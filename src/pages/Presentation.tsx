@@ -1,147 +1,18 @@
-import { useState, useRef, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { Download, Mountain, Camera, Gamepad2, Telescope } from 'lucide-react'
-import type { ReactNode } from 'react'
+import { motion } from 'framer-motion'
 import type { View } from '../types'
-
-// ─── Data ────────────────────────────────────────────────────────────────────
-
-const SOFT_SKILLS = [
-  'Adaptabilité', 'Curiosité', 'Rigueur', 'Autonomie', "Esprit d'équipe", 'Persévérance', 'Force de proposition', 'Leadership', 'Organisation',
-]
-
-const LANGUAGES = [
-  { lang: 'Français', level: 'Langue maternelle' },
-  { lang: 'Anglais',  level: 'B2+' },
-]
-
-const RECOMMENDATIONS = [
-  {
-    id:   'iaboni',
-    label: 'Alexandra IABONI',
-    role:  'Responsable des admissions - Lyon Ynov Campus',
-    text:  "Alexandra m'a côtoyé en tant qu'ambassadeur de l'école et ancien membre du Bureau des Sports. Elle atteste de mon engagement dans la vie étudiante, de mon sens du collectif et de ma capacité à représenter l'établissement avec authenticité lors d'événements d'envergure.",
-    pdf:   '/ldr/Alexandra%20IABONI.pdf',
-  },
-  {
-    id:   'sirot',
-    label: 'Cellya SIROT',
-    role:  'Développeuse web - Oraxya',
-    text:  "Cellya m'a confié un rôle clé sur un projet numérique d'envergure nationale. Elle souligne ma posture client exemplaire, mon esprit force de proposition, ayant contribué à des optimisations encore appréciées aujourd'hui, et ma capacité à progresser en autonomie face à des problématiques techniques complexes.",
-    pdf:   '/ldr/Cellya%20SIROT.pdf',
-  },
-  {
-    id:   'theodore',
-    label: 'Melvin THEODORE',
-    role:  'Expert en cybersécurité - Formateur / Conférencier',
-    text:  "Fort d'expériences au sein d'ARKEMA et d'INTERPOL, Melvin m'a encadré dans plusieurs formations spécialisées. Il témoigne de mes compétences techniques, de ma curiosité pour les enjeux du domaine et de mon éthique professionnelle, des qualités qu'il juge essentielles dans les métiers de la cybersécurité.",
-    pdf:   '/ldr/Melvin%20Theodore.pdf',
-  },
-] as const
-
-type RecoId = (typeof RECOMMENDATIONS)[number]['id']
-
-const PASSIONS = [
-  {
-    id:    'hiking',
-    label: 'Randonnée',
-    Icon:  Mountain,
-    text:  "J'aime partir à la découverte de zones naturelles et sillonner les sentiers de montagne pour me ressourcer. Prendre un bol d'air frais loin du quotidien, se dépasser physiquement et contempler des paysages sauvages, la montagne représente pour moi un espace de liberté et de reconnexion avec l'essentiel.",
-  },
-  {
-    id:    'photography',
-    label: 'Photographie',
-    Icon:  Camera,
-    text:  "Commencée en 2021 avec le petit Nikon Coolpix P510 de mon père, la photographie est rapidement devenue une passion à part entière. J'emporte mon appareil partout, à l'école, en randonnée, en camping, en vacances... Il m'accompagne presque en permanence. Capturer l'instant, choisir la lumière, figer un paysage ou un visage : chaque prise de vue est une nouvelle exploration.",
-  },
-  {
-    id:    'gaming',
-    label: 'Jeux Vidéo',
-    Icon:  Gamepad2,
-    text:  "Je joue aux jeux vidéo depuis l'enfance, ce qui m'a permis de développer des compétences sociales et relationnelles bien avant ma vie professionnelle. C'est en me demandant comment un jeu est créé que j'ai commencé à coder, puis à m'intéresser au réseau et système informatique, et enfin à comprendre leur protection, et pourquoi il était si simple de cracker certains jeux à l'époque. Le jeu vidéo est à l'origine de ma vocation en cybersécurité.",
-  },
-  {
-    id:    'astronomy',
-    label: 'Astronomie',
-    Icon:  Telescope,
-    text:  "Un amour émergent pour le ciel, et tout particulièrement pour l'observation du ciel profond. Galaxies, nébuleuses, amas stellaires... contempler ce qui se passe à des millions d'années-lumière me donne une perspective unique sur le monde. Cette passion croise naturellement la photographie, notamment l'astrophotographie, un terrain d'exploration qui n'a pas fini de me surprendre.",
-  },
-] as const
-
-type PassionId = (typeof PASSIONS)[number]['id']
-
-// ─── Helpers ─────────────────────────────────────────────────────────────────
+import SectionLabel from '../components/ui/SectionLabel'
+import ScrollReveal from '../components/ui/ScrollReveal'
+import SkillsSection from './presentation/SkillsSection'
+import RecommendationPanel from './presentation/RecommendationPanel'
+import PassionPanel from './presentation/PassionPanel'
 
 const EASE = [0.22, 1, 0.36, 1] as const
-
-function ScrollReveal({
-  children,
-  delay = 0,
-  className,
-}: {
-  children: ReactNode
-  delay?: number
-  className?: string
-}) {
-  const ref = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    const el = ref.current
-    if (!el) return
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (!entry.isIntersecting) return
-        el.style.opacity = '1'
-        el.style.transform = 'translateY(0)'
-        observer.unobserve(el)
-      },
-      { rootMargin: '-60px' },
-    )
-    observer.observe(el)
-    return () => observer.disconnect()
-  }, [])
-
-  return (
-    <div
-      ref={ref}
-      style={{
-        opacity: 0,
-        transform: 'translateY(28px)',
-        transition: `opacity 0.65s cubic-bezier(0.22,1,0.36,1) ${delay}s, transform 0.65s cubic-bezier(0.22,1,0.36,1) ${delay}s`,
-      }}
-      className={className}
-    >
-      {children}
-    </div>
-  )
-}
-
-function SectionLabel({
-  children,
-  as: Tag = 'h2',
-}: {
-  children: ReactNode
-  as?: 'h2' | 'p'
-}) {
-  return (
-    <Tag className="mb-5 font-mono text-xs uppercase tracking-widest text-accent">
-      {children}
-    </Tag>
-  )
-}
-
-// ─── Page ─────────────────────────────────────────────────────────────────────
 
 interface Props {
   onNavigate: (view: View) => void
 }
 
 export default function Presentation({ onNavigate: _onNavigate }: Props) {
-  const [active, setActive]         = useState<PassionId>('hiking')
-  const [activeReco, setActiveReco] = useState<RecoId>('iaboni')
-  const passion = PASSIONS.find(p => p.id === active)!
-  const reco    = RECOMMENDATIONS.find(r => r.id === activeReco)!
-
   return (
     <motion.div
       initial={{ opacity: 0, y: 16 }}
@@ -151,7 +22,7 @@ export default function Presentation({ onNavigate: _onNavigate }: Props) {
     >
       <div className="mx-auto max-w-5xl space-y-16 px-4 py-12 sm:px-6 sm:py-16 md:space-y-24 md:py-20">
 
-        {/* ── Intro ─────────────────────────────────────────────────────── */}
+        {/* ── Intro — visible immediately, no scroll reveal ─────────── */}
         <div>
           <SectionLabel as="p">// intro</SectionLabel>
           <h1 className="mb-6 font-black leading-tight text-foreground
@@ -168,156 +39,17 @@ export default function Presentation({ onNavigate: _onNavigate }: Props) {
           </p>
         </div>
 
-        {/* ── Soft Skills + Languages ───────────────────────────────────── */}
-        <div className="grid gap-10 md:grid-cols-2 md:gap-16">
+        {/* ── Soft Skills + Languages ── each column has its own reveal */}
+        <SkillsSection />
 
-          <ScrollReveal>
-            <SectionLabel>// soft skills</SectionLabel>
-            <div className="flex flex-wrap gap-2">
-              {SOFT_SKILLS.map(skill => (
-                <span
-                  key={skill}
-                  className="border border-accent/20 px-3 py-1 font-mono text-xs text-foreground/60"
-                >
-                  {skill}
-                </span>
-              ))}
-            </div>
-          </ScrollReveal>
-
-          <ScrollReveal delay={0.1}>
-            <SectionLabel>// langues</SectionLabel>
-            <div className="flex flex-col gap-4">
-              {LANGUAGES.map(({ lang, level }) => (
-                <div
-                  key={lang}
-                  className="flex items-baseline justify-between border-b border-accent/10 pb-3"
-                >
-                  <span className="text-sm font-semibold text-foreground">{lang}</span>
-                  <span className="font-mono text-xs text-foreground/40">{level}</span>
-                </div>
-              ))}
-            </div>
-          </ScrollReveal>
-
-        </div>
-
-        {/* ── Recommandations ───────────────────────────────────────────── */}
+        {/* ── Recommandations ───────────────────────────────────────── */}
         <ScrollReveal>
-          <SectionLabel>// recommandations</SectionLabel>
-
-          <div className="grid gap-8 md:grid-cols-[220px_1fr] md:gap-16">
-
-            {/* Selector */}
-            <div className="flex flex-wrap gap-x-6 gap-y-3 md:flex-col md:gap-4">
-              {RECOMMENDATIONS.map(({ id, label }) => {
-                const isActive = activeReco === id
-                return (
-                  <button
-                    key={id}
-                    onClick={() => setActiveReco(id)}
-                    aria-pressed={isActive}
-                    className={[
-                      'flex items-center gap-3 text-left transition-all duration-200',
-                      isActive
-                        ? 'text-accent'
-                        : 'text-foreground/60 hover:text-foreground',
-                    ].join(' ')}
-                  >
-                    <motion.span
-                      animate={{ opacity: isActive ? 1 : 0, x: isActive ? 0 : -4 }}
-                      transition={{ duration: 0.18, ease: 'easeOut' }}
-                      className="font-mono text-xs"
-                    >
-                      ›
-                    </motion.span>
-                    <span className="font-mono text-sm">{label}</span>
-                  </button>
-                )
-              })}
-            </div>
-
-            {/* Cross-fading content */}
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={activeReco}
-                initial={{ opacity: 0, y: 6 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -6 }}
-                transition={{ duration: 0.22, ease: 'easeOut' }}
-                className="flex flex-col gap-4"
-              >
-                <p className="font-mono text-xs text-accent">{reco.role}</p>
-                <p className="min-h-[6rem] text-sm leading-relaxed text-foreground/60 md:min-h-[8rem] md:text-base">
-                  {reco.text}
-                </p>
-                <a
-                  href={reco.pdf}
-                  download
-                  className="inline-flex items-center gap-2 self-start border border-accent/30 px-5 py-2.5
-                             font-mono text-xs text-foreground/60
-                             transition-all duration-200 hover:-translate-y-px hover:border-accent/70 hover:text-foreground"
-                >
-                  <Download size={13} />
-                  Télécharger le PDF
-                </a>
-              </motion.div>
-            </AnimatePresence>
-
-          </div>
+          <RecommendationPanel />
         </ScrollReveal>
 
-        {/* ── Passions ──────────────────────────────────────────────────── */}
+        {/* ── Passions ──────────────────────────────────────────────── */}
         <ScrollReveal>
-          <SectionLabel>// passions</SectionLabel>
-
-          <div className="grid gap-8 md:grid-cols-[200px_1fr] md:gap-16">
-
-            {/* Selector */}
-            <div className="flex flex-wrap gap-x-6 gap-y-3 md:flex-col md:gap-4">
-              {PASSIONS.map(({ id, label, Icon }) => {
-                const isActive = active === id
-                return (
-                  <button
-                    key={id}
-                    onClick={() => setActive(id)}
-                    aria-pressed={isActive}
-                    className={[
-                      'flex items-center gap-3 text-left transition-all duration-200',
-                      isActive
-                        ? 'text-accent'
-                        : 'text-foreground/60 hover:text-foreground',
-                    ].join(' ')}
-                  >
-                    <motion.span
-                      animate={{ opacity: isActive ? 1 : 0, x: isActive ? 0 : -4 }}
-                      transition={{ duration: 0.18, ease: 'easeOut' }}
-                      className="font-mono text-xs"
-                    >
-                      ›
-                    </motion.span>
-                    <Icon size={13} />
-                    <span className="font-mono text-sm">{label}</span>
-                  </button>
-                )
-              })}
-            </div>
-
-            {/* Cross-fading text */}
-            <AnimatePresence mode="wait">
-              <motion.p
-                key={active}
-                initial={{ opacity: 0, y: 6 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -6 }}
-                transition={{ duration: 0.22, ease: 'easeOut' }}
-                className="min-h-[6rem] text-sm leading-relaxed text-foreground/60 md:min-h-[8rem] md:text-base"
-              >
-                {passion.text}
-              </motion.p>
-            </AnimatePresence>
-
-          </div>
+          <PassionPanel />
         </ScrollReveal>
 
       </div>

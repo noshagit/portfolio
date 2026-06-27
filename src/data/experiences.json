@@ -23,9 +23,7 @@
     "metiers_lies": ["Responsable de projet IT", "Chef de projet cybersécurité", "Analyste SOC"],
     "competences_obtenir": ["Gestion de projet", "ELK Stack", "SIEM", "Scripts d'attaques", "Kibana", "Suivi de livrables"],
     "soft_skills_utilises": ["Leadership & coordination", "Travail en équipe", "Sens de la communication", "Gestion des priorités"],
-    "links": [
-      { "label": "GitHub — Scripts & Configuration", "url": "https://github.com/" }
-    ]
+    "links": []
   },
   {
     "id": "exp-inca-2024",
@@ -38,7 +36,7 @@
     "metiers_lies": ["Développeur web", "Développeur / Scripteur", "Auditeur de sécurité (automatisation)"],
     "competences_obtenir": ["React", "TypeScript", "Bash", "GitLab", "Validation de code"],
     "soft_skills_utilises": ["Curiosité technique", "Travail en équipe", "Force de proposition", "autonomie"],
-    "links": []
+    "links": [ { "label": "Inca Project", "url": "https://incaproject.fr/" } ]
   },
   {
     "id": "exp-oraxya-2025",
@@ -90,7 +88,7 @@
     "metiers_lies": ["Serveur", "Barman", "Équipier polyvalent de restauration"],
     "competences_obtenir": ["Relation et fidélisation client", "Gestion du service (flux tendu)", "Préparation et logistique de comptoir", "Application des normes HACCP"],
     "soft_skills_utilises": ["Gestion du stress", "Polyvalence", "Sens de la communication", "Travail en équipe"],
-    "links": []
+    "links": [{ "label": "Site web", "url": "https://bistrot-les-iris.fr/" }]
   },
   {
     "id": "exp-room-service-2025",
@@ -103,7 +101,7 @@
     "metiers_lies": ["Photographe événementiel", "Reporter photographe", "Créateur de contenu visuel"],
     "competences_obtenir": ["Techniques de prise de vue (reportage & institutionnel)", "Gestion de la lumière (basse luminosité / intérieur)", "Post-traitement et édition numérique", "Respect d'un cahier des charges et de délais"],
     "soft_skills_utilises": ["Capacité d'adaptation", "Autonomie", "Sens du détail", "Discrétion et professionnalisme"],
-    "links": []
+    "links": [{ "label": "Instagram — Room Service Festival", "url": "https://www.instagram.com/roomservicefestival/" }]
   },
   {
     "id": "exp-photo-slam-2025",
@@ -116,7 +114,10 @@
     "metiers_lies": ["Photographe de scène", "Portraitiste", "Créateur de contenu visuel"],
     "competences_obtenir": ["Photographie de spectacle (gestion du mouvement et des éclairages scéniques)", "Techniques du portrait institutionnel et artistique", "Retouche et optimisation pour le print et le web"],
     "soft_skills_utilises": ["Sens de la communication", "Écoute et compréhension du besoin", "Créativité", "Rigueur"],
-    "links": []
+    "links": [
+      { "label": "Instagram — Fifamé", "url": "https://www.instagram.com/fifame_slamconte/" },
+      { "label": "Profil Azelar — Madeleine Adoumbou", "url": "https://www.azelar.coop/entrepreneur/madeleine-adoumbou/" }
+    ]
   },
   {
     "id": "exp-wifi-2026",
@@ -134,8 +135,6 @@
       "Règles de filtrage et politiques d'accès"
     ],
     "soft_skills_utilises": ["Rigueur", "Résolution de problèmes", "Organisation"],
-    "links": [
-      { "label": "GitHub — Architecture & Config", "url": "https://github.com/" }
-    ]
+    "links": []
   }
 ]
