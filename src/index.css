@@ -17,7 +17,7 @@
 /* ─── Light theme (default) ─── */
 :root {
   color-scheme: light;
-  --background:    #FAFAC6;
+  --background:    #FFFBEF;
   --foreground:    #141018;
   --accent:        #7B5EA7;
   --accent-muted:  rgba(90, 62, 148, 0.10);
@@ -27,7 +27,7 @@
 .dark {
   color-scheme: dark;
   --background:    #141018;
-  --foreground:    #FAFAC6;
+  --foreground:    #FFFBEF;
   --accent:        #b39fd6;
   --accent-muted:  rgba(147, 131, 175, 0.12);
 }

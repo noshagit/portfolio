@@ -1,22 +1,16 @@
 import { motion, type Variants } from 'framer-motion'
 import { Download, ArrowRight } from 'lucide-react'
 import type { View } from '../types'
+import { useLang } from '../hooks/useLang'
+import { EASE } from '../lib/motion'
 
 interface Props {
   onNavigate: (view: View) => void
 }
 
-// ─── Variants ─────────────────────────────────────────────────────────────────
-
-const EASE = [0.22, 1, 0.36, 1] as const
-
 const WORD: Variants = {
   hidden:  { opacity: 0, y: 48 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.8, ease: EASE },
-  },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: EASE } },
 }
 
 const NAME_CONTAINER: Variants = {
@@ -26,18 +20,14 @@ const NAME_CONTAINER: Variants = {
 
 const BUTTONS: Variants = {
   hidden:  { opacity: 0, y: 24 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.65, ease: EASE, delay: 0.8 },
-  },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.65, ease: EASE, delay: 0.8 } },
 }
 
 const SPRING = { type: 'spring', stiffness: 380, damping: 22 } as const
 
-// ─── Page ─────────────────────────────────────────────────────────────────────
-
 export default function Landing({ onNavigate }: Props) {
+  const { t } = useLang()
+
   return (
     <motion.div
       initial="hidden"
@@ -48,12 +38,7 @@ export default function Landing({ onNavigate }: Props) {
       <div className="mx-auto w-full max-w-5xl">
         <div className="flex flex-col items-center gap-14 text-center sm:gap-20">
 
-          {/* ── Name ────────────────────────────────────────────────── */}
-          <motion.h1
-            variants={NAME_CONTAINER}
-            className="flex flex-col items-center"
-          >
-            {/* First name — light weight for hierarchy contrast */}
+          <motion.h1 variants={NAME_CONTAINER} className="flex flex-col items-center">
             <div className="overflow-hidden pb-1">
               <motion.span
                 variants={WORD}
@@ -63,8 +48,6 @@ export default function Landing({ onNavigate }: Props) {
                 Ilian
               </motion.span>
             </div>
-
-            {/* Last name — massive, black weight, accent color */}
             <div className="flex items-baseline gap-3 overflow-hidden pb-2 sm:gap-5">
               {(['BEN', 'HAMOU'] as const).map(word => (
                 <motion.span
@@ -79,12 +62,10 @@ export default function Landing({ onNavigate }: Props) {
             </div>
           </motion.h1>
 
-          {/* ── CTAs ────────────────────────────────────────────────── */}
           <motion.div
             variants={BUTTONS}
             className="flex flex-col items-center gap-4 sm:flex-row sm:gap-5"
           >
-            {/* Primary — solid accent, rounded, scale hover */}
             <motion.button
               onClick={() => onNavigate('presentation')}
               whileHover={{ scale: 1.03 }}
@@ -94,14 +75,10 @@ export default function Landing({ onNavigate }: Props) {
                          bg-accent px-6 py-3 text-sm font-medium text-background
                          shadow-lg hover:shadow-accent transition-[box-shadow] duration-300"
             >
-              Me découvrir
-              <ArrowRight
-                size={15}
-                className="transition-transform duration-200 group-hover:translate-x-1"
-              />
+              {t.landing.discover}
+              <ArrowRight size={15} className="transition-transform duration-200 group-hover:translate-x-1" />
             </motion.button>
 
-            {/* Secondary — outlined, rounded, same hover scale */}
             <motion.a
               href="/cv.pdf"
               download
@@ -115,13 +92,12 @@ export default function Landing({ onNavigate }: Props) {
                          transition-all duration-300"
             >
               <Download size={15} />
-              Télécharger le CV
+              {t.landing.downloadCV}
             </motion.a>
           </motion.div>
 
         </div>
       </div>
-
     </motion.div>
   )
 }

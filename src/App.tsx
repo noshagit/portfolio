@@ -1,8 +1,11 @@
 import { useState } from 'react'
 import { AnimatePresence } from 'framer-motion'
 import { ThemeProvider } from './context/ThemeContext'
+import { LanguageProvider } from './context/LanguageContext'
+import { useLang } from './hooks/useLang'
 import Header from './components/layout/Header'
 import Footer from './components/layout/Footer'
+import SplashScreen from './components/ui/SplashScreen'
 import Landing from './pages/Landing'
 import Presentation from './pages/Presentation'
 import Experiences from './pages/Experiences'
@@ -33,10 +36,23 @@ function AppShell() {
   )
 }
 
+// Thin gate: reads loading state from LanguageContext and passes ready signal to SplashScreen
+function SplashGate({ onDone }: { onDone: () => void }) {
+  const { loading } = useLang()
+  return <SplashScreen ready={!loading} onDone={onDone} />
+}
+
 export default function App() {
+  const [splashDone, setSplashDone] = useState(false)
+
   return (
-    <ThemeProvider>
-      <AppShell />
-    </ThemeProvider>
+    <LanguageProvider>
+      <ThemeProvider>
+        <AnimatePresence>
+          {!splashDone && <SplashGate onDone={() => setSplashDone(true)} />}
+        </AnimatePresence>
+        <AppShell />
+      </ThemeProvider>
+    </LanguageProvider>
   )
 }

@@ -1,140 +1,403 @@
 [
-  {
-    "id": "exp-infra-2026",
-    "nom": "Administrateur système & réseau",
-    "date": "2026",
-    "type": "Projet académique",
-    "domaine": ["Cybersécurité", "Infrastructure réseau"],
-    "employeur_collab": "Ynov Campus Lyon",
-    "description": "Déploiement d'une infrastructure réseau d'entreprise complète: Windows Server, Active Directory, GPO, VPN IPSec, DNS/DHCP et politique de sécurité. Configuration du routage, du pare-feu et des règles de filtrage réseau dans un environnement virtualisé.",
-    "metiers_lies": ["Administrateur système", "Administrateur réseau", "Technicien système et réseau"],
-    "competences_obtenir": ["Windows Server", "Active Directory", "GPO", "VPN IPSec", "DNS/DHCP", "Routage", "Pare-feu", "Virtualisation"],
-    "soft_skills_utilises": ["Rigueur", "Autonomie", "Esprit d'analyse"],
-    "links": []
-  },
-  {
-    "id": "exp-cyberwatch-2025",
-    "nom": "Responsable de projet",
-    "date": "2025-2026",
-    "type": "Projet académique",
-    "domaine": ["Cybersécurité"],
-    "employeur_collab": "Ynov Campus Lyon",
-    "description": "Pilotage d'une équipe de 8 personnes, gestion de projet, mise en place d'un SIEM avec ELK Stack et création de scripts d'attaques automatisées. Suivi des livrables, animation des réunions d'équipe et coordination entre les pôles technique et fonctionnel.",
-    "metiers_lies": ["Responsable de projet IT", "Chef de projet cybersécurité", "Analyste SOC"],
-    "competences_obtenir": ["Gestion de projet", "ELK Stack", "SIEM", "Scripts d'attaques", "Kibana", "Suivi de livrables"],
-    "soft_skills_utilises": ["Leadership & coordination", "Travail en équipe", "Sens de la communication", "Gestion des priorités"],
-    "links": []
-  },
-  {
-    "id": "exp-inca-2024",
-    "nom": "Développeur web et script",
-    "date": "2024-2025",
-    "type": "Projet académique",
-    "domaine": ["Informatique"],
-    "employeur_collab": "Ynov Campus Lyon",
-    "description": "Contribution au développement web: React, TypeScript. Création de scripts en Bash et validation des contributions de l'équipe via GitLab.",
-    "metiers_lies": ["Développeur web", "Développeur / Scripteur", "Auditeur de sécurité (automatisation)"],
-    "competences_obtenir": ["React", "TypeScript", "Bash", "GitLab", "Validation de code"],
-    "soft_skills_utilises": ["Curiosité technique", "Travail en équipe", "Force de proposition", "autonomie"],
-    "links": [ { "label": "Inca Project", "url": "https://incaproject.fr/" } ]
-  },
-  {
-    "id": "exp-oraxya-2025",
-    "nom": "Développeur web et data Engineer",
-    "date": "2025",
-    "type": "Participation bénévole",
-    "domaine": ["Informatique"],
-    "employeur_collab": "Oraxya",
-    "description": "Contribution au développement web: Vite, TypeScript. Alimentation, tri et analyse des données partagées par des centaines de pharmacies.",
-    "metiers_lies": ["Développeur web", "Data Engineer"],
-    "competences_obtenir": ["Vite", "TypeScript", "Json", "GitHub", "Review de code"],
-    "soft_skills_utilises": ["Curiosité technique", "Travail en équipe", "Force de proposition", "autonomie"],
-    "links": []
-  },
-  {
-    "id": "exp-marseille-2023",
-    "nom": "Agent de nettoiement",
-    "date": "2023",
-    "type": "CDD",
-    "domaine": ["Service"],
-    "employeur_collab": "Ville de Marseille",
-    "description": "Optimisation opérationnelle et maintien de la salubrité des espaces publics. Gestion de la logistique de tri, application rigoureuse des normes d'hygiène et de sécurité, et coordination des flux de revalorisation des encombrants.",
-    "metiers_lies": ["Agent de nettoiement", "Opérateur logistique", "Agent d'entretien et d'assainissement"],
-    "competences_obtenir": ["Gestion logistique", "Application des normes HSE (Hygiène, Sécurité, Environnement)", "Optimisation des flux opérationnels", "Maintenance des équipements"],
-    "soft_skills_utilises": ["Rigueur", "Résistance physique", "Gestion des priorités", "Sens du service public"],
-    "links": []
-  },
-  {
-    "id": "exp-marseille-2022",
-    "nom": "Agent de nettoiement",
-    "date": "2022",
-    "type": "CDD",
-    "domaine": ["Service"],
-    "employeur_collab": "Ville de Marseille",
-    "description": "Optimisation opérationnelle et maintien de la salubrité des espaces publics. Gestion de la logistique de tri, application rigoureuse des normes d'hygiène et de sécurité, et coordination des flux de revalorisation des encombrants.",
-    "metiers_lies": ["Agent de nettoiement", "Opérateur logistique", "Agent d'entretien et d'assainissement"],
-    "competences_obtenir": ["Gestion logistique", "Application des normes HSE (Hygiène, Sécurité, Environnement)", "Optimisation des flux opérationnels", "Maintenance des équipements"],
-    "soft_skills_utilises": ["Rigueur", "Résistance physique", "Gestion des priorités", "Sens du service public"],
-    "links": []
-  },
-  {
-    "id": "exp-bistrot-iris-2024",
-    "nom": "Serveur & Barman polyvalent",
-    "date": "2024",
-    "type": "CDI",
-    "domaine": ["Restauration"],
-    "employeur_collab": "Bistrot Les Iris (Bron)",
-    "description": "Garant de l'expérience client en salle et au bar au sein d'un environnement à fort flux. Gestion de la relation client, préparation des commandes (boissons et petite restauration) et maintien de la conformité aux normes d'hygiène (HACCP) en cuisine et comptoir.",
-    "metiers_lies": ["Serveur", "Barman", "Équipier polyvalent de restauration"],
-    "competences_obtenir": ["Relation et fidélisation client", "Gestion du service (flux tendu)", "Préparation et logistique de comptoir", "Application des normes HACCP"],
-    "soft_skills_utilises": ["Gestion du stress", "Polyvalence", "Sens de la communication", "Travail en équipe"],
-    "links": [{ "label": "Site web", "url": "https://bistrot-les-iris.fr/" }]
-  },
-  {
-    "id": "exp-room-service-2025",
-    "nom": "Photographe événementiel",
-    "date": "2025",
-    "type": "Participation bénévole",
-    "domaine": ["Photographie"],
-    "employeur_collab": "Room Service (Lyon)",
-    "description": "Deux jours de couverture photographique d'événements culturels sur trois journées. Captation d'une conférence sur le statut d'indépendant dans le design graphique lors d'une conférence au Musée d'Art Contemporain (MAC) de Lyon et valorisation visuelle d'une soirée d'exposition à l'espace KOMMET. Gestion du cadrage, de la lumière en conditions variables.",
-    "metiers_lies": ["Photographe événementiel", "Reporter photographe", "Créateur de contenu visuel"],
-    "competences_obtenir": ["Techniques de prise de vue (reportage & institutionnel)", "Gestion de la lumière (basse luminosité / intérieur)", "Post-traitement et édition numérique", "Respect d'un cahier des charges et de délais"],
-    "soft_skills_utilises": ["Capacité d'adaptation", "Autonomie", "Sens du détail", "Discrétion et professionnalisme"],
-    "links": [{ "label": "Instagram — Room Service Festival", "url": "https://www.instagram.com/roomservicefestival/" }]
-  },
-  {
-    "id": "exp-photo-slam-2025",
-    "nom": "Photographe de scène & portrait",
-    "date": "2025",
-    "type": "Participation bénévole",
-    "domaine": ["Photographie"],
-    "employeur_collab": "Fifamé (Lyon)",
-    "description": "Couverture photographique d'une performance scénique en direct et réalisation de portraits professionnels. Production de visuels de communication et à l'identité numérique (photo de profil officielle) de l'artiste.",
-    "metiers_lies": ["Photographe de scène", "Portraitiste", "Créateur de contenu visuel"],
-    "competences_obtenir": ["Photographie de spectacle (gestion du mouvement et des éclairages scéniques)", "Techniques du portrait institutionnel et artistique", "Retouche et optimisation pour le print et le web"],
-    "soft_skills_utilises": ["Sens de la communication", "Écoute et compréhension du besoin", "Créativité", "Rigueur"],
-    "links": [
-      { "label": "Instagram — Fifamé", "url": "https://www.instagram.com/fifame_slamconte/" },
-      { "label": "Profil Azelar — Madeleine Adoumbou", "url": "https://www.azelar.coop/entrepreneur/madeleine-adoumbou/" }
-    ]
-  },
-  {
-    "id": "exp-wifi-2026",
-    "nom": "Architecte Réseau & Sécurité",
-    "date": "2025",
-    "type": "Projet académique",
-    "domaine": ["Infrastructure réseau"],
-    "employeur_collab": "Ynov Campus Lyon",
-    "description": "Conception et déploiement d'une architecture réseau sécurisée au sein de l'établissement. Configuration d'une infrastructure complète (routeurs et switchs Cisco, pare-feu Stormshield) avec plan d'adressage IP dédié, segmentation par VLAN, routage inter-VLAN et application de politiques de filtrage pour sécuriser les flux de l'infrastructure.",
-    "metiers_lies": ["Architecte sécurité réseau", "Administrateur réseau", "Intégrateur de solutions de sécurité"],
-    "competences_obtenir": [
-      "Segmentation réseau (VLAN Cisco)",
-      "Routage et configuration matérielle (Switchs & Routeurs Cisco)",
-      "Configuration de pare-feu d'entreprise (Stormshield)",
-      "Règles de filtrage et politiques d'accès"
-    ],
-    "soft_skills_utilises": ["Rigueur", "Résolution de problèmes", "Organisation"],
-    "links": []
-  }
+    {
+        "id": "exp-infra-2026",
+        "nom": "Administrateur système & réseau",
+        "date": "2026",
+        "type": "Projet académique",
+        "domaine": ["Cybersécurité", "Infrastructure réseau"],
+        "employeur_collab": "Ynov Campus Lyon",
+        "description": "Déploiement d'une infrastructure réseau d'entreprise complète: Windows Server, Active Directory, GPO, VPN IPSec, DNS/DHCP et politique de sécurité. Configuration du routage, du pare-feu et des règles de filtrage réseau dans un environnement virtualisé.",
+        "metiers_lies": [
+            "Administrateur système",
+            "Administrateur réseau",
+            "Technicien système et réseau"
+        ],
+        "competences_obtenir": [
+            "Windows Server",
+            "Active Directory",
+            "GPO",
+            "VPN IPSec",
+            "DNS/DHCP",
+            "Routage",
+            "Pare-feu",
+            "Virtualisation"
+        ],
+        "soft_skills_utilises": ["Rigueur", "Autonomie", "Esprit d'analyse"],
+        "links": []
+    },
+    {
+        "id": "exp-cyberwatch-2025",
+        "nom": "Responsable de projet",
+        "date": "2025-2026",
+        "type": "Projet académique",
+        "domaine": ["Cybersécurité"],
+        "employeur_collab": "Ynov Campus Lyon",
+        "description": "Pilotage d'une équipe de 8 personnes, gestion de projet, mise en place d'un SIEM avec ELK Stack et création de scripts d'attaques automatisées. Suivi des livrables, animation des réunions d'équipe et coordination entre les pôles technique et fonctionnel.",
+        "metiers_lies": [
+            "Responsable de projet IT",
+            "Chef de projet cybersécurité",
+            "Analyste SOC"
+        ],
+        "competences_obtenir": [
+            "Gestion de projet",
+            "ELK Stack",
+            "SIEM",
+            "Scripts d'attaques",
+            "Kibana",
+            "Suivi de livrables"
+        ],
+        "soft_skills_utilises": [
+            "Leadership & coordination",
+            "Travail en équipe",
+            "Sens de la communication",
+            "Gestion des priorités"
+        ],
+        "links": []
+    },
+    {
+        "id": "exp-inca-2024",
+        "nom": "Développeur web et script",
+        "date": "2024-2025",
+        "type": "Projet académique",
+        "domaine": ["Informatique"],
+        "employeur_collab": "Ynov Campus Lyon",
+        "description": "Contribution au développement web: React, TypeScript. Création de scripts en Bash et validation des contributions de l'équipe via GitLab.",
+        "metiers_lies": [
+            "Développeur web",
+            "Développeur / Scripteur",
+            "Auditeur de sécurité (automatisation)"
+        ],
+        "competences_obtenir": [
+            "React",
+            "TypeScript",
+            "Bash",
+            "GitLab",
+            "Validation de code"
+        ],
+        "soft_skills_utilises": [
+            "Curiosité technique",
+            "Travail en équipe",
+            "Force de proposition",
+            "autonomie"
+        ],
+        "links": [{ "label": "Inca Project", "url": "https://incaproject.fr/" }]
+    },
+    {
+        "id": "exp-oraxya-2025",
+        "nom": "Développeur web et data Engineer",
+        "date": "2025",
+        "type": "Participation bénévole",
+        "domaine": ["Informatique"],
+        "employeur_collab": "Oraxya",
+        "description": "Contribution au développement web: Vite, TypeScript. Alimentation, tri et analyse des données partagées par des centaines de pharmacies.",
+        "metiers_lies": ["Développeur web", "Data Engineer"],
+        "competences_obtenir": [
+            "Vite",
+            "TypeScript",
+            "Json",
+            "GitHub",
+            "Review de code"
+        ],
+        "soft_skills_utilises": [
+            "Curiosité technique",
+            "Travail en équipe",
+            "Force de proposition",
+            "autonomie"
+        ],
+        "links": []
+    },
+    {
+        "id": "exp-marseille-2023",
+        "nom": "Agent de nettoiement",
+        "date": "2023",
+        "type": "CDD",
+        "domaine": ["Service"],
+        "employeur_collab": "Ville de Marseille",
+        "description": "Optimisation opérationnelle et maintien de la salubrité des espaces publics. Gestion de la logistique de tri, application rigoureuse des normes d'hygiène et de sécurité, et coordination des flux de revalorisation des encombrants.",
+        "metiers_lies": [
+            "Agent de nettoiement",
+            "Opérateur logistique",
+            "Agent d'entretien et d'assainissement"
+        ],
+        "competences_obtenir": [
+            "Gestion logistique",
+            "Application des normes HSE (Hygiène, Sécurité, Environnement)",
+            "Optimisation des flux opérationnels",
+            "Maintenance des équipements"
+        ],
+        "soft_skills_utilises": [
+            "Rigueur",
+            "Résistance physique",
+            "Gestion des priorités",
+            "Sens du service public"
+        ],
+        "links": []
+    },
+    {
+        "id": "exp-marseille-2022",
+        "nom": "Agent de nettoiement",
+        "date": "2022",
+        "type": "CDD",
+        "domaine": ["Service"],
+        "employeur_collab": "Ville de Marseille",
+        "description": "Optimisation opérationnelle et maintien de la salubrité des espaces publics. Gestion de la logistique de tri, application rigoureuse des normes d'hygiène et de sécurité, et coordination des flux de revalorisation des encombrants.",
+        "metiers_lies": [
+            "Agent de nettoiement",
+            "Opérateur logistique",
+            "Agent d'entretien et d'assainissement"
+        ],
+        "competences_obtenir": [
+            "Gestion logistique",
+            "Application des normes HSE (Hygiène, Sécurité, Environnement)",
+            "Optimisation des flux opérationnels",
+            "Maintenance des équipements"
+        ],
+        "soft_skills_utilises": [
+            "Rigueur",
+            "Résistance physique",
+            "Gestion des priorités",
+            "Sens du service public"
+        ],
+        "links": []
+    },
+    {
+        "id": "exp-bistrot-iris-2024",
+        "nom": "Serveur & Barman polyvalent",
+        "date": "2024",
+        "type": "CDI",
+        "domaine": ["Restauration"],
+        "employeur_collab": "Bistrot Les Iris (Bron)",
+        "description": "Garant de l'expérience client en salle et au bar au sein d'un environnement à fort flux. Gestion de la relation client, préparation des commandes (boissons et petite restauration) et maintien de la conformité aux normes d'hygiène (HACCP) en cuisine et comptoir.",
+        "metiers_lies": [
+            "Serveur",
+            "Barman",
+            "Équipier polyvalent de restauration"
+        ],
+        "competences_obtenir": [
+            "Relation et fidélisation client",
+            "Gestion du service (flux tendu)",
+            "Préparation et logistique de comptoir",
+            "Application des normes HACCP"
+        ],
+        "soft_skills_utilises": [
+            "Gestion du stress",
+            "Polyvalence",
+            "Sens de la communication",
+            "Travail en équipe"
+        ],
+        "links": [
+            { "label": "Site web", "url": "https://bistrot-les-iris.fr/" }
+        ]
+    },
+    {
+        "id": "exp-room-service-2025",
+        "nom": "Photographe événementiel",
+        "date": "2025",
+        "type": "Participation bénévole",
+        "domaine": ["Photographie"],
+        "employeur_collab": "Room Service (Lyon)",
+        "description": "Deux jours de couverture photographique d'événements culturels sur trois journées. Captation d'une conférence sur le statut d'indépendant dans le design graphique lors d'une conférence au Musée d'Art Contemporain (MAC) de Lyon et valorisation visuelle d'une soirée d'exposition à l'espace KOMMET. Gestion du cadrage, de la lumière en conditions variables.",
+        "metiers_lies": [
+            "Photographe événementiel",
+            "Reporter photographe",
+            "Créateur de contenu visuel"
+        ],
+        "competences_obtenir": [
+            "Techniques de prise de vue (reportage & institutionnel)",
+            "Gestion de la lumière (basse luminosité / intérieur)",
+            "Post-traitement et édition numérique",
+            "Respect d'un cahier des charges et de délais"
+        ],
+        "soft_skills_utilises": [
+            "Capacité d'adaptation",
+            "Autonomie",
+            "Sens du détail",
+            "Discrétion et professionnalisme"
+        ],
+        "links": [
+            {
+                "label": "Instagram — Room Service Festival",
+                "url": "https://www.instagram.com/roomservicefestival/"
+            }
+        ]
+    },
+    {
+        "id": "exp-photo-slam-2025",
+        "nom": "Photographe de scène & portrait",
+        "date": "2025",
+        "type": "Participation bénévole",
+        "domaine": ["Photographie"],
+        "employeur_collab": "Fifamé (Lyon)",
+        "description": "Couverture photographique d'une performance scénique en direct et réalisation de portraits professionnels. Production de visuels de communication et à l'identité numérique (photo de profil officielle) de l'artiste.",
+        "metiers_lies": [
+            "Photographe de scène",
+            "Portraitiste",
+            "Créateur de contenu visuel"
+        ],
+        "competences_obtenir": [
+            "Photographie de spectacle (gestion du mouvement et des éclairages scéniques)",
+            "Techniques du portrait institutionnel et artistique",
+            "Retouche et optimisation pour le print et le web"
+        ],
+        "soft_skills_utilises": [
+            "Sens de la communication",
+            "Écoute et compréhension du besoin",
+            "Créativité",
+            "Rigueur"
+        ],
+        "links": [
+            {
+                "label": "Instagram - Fifamé",
+                "url": "https://www.instagram.com/fifame_slamconte/"
+            },
+            {
+                "label": "Profil Azelar - Madeleine Adoumbou",
+                "url": "https://www.azelar.coop/entrepreneur/madeleine-adoumbou/"
+            }
+        ]
+    },
+    {
+        "id": "exp-wifi-2026",
+        "nom": "Architecte Réseau & Sécurité",
+        "date": "2025",
+        "type": "Projet académique",
+        "domaine": ["Infrastructure réseau"],
+        "employeur_collab": "Ynov Campus Lyon",
+        "description": "Conception et déploiement d'une architecture réseau sécurisée au sein de l'établissement. Configuration d'une infrastructure complète (routeurs et switchs Cisco, pare-feu Stormshield) avec plan d'adressage IP dédié, segmentation par VLAN, routage inter-VLAN et application de politiques de filtrage pour sécuriser les flux de l'infrastructure.",
+        "metiers_lies": [
+            "Architecte sécurité réseau",
+            "Administrateur réseau",
+            "Intégrateur de solutions de sécurité"
+        ],
+        "competences_obtenir": [
+            "Segmentation réseau (VLAN Cisco)",
+            "Routage et configuration matérielle (Switchs & Routeurs Cisco)",
+            "Configuration de pare-feu d'entreprise (Stormshield)",
+            "Règles de filtrage et politiques d'accès"
+        ],
+        "soft_skills_utilises": [
+            "Rigueur",
+            "Résolution de problèmes",
+            "Organisation"
+        ],
+        "links": []
+    },
+    {
+        "id": "exp-challenge-48h-2026",
+        "nom": "Enquêteur Forensic & Réponse aux Incidents (Challenge 48H)",
+        "date": "2026",
+        "type": "Projet académique",
+        "domaine": ["Cybersécurité"],
+        "employeur_collab": "Ynov Campus Lyon",
+        "description": "Participation à un défi de 48 heures simulant une enquête policière numérique. Analyse approfondie de dumps de mémoire d'appareils mobiles et de PC pour reconstituer la chronologie d'une affaire suspecte, extraire des artefacts compromettants et résoudre des défis de stéganographie à l'aide d'outils professionnels d'investigation.",
+        "metiers_lies": [
+            "Analyste Forensics (DFIR)",
+            "Consultant en Cybersécurité"
+        ],
+        "competences_obtenir": [
+            "Analyse de dumps mémoires (Mobile & PC)",
+            "Utilisation de suites forensics (Cellebrite Reader, Autopsy)",
+            "Extraction d'artefacts et reconstruction de timeline",
+            "Résolution de challenges de stéganographie"
+        ],
+        "soft_skills_utilises": [
+            "Rigueur",
+            "Esprit d'analyse",
+            "Gestion du stress",
+            "Persévérance"
+        ],
+        "links": []
+    },
+    {
+        "id": "exp-lyon-breach-2026",
+        "nom": "Compétiteur CTF (LYON://BREACH x Ynov)",
+        "date": "2026",
+        "type": "CTF",
+        "domaine": ["Cybersécurité"],
+        "employeur_collab": "Ynov Campus x HackTheBox",
+        "description": "Compétition de type Capture The Flag (CTF) regroupant 33 équipes sur des défis de niveau Très Facile à Insane. Au sein de l'équipe 'Pirate La Boite', résolution de 9 scénarios sur 15 et validation de 14 flags sur 20. Investigation multi-domaines incluant le web, le pwn, le reversing, la crypto, la blockchain, le forensic, le hardware, le mobile, le spatial (satellite) et la sécurité des systèmes industriels (ICS). Classement final : 17ème sur 33.",
+        "metiers_lies": [
+            "Pentester",
+            "Auditeur Sécurité",
+            "Analyste Sécurité",
+            "Ingénieur Sécurité Blockchain/ICS"
+        ],
+        "competences_obtenir": [
+            "Exploitation de vulnérabilités Web et infrastructure (Pwn)",
+            "Rétro-ingénierie et cryptanalyse (Reversing & Crypto)",
+            "Sécurisation et audit de Smart Contracts (Blockchain)",
+            "Analyse de systèmes industriels et embarqués (ICS & Hardware)"
+        ],
+        "soft_skills_utilises": [
+            "Esprit d'équipe",
+            "Adaptabilité",
+            "Résolution de problèmes",
+            "Curiosité"
+        ],
+        "links": [
+            {
+                "label": "Lyon://Breach - HackTheBox",
+                "url": "https://ctf.hackthebox.com/event/details/lyonbreach-x-ynov-3392"
+            }
+        ]
+    },
+    {
+        "id": "exp-photo-onwheels-2026",
+        "nom": "Vidéaste & Photographe",
+        "date": "2025-2026",
+        "type": "Participation bénévole",
+        "domaine": ["Photographie", "Vidéo"],
+        "employeur_collab": "ON WHEELS",
+        "description": "Gestion complète de la production visuelle pour la marque. Réalisation de photos de produits et de portraits de l'équipe pour les supports de communication professionnels. Captation et montage de teasers promotionnels, réalisation d'interviews format long et couverture de l'ensemble des événements officiels de la structure.",
+        "metiers_lies": [
+            "Créateur de contenu",
+            "Responsable communication visuelle",
+            "Spécialiste multimédia"
+        ],
+        "competences_obtenir": [
+            "Production et post-production vidéo (Teasers, Interviews)",
+            "Photographie de studio et packshot produit",
+            "Reportage photo événementiel et gestion de la lumière",
+            "Direction artistique et traitement d'image"
+        ],
+        "soft_skills_utilises": [
+            "Autonomie",
+            "Créativité",
+            "Gestion de projet",
+            "Sens de la communication"
+        ],
+        "links": [
+            {
+                "label": "Instagram - ON WHEELS",
+                "url": "https://www.instagram.com/onwheels.fr/"
+            }
+        ]
+    },
+    {
+        "id": "exp-photo-ynov-2026",
+        "nom": "Photographe événementiel (Remise des diplômes)",
+        "date": "2026",
+        "type": "Participation bénévole",
+        "domaine": ["Photographie"],
+        "employeur_collab": "Ynov Campus Lyon",
+        "description": "Couverture photographique de la cérémonie officielle de remise des diplômes de l'établissement. Prise en charge exclusive de la captation brute sur le terrain en conditions lumineuses complexes (scène, basse luminosité) et réalisation des portraits des diplômés à la volée. Le tri et la post-production ont été gérés par une équipe tierce.",
+        "metiers_lies": ["Photographe événementiel"],
+        "competences_obtenir": [
+            "Prise de vue technique en basse luminosité et contrastes forts (Événementiel)",
+            "Gestion du positionnement et des angles en direct",
+            "Adaptation instantanée aux mouvements sur scène"
+        ],
+        "soft_skills_utilises": [
+            "Réactivité",
+            "Rigueur",
+            "Adaptabilité",
+            "Relationnel"
+        ],
+        "links": [
+            {
+                "label": "Voir la publication (Instagram)",
+                "url": "https://www.instagram.com/p/DYw6MOAkfJr/?img_index=1"
+            }
+        ]
+    }
 ]

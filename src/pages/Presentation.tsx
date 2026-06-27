@@ -1,18 +1,23 @@
 import { motion } from 'framer-motion'
 import type { View } from '../types'
 import SectionLabel from '../components/ui/SectionLabel'
+import { useLang } from '../hooks/useLang'
 import ScrollReveal from '../components/ui/ScrollReveal'
+import TechSkillsSection from './presentation/TechSkillsSection'
 import SkillsSection from './presentation/SkillsSection'
+import EducationSection from './presentation/EducationSection'
 import RecommendationPanel from './presentation/RecommendationPanel'
 import PassionPanel from './presentation/PassionPanel'
-
-const EASE = [0.22, 1, 0.36, 1] as const
+import { EASE } from '../lib/motion'
 
 interface Props {
   onNavigate: (view: View) => void
 }
 
 export default function Presentation({ onNavigate: _onNavigate }: Props) {
+  const { t } = useLang()
+  const i = t.presentation.intro
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 16 }}
@@ -24,23 +29,31 @@ export default function Presentation({ onNavigate: _onNavigate }: Props) {
 
         {/* ── Intro — visible immediately, no scroll reveal ─────────── */}
         <div>
-          <SectionLabel as="p">// intro</SectionLabel>
+          <SectionLabel as="p">{i.label}</SectionLabel>
           <h1 className="mb-6 font-black leading-tight text-foreground
                          text-3xl sm:text-4xl md:text-5xl">
-            Étudiant en<br />
-            <span className="text-accent">Cybersécurité.</span>
+            {i.title}<br />
+            <span className="text-accent">{i.titleAccent}</span>
           </h1>
           <p className="max-w-lg text-sm leading-relaxed text-foreground/60 md:text-base">
-            23 ans, en troisième année d'école spécialisée en cybersécurité,
-            je suis activement à la recherche d'un{' '}
-            <span className="font-medium text-accent">contrat d'apprentissage</span>{' '}
-            pour poursuivre ma montée en compétences au sein d'une équipe
-            technique ambitieuse.
+            {i.bio1}{' '}
+            <span className="font-medium text-accent">{i.bioAccent}</span>{' '}
+            {i.bio2}
           </p>
         </div>
 
-        {/* ── Soft Skills + Languages ── each column has its own reveal */}
+        {/* ── 1. Compétences techniques ─────────────────────────────── */}
+        <ScrollReveal>
+          <TechSkillsSection />
+        </ScrollReveal>
+
+        {/* ── 2. Soft Skills + Languages ────────────────────────────── */}
         <SkillsSection />
+
+        {/* ── 3. Parcours éducatif ──────────────────────────────────── */}
+        <ScrollReveal>
+          <EducationSection />
+        </ScrollReveal>
 
         {/* ── Recommandations ───────────────────────────────────────── */}
         <ScrollReveal>

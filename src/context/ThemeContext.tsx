@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState } from 'react'
+import { createContext, useEffect, useState } from 'react'
 import type { ReactNode } from 'react'
 import type { Theme } from '../types'
 
@@ -7,28 +7,30 @@ interface ThemeContextValue {
   toggleTheme: () => void
 }
 
-const ThemeContext = createContext<ThemeContextValue | null>(null)
+// oxlint-disable-next-line react/only-export-components -- context objects must be co-located with their Provider
+export const ThemeContext = createContext<ThemeContextValue | null>(null)
+
+const STORAGE_KEY = 'portfolio-theme'
 
 function getInitialTheme(): Theme {
-  const saved = localStorage.getItem('theme') as Theme | null
+  const saved = localStorage.getItem(STORAGE_KEY) as Theme | null
   if (saved === 'light' || saved === 'dark') return saved
-  return 'dark'
+  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
 }
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
   const [theme, setTheme] = useState<Theme>(getInitialTheme)
 
   useEffect(() => {
-    const root = document.documentElement
-    root.classList.toggle('dark', theme === 'dark')
-    localStorage.setItem('theme', theme)
+    document.documentElement.classList.toggle('dark', theme === 'dark')
+    localStorage.setItem(STORAGE_KEY, theme)
   }, [theme])
 
-  // Sync with OS preference changes only when the user has no manual override
+  // Follow OS preference changes only when the user has no manual override
   useEffect(() => {
     const mq = window.matchMedia('(prefers-color-scheme: dark)')
     const handler = (e: MediaQueryListEvent) => {
-      if (!localStorage.getItem('theme')) {
+      if (!localStorage.getItem(STORAGE_KEY)) {
         setTheme(e.matches ? 'dark' : 'light')
       }
     }
@@ -47,10 +49,4 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
       {children}
     </ThemeContext.Provider>
   )
-}
-
-export function useTheme(): ThemeContextValue {
-  const ctx = useContext(ThemeContext)
-  if (!ctx) throw new Error('useTheme must be used within <ThemeProvider>')
-  return ctx
 }

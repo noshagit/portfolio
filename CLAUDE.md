@@ -18,6 +18,24 @@ npm run lint      # oxlint (no tests exist)
 npm run preview   # preview production build
 ```
 
+## Engineering Standards (non-negotiable)
+
+**Design Tokens** — All colors, spacing, and typography are centralized in `src/index.css` as CSS custom properties. Never hardcode hex values or magic numbers in components. Always use semantic Tailwind tokens: `bg-background`, `text-foreground`, `text-accent`, `bg-accent-muted`.
+
+**SRP** — Data fetching and state logic live in hooks or context (`src/hooks/`, `src/context/`). Components render only. No fetch calls or business logic inside JSX files unless they are the dedicated owner (e.g. `LanguageContext.tsx`).
+
+**DRY** — Shared constants live in `src/lib/` (e.g. `motion.ts` exports `EASE`). Never duplicate a constant across files. Shared UI patterns become atoms in `src/components/ui/`.
+
+**Lint gate** — Run `npm run lint` before closing any task. Zero warnings, zero errors is the bar. Inline `oxlint-disable` is allowed only with an explanatory comment.
+
+**Fetch robustness** — Always check `res.ok` before calling `res.json()`. Throw on non-2xx; callers must handle gracefully (fallback to last known good state).
+
+**i18n** — FR is bundled (`src/locales/fr.json`). EN is lazy-fetched (`public/locales/en.json`). Experience data per language lives in `public/locales/{lang}/experiences.json`. Module-level `Map` cache prevents redundant fetches. Locale keys must stay in sync across both JSON files.
+
+### 4. Performance & Resource Optimization
+- **Asset & Data Loading**: Always optimize data consumption. Translatable resources and heavy data sets (like `experiences.json`) must be dynamically or lazy-loaded based on the active locale. Never preload unused languages or heavy assets that waste network bandwidth.
+- **Rendering Performance**: Keep components lightweight. Strive for a locked 60 FPS experience by preventing unnecessary layout reflows. Always privilege hardware-accelerated CSS properties (`transform`, `opacity`) for animations and use `React.memo` or `useMemo` to cache heavy computations or filtered arrays.
+
 ## Architecture
 
 SPA with no router — navigation is pure React state. `App.tsx` holds `currentView: View` and renders the active page via a `PAGES` map. `AnimatePresence` from framer-motion wraps the active `<Page>` for enter/exit transitions.
@@ -28,7 +46,9 @@ SPA with no router — navigation is pure React state. `App.tsx` holds `currentV
 
 **Pages** (`src/pages/`): `Landing`, `Presentation`, `Experiences`, `Contact` — each accepts `{ onNavigate }` prop and wraps its root element in a `<motion.div>` with the standard fade+slide transition (`opacity 0→1, y 24→0`).
 
-**Content data** lives in `src/data/` as JSON (e.g. `experiences.json`). The `Experience` interface is defined inline in `Experiences.tsx`, not in `src/types/index.ts` — `types/index.ts` only holds `View`, `Theme`, and `NavItem`.
+**Content data** lives in `src/data/` (FR experiences JSON, bundled). The `Experience` interface and `SortDir` type live in `src/types/experience.ts`. `src/types/index.ts` holds only `View`, `Theme`, and `NavItem`.
+
+**i18n** — `LanguageContext` + `useLang()` hook. FR bundled, EN lazy-fetched. Experience translations in `public/locales/en/experiences.json` (separate file, fetched by `Experiences.tsx` via `useEffect([lang])`). `EASE` animation constant lives in `src/lib/motion.ts` — import from there, never redeclare.
 
 **Linter**: oxlint with react + typescript + oxc plugins. `react/rules-of-hooks` is an error; `react/only-export-components` is a warning (constant exports allowed). No ESLint.
 

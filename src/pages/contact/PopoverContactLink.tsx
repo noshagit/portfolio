@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Copy, Check } from 'lucide-react'
 import type { ComponentType } from 'react'
+import { useLang } from '../../hooks/useLang'
 
 interface IconProps { size?: number; className?: string }
 
@@ -25,6 +26,7 @@ export default function PopoverContactLink({
   const [open,   setOpen]   = useState(false)
   const [copied, setCopied] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
+  const { t } = useLang()
 
   useEffect(() => {
     if (!open) return
@@ -86,8 +88,8 @@ export default function PopoverContactLink({
                            hover:border-accent/60 hover:text-foreground"
               >
                 {copied
-                  ? <><Check size={11} className="text-accent" /><span>Copié !</span></>
-                  : <><Copy size={11} /><span>Copier</span></>
+                  ? <><Check size={11} className="text-accent" /><span>{t.contact.copied}</span></>
+                  : <><Copy size={11} /><span>{t.contact.copy}</span></>
                 }
               </button>
 

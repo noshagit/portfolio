@@ -1,0 +1,307 @@
+{
+  "header": {
+    "nav": {
+      "home": "Accueil",
+      "about": "A propos",
+      "experiences": "Expériences",
+      "contact": "Contacts"
+    }
+  },
+  "landing": {
+    "discover": "Me découvrir",
+    "downloadCV": "Télécharger le CV"
+  },
+  "presentation": {
+    "intro": {
+      "label": "// intro",
+      "title": "Étudiant en",
+      "titleAccent": "Cybersécurité.",
+      "bio1": "23 ans, en troisième année de cybersécurité, je suis activement à la recherche d'un",
+      "bioAccent": "contrat d'apprentissage",
+      "bio2": "pour poursuivre ma montée en compétences au sein d'une équipe technique ambitieuse."
+    },
+    "softSkills": {
+      "label": "// soft skills",
+      "items": [
+        "Adaptabilité",
+        "Curiosité",
+        "Rigueur",
+        "Autonomie",
+        "Esprit d'équipe",
+        "Persévérance",
+        "Force de proposition",
+        "Leadership",
+        "Organisation"
+      ]
+    },
+    "languages": {
+      "label": "// langues",
+      "items": [
+        {
+          "lang": "Français",
+          "level": "Langue maternelle"
+        },
+        {
+          "lang": "Anglais",
+          "level": "B2+"
+        }
+      ]
+    },
+    "techSkills": {
+      "label": "// compétences techniques",
+      "categories": [
+        {
+          "id": "cyber",
+          "label": "Cybersécurité",
+          "skills": [
+            {
+              "title": "Analyse de trafic",
+              "description": "Capture, filtrage et détection d'anomalies réseau avec Wireshark."
+            },
+            {
+              "title": "GRC & Sensibilisation",
+              "description": "Rédaction de politiques de sécurité (mots de passe, phishing, ransomware, durcissement de postes)."
+            },
+            {
+              "title": "Security by Design",
+              "description": "Application des principes de moindre privilège, défense en profondeur et DevSecOps."
+            },
+            {
+              "title": "Audits automatisés",
+              "description": "Audits de sécurité automatisés via scripts Python et Bash."
+            },
+            {
+              "title": "Sécurité web",
+              "description": "Tests et audits applicatifs basés sur l'OWASP Top 10 (SQLi, XSS, Broken Auth)."
+            },
+            {
+              "title": "SIEM / SOC",
+              "description": "Déploiement ELK Stack, rédaction de règles d'alerte Kibana, intégration clients Windows/Linux."
+            },
+            {
+              "title": "Forensique numérique",
+              "description": "Investigation d'images disque et dumps mémoire (Autopsy, Cellebrite Reader, OpenStego)."
+            },
+            {
+              "title": "OSINT",
+              "description": "Collecte de renseignements, Google Dorking, membre actif de « [JOMT] Just One More Tabs » sur OSINTOPIA."
+            }
+          ]
+        },
+        {
+          "id": "sys",
+          "label": "Système & Admin",
+          "skills": [
+            {
+              "title": "Windows Server",
+              "description": "Administration Active Directory, GPO, gestion utilisateurs/groupes, DNS, DHCP, services de fichiers."
+            },
+            {
+              "title": "Administration Linux",
+              "description": "Gestion des droits, services essentiels (SSH, NFS, Apache, DNS, DHCP), supervision des journaux."
+            },
+            {
+              "title": "Virtualisation",
+              "description": "Interconnexion avancée de VMs via VirtualBox et VMware."
+            },
+            {
+              "title": "Conteneurisation",
+              "description": "Orchestration Docker avec images, volumes et docker-compose pour applications multi-services."
+            }
+          ]
+        },
+        {
+          "id": "net",
+          "label": "Réseaux",
+          "skills": [
+            {
+              "title": "Configuration protocolaire",
+              "description": "Micro-segmentation par VLANs, NAT/PAT, RIP, OSPF, DHCP, DNS, routage statique et dynamique."
+            },
+            {
+              "title": "Architecture sécurisée",
+              "description": "Conception et déploiement d'infrastructures réseau sécurisées complètes (Firewall, Routeur, Switch, Serveur)."
+            },
+            {
+              "title": "Déploiement entreprise",
+              "description": "Mise en œuvre de plans d'adressage IP cohérents et de politiques de filtrage strictes pour déploiement Wi-Fi."
+            }
+          ]
+        },
+        {
+          "id": "dev",
+          "label": "Scripting & Dev",
+          "skills": [
+            {
+              "title": "Scripts d'automatisation",
+              "description": "Python avancé : supervision système, Google Dorking automatisé, déploiements distants déclenchés par Git."
+            },
+            {
+              "title": "Infrastructure as Code",
+              "description": "Automatisation Bash (Apache2, bases SQL) ; scripts PowerShell pour déploiement Active Directory (GPO, UOs)."
+            },
+            {
+              "title": "Développement web",
+              "description": "Applications web full-stack responsives avec React, TypeScript et Tailwind CSS, selon les principes SOLID, DRY et KISS."
+            },
+            {
+              "title": "Bases de données",
+              "description": "Modélisation relationnelle, normalisation de schémas et requêtes SQL complexes avancées."
+            }
+          ]
+        },
+        {
+          "id": "proj",
+          "label": "Gestion de Projet",
+          "skills": [
+            {
+              "title": "Outillage Agile",
+              "description": "Organisation et suivi d'avancement via Trello et Notion."
+            },
+            {
+              "title": "Rédaction technique",
+              "description": "Production de documentations techniques et fonctionnelles de qualité."
+            },
+            {
+              "title": "Leadership d'équipe",
+              "description": "Coordination d'équipes pluridisciplinaires, suivi des livrables et animation de réunions."
+            }
+          ]
+        }
+      ]
+    },
+    "education": {
+      "label": "// parcours éducatif",
+      "items": [
+        {
+          "id": "bachelor",
+          "period": "2024 – 2027",
+          "degree": "Bachelor Cybersécurité",
+          "institution": "Ynov Campus Lyon",
+          "context": "Fondamentaux de la cybersécurité, systèmes, réseaux, forensique et réponse à incident."
+        },
+        {
+          "id": "licence",
+          "period": "2021 – 2023",
+          "degree": "Licence Informatique & Mathématiques",
+          "institution": "Université Clermont Auvergne",
+          "context": "Logique fondamentale, mathématiques avancées, génie logiciel et structuration algorithmique."
+        },
+        {
+          "id": "bac",
+          "period": "2018 – 2021",
+          "degree": "Baccalauréat Général & Technologique",
+          "institution": "Lycée Périer, Marseille",
+          "context": "Spécialités NSI (Numérique et Sciences Informatiques) et Mathématiques."
+        }
+      ]
+    },
+    "recommendations": {
+      "label": "// recommandations",
+      "downloadPdf": "Télécharger le PDF",
+      "items": [
+        {
+          "id": "iaboni",
+          "label": "Alexandra IABONI",
+          "role": "Responsable des admissions — Lyon Ynov Campus",
+          "text": "Alexandra m'a côtoyé en tant qu'ambassadeur de l'école et ancien membre du Bureau des Sports. Elle atteste de mon engagement dans la vie étudiante, de mon sens du collectif et de ma capacité à représenter l'établissement avec authenticité lors d'événements d'envergure.",
+          "pdf": "/ldr/Alexandra%20IABONI.pdf"
+        },
+        {
+          "id": "sirot",
+          "label": "Cellya SIROT",
+          "role": "Développeuse web — Oraxya",
+          "text": "Cellya m'a confié un rôle clé sur un projet numérique d'envergure nationale. Elle souligne ma posture client exemplaire, mon esprit force de proposition, ayant contribué à des optimisations encore appréciées aujourd'hui, et ma capacité à progresser en autonomie face à des problématiques techniques complexes.",
+          "pdf": "/ldr/Cellya%20SIROT.pdf"
+        },
+        {
+          "id": "theodore",
+          "label": "Melvin THEODORE",
+          "role": "Expert en cybersécurité — Formateur / Conférencier",
+          "text": "Fort d'expériences au sein d'ARKEMA et d'INTERPOL, Melvin m'a encadré dans plusieurs formations spécialisées. Il témoigne de mes compétences techniques, de ma curiosité pour les enjeux du domaine et de mon éthique professionnelle, des qualités qu'il juge essentielles dans les métiers de la cybersécurité.",
+          "pdf": "/ldr/Melvin%20Theodore.pdf"
+        }
+      ]
+    },
+    "passions": {
+      "label": "// passions",
+      "items": [
+        {
+          "id": "hiking",
+          "label": "Randonnée",
+          "text": "J'aime partir à la découverte de zones naturelles et sillonner les sentiers de montagne pour me ressourcer. Prendre un bol d'air frais loin du quotidien, se dépasser physiquement et contempler des paysages sauvages, la montagne représente pour moi un espace de liberté et de reconnexion avec l'essentiel."
+        },
+        {
+          "id": "photography",
+          "label": "Photographie",
+          "text": "Commencée en 2021 avec le petit Nikon Coolpix P510 de mon père, la photographie est rapidement devenue une passion à part entière. J'emporte mon appareil partout, à l'école, en randonnée, en camping, en vacances... Il m'accompagne presque en permanence. Capturer l'instant, choisir la lumière, figer un paysage ou un visage : chaque prise de vue est une nouvelle exploration."
+        },
+        {
+          "id": "gaming",
+          "label": "Jeux Vidéo",
+          "text": "Je joue aux jeux vidéo depuis l'enfance, ce qui m'a permis de développer des compétences sociales et relationnelles bien avant ma vie professionnelle. C'est en me demandant comment un jeu est créé que j'ai commencé à coder, puis à m'intéresser au réseau et système informatique, et enfin à comprendre leur protection. Le jeu vidéo est à l'origine de ma vocation en cybersécurité."
+        },
+        {
+          "id": "astronomy",
+          "label": "Astronomie",
+          "text": "Un amour émergent pour le ciel, et tout particulièrement pour l'observation du ciel profond. Galaxies, nébuleuses, amas stellaires... contempler ce qui se passe à des millions d'années-lumière me donne une perspective unique sur le monde. Cette passion croise naturellement la photographie, notamment l'astrophotographie, un terrain d'exploration qui n'a pas fini de me surprendre."
+        }
+      ]
+    }
+  },
+  "experiences": {
+    "sectionLabel": "// expériences & participations",
+    "empty": "Aucune expérience ne correspond aux filtres sélectionnés.",
+    "filters": {
+      "all": "Tous",
+      "sortLabel": "Trier par",
+      "sortDesc": "Récent → Ancien",
+      "sortAsc": "Ancien → Récent",
+      "ariaType": "Filtrer par type",
+      "ariaDomain": "Filtrer par domaine",
+      "ariaSort": "Trier les expériences"
+    },
+    "modal": {
+      "close": "Fermer",
+      "description": "// description",
+      "images": "// images",
+      "relatedJobs": "// métiers liés",
+      "skills": "// compétences obtenues",
+      "softSkills": "// soft skills utilisés",
+      "links": "// liens",
+      "photo": "photo"
+    },
+    "types": {
+      "Projet académique": "Projet académique",
+      "CDD": "CDD",
+      "CDI": "CDI",
+      "Participation bénévole": "Participation bénévole",
+      "CTF": "CTF"
+    },
+    "domains": {
+      "Cybersécurité": "Cybersécurité",
+      "Infrastructure réseau": "Infrastructure réseau",
+      "Informatique": "Informatique",
+      "Service": "Service",
+      "Restauration": "Restauration",
+      "Photographie": "Photographie",
+      "Vidéo": "Vidéo"
+    }
+  },
+  "contact": {
+    "sectionLabel": "Contact",
+    "mobilityLabel": "Zone de mobilité / Lieux de travail",
+    "remote": "Ouvert aux propositions (Full Remote / Déplacements)",
+    "phone": {
+      "action": "Appeler"
+    },
+    "email": {
+      "action": "Ouvrir la messagerie"
+    },
+    "copy": "Copier",
+    "copied": "Copié !"
+  },
+  "footer": {
+    "contact": "Contact"
+  }
+}

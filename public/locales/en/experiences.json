@@ -1,0 +1,450 @@
+[
+  {
+    "id": "exp-infra-2026",
+    "nom": "Systems & Network Administrator",
+    "date": "2026",
+    "type": "Projet académique",
+    "domaine": [
+      "Cybersécurité",
+      "Infrastructure réseau"
+    ],
+    "employeur_collab": "Ynov Campus Lyon",
+    "description": "Deployment of a complete enterprise network infrastructure: Windows Server, Active Directory, GPO, IPSec VPN, DNS/DHCP, and security policy. Configuration of routing, firewall, and network filtering rules in a virtualized environment.",
+    "metiers_lies": [
+      "Systems Administrator",
+      "Network Administrator",
+      "Systems & Network Technician"
+    ],
+    "competences_obtenir": [
+      "Windows Server",
+      "Active Directory",
+      "GPO",
+      "IPSec VPN",
+      "DNS/DHCP",
+      "Routing",
+      "Firewall",
+      "Virtualization"
+    ],
+    "soft_skills_utilises": [
+      "Thoroughness",
+      "Autonomy",
+      "Analytical mindset"
+    ],
+    "links": []
+  },
+  {
+    "id": "exp-cyberwatch-2025",
+    "nom": "Project Manager",
+    "date": "2025-2026",
+    "type": "Projet académique",
+    "domaine": [
+      "Cybersécurité"
+    ],
+    "employeur_collab": "Ynov Campus Lyon",
+    "description": "Management of an 8-person team, project oversight, deployment of an ELK Stack SIEM, and creation of automated attack scripts. Deliverable tracking, team meeting facilitation, and coordination between technical and functional departments.",
+    "metiers_lies": [
+      "IT Project Manager",
+      "Cybersecurity Project Lead",
+      "SOC Analyst"
+    ],
+    "competences_obtenir": [
+      "Project Management",
+      "ELK Stack",
+      "SIEM",
+      "Attack Scripts",
+      "Kibana",
+      "Deliverable Tracking"
+    ],
+    "soft_skills_utilises": [
+      "Leadership & coordination",
+      "Teamwork",
+      "Communication",
+      "Priority management"
+    ],
+    "links": []
+  },
+  {
+    "id": "exp-inca-2024",
+    "nom": "Web Developer & Scripter",
+    "date": "2024-2025",
+    "type": "Projet académique",
+    "domaine": [
+      "Informatique"
+    ],
+    "employeur_collab": "Ynov Campus Lyon",
+    "description": "Contribution to web development: React, TypeScript. Creation of Bash scripts and validation of team contributions via GitLab.",
+    "metiers_lies": [
+      "Web Developer",
+      "Developer / Scripter",
+      "Security Auditor (automation)"
+    ],
+    "competences_obtenir": [
+      "React",
+      "TypeScript",
+      "Bash",
+      "GitLab",
+      "Code review"
+    ],
+    "soft_skills_utilises": [
+      "Technical curiosity",
+      "Teamwork",
+      "Proactive mindset",
+      "Autonomy"
+    ],
+    "links": [
+      {
+        "label": "Inca Project",
+        "url": "https://incaproject.fr/"
+      }
+    ]
+  },
+  {
+    "id": "exp-oraxya-2025",
+    "nom": "Web Developer & Data Engineer",
+    "date": "2025",
+    "type": "Participation bénévole",
+    "domaine": [
+      "Informatique"
+    ],
+    "employeur_collab": "Oraxya",
+    "description": "Contribution to web development: Vite, TypeScript. Data ingestion, sorting, and analysis shared by hundreds of pharmacies.",
+    "metiers_lies": [
+      "Web Developer",
+      "Data Engineer"
+    ],
+    "competences_obtenir": [
+      "Vite",
+      "TypeScript",
+      "JSON",
+      "GitHub",
+      "Code review"
+    ],
+    "soft_skills_utilises": [
+      "Technical curiosity",
+      "Teamwork",
+      "Proactive mindset",
+      "Autonomy"
+    ],
+    "links": []
+  },
+  {
+    "id": "exp-marseille-2023",
+    "nom": "Sanitation Agent",
+    "date": "2023",
+    "type": "CDD",
+    "domaine": [
+      "Service"
+    ],
+    "employeur_collab": "Ville de Marseille",
+    "description": "Operational optimisation and maintenance of public space cleanliness. Sorting logistics management, rigorous application of health and safety standards, and coordination of bulky waste recovery flows.",
+    "metiers_lies": [
+      "Sanitation Agent",
+      "Logistics Operator",
+      "Maintenance & Sanitation Agent"
+    ],
+    "competences_obtenir": [
+      "Logistics management",
+      "HSE Standards",
+      "Operational flow optimisation",
+      "Equipment maintenance"
+    ],
+    "soft_skills_utilises": [
+      "Thoroughness",
+      "Physical endurance",
+      "Priority management",
+      "Public service commitment"
+    ],
+    "links": []
+  },
+  {
+    "id": "exp-marseille-2022",
+    "nom": "Sanitation Agent",
+    "date": "2022",
+    "type": "CDD",
+    "domaine": [
+      "Service"
+    ],
+    "employeur_collab": "Ville de Marseille",
+    "description": "Operational optimisation and maintenance of public space cleanliness. Sorting logistics management, rigorous application of health and safety standards, and coordination of bulky waste recovery flows.",
+    "metiers_lies": [
+      "Sanitation Agent",
+      "Logistics Operator",
+      "Maintenance & Sanitation Agent"
+    ],
+    "competences_obtenir": [
+      "Logistics management",
+      "HSE Standards",
+      "Operational flow optimisation",
+      "Equipment maintenance"
+    ],
+    "soft_skills_utilises": [
+      "Thoroughness",
+      "Physical endurance",
+      "Priority management",
+      "Public service commitment"
+    ],
+    "links": []
+  },
+  {
+    "id": "exp-bistrot-iris-2024",
+    "nom": "Versatile Server & Bartender",
+    "date": "2024",
+    "type": "CDI",
+    "domaine": [
+      "Restauration"
+    ],
+    "employeur_collab": "Bistrot Les Iris (Bron)",
+    "description": "Ensuring customer experience in the dining room and at the bar in a high-traffic environment. Customer relationship management, order preparation, and compliance with HACCP hygiene standards in kitchen and counter operations.",
+    "metiers_lies": [
+      "Server",
+      "Bartender",
+      "Versatile hospitality staff"
+    ],
+    "competences_obtenir": [
+      "Customer relationship management",
+      "High-volume service",
+      "Counter preparation & logistics",
+      "HACCP standards"
+    ],
+    "soft_skills_utilises": [
+      "Stress management",
+      "Versatility",
+      "Communication",
+      "Teamwork"
+    ],
+    "links": [
+      {
+        "label": "Site web",
+        "url": "https://bistrot-les-iris.fr/"
+      }
+    ]
+  },
+  {
+    "id": "exp-room-service-2025",
+    "nom": "Event Photographer",
+    "date": "2025",
+    "type": "Participation bénévole",
+    "domaine": [
+      "Photographie"
+    ],
+    "employeur_collab": "Room Service (Lyon)",
+    "description": "Two days of photographic coverage of cultural events. Capturing a conference on freelance status in graphic design at the MAC in Lyon, and visual showcasing of an exhibition evening at the KOMMET space. Frame composition and light management in variable conditions.",
+    "metiers_lies": [
+      "Event Photographer",
+      "Press Photographer",
+      "Visual Content Creator"
+    ],
+    "competences_obtenir": [
+      "Photoshoot techniques (reportage & institutional)",
+      "Low-light management",
+      "Digital post-processing",
+      "Brief & deadline compliance"
+    ],
+    "soft_skills_utilises": [
+      "Adaptability",
+      "Autonomy",
+      "Attention to detail",
+      "Discretion & professionalism"
+    ],
+    "links": [
+      {
+        "label": "Instagram — Room Service Festival",
+        "url": "https://www.instagram.com/roomservicefestival/"
+      }
+    ]
+  },
+  {
+    "id": "exp-photo-slam-2025",
+    "nom": "Stage & Portrait Photographer",
+    "date": "2025",
+    "type": "Participation bénévole",
+    "domaine": [
+      "Photographie"
+    ],
+    "employeur_collab": "Fifamé (Lyon)",
+    "description": "Photographic coverage of a live stage performance and creation of professional portraits. Production of communication visuals and digital identity assets (official profile photo) for the artist.",
+    "metiers_lies": [
+      "Stage Photographer",
+      "Portrait Photographer",
+      "Visual Content Creator"
+    ],
+    "competences_obtenir": [
+      "Performance photography",
+      "Institutional & artistic portraiture",
+      "Retouching for print and web"
+    ],
+    "soft_skills_utilises": [
+      "Communication",
+      "Active listening",
+      "Creativity",
+      "Thoroughness"
+    ],
+    "links": [
+      {
+        "label": "Instagram — Fifamé",
+        "url": "https://www.instagram.com/fifame_slamconte/"
+      },
+      {
+        "label": "Profil Azelar — Madeleine Adoumbou",
+        "url": "https://www.azelar.coop/entrepreneur/madeleine-adoumbou/"
+      }
+    ]
+  },
+  {
+    "id": "exp-wifi-2026",
+    "nom": "Network & Security Architect",
+    "date": "2025",
+    "type": "Projet académique",
+    "domaine": [
+      "Infrastructure réseau"
+    ],
+    "employeur_collab": "Ynov Campus Lyon",
+    "description": "Design and deployment of a secure network architecture. Configuration of a complete infrastructure (Cisco routers and switches, Stormshield firewall) with a dedicated IP addressing plan, VLAN segmentation, inter-VLAN routing, and traffic filtering policies.",
+    "metiers_lies": [
+      "Network Security Architect",
+      "Network Administrator",
+      "Security Solutions Integrator"
+    ],
+    "competences_obtenir": [
+      "Network segmentation (Cisco VLANs)",
+      "Cisco routing & hardware config",
+      "Stormshield firewall",
+      "Filtering rules & access policies"
+    ],
+    "soft_skills_utilises": [
+      "Thoroughness",
+      "Problem solving",
+      "Organisation"
+    ],
+    "links": []
+  },
+  {
+    "id": "exp-challenge-48h-2026",
+    "nom": "Forensic Investigator & Incident Responder (48H Challenge)",
+    "date": "2026",
+    "type": "Projet académique",
+    "domaine": [
+      "Cybersécurité"
+    ],
+    "employeur_collab": "Ynov Campus Lyon",
+    "description": "Participation in a 48-hour challenge simulating a digital police investigation. In-depth analysis of memory dumps from mobile devices and PCs to reconstruct the timeline of a suspicious case, extract incriminating artifacts, and solve steganography challenges using professional forensic tools.",
+    "metiers_lies": [
+      "Forensics Analyst (DFIR)",
+      "Cybersecurity Consultant"
+    ],
+    "competences_obtenir": [
+      "Memory dump analysis (Mobile & PC)",
+      "Forensic suite usage (Cellebrite Reader, Autopsy)",
+      "Artifact extraction and timeline reconstruction",
+      "Steganography challenge solving"
+    ],
+    "soft_skills_utilises": [
+      "Thoroughness",
+      "Analytical mindset",
+      "Stress management",
+      "Perseverance"
+    ],
+    "links": []
+  },
+  {
+    "id": "exp-lyon-breach-2026",
+    "nom": "CTF Competitor (LYON://BREACH x Ynov)",
+    "date": "2026",
+    "type": "CTF",
+    "domaine": [
+      "Cybersécurité"
+    ],
+    "employeur_collab": "Ynov Campus x HackTheBox",
+    "description": "Capture The Flag competition bringing together 33 teams on challenges ranging from Very Easy to Insane. As part of the 'Pirate La Boite' team, solved 9 out of 15 scenarios and validated 14 out of 20 flags. Multi-domain investigation covering web, pwn, reversing, crypto, blockchain, forensics, hardware, mobile, satellite, and ICS security. Final ranking: 17th out of 33.",
+    "metiers_lies": [
+      "Pentester",
+      "Security Auditor",
+      "Security Analyst",
+      "Blockchain/ICS Security Engineer"
+    ],
+    "competences_obtenir": [
+      "Web & infrastructure exploitation (Pwn)",
+      "Reverse engineering & cryptanalysis",
+      "Smart contract auditing (Blockchain)",
+      "Industrial & embedded system analysis (ICS & Hardware)"
+    ],
+    "soft_skills_utilises": [
+      "Team spirit",
+      "Adaptability",
+      "Problem solving",
+      "Curiosity"
+    ],
+    "links": [
+      {
+        "label": "Lyon://Breach - HackTheBox",
+        "url": "https://ctf.hackthebox.com/event/details/lyonbreach-x-ynov-3392"
+      }
+    ]
+  },
+  {
+    "id": "exp-photo-onwheels-2026",
+    "nom": "Videographer & Photographer",
+    "date": "2025-2026",
+    "type": "Participation bénévole",
+    "domaine": [
+      "Photographie",
+      "Vidéo"
+    ],
+    "employeur_collab": "ON WHEELS",
+    "description": "Full management of visual production for the brand. Product photography and team portraits for professional communication materials. Filming and editing of promotional teasers, long-format interviews, and coverage of all official brand events.",
+    "metiers_lies": [
+      "Content Creator",
+      "Visual Communications Manager",
+      "Multimedia Specialist"
+    ],
+    "competences_obtenir": [
+      "Video production & post-production (Teasers, Interviews)",
+      "Studio photography & product packshot",
+      "Event photojournalism and light management",
+      "Art direction and image processing"
+    ],
+    "soft_skills_utilises": [
+      "Autonomy",
+      "Creativity",
+      "Project management",
+      "Communication"
+    ],
+    "links": [
+      {
+        "label": "Instagram - ON WHEELS",
+        "url": "https://www.instagram.com/onwheels.fr/"
+      }
+    ]
+  },
+  {
+    "id": "exp-photo-ynov-2026",
+    "nom": "Event Photographer (Graduation Ceremony)",
+    "date": "2026",
+    "type": "Participation bénévole",
+    "domaine": [
+      "Photographie"
+    ],
+    "employeur_collab": "Ynov Campus Lyon",
+    "description": "Photographic coverage of the official graduation ceremony. Sole responsibility for raw capture on location under challenging lighting conditions (stage, low light) and on-the-fly portrait photography of graduates. Sorting and post-production were handled by a separate team.",
+    "metiers_lies": [
+      "Event Photographer"
+    ],
+    "competences_obtenir": [
+      "Technical shooting in low light & high contrast (Events)",
+      "Live positioning and angle management",
+      "Instant adaptation to on-stage movement"
+    ],
+    "soft_skills_utilises": [
+      "Reactivity",
+      "Thoroughness",
+      "Adaptability",
+      "Interpersonal skills"
+    ],
+    "links": [
+      {
+        "label": "See publication (Instagram)",
+        "url": "https://www.instagram.com/p/DYw6MOAkfJr/?img_index=1"
+      }
+    ]
+  }
+]

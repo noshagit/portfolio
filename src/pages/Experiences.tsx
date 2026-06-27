@@ -1,56 +1,79 @@
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect, useRef, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import type { View } from '../types'
 import type { Experience, SortDir } from '../types/experience'
+import type { Lang } from '../context/LanguageContext'
 import RAW from '../data/experiences.json'
 import ExperienceCard from './experiences/ExperienceCard'
 import ExperienceModal from './experiences/ExperienceModal'
 import ExperienceFilters from './experiences/ExperienceFilters'
+import { useLang } from '../hooks/useLang'
+import { EASE } from '../lib/motion'
 
-// ─── Data ─────────────────────────────────────────────────────────────────────
+const FR_BASE = RAW as Experience[]
+const ALL_TYPES_BASE    = Array.from(new Set(FR_BASE.map(e => e.type)))
+const ALL_DOMAINES_BASE = Array.from(new Set(FR_BASE.flatMap(e => e.domaine)))
 
-const EXPERIENCES  = RAW as Experience[]
-const ALL_TYPES    = Array.from(new Set(EXPERIENCES.map(e => e.type)))
-const ALL_DOMAINES = Array.from(new Set(EXPERIENCES.flatMap(e => e.domaine)))
-const EASE         = [0.22, 1, 0.36, 1] as const
+// Module-level cache — survives page navigation
+const expCache = new Map<Lang, Experience[]>([['fr', FR_BASE]])
 
 function yearMax(date: string) { return Math.max(...date.split('-').map(Number)) }
 function yearMin(date: string) { return Math.min(...date.split('-').map(Number)) }
-
-// ─── Page ─────────────────────────────────────────────────────────────────────
 
 interface Props {
   onNavigate: (view: View) => void
 }
 
 export default function Experiences({ onNavigate: _onNavigate }: Props) {
+  const { lang, t } = useLang()
   const [activeType,    setActiveType]    = useState<string | null>(null)
   const [activeDomaine, setActiveDomaine] = useState<string | null>(null)
-  const [selected,      setSelected]      = useState<Experience | null>(null)
+  const [selectedId,    setSelectedId]    = useState<string | null>(null)
   const [sort,          setSort]          = useState<SortDir>('desc')
+  const [experiences,   setExperiences]   = useState<Experience[]>(expCache.get(lang) ?? FR_BASE)
+  const abortRef = useRef<AbortController | null>(null)
 
-  const filtered = useMemo(() => {
-    return EXPERIENCES
-      .filter(exp =>
-        (activeType    === null || exp.type === activeType) &&
-        (activeDomaine === null || exp.domaine.includes(activeDomaine))
-      )
-      .sort((a, b) =>
-        sort === 'desc'
-          ? yearMax(b.date) - yearMax(a.date) || yearMin(b.date) - yearMin(a.date)
-          : yearMin(a.date) - yearMin(b.date) || yearMax(a.date) - yearMax(b.date)
-      )
-  }, [activeType, activeDomaine, sort])
+  // Fetch EN experiences lazily; FR is always from the bundled JSON
+  useEffect(() => {
+    const cached = expCache.get(lang)
+    if (cached) { setExperiences(cached); return }
+
+    abortRef.current?.abort()
+    abortRef.current = new AbortController()
+
+    fetch(`/locales/${lang}/experiences.json`, { signal: abortRef.current.signal })
+      .then(r => { if (!r.ok) throw new Error(`${r.status}`); return r.json() })
+      .then((data: Experience[]) => { expCache.set(lang, data); setExperiences(data) })
+      .catch(() => {/* aborted or HTTP error — keep current */})
+  }, [lang])
+
+  const filtered = useMemo(() => experiences
+    .filter(exp =>
+      (activeType    === null || exp.type === activeType) &&
+      (activeDomaine === null || exp.domaine.includes(activeDomaine))
+    )
+    .sort((a, b) =>
+      sort === 'desc'
+        ? yearMax(b.date) - yearMax(a.date) || yearMin(b.date) - yearMin(a.date)
+        : yearMin(a.date) - yearMin(b.date) || yearMax(a.date) - yearMax(b.date)
+    ), [experiences, activeType, activeDomaine, sort])
 
   const availableTypes = useMemo(() => {
-    if (activeDomaine === null) return new Set(ALL_TYPES)
-    return new Set(EXPERIENCES.filter(e => e.domaine.includes(activeDomaine)).map(e => e.type))
+    if (activeDomaine === null) return new Set(ALL_TYPES_BASE)
+    return new Set(FR_BASE.filter(e => e.domaine.includes(activeDomaine)).map(e => e.type))
   }, [activeDomaine])
 
   const availableDomaines = useMemo(() => {
-    if (activeType === null) return new Set(ALL_DOMAINES)
-    return new Set(EXPERIENCES.filter(e => e.type === activeType).flatMap(e => e.domaine))
+    if (activeType === null) return new Set(ALL_DOMAINES_BASE)
+    return new Set(FR_BASE.filter(e => e.type === activeType).flatMap(e => e.domaine))
   }, [activeType])
+
+  const selected = useMemo(
+    () => selectedId ? (experiences.find(e => e.id === selectedId) ?? null) : null,
+    [selectedId, experiences],
+  )
+
+  const clearSelection = useCallback(() => setSelectedId(null), [])
 
   return (
     <motion.div
@@ -61,43 +84,35 @@ export default function Experiences({ onNavigate: _onNavigate }: Props) {
     >
       <div className="mx-auto max-w-5xl space-y-8 px-4 py-10 sm:px-6 sm:py-16">
 
-        {/* ── Header ────────────────────────────────────────────────── */}
         <div className="space-y-5">
           <p className="font-mono text-xs uppercase tracking-widest text-accent">
-            // expériences & participations
+            {t.experiences.sectionLabel}
           </p>
-
           <ExperienceFilters
-            allTypes={ALL_TYPES}
-            allDomaines={ALL_DOMAINES}
+            allTypes={ALL_TYPES_BASE}
+            allDomaines={ALL_DOMAINES_BASE}
             availableTypes={availableTypes}
             availableDomaines={availableDomaines}
             activeType={activeType}
             activeDomaine={activeDomaine}
             sort={sort}
-            onTypeChange={setActiveType}
+            onTypeChange={setActiveType}    // stable: useState setter
             onDomaineChange={setActiveDomaine}
             onSortChange={setSort}
           />
         </div>
 
-        {/* ── Grid ──────────────────────────────────────────────────── */}
         <div aria-live="polite" aria-atomic="false" className="sr-only">
-          {filtered.length} résultat{filtered.length !== 1 ? 's' : ''}
+          {filtered.length} {t.experiences.sectionLabel}
         </div>
         <motion.div layout className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           <AnimatePresence mode="popLayout">
             {filtered.map(exp => (
-              <ExperienceCard
-                key={exp.id}
-                exp={exp}
-                onOpen={() => setSelected(exp)}
-              />
+              <ExperienceCard key={exp.id} exp={exp} onOpen={setSelectedId} />
             ))}
           </AnimatePresence>
         </motion.div>
 
-        {/* Empty state */}
         <AnimatePresence>
           {filtered.length === 0 && (
             <motion.p
@@ -106,20 +121,16 @@ export default function Experiences({ onNavigate: _onNavigate }: Props) {
               exit={{ opacity: 0 }}
               className="py-20 text-center font-mono text-xs text-foreground/60"
             >
-              Aucune expérience ne correspond aux filtres sélectionnés.
+              {t.experiences.empty}
             </motion.p>
           )}
         </AnimatePresence>
 
       </div>
 
-      {/* ── Modal ─────────────────────────────────────────────────── */}
       <AnimatePresence>
         {selected && (
-          <ExperienceModal
-            exp={selected}
-            onClose={() => setSelected(null)}
-          />
+          <ExperienceModal exp={selected} onClose={clearSelection} />
         )}
       </AnimatePresence>
     </motion.div>

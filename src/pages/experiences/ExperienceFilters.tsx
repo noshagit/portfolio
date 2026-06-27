@@ -1,7 +1,8 @@
+import { memo } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import type { SortDir } from '../../types/experience'
-
-const EASE = [0.22, 1, 0.36, 1] as const
+import { useLang } from '../../hooks/useLang'
+import { EASE } from '../../lib/motion'
 
 interface Props {
   allTypes:          string[]
@@ -16,15 +17,7 @@ interface Props {
   onSortChange:      (v: SortDir) => void
 }
 
-function FilterButton({
-  label,
-  isActive,
-  onClick,
-}: {
-  label:    string
-  isActive: boolean
-  onClick:  () => void
-}) {
+function FilterButton({ label, isActive, onClick }: { label: string; isActive: boolean; onClick: () => void }) {
   return (
     <motion.button
       layout
@@ -46,35 +39,31 @@ function FilterButton({
   )
 }
 
-export default function ExperienceFilters({
-  allTypes,
-  allDomaines,
-  availableTypes,
-  availableDomaines,
-  activeType,
-  activeDomaine,
-  sort,
-  onTypeChange,
-  onDomaineChange,
-  onSortChange,
+function ExperienceFilters({
+  allTypes, allDomaines, availableTypes, availableDomaines,
+  activeType, activeDomaine, sort,
+  onTypeChange, onDomaineChange, onSortChange,
 }: Props) {
+  const { t } = useLang()
+  const { filters, types, domains } = t.experiences
+
   return (
     <div className="space-y-5">
       {/* Type filters */}
-      <motion.div layout role="group" aria-label="Filtrer par type" className="flex flex-wrap gap-2">
+      <motion.div layout role="group" aria-label={filters.ariaType} className="flex flex-wrap gap-2">
         <AnimatePresence mode="popLayout">
           <FilterButton
             key="tous-type"
-            label="Tous"
+            label={filters.all}
             isActive={activeType === null}
             onClick={() => onTypeChange(null)}
           />
           {allTypes
-            .filter(t => availableTypes.has(t))
+            .filter(type => availableTypes.has(type))
             .map(type => (
               <FilterButton
                 key={type}
-                label={type}
+                label={types[type as keyof typeof types] ?? type}
                 isActive={activeType === type}
                 onClick={() => onTypeChange(activeType === type ? null : type)}
               />
@@ -83,36 +72,36 @@ export default function ExperienceFilters({
       </motion.div>
 
       {/* Domain filters */}
-      <motion.div layout role="group" aria-label="Filtrer par domaine" className="flex flex-wrap gap-2">
+      <motion.div layout role="group" aria-label={filters.ariaDomain} className="flex flex-wrap gap-2">
         <AnimatePresence mode="popLayout">
           <FilterButton
             key="tous-domaine"
-            label="Tous"
+            label={filters.all}
             isActive={activeDomaine === null}
             onClick={() => onDomaineChange(null)}
           />
           {allDomaines
-            .filter(d => availableDomaines.has(d))
-            .map(domaine => (
+            .filter(dom => availableDomaines.has(dom))
+            .map(dom => (
               <FilterButton
-                key={domaine}
-                label={domaine}
-                isActive={activeDomaine === domaine}
-                onClick={() => onDomaineChange(activeDomaine === domaine ? null : domaine)}
+                key={dom}
+                label={domains[dom as keyof typeof domains] ?? dom}
+                isActive={activeDomaine === dom}
+                onClick={() => onDomaineChange(activeDomaine === dom ? null : dom)}
               />
             ))}
         </AnimatePresence>
       </motion.div>
 
       {/* Sort */}
-      <div role="group" aria-label="Trier les expériences" className="flex items-center gap-3">
+      <div role="group" aria-label={filters.ariaSort} className="flex items-center gap-3">
         <span className="font-mono text-[10px] uppercase tracking-widest text-foreground/60">
-          Trier par
+          {filters.sortLabel}
         </span>
         {([
-          { dir: 'desc' as SortDir, label: 'Récent → Ancien' },
-          { dir: 'asc'  as SortDir, label: 'Ancien → Récent' },
-        ] as const).map(({ dir, label }) => (
+          { dir: 'desc' as SortDir, label: filters.sortDesc },
+          { dir: 'asc'  as SortDir, label: filters.sortAsc  },
+        ]).map(({ dir, label }) => (
           <button
             key={dir}
             onClick={() => onSortChange(dir)}
@@ -131,3 +120,5 @@ export default function ExperienceFilters({
     </div>
   )
 }
+
+export default memo(ExperienceFilters)

@@ -3,16 +3,20 @@ import { motion, LayoutGroup, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 import type { View, NavItem } from '../../types'
 import ThemeToggle from '../ui/ThemeToggle'
+import LangToggle from '../ui/LangToggle'
 import { LinkedInIcon } from '../ui/BrandIcons'
+import { useTheme } from '../../hooks/useTheme'
+import { useLang } from '../../hooks/useLang'
+import { EASE } from '../../lib/motion'
 
-const NAV_ITEMS: NavItem[] = [
-  { id: 'landing',      label: 'Accueil' },
-  { id: 'presentation', label: 'A propos' },
-  { id: 'experiences',  label: 'Expériences' },
-  { id: 'contact',      label: 'Contacts' },
-]
-
-const EASE = [0.22, 1, 0.36, 1] as const
+function useNavItems(t: ReturnType<typeof useLang>['t']): NavItem[] {
+  return [
+    { id: 'landing',      label: t.header.nav.home },
+    { id: 'presentation', label: t.header.nav.about },
+    { id: 'experiences',  label: t.header.nav.experiences },
+    { id: 'contact',      label: t.header.nav.contact },
+  ]
+}
 
 interface Props {
   currentView: View
@@ -21,6 +25,9 @@ interface Props {
 
 export default function Header({ currentView, onNavigate }: Props) {
   const [menuOpen, setMenuOpen] = useState(false)
+  const { theme } = useTheme()
+  const { t } = useLang()
+  const NAV_ITEMS = useNavItems(t)
 
   function navigate(view: View) {
     onNavigate(view)
@@ -37,10 +44,13 @@ export default function Header({ currentView, onNavigate }: Props) {
             <button
               onClick={() => navigate('landing')}
               aria-label="Accueil"
-              className="text-sm font-bold uppercase tracking-[0.25em] text-accent
-                         transition-opacity duration-200 hover:opacity-50"
+              className="transition-opacity duration-200 hover:opacity-50"
             >
-              IB
+              <img
+                src={theme === 'dark' ? '/favicon-dark.png' : '/favicon.png'}
+                alt="Ilian BEN HAMOU"
+                className="h-11 w-11 rounded-full"
+              />
             </button>
           </div>
 
@@ -93,6 +103,7 @@ export default function Header({ currentView, onNavigate }: Props) {
             >
               <LinkedInIcon size={15} />
             </a>
+            <LangToggle />
             <ThemeToggle />
 
             {/* Hamburger — mobile only */}

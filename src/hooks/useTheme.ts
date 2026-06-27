@@ -1,2 +1,8 @@
-// Re-export from context so consumers can import from either path
-export { useTheme } from '../context/ThemeContext'
+import { useContext } from 'react'
+import { ThemeContext } from '../context/ThemeContext'
+
+export function useTheme() {
+  const ctx = useContext(ThemeContext)
+  if (!ctx) throw new Error('useTheme must be used within <ThemeProvider>')
+  return ctx
+}

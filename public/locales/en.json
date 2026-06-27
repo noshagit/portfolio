@@ -1,0 +1,307 @@
+{
+  "header": {
+    "nav": {
+      "home": "Home",
+      "about": "About",
+      "experiences": "Experiences",
+      "contact": "Contact"
+    }
+  },
+  "landing": {
+    "discover": "Learn about me",
+    "downloadCV": "Download CV"
+  },
+  "presentation": {
+    "intro": {
+      "label": "// intro",
+      "title": "Student in",
+      "titleAccent": "Cybersecurity.",
+      "bio1": "23 years old, in my third year of cybersecurity studies, I am actively seeking an",
+      "bioAccent": "apprenticeship contract",
+      "bio2": "to continue building my skills within an ambitious technical team."
+    },
+    "softSkills": {
+      "label": "// soft skills",
+      "items": [
+        "Adaptability",
+        "Curiosity",
+        "Thoroughness",
+        "Autonomy",
+        "Team spirit",
+        "Perseverance",
+        "Proactive mindset",
+        "Leadership",
+        "Organisation"
+      ]
+    },
+    "languages": {
+      "label": "// languages",
+      "items": [
+        {
+          "lang": "French",
+          "level": "Native speaker"
+        },
+        {
+          "lang": "English",
+          "level": "B2+"
+        }
+      ]
+    },
+    "techSkills": {
+      "label": "// technical skills",
+      "categories": [
+        {
+          "id": "cyber",
+          "label": "Cybersecurity",
+          "skills": [
+            {
+              "title": "Traffic Analysis",
+              "description": "Capture, filtering, and anomaly detection using Wireshark."
+            },
+            {
+              "title": "GRC & Awareness",
+              "description": "Drafting security policies (passwords, phishing, ransomware, workstation hardening)."
+            },
+            {
+              "title": "Security by Design",
+              "description": "Implementing least privilege, defense in depth, and DevSecOps principles."
+            },
+            {
+              "title": "Automated Audits",
+              "description": "Automated security audits using Python and Bash scripts."
+            },
+            {
+              "title": "Web Security",
+              "description": "Application testing and audits based on OWASP Top 10 (SQLi, XSS, Broken Auth)."
+            },
+            {
+              "title": "SIEM / SOC",
+              "description": "Deploying ELK Stack, writing custom Kibana alerting rules, integrating Windows/Linux clients."
+            },
+            {
+              "title": "Digital Forensics",
+              "description": "Image/memory dump investigation (Autopsy, Cellebrite Reader, OpenStego)."
+            },
+            {
+              "title": "OSINT",
+              "description": "Intel gathering, Google Dorking, active member of \"[JOMT] Just One More Tabs\" on OSINTOPIA."
+            }
+          ]
+        },
+        {
+          "id": "sys",
+          "label": "Systems & Admin",
+          "skills": [
+            {
+              "title": "Windows Server",
+              "description": "Active Directory administration, GPO, user/group management, DNS, DHCP, file services."
+            },
+            {
+              "title": "Linux Administration",
+              "description": "Rights management, core services (SSH, NFS, Apache, DNS, DHCP), log monitoring."
+            },
+            {
+              "title": "Virtualization",
+              "description": "Advanced VM interconnection via VirtualBox and VMware."
+            },
+            {
+              "title": "Containerization",
+              "description": "Docker orchestration using images, volumes, and docker-compose for multi-service apps."
+            }
+          ]
+        },
+        {
+          "id": "net",
+          "label": "Networking",
+          "skills": [
+            {
+              "title": "Protocol Configuration",
+              "description": "Micro-segmentation with VLANs, NAT/PAT, RIP, OSPF, DHCP, DNS, static/dynamic routing."
+            },
+            {
+              "title": "Secure Architecture",
+              "description": "Designing and deploying full-scale secure network infrastructures (Firewall, Router, Switch, Server)."
+            },
+            {
+              "title": "Enterprise Deployment",
+              "description": "Implementing coherent IP addressing plans and strict filtering policies for enterprise Wi-Fi deployment."
+            }
+          ]
+        },
+        {
+          "id": "dev",
+          "label": "Scripting & Dev",
+          "skills": [
+            {
+              "title": "Automation Scripts",
+              "description": "Advanced Python for system monitoring, automated Google Dorking, and Git-triggered remote deployments."
+            },
+            {
+              "title": "Infrastructure as Code",
+              "description": "Bash automation for Apache2 and SQL; PowerShell scripts for Active Directory deployment (GPOs, OUs)."
+            },
+            {
+              "title": "Web Development",
+              "description": "Full-stack responsive web apps using React, TypeScript, and Tailwind CSS (SOLID, DRY, KISS)."
+            },
+            {
+              "title": "Databases",
+              "description": "Relational database modeling, schema normalization, and advanced complex SQL queries."
+            }
+          ]
+        },
+        {
+          "id": "proj",
+          "label": "Project Management",
+          "skills": [
+            {
+              "title": "Agile Tooling",
+              "description": "Workspace organization and progress tracking via Trello and Notion."
+            },
+            {
+              "title": "Technical Writing",
+              "description": "Authoring high-quality technical and functional documentation."
+            },
+            {
+              "title": "Team Leadership",
+              "description": "Coordinating cross-functional teams, deliverables monitoring, and meeting facilitation."
+            }
+          ]
+        }
+      ]
+    },
+    "education": {
+      "label": "// education",
+      "items": [
+        {
+          "id": "bachelor",
+          "period": "2024 – 2027",
+          "degree": "Bachelor in Cybersecurity",
+          "institution": "Ynov Campus Lyon",
+          "context": "Focus on core cybersecurity principles, systems, networks, forensics, and incident response."
+        },
+        {
+          "id": "licence",
+          "period": "2021 – 2023",
+          "degree": "Bachelor's in Computer Science & Mathematics",
+          "institution": "Université Clermont Auvergne",
+          "context": "Foundational logic, advanced mathematics, software engineering concepts, and algorithmic structuring."
+        },
+        {
+          "id": "bac",
+          "period": "2018 – 2021",
+          "degree": "General & Technological Baccalaureate",
+          "institution": "Lycée Périer, Marseille",
+          "context": "Specialisations: NSI (Digital & Computer Science) and Mathematics."
+        }
+      ]
+    },
+    "recommendations": {
+      "label": "// recommendations",
+      "downloadPdf": "Download PDF",
+      "items": [
+        {
+          "id": "iaboni",
+          "label": "Alexandra IABONI",
+          "role": "Head of Admissions — Lyon Ynov Campus",
+          "text": "Alexandra worked alongside me during my time as a school ambassador and former member of the Student Sports Association. She vouches for my commitment to student life, my team spirit, and my ability to authentically represent the institution at major events.",
+          "pdf": "/ldr/Alexandra%20IABONI.pdf"
+        },
+        {
+          "id": "sirot",
+          "label": "Cellya SIROT",
+          "role": "Web Developer — Oraxya",
+          "text": "Cellya entrusted me with a key role on a nationally scoped digital project. She highlights my exemplary client-facing attitude, my proactive contributions — some of which are still valued today — and my ability to grow autonomously when faced with complex technical challenges.",
+          "pdf": "/ldr/Cellya%20SIROT.pdf"
+        },
+        {
+          "id": "theodore",
+          "label": "Melvin THEODORE",
+          "role": "Cybersecurity Expert — Trainer / Speaker",
+          "text": "With experience at ARKEMA and INTERPOL, Melvin supervised me across several specialised training programmes. He attests to my technical skills, my curiosity for the field, and my professional ethics — qualities he considers essential in cybersecurity careers.",
+          "pdf": "/ldr/Melvin%20Theodore.pdf"
+        }
+      ]
+    },
+    "passions": {
+      "label": "// passions",
+      "items": [
+        {
+          "id": "hiking",
+          "label": "Hiking",
+          "text": "I love exploring natural areas and wandering mountain trails to recharge. Breathing fresh air away from daily life, pushing myself physically, and taking in wild landscapes — the mountains represent a space of freedom and reconnection with what truly matters."
+        },
+        {
+          "id": "photography",
+          "label": "Photography",
+          "text": "Starting in 2021 with my father's Nikon Coolpix P510, photography quickly became a full-blown passion. I bring my camera everywhere — to school, on hikes, camping, on holiday. It is nearly always with me. Capturing a moment, choosing the light, freezing a landscape or a face: every shot is a new exploration."
+        },
+        {
+          "id": "gaming",
+          "label": "Video Games",
+          "text": "I have been playing video games since childhood, which helped me develop social and interpersonal skills long before my professional life. Wondering how a game was built led me to start coding, then to explore networking and systems, and finally to understanding how to protect them. Video games are at the root of my passion for cybersecurity."
+        },
+        {
+          "id": "astronomy",
+          "label": "Astronomy",
+          "text": "A growing love for the sky, especially deep-sky observation. Galaxies, nebulae, star clusters — contemplating what is happening millions of light-years away gives me a unique perspective on the world. This passion naturally intersects with photography, particularly astrophotography, a field of exploration that never stops surprising me."
+        }
+      ]
+    }
+  },
+  "experiences": {
+    "sectionLabel": "// experiences & projects",
+    "empty": "No experience matches the selected filters.",
+    "filters": {
+      "all": "All",
+      "sortLabel": "Sort by",
+      "sortDesc": "Recent → Oldest",
+      "sortAsc": "Oldest → Recent",
+      "ariaType": "Filter by type",
+      "ariaDomain": "Filter by domain",
+      "ariaSort": "Sort experiences"
+    },
+    "modal": {
+      "close": "Close",
+      "description": "// description",
+      "images": "// images",
+      "relatedJobs": "// related roles",
+      "skills": "// acquired skills",
+      "softSkills": "// soft skills used",
+      "links": "// links",
+      "photo": "photo"
+    },
+    "types": {
+      "Projet académique": "Academic Project",
+      "CDD": "Fixed-term Contract",
+      "CDI": "Permanent Contract",
+      "Participation bénévole": "Volunteer",
+      "CTF": "CTF"
+    },
+    "domains": {
+      "Cybersécurité": "Cybersecurity",
+      "Infrastructure réseau": "Network Infrastructure",
+      "Informatique": "Computer Science",
+      "Service": "Service",
+      "Restauration": "Hospitality",
+      "Photographie": "Photography",
+      "Vidéo": "Video"
+    }
+  },
+  "contact": {
+    "sectionLabel": "Contact",
+    "mobilityLabel": "Mobility zone / Work locations",
+    "remote": "Open to opportunities (Full Remote / Travel)",
+    "phone": {
+      "action": "Call"
+    },
+    "email": {
+      "action": "Open mail client"
+    },
+    "copy": "Copy",
+    "copied": "Copied!"
+  },
+  "footer": {
+    "contact": "Contact"
+  }
+}
