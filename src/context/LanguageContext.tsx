@@ -17,6 +17,10 @@ export const LanguageContext = createContext<LanguageContextValue | null>(null)
 const cache = new Map<Lang, Translations>([['fr', FR]])
 
 function resolveInitialLang(): Lang {
+  // URL param takes priority — used by hreflang crawlers and direct deep-links
+  const urlLang = new URLSearchParams(window.location.search).get('lang') as Lang | null
+  if (urlLang === 'en' || urlLang === 'fr') return urlLang
+
   const saved = localStorage.getItem('portfolio-lang') as Lang | null
   if (saved === 'en' || saved === 'fr') return saved
 
@@ -33,6 +37,9 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   // If the resolved initial lang is EN, it isn't bundled — set loading=true until fetched
   const [t,       setT]       = useState<Translations>(() => cache.get(lang) ?? FR)
   const [loading, setLoading] = useState<boolean>(() => lang === 'en' && !cache.has('en'))
+  // Keep html[lang] in sync with active language — SEO + screen readers
+  useEffect(() => { document.documentElement.lang = lang }, [lang])
+
   // Capture initial lang in a ref so the mount effect below doesn't need lang as a dep
   const initialLang = useRef(lang)
 

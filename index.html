@@ -1,26 +1,129 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="/favicon.png" />
-    <!-- Theme init: runs synchronously before any paint to prevent FOUC.
-         Mirrors ThemeContext.getInitialTheme() exactly:
-         1. Use saved 'portfolio-theme' preference if present.
-         2. Otherwise fall back to the OS system preference via matchMedia. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Synchronous init: sets theme class + html[lang] before first paint.
+         Mirrors ThemeContext.getInitialTheme() and resolveInitialLang() exactly. -->
     <script>
       (function () {
         var t = localStorage.getItem('portfolio-theme');
         var dark = t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches);
         if (dark) document.documentElement.classList.add('dark');
         document.documentElement.style.backgroundColor = dark ? '#141018' : '#FFFBEF';
+
+        var urlLang = new URLSearchParams(window.location.search).get('lang');
+        var savedLang = (urlLang === 'fr' || urlLang === 'en') ? urlLang : localStorage.getItem('portfolio-lang');
+        if (savedLang !== 'fr' && savedLang !== 'en') {
+          var nav = (navigator.languages && navigator.languages[0]) || navigator.language || 'fr';
+          savedLang = nav.toLowerCase().startsWith('fr') ? 'fr' : 'en';
+        }
+        document.documentElement.lang = savedLang;
       })();
     </script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Ilian BEN HAMOU — Étudiant en cybersécurité, recherche un contrat d'apprentissage." />
-    <title>Ilian BEN HAMOU — Cybersécurité</title>
+
+    <!-- ═══════════════════════════════════════════════════
+         PRIMARY SEO
+         Replace https://ilianbenhamou.fr with your domain.
+         ═══════════════════════════════════════════════════ -->
+    <title>Ilian BEN HAMOU | Bachelor Cybersécurité – Alternance Lyon</title>
+    <meta name="description" content="Portfolio d'Ilian BEN HAMOU, étudiant en Bachelor Cybersécurité à Lyon. Compétences en SOC, SIEM, Digital Forensics, Active Directory, architecture réseaux et scripting. Disponible en alternance." />
+    <link rel="canonical" href="https://ilianbenhamou.fr/" />
+
+    <!-- ═══════════════════════════════════════════════════════
+         OPEN GRAPH  (Facebook, LinkedIn, Discord…)
+         og:image must be 1200×630 px — create
+         /public/og-image.png before publishing to social media.
+         ═══════════════════════════════════════════════════════ -->
+    <meta property="og:type"             content="website" />
+    <meta property="og:url"              content="https://ilianbenhamou.fr/" />
+    <meta property="og:title"            content="Ilian BEN HAMOU | Bachelor Cybersécurité – Alternance Lyon" />
+    <meta property="og:description"      content="Portfolio d'Ilian BEN HAMOU, étudiant en Bachelor Cybersécurité à Lyon. SOC · SIEM · Forensics · Active Directory · Réseaux." />
+    <meta property="og:image"            content="https://ilianbenhamou.fr/og-image.png" />
+    <meta property="og:image:width"      content="1200" />
+    <meta property="og:image:height"     content="630" />
+    <meta property="og:locale"           content="fr_FR" />
+    <meta property="og:locale:alternate" content="en_GB" />
+    <meta property="og:site_name"        content="Ilian BEN HAMOU" />
+
+    <!-- ═════════════════════════════
+         TWITTER / X CARD
+         ═════════════════════════════ -->
+    <meta name="twitter:card"        content="summary_large_image" />
+    <meta name="twitter:title"       content="Ilian BEN HAMOU | Bachelor Cybersécurité – Alternance Lyon" />
+    <meta name="twitter:description" content="Portfolio d'Ilian BEN HAMOU, étudiant en Bachelor Cybersécurité à Lyon. SOC · SIEM · Forensics · Active Directory · Réseaux." />
+    <meta name="twitter:image"       content="https://ilianbenhamou.fr/og-image.png" />
+
+    <!-- ══════════════════════════════════════════════════════════
+         HREFLANG — ?lang= URL param activates the correct locale,
+         making these links crawlable by Googlebot.
+         x-default → canonical URL (FR default).
+         ══════════════════════════════════════════════════════════ -->
+    <link rel="alternate" hreflang="fr"        href="https://ilianbenhamou.fr/?lang=fr" />
+    <link rel="alternate" hreflang="en"        href="https://ilianbenhamou.fr/?lang=en" />
+    <link rel="alternate" hreflang="x-default" href="https://ilianbenhamou.fr/" />
+
+    <!-- Favicons -->
+    <link rel="icon"             type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon"             type="image/png"     href="/favicon.png" />
+    <link rel="apple-touch-icon"                      href="/favicon.png" />
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- ══════════════════════════════════════════════════════════════════
+         STRUCTURED DATA — JSON-LD
+         Helps Google instantly understand the site's subject and author.
+         Update `url` and `sameAs` after deploying to your custom domain.
+         ══════════════════════════════════════════════════════════════════ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfilePage",
+      "url": "https://ilianbenhamou.fr/",
+      "name": "Portfolio — Ilian BEN HAMOU",
+      "description": "Portfolio professionnel d'Ilian BEN HAMOU, étudiant en Bachelor Cybersécurité à Lyon.",
+      "inLanguage": ["fr", "en"],
+      "mainEntity": {
+        "@type": "Person",
+        "name": "Ilian BEN HAMOU",
+        "givenName": "Ilian",
+        "familyName": "BEN HAMOU",
+        "jobTitle": "Étudiant en Bachelor Cybersécurité – Alternant Systèmes & Réseaux",
+        "description": "Étudiant en cybersécurité à Lyon, spécialisé en SOC, Digital Forensics, SIEM, Active Directory et architecture réseau. Recherche un contrat d'alternance.",
+        "email": "ilianbenhamou2163@gmail.com",
+        "telephone": "+33781583839",
+        "url": "https://ilianbenhamou.fr/",
+        "image": "https://ilianbenhamou.fr/favicon.png",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Lyon",
+          "addressRegion": "Auvergne-Rhône-Alpes",
+          "addressCountry": "FR"
+        },
+        "alumniOf": {
+          "@type": "EducationalOrganization",
+          "name": "Ynov Campus Lyon"
+        },
+        "knowsAbout": [
+          "Cybersécurité",
+          "Digital Forensics",
+          "SOC / SIEM",
+          "Active Directory",
+          "Architecture Réseau",
+          "Scripting Python & Bash",
+          "CTF (Capture The Flag)",
+          "Systèmes & Réseaux"
+        ],
+        "sameAs": [
+          "https://www.linkedin.com/in/ilian-ben-hamou-7b6053297/"
+        ]
+      }
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>

@@ -35,7 +35,7 @@ function ExperienceCard({ exp, onOpen }: Props) {
       </span>
 
       <div className="flex-1">
-        <h3 className="mb-1 text-sm font-bold leading-snug text-foreground">{exp.nom}</h3>
+        <h2 className="mb-1 text-sm font-bold leading-snug text-foreground">{exp.nom}</h2>
         <p className="font-mono text-xs text-foreground/60">{exp.employeur_collab}</p>
       </div>
 

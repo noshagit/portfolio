@@ -43,6 +43,7 @@ export default function Contact({ onNavigate: _onNavigate }: Props) {
 
           <motion.h1
             variants={LINE}
+            aria-label="Ilian BEN HAMOU"
             className="font-black uppercase tracking-tight text-accent
                        text-4xl sm:text-6xl md:text-8xl"
           >
@@ -51,6 +52,7 @@ export default function Contact({ onNavigate: _onNavigate }: Props) {
 
           <motion.p
             variants={LINE}
+            aria-hidden="true"
             className="mb-10 font-light tracking-tight text-foreground
                        text-3xl sm:text-4xl md:text-6xl sm:mb-14"
           >
