@@ -1,0 +1,563 @@
+<repomix><file_summary>This file is a merged representation of the entire codebase, combined into a single document by Repomix.
+The content has been processed where content has been formatted for parsing in xml style.<purpose>This file contains a packed representation of the entire repository&apos;s contents.
+It is designed to be easily consumable by AI systems for analysis, code review,
+or other automated processes.</purpose><file_format>The content is organized as follows:
+1. This summary section
+2. Repository information
+3. Directory structure
+4. Repository files (if enabled)
+5. Repository files, each consisting of:
+  - File path as an attribute
+  - Full contents of the file</file_format><usage_guidelines>- This file should be treated as read-only. Any changes should be made to the
+  original repository files, not this packed version.
+- When processing this file, use the file path to distinguish
+  between different files in the repository.
+- Be aware that this file may contain sensitive information. Handle it with
+  the same level of security as you would the original repository.</usage_guidelines><notes>- Some files may have been excluded based on .gitignore rules and Repomix&apos;s configuration
+- Binary files are not included in this packed representation. Please refer to the Repository Structure section for a complete list of file paths, including binary files
+- Files matching patterns in .gitignore are excluded
+- Files matching default ignore patterns are excluded
+- Content has been formatted for parsing in xml style
+- Files are sorted by Git change count (files with more changes are at the bottom)</notes></file_summary><directory_structure>public/
+  favicon.svg
+  icons.svg
+src/
+  assets/
+    hero.png
+    react.svg
+    vite.svg
+  components/
+    layout/
+      Footer.tsx
+      Header.tsx
+    ui/
+      ThemeToggle.tsx
+  context/
+    ThemeContext.tsx
+  data/
+    .gitkeep
+  hooks/
+    useTheme.ts
+  pages/
+    Contact.tsx
+    Experiences.tsx
+    Landing.tsx
+    Presentation.tsx
+  types/
+    index.ts
+  App.css
+  App.tsx
+  index.css
+  main.tsx
+.gitignore
+.oxlintrc.json
+index.html
+package.json
+README.md
+tsconfig.app.json
+tsconfig.json
+tsconfig.node.json
+vite.config.ts</directory_structure><files>This section contains the contents of the repository&apos;s files.<file path="public/favicon.svg">&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;48&quot; height=&quot;46&quot; fill=&quot;none&quot; viewBox=&quot;0 0 48 46&quot;&gt;&lt;path fill=&quot;#863bff&quot; d=&quot;M25.946 44.938c-.664.845-2.021.375-2.021-.698V33.937a2.26 2.26 0 0 0-2.262-2.262H10.287c-.92 0-1.456-1.04-.92-1.788l7.48-10.471c1.07-1.497 0-3.578-1.842-3.578H1.237c-.92 0-1.456-1.04-.92-1.788L10.013.474c.214-.297.556-.474.92-.474h28.894c.92 0 1.456 1.04.92 1.788l-7.48 10.471c-1.07 1.498 0 3.579 1.842 3.579h11.377c.943 0 1.473 1.088.89 1.83L25.947 44.94z&quot; style=&quot;fill:#863bff;fill:color(display-p3 .5252 .23 1);fill-opacity:1&quot;/&gt;&lt;mask id=&quot;a&quot; width=&quot;48&quot; height=&quot;46&quot; x=&quot;0&quot; y=&quot;0&quot; maskUnits=&quot;userSpaceOnUse&quot; style=&quot;mask-type:alpha&quot;&gt;&lt;path fill=&quot;#000&quot; d=&quot;M25.842 44.938c-.664.844-2.021.375-2.021-.698V33.937a2.26 2.26 0 0 0-2.262-2.262H10.183c-.92 0-1.456-1.04-.92-1.788l7.48-10.471c1.07-1.498 0-3.579-1.842-3.579H1.133c-.92 0-1.456-1.04-.92-1.787L9.91.473c.214-.297.556-.474.92-.474h28.894c.92 0 1.456 1.04.92 1.788l-7.48 10.471c-1.07 1.498 0 3.578 1.842 3.578h11.377c.943 0 1.473 1.088.89 1.832L25.843 44.94z&quot; style=&quot;fill:#000;fill-opacity:1&quot;/&gt;&lt;/mask&gt;&lt;g mask=&quot;url(#a)&quot;&gt;&lt;g filter=&quot;url(#b)&quot;&gt;&lt;ellipse cx=&quot;5.508&quot; cy=&quot;14.704&quot; fill=&quot;#ede6ff&quot; rx=&quot;5.508&quot; ry=&quot;14.704&quot; style=&quot;fill:#ede6ff;fill:color(display-p3 .9275 .9033 1);fill-opacity:1&quot; transform=&quot;matrix(.00324 1 1 -.00324 -4.47 31.516)&quot;/&gt;&lt;/g&gt;&lt;g filter=&quot;url(#c)&quot;&gt;&lt;ellipse cx=&quot;10.399&quot; cy=&quot;29.851&quot; fill=&quot;#ede6ff&quot; rx=&quot;10.399&quot; ry=&quot;29.851&quot; style=&quot;fill:#ede6ff;fill:color(display-p3 .9275 .9033 1);fill-opacity:1&quot; transform=&quot;matrix(.00324 1 1 -.00324 -39.328 7.883)&quot;/&gt;&lt;/g&gt;&lt;g filter=&quot;url(#d)&quot;&gt;&lt;ellipse cx=&quot;5.508&quot; cy=&quot;30.487&quot; fill=&quot;#7e14ff&quot; rx=&quot;5.508&quot; ry=&quot;30.487&quot; style=&quot;fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1&quot; transform=&quot;rotate(89.814 -25.913 -14.639)scale(1 -1)&quot;/&gt;&lt;/g&gt;&lt;g filter=&quot;url(#e)&quot;&gt;&lt;ellipse cx=&quot;5.508&quot; cy=&quot;30.599&quot; fill=&quot;#7e14ff&quot; rx=&quot;5.508&quot; ry=&quot;30.599&quot; style=&quot;fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1&quot; transform=&quot;rotate(89.814 -32.644 -3.334)scale(1 -1)&quot;/&gt;&lt;/g&gt;&lt;g filter=&quot;url(#f)&quot;&gt;&lt;ellipse cx=&quot;5.508&quot; cy=&quot;30.599&quot; fill=&quot;#7e14ff&quot; rx=&quot;5.508&quot; ry=&quot;30.599&quot; style=&quot;fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1&quot; transform=&quot;matrix(.00324 1 1 -.00324 -34.34 30.47)&quot;/&gt;&lt;/g&gt;&lt;g filter=&quot;url(#g)&quot;&gt;&lt;ellipse cx=&quot;14.072&quot; cy=&quot;22.078&quot; fill=&quot;#ede6ff&quot; rx=&quot;14.072&quot; ry=&quot;22.078&quot; style=&quot;fill:#ede6ff;fill:color(display-p3 .9275 .9033 1);fill-opacity:1&quot; transform=&quot;rotate(93.35 24.506 48.493)scale(-1 1)&quot;/&gt;&lt;/g&gt;&lt;g filter=&quot;url(#h)&quot;&gt;&lt;ellipse cx=&quot;3.47&quot; cy=&quot;21.501&quot; fill=&quot;#7e14ff&quot; rx=&quot;3.47&quot; ry=&quot;21.501&quot; style=&quot;fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1&quot; transform=&quot;rotate(89.009 28.708 47.59)scale(-1 1)&quot;/&gt;&lt;/g&gt;&lt;g filter=&quot;url(#i)&quot;&gt;&lt;ellipse cx=&quot;3.47&quot; cy=&quot;21.501&quot; fill=&quot;#7e14ff&quot; rx=&quot;3.47&quot; ry=&quot;21.501&quot; style=&quot;fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1&quot; transform=&quot;rotate(89.009 28.708 47.59)scale(-1 1)&quot;/&gt;&lt;/g&gt;&lt;g filter=&quot;url(#j)&quot;&gt;&lt;ellipse cx=&quot;.387&quot; cy=&quot;8.972&quot; fill=&quot;#7e14ff&quot; rx=&quot;4.407&quot; ry=&quot;29.108&quot; style=&quot;fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1&quot; transform=&quot;rotate(39.51 .387 8.972)&quot;/&gt;&lt;/g&gt;&lt;g filter=&quot;url(#k)&quot;&gt;&lt;ellipse cx=&quot;47.523&quot; cy=&quot;-6.092&quot; fill=&quot;#7e14ff&quot; rx=&quot;4.407&quot; ry=&quot;29.108&quot; style=&quot;fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1&quot; transform=&quot;rotate(37.892 47.523 -6.092)&quot;/&gt;&lt;/g&gt;&lt;g filter=&quot;url(#l)&quot;&gt;&lt;ellipse cx=&quot;41.412&quot; cy=&quot;6.333&quot; fill=&quot;#47bfff&quot; rx=&quot;5.971&quot; ry=&quot;9.665&quot; style=&quot;fill:#47bfff;fill:color(display-p3 .2799 .748 1);fill-opacity:1&quot; transform=&quot;rotate(37.892 41.412 6.333)&quot;/&gt;&lt;/g&gt;&lt;g filter=&quot;url(#m)&quot;&gt;&lt;ellipse cx=&quot;-1.879&quot; cy=&quot;38.332&quot; fill=&quot;#7e14ff&quot; rx=&quot;4.407&quot; ry=&quot;29.108&quot; style=&quot;fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1&quot; transform=&quot;rotate(37.892 -1.88 38.332)&quot;/&gt;&lt;/g&gt;&lt;g filter=&quot;url(#n)&quot;&gt;&lt;ellipse cx=&quot;-1.879&quot; cy=&quot;38.332&quot; fill=&quot;#7e14ff&quot; rx=&quot;4.407&quot; ry=&quot;29.108&quot; style=&quot;fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1&quot; transform=&quot;rotate(37.892 -1.88 38.332)&quot;/&gt;&lt;/g&gt;&lt;g filter=&quot;url(#o)&quot;&gt;&lt;ellipse cx=&quot;35.651&quot; cy=&quot;29.907&quot; fill=&quot;#7e14ff&quot; rx=&quot;4.407&quot; ry=&quot;29.108&quot; style=&quot;fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1&quot; transform=&quot;rotate(37.892 35.651 29.907)&quot;/&gt;&lt;/g&gt;&lt;g filter=&quot;url(#p)&quot;&gt;&lt;ellipse cx=&quot;38.418&quot; cy=&quot;32.4&quot; fill=&quot;#47bfff&quot; rx=&quot;5.971&quot; ry=&quot;15.297&quot; style=&quot;fill:#47bfff;fill:color(display-p3 .2799 .748 1);fill-opacity:1&quot; transform=&quot;rotate(37.892 38.418 32.4)&quot;/&gt;&lt;/g&gt;&lt;/g&gt;&lt;defs&gt;&lt;filter id=&quot;b&quot; width=&quot;60.045&quot; height=&quot;41.654&quot; x=&quot;-19.77&quot; y=&quot;16.149&quot; color-interpolation-filters=&quot;sRGB&quot; filterUnits=&quot;userSpaceOnUse&quot;&gt;&lt;feFlood flood-opacity=&quot;0&quot; result=&quot;BackgroundImageFix&quot;/&gt;&lt;feBlend in=&quot;SourceGraphic&quot; in2=&quot;BackgroundImageFix&quot; result=&quot;shape&quot;/&gt;&lt;feGaussianBlur result=&quot;effect1_foregroundBlur_2002_17158&quot; stdDeviation=&quot;7.659&quot;/&gt;&lt;/filter&gt;&lt;filter id=&quot;c&quot; width=&quot;90.34&quot; height=&quot;51.437&quot; x=&quot;-54.613&quot; y=&quot;-7.533&quot; color-interpolation-filters=&quot;sRGB&quot; filterUnits=&quot;userSpaceOnUse&quot;&gt;&lt;feFlood flood-opacity=&quot;0&quot; result=&quot;BackgroundImageFix&quot;/&gt;&lt;feBlend in=&quot;SourceGraphic&quot; in2=&quot;BackgroundImageFix&quot; result=&quot;shape&quot;/&gt;&lt;feGaussianBlur result=&quot;effect1_foregroundBlur_2002_17158&quot; stdDeviation=&quot;7.659&quot;/&gt;&lt;/filter&gt;&lt;filter id=&quot;d&quot; width=&quot;79.355&quot; height=&quot;29.4&quot; x=&quot;-49.64&quot; y=&quot;2.03&quot; color-interpolation-filters=&quot;sRGB&quot; filterUnits=&quot;userSpaceOnUse&quot;&gt;&lt;feFlood flood-opacity=&quot;0&quot; result=&quot;BackgroundImageFix&quot;/&gt;&lt;feBlend in=&quot;SourceGraphic&quot; in2=&quot;BackgroundImageFix&quot; result=&quot;shape&quot;/&gt;&lt;feGaussianBlur result=&quot;effect1_foregroundBlur_2002_17158&quot; stdDeviation=&quot;4.596&quot;/&gt;&lt;/filter&gt;&lt;filter id=&quot;e&quot; width=&quot;79.579&quot; height=&quot;29.4&quot; x=&quot;-45.045&quot; y=&quot;20.029&quot; color-interpolation-filters=&quot;sRGB&quot; filterUnits=&quot;userSpaceOnUse&quot;&gt;&lt;feFlood flood-opacity=&quot;0&quot; result=&quot;BackgroundImageFix&quot;/&gt;&lt;feBlend in=&quot;SourceGraphic&quot; in2=&quot;BackgroundImageFix&quot; result=&quot;shape&quot;/&gt;&lt;feGaussianBlur result=&quot;effect1_foregroundBlur_2002_17158&quot; stdDeviation=&quot;4.596&quot;/&gt;&lt;/filter&gt;&lt;filter id=&quot;f&quot; width=&quot;79.579&quot; height=&quot;29.4&quot; x=&quot;-43.513&quot; y=&quot;21.178&quot; color-interpolation-filters=&quot;sRGB&quot; filterUnits=&quot;userSpaceOnUse&quot;&gt;&lt;feFlood flood-opacity=&quot;0&quot; result=&quot;BackgroundImageFix&quot;/&gt;&lt;feBlend in=&quot;SourceGraphic&quot; in2=&quot;BackgroundImageFix&quot; result=&quot;shape&quot;/&gt;&lt;feGaussianBlur result=&quot;effect1_foregroundBlur_2002_17158&quot; stdDeviation=&quot;4.596&quot;/&gt;&lt;/filter&gt;&lt;filter id=&quot;g&quot; width=&quot;74.749&quot; height=&quot;58.852&quot; x=&quot;15.756&quot; y=&quot;-17.901&quot; color-interpolation-filters=&quot;sRGB&quot; filterUnits=&quot;userSpaceOnUse&quot;&gt;&lt;feFlood flood-opacity=&quot;0&quot; result=&quot;BackgroundImageFix&quot;/&gt;&lt;feBlend in=&quot;SourceGraphic&quot; in2=&quot;BackgroundImageFix&quot; result=&quot;shape&quot;/&gt;&lt;feGaussianBlur result=&quot;effect1_foregroundBlur_2002_17158&quot; stdDeviation=&quot;7.659&quot;/&gt;&lt;/filter&gt;&lt;filter id=&quot;h&quot; width=&quot;61.377&quot; height=&quot;25.362&quot; x=&quot;23.548&quot; y=&quot;2.284&quot; color-interpolation-filters=&quot;sRGB&quot; filterUnits=&quot;userSpaceOnUse&quot;&gt;&lt;feFlood flood-opacity=&quot;0&quot; result=&quot;BackgroundImageFix&quot;/&gt;&lt;feBlend in=&quot;SourceGraphic&quot; in2=&quot;BackgroundImageFix&quot; result=&quot;shape&quot;/&gt;&lt;feGaussianBlur result=&quot;effect1_foregroundBlur_2002_17158&quot; stdDeviation=&quot;4.596&quot;/&gt;&lt;/filter&gt;&lt;filter id=&quot;i&quot; width=&quot;61.377&quot; height=&quot;25.362&quot; x=&quot;23.548&quot; y=&quot;2.284&quot; color-interpolation-filters=&quot;sRGB&quot; filterUnits=&quot;userSpaceOnUse&quot;&gt;&lt;feFlood flood-opacity=&quot;0&quot; result=&quot;BackgroundImageFix&quot;/&gt;&lt;feBlend in=&quot;SourceGraphic&quot; in2=&quot;BackgroundImageFix&quot; result=&quot;shape&quot;/&gt;&lt;feGaussianBlur result=&quot;effect1_foregroundBlur_2002_17158&quot; stdDeviation=&quot;4.596&quot;/&gt;&lt;/filter&gt;&lt;filter id=&quot;j&quot; width=&quot;56.045&quot; height=&quot;63.649&quot; x=&quot;-27.636&quot; y=&quot;-22.853&quot; color-interpolation-filters=&quot;sRGB&quot; filterUnits=&quot;userSpaceOnUse&quot;&gt;&lt;feFlood flood-opacity=&quot;0&quot; result=&quot;BackgroundImageFix&quot;/&gt;&lt;feBlend in=&quot;SourceGraphic&quot; in2=&quot;BackgroundImageFix&quot; result=&quot;shape&quot;/&gt;&lt;feGaussianBlur result=&quot;effect1_foregroundBlur_2002_17158&quot; stdDeviation=&quot;4.596&quot;/&gt;&lt;/filter&gt;&lt;filter id=&quot;k&quot; width=&quot;54.814&quot; height=&quot;64.646&quot; x=&quot;20.116&quot; y=&quot;-38.415&quot; color-interpolation-filters=&quot;sRGB&quot; filterUnits=&quot;userSpaceOnUse&quot;&gt;&lt;feFlood flood-opacity=&quot;0&quot; result=&quot;BackgroundImageFix&quot;/&gt;&lt;feBlend in=&quot;SourceGraphic&quot; in2=&quot;BackgroundImageFix&quot; result=&quot;shape&quot;/&gt;&lt;feGaussianBlur result=&quot;effect1_foregroundBlur_2002_17158&quot; stdDeviation=&quot;4.596&quot;/&gt;&lt;/filter&gt;&lt;filter id=&quot;l&quot; width=&quot;33.541&quot; height=&quot;35.313&quot; x=&quot;24.641&quot; y=&quot;-11.323&quot; color-interpolation-filters=&quot;sRGB&quot; filterUnits=&quot;userSpaceOnUse&quot;&gt;&lt;feFlood flood-opacity=&quot;0&quot; result=&quot;BackgroundImageFix&quot;/&gt;&lt;feBlend in=&quot;SourceGraphic&quot; in2=&quot;BackgroundImageFix&quot; result=&quot;shape&quot;/&gt;&lt;feGaussianBlur result=&quot;effect1_foregroundBlur_2002_17158&quot; stdDeviation=&quot;4.596&quot;/&gt;&lt;/filter&gt;&lt;filter id=&quot;m&quot; width=&quot;54.814&quot; height=&quot;64.646&quot; x=&quot;-29.286&quot; y=&quot;6.009&quot; color-interpolation-filters=&quot;sRGB&quot; filterUnits=&quot;userSpaceOnUse&quot;&gt;&lt;feFlood flood-opacity=&quot;0&quot; result=&quot;BackgroundImageFix&quot;/&gt;&lt;feBlend in=&quot;SourceGraphic&quot; in2=&quot;BackgroundImageFix&quot; result=&quot;shape&quot;/&gt;&lt;feGaussianBlur result=&quot;effect1_foregroundBlur_2002_17158&quot; stdDeviation=&quot;4.596&quot;/&gt;&lt;/filter&gt;&lt;filter id=&quot;n&quot; width=&quot;54.814&quot; height=&quot;64.646&quot; x=&quot;-29.286&quot; y=&quot;6.009&quot; color-interpolation-filters=&quot;sRGB&quot; filterUnits=&quot;userSpaceOnUse&quot;&gt;&lt;feFlood flood-opacity=&quot;0&quot; result=&quot;BackgroundImageFix&quot;/&gt;&lt;feBlend in=&quot;SourceGraphic&quot; in2=&quot;BackgroundImageFix&quot; result=&quot;shape&quot;/&gt;&lt;feGaussianBlur result=&quot;effect1_foregroundBlur_2002_17158&quot; stdDeviation=&quot;4.596&quot;/&gt;&lt;/filter&gt;&lt;filter id=&quot;o&quot; width=&quot;54.814&quot; height=&quot;64.646&quot; x=&quot;8.244&quot; y=&quot;-2.416&quot; color-interpolation-filters=&quot;sRGB&quot; filterUnits=&quot;userSpaceOnUse&quot;&gt;&lt;feFlood flood-opacity=&quot;0&quot; result=&quot;BackgroundImageFix&quot;/&gt;&lt;feBlend in=&quot;SourceGraphic&quot; in2=&quot;BackgroundImageFix&quot; result=&quot;shape&quot;/&gt;&lt;feGaussianBlur result=&quot;effect1_foregroundBlur_2002_17158&quot; stdDeviation=&quot;4.596&quot;/&gt;&lt;/filter&gt;&lt;filter id=&quot;p&quot; width=&quot;39.409&quot; height=&quot;43.623&quot; x=&quot;18.713&quot; y=&quot;10.588&quot; color-interpolation-filters=&quot;sRGB&quot; filterUnits=&quot;userSpaceOnUse&quot;&gt;&lt;feFlood flood-opacity=&quot;0&quot; result=&quot;BackgroundImageFix&quot;/&gt;&lt;feBlend in=&quot;SourceGraphic&quot; in2=&quot;BackgroundImageFix&quot; result=&quot;shape&quot;/&gt;&lt;feGaussianBlur result=&quot;effect1_foregroundBlur_2002_17158&quot; stdDeviation=&quot;4.596&quot;/&gt;&lt;/filter&gt;&lt;/defs&gt;&lt;/svg&gt;</file><file path="public/icons.svg">&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
+  &lt;symbol id=&quot;bluesky-icon&quot; viewBox=&quot;0 0 16 17&quot;&gt;
+    &lt;g clip-path=&quot;url(#bluesky-clip)&quot;&gt;&lt;path fill=&quot;#08060d&quot; d=&quot;M7.75 7.735c-.693-1.348-2.58-3.86-4.334-5.097-1.68-1.187-2.32-.981-2.74-.79C.188 2.065.1 2.812.1 3.251s.241 3.602.398 4.13c.52 1.744 2.367 2.333 4.07 2.145-2.495.37-4.71 1.278-1.805 4.512 3.196 3.309 4.38-.71 4.987-2.746.608 2.036 1.307 5.91 4.93 2.746 2.72-2.746.747-4.143-1.747-4.512 1.702.189 3.55-.4 4.07-2.145.156-.528.397-3.691.397-4.13s-.088-1.186-.575-1.406c-.42-.19-1.06-.395-2.741.79-1.755 1.24-3.64 3.752-4.334 5.099&quot;/&gt;&lt;/g&gt;
+    &lt;defs&gt;&lt;clipPath id=&quot;bluesky-clip&quot;&gt;&lt;path fill=&quot;#fff&quot; d=&quot;M.1.85h15.3v15.3H.1z&quot;/&gt;&lt;/clipPath&gt;&lt;/defs&gt;
+  &lt;/symbol&gt;
+  &lt;symbol id=&quot;discord-icon&quot; viewBox=&quot;0 0 20 19&quot;&gt;
+    &lt;path fill=&quot;#08060d&quot; d=&quot;M16.224 3.768a14.5 14.5 0 0 0-3.67-1.153c-.158.286-.343.67-.47.976a13.5 13.5 0 0 0-4.067 0c-.128-.306-.317-.69-.476-.976A14.4 14.4 0 0 0 3.868 3.77C1.546 7.28.916 10.703 1.231 14.077a14.7 14.7 0 0 0 4.5 2.306q.545-.748.965-1.587a9.5 9.5 0 0 1-1.518-.74q.191-.14.372-.293c2.927 1.369 6.107 1.369 8.999 0q.183.152.372.294-.723.437-1.52.74.418.838.963 1.588a14.6 14.6 0 0 0 4.504-2.308c.37-3.911-.63-7.302-2.644-10.309m-9.13 8.234c-.878 0-1.599-.82-1.599-1.82 0-.998.705-1.82 1.6-1.82.894 0 1.614.82 1.599 1.82.001 1-.705 1.82-1.6 1.82m5.91 0c-.878 0-1.599-.82-1.599-1.82 0-.998.705-1.82 1.6-1.82.893 0 1.614.82 1.599 1.82 0 1-.706 1.82-1.6 1.82&quot;/&gt;
+  &lt;/symbol&gt;
+  &lt;symbol id=&quot;documentation-icon&quot; viewBox=&quot;0 0 21 20&quot;&gt;
+    &lt;path fill=&quot;none&quot; stroke=&quot;#aa3bff&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; stroke-width=&quot;1.35&quot; d=&quot;m15.5 13.333 1.533 1.322c.645.555.967.833.967 1.178s-.322.623-.967 1.179L15.5 18.333m-3.333-5-1.534 1.322c-.644.555-.966.833-.966 1.178s.322.623.966 1.179l1.534 1.321&quot;/&gt;
+    &lt;path fill=&quot;none&quot; stroke=&quot;#aa3bff&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; stroke-width=&quot;1.35&quot; d=&quot;M17.167 10.836v-4.32c0-1.41 0-2.117-.224-2.68-.359-.906-1.118-1.621-2.08-1.96-.599-.21-1.349-.21-2.848-.21-2.623 0-3.935 0-4.983.369-1.684.591-3.013 1.842-3.641 3.428C3 6.449 3 7.684 3 10.154v2.122c0 2.558 0 3.838.706 4.726q.306.383.713.671c.76.536 1.79.64 3.581.66&quot;/&gt;
+    &lt;path fill=&quot;none&quot; stroke=&quot;#aa3bff&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; stroke-width=&quot;1.35&quot; d=&quot;M3 10a2.78 2.78 0 0 1 2.778-2.778c.555 0 1.209.097 1.748-.047.48-.129.854-.503.982-.982.145-.54.048-1.194.048-1.749a2.78 2.78 0 0 1 2.777-2.777&quot;/&gt;
+  &lt;/symbol&gt;
+  &lt;symbol id=&quot;github-icon&quot; viewBox=&quot;0 0 19 19&quot;&gt;
+    &lt;path fill=&quot;#08060d&quot; fill-rule=&quot;evenodd&quot; d=&quot;M9.356 1.85C5.05 1.85 1.57 5.356 1.57 9.694a7.84 7.84 0 0 0 5.324 7.44c.387.079.528-.168.528-.376 0-.182-.013-.805-.013-1.454-2.165.467-2.616-.935-2.616-.935-.349-.91-.864-1.143-.864-1.143-.71-.48.051-.48.051-.48.787.051 1.2.805 1.2.805.695 1.194 1.817.857 2.268.649.064-.507.27-.857.49-1.052-1.728-.182-3.545-.857-3.545-3.87 0-.857.31-1.558.8-2.104-.078-.195-.349-1 .077-2.078 0 0 .657-.208 2.14.805a7.5 7.5 0 0 1 1.946-.26c.657 0 1.328.092 1.946.26 1.483-1.013 2.14-.805 2.14-.805.426 1.078.155 1.883.078 2.078.502.546.799 1.247.799 2.104 0 3.013-1.818 3.675-3.558 3.87.284.247.528.714.528 1.454 0 1.052-.012 1.896-.012 2.156 0 .208.142.455.528.377a7.84 7.84 0 0 0 5.324-7.441c.013-4.338-3.48-7.844-7.773-7.844&quot; clip-rule=&quot;evenodd&quot;/&gt;
+  &lt;/symbol&gt;
+  &lt;symbol id=&quot;social-icon&quot; viewBox=&quot;0 0 20 20&quot;&gt;
+    &lt;path fill=&quot;none&quot; stroke=&quot;#aa3bff&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; stroke-width=&quot;1.35&quot; d=&quot;M12.5 6.667a4.167 4.167 0 1 0-8.334 0 4.167 4.167 0 0 0 8.334 0&quot;/&gt;
+    &lt;path fill=&quot;none&quot; stroke=&quot;#aa3bff&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; stroke-width=&quot;1.35&quot; d=&quot;M2.5 16.667a5.833 5.833 0 0 1 8.75-5.053m3.837.474.513 1.035c.07.144.257.282.414.309l.93.155c.596.1.736.536.307.965l-.723.73a.64.64 0 0 0-.152.531l.207.903c.164.715-.213.991-.84.618l-.872-.52a.63.63 0 0 0-.577 0l-.872.52c-.624.373-1.003.094-.84-.618l.207-.903a.64.64 0 0 0-.152-.532l-.723-.729c-.426-.43-.289-.864.306-.964l.93-.156a.64.64 0 0 0 .412-.31l.513-1.034c.28-.562.735-.562 1.012 0&quot;/&gt;
+  &lt;/symbol&gt;
+  &lt;symbol id=&quot;x-icon&quot; viewBox=&quot;0 0 19 19&quot;&gt;
+    &lt;path fill=&quot;#08060d&quot; fill-rule=&quot;evenodd&quot; d=&quot;M1.893 1.98c.052.072 1.245 1.769 2.653 3.77l2.892 4.114c.183.261.333.48.333.486s-.068.089-.152.183l-.522.593-.765.867-3.597 4.087c-.375.426-.734.834-.798.905a1 1 0 0 0-.118.148c0 .01.236.017.664.017h.663l.729-.83c.4-.457.796-.906.879-.999a692 692 0 0 0 1.794-2.038c.034-.037.301-.34.594-.675l.551-.624.345-.392a7 7 0 0 1 .34-.374c.006 0 .93 1.306 2.052 2.903l2.084 2.965.045.063h2.275c1.87 0 2.273-.003 2.266-.021-.008-.02-1.098-1.572-3.894-5.547-2.013-2.862-2.28-3.246-2.273-3.266.008-.019.282-.332 2.085-2.38l2-2.274 1.567-1.782c.022-.028-.016-.03-.65-.03h-.674l-.3.342a871 871 0 0 1-1.782 2.025c-.067.075-.405.458-.75.852a100 100 0 0 1-.803.91c-.148.172-.299.344-.99 1.127-.304.343-.32.358-.345.327-.015-.019-.904-1.282-1.976-2.808L6.365 1.85H1.8zm1.782.91 8.078 11.294c.772 1.08 1.413 1.973 1.425 1.984.016.017.241.02 1.05.017l1.03-.004-2.694-3.766L7.796 5.75 5.722 2.852l-1.039-.004-1.039-.004z&quot; clip-rule=&quot;evenodd&quot;/&gt;
+  &lt;/symbol&gt;
+&lt;/svg&gt;</file><file path="src/assets/react.svg">&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; aria-hidden=&quot;true&quot; role=&quot;img&quot; class=&quot;iconify iconify--logos&quot; width=&quot;35.93&quot; height=&quot;32&quot; preserveAspectRatio=&quot;xMidYMid meet&quot; viewBox=&quot;0 0 256 228&quot;&gt;&lt;path fill=&quot;#00D8FF&quot; d=&quot;M210.483 73.824a171.49 171.49 0 0 0-8.24-2.597c.465-1.9.893-3.777 1.273-5.621c6.238-30.281 2.16-54.676-11.769-62.708c-13.355-7.7-35.196.329-57.254 19.526a171.23 171.23 0 0 0-6.375 5.848a155.866 155.866 0 0 0-4.241-3.917C100.759 3.829 77.587-4.822 63.673 3.233C50.33 10.957 46.379 33.89 51.995 62.588a170.974 170.974 0 0 0 1.892 8.48c-3.28.932-6.445 1.924-9.474 2.98C17.309 83.498 0 98.307 0 113.668c0 15.865 18.582 31.778 46.812 41.427a145.52 145.52 0 0 0 6.921 2.165a167.467 167.467 0 0 0-2.01 9.138c-5.354 28.2-1.173 50.591 12.134 58.266c13.744 7.926 36.812-.22 59.273-19.855a145.567 145.567 0 0 0 5.342-4.923a168.064 168.064 0 0 0 6.92 6.314c21.758 18.722 43.246 26.282 56.54 18.586c13.731-7.949 18.194-32.003 12.4-61.268a145.016 145.016 0 0 0-1.535-6.842c1.62-.48 3.21-.974 4.76-1.488c29.348-9.723 48.443-25.443 48.443-41.52c0-15.417-17.868-30.326-45.517-39.844Zm-6.365 70.984c-1.4.463-2.836.91-4.3 1.345c-3.24-10.257-7.612-21.163-12.963-32.432c5.106-11 9.31-21.767 12.459-31.957c2.619.758 5.16 1.557 7.61 2.4c23.69 8.156 38.14 20.213 38.14 29.504c0 9.896-15.606 22.743-40.946 31.14Zm-10.514 20.834c2.562 12.94 2.927 24.64 1.23 33.787c-1.524 8.219-4.59 13.698-8.382 15.893c-8.067 4.67-25.32-1.4-43.927-17.412a156.726 156.726 0 0 1-6.437-5.87c7.214-7.889 14.423-17.06 21.459-27.246c12.376-1.098 24.068-2.894 34.671-5.345a134.17 134.17 0 0 1 1.386 6.193ZM87.276 214.515c-7.882 2.783-14.16 2.863-17.955.675c-8.075-4.657-11.432-22.636-6.853-46.752a156.923 156.923 0 0 1 1.869-8.499c10.486 2.32 22.093 3.988 34.498 4.994c7.084 9.967 14.501 19.128 21.976 27.15a134.668 134.668 0 0 1-4.877 4.492c-9.933 8.682-19.886 14.842-28.658 17.94ZM50.35 144.747c-12.483-4.267-22.792-9.812-29.858-15.863c-6.35-5.437-9.555-10.836-9.555-15.216c0-9.322 13.897-21.212 37.076-29.293c2.813-.98 5.757-1.905 8.812-2.773c3.204 10.42 7.406 21.315 12.477 32.332c-5.137 11.18-9.399 22.249-12.634 32.792a134.718 134.718 0 0 1-6.318-1.979Zm12.378-84.26c-4.811-24.587-1.616-43.134 6.425-47.789c8.564-4.958 27.502 2.111 47.463 19.835a144.318 144.318 0 0 1 3.841 3.545c-7.438 7.987-14.787 17.08-21.808 26.988c-12.04 1.116-23.565 2.908-34.161 5.309a160.342 160.342 0 0 1-1.76-7.887Zm110.427 27.268a347.8 347.8 0 0 0-7.785-12.803c8.168 1.033 15.994 2.404 23.343 4.08c-2.206 7.072-4.956 14.465-8.193 22.045a381.151 381.151 0 0 0-7.365-13.322Zm-45.032-43.861c5.044 5.465 10.096 11.566 15.065 18.186a322.04 322.04 0 0 0-30.257-.006c4.974-6.559 10.069-12.652 15.192-18.18ZM82.802 87.83a323.167 323.167 0 0 0-7.227 13.238c-3.184-7.553-5.909-14.98-8.134-22.152c7.304-1.634 15.093-2.97 23.209-3.984a321.524 321.524 0 0 0-7.848 12.897Zm8.081 65.352c-8.385-.936-16.291-2.203-23.593-3.793c2.26-7.3 5.045-14.885 8.298-22.6a321.187 321.187 0 0 0 7.257 13.246c2.594 4.48 5.28 8.868 8.038 13.147Zm37.542 31.03c-5.184-5.592-10.354-11.779-15.403-18.433c4.902.192 9.899.29 14.978.29c5.218 0 10.376-.117 15.453-.343c-4.985 6.774-10.018 12.97-15.028 18.486Zm52.198-57.817c3.422 7.8 6.306 15.345 8.596 22.52c-7.422 1.694-15.436 3.058-23.88 4.071a382.417 382.417 0 0 0 7.859-13.026a347.403 347.403 0 0 0 7.425-13.565Zm-16.898 8.101a358.557 358.557 0 0 1-12.281 19.815a329.4 329.4 0 0 1-23.444.823c-7.967 0-15.716-.248-23.178-.732a310.202 310.202 0 0 1-12.513-19.846h.001a307.41 307.41 0 0 1-10.923-20.627a310.278 310.278 0 0 1 10.89-20.637l-.001.001a307.318 307.318 0 0 1 12.413-19.761c7.613-.576 15.42-.876 23.31-.876H128c7.926 0 15.743.303 23.354.883a329.357 329.357 0 0 1 12.335 19.695a358.489 358.489 0 0 1 11.036 20.54a329.472 329.472 0 0 1-11 20.722Zm22.56-122.124c8.572 4.944 11.906 24.881 6.52 51.026c-.344 1.668-.73 3.367-1.15 5.09c-10.622-2.452-22.155-4.275-34.23-5.408c-7.034-10.017-14.323-19.124-21.64-27.008a160.789 160.789 0 0 1 5.888-5.4c18.9-16.447 36.564-22.941 44.612-18.3ZM128 90.808c12.625 0 22.86 10.235 22.86 22.86s-10.235 22.86-22.86 22.86s-22.86-10.235-22.86-22.86s10.235-22.86 22.86-22.86Z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;</file><file path="src/assets/vite.svg">&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;77&quot; height=&quot;47&quot; fill=&quot;none&quot; aria-labelledby=&quot;vite-logo-title&quot; viewBox=&quot;0 0 77 47&quot;&gt;&lt;title id=&quot;vite-logo-title&quot;&gt;Vite&lt;/title&gt;&lt;style&gt;.parenthesis{fill:#000}@media (prefers-color-scheme:dark){.parenthesis{fill:#fff}}&lt;/style&gt;&lt;path fill=&quot;#9135ff&quot; d=&quot;M40.151 45.71c-.663.844-2.02.374-2.02-.699V34.708a2.26 2.26 0 0 0-2.262-2.262H24.493c-.92 0-1.457-1.04-.92-1.788l7.479-10.471c1.07-1.498 0-3.578-1.842-3.578H15.443c-.92 0-1.456-1.04-.92-1.788l9.696-13.576c.213-.297.556-.474.92-.474h28.894c.92 0 1.456 1.04.92 1.788l-7.48 10.472c-1.07 1.497 0 3.578 1.842 3.578h11.376c.944 0 1.474 1.087.89 1.83L40.153 45.712z&quot;/&gt;&lt;mask id=&quot;a&quot; width=&quot;48&quot; height=&quot;47&quot; x=&quot;14&quot; y=&quot;0&quot; maskUnits=&quot;userSpaceOnUse&quot; style=&quot;mask-type:alpha&quot;&gt;&lt;path fill=&quot;#000&quot; d=&quot;M40.047 45.71c-.663.843-2.02.374-2.02-.699V34.708a2.26 2.26 0 0 0-2.262-2.262H24.389c-.92 0-1.457-1.04-.92-1.788l7.479-10.472c1.07-1.497 0-3.578-1.842-3.578H15.34c-.92 0-1.456-1.04-.92-1.788l9.696-13.575c.213-.297.556-.474.92-.474H53.93c.92 0 1.456 1.04.92 1.788L47.37 13.03c-1.07 1.498 0 3.578 1.842 3.578h11.376c.944 0 1.474 1.088.89 1.831L40.049 45.712z&quot;/&gt;&lt;/mask&gt;&lt;g mask=&quot;url(#a)&quot;&gt;&lt;g filter=&quot;url(#b)&quot;&gt;&lt;ellipse cx=&quot;5.508&quot; cy=&quot;14.704&quot; fill=&quot;#eee6ff&quot; rx=&quot;5.508&quot; ry=&quot;14.704&quot; transform=&quot;rotate(269.814 20.96 11.29)scale(-1 1)&quot;/&gt;&lt;/g&gt;&lt;g filter=&quot;url(#c)&quot;&gt;&lt;ellipse cx=&quot;10.399&quot; cy=&quot;29.851&quot; fill=&quot;#eee6ff&quot; rx=&quot;10.399&quot; ry=&quot;29.851&quot; transform=&quot;rotate(89.814 -16.902 -8.275)scale(1 -1)&quot;/&gt;&lt;/g&gt;&lt;g filter=&quot;url(#d)&quot;&gt;&lt;ellipse cx=&quot;5.508&quot; cy=&quot;30.487&quot; fill=&quot;#8900ff&quot; rx=&quot;5.508&quot; ry=&quot;30.487&quot; transform=&quot;rotate(89.814 -19.197 -7.127)scale(1 -1)&quot;/&gt;&lt;/g&gt;&lt;g filter=&quot;url(#e)&quot;&gt;&lt;ellipse cx=&quot;5.508&quot; cy=&quot;30.599&quot; fill=&quot;#8900ff&quot; rx=&quot;5.508&quot; ry=&quot;30.599&quot; transform=&quot;rotate(89.814 -25.928 4.177)scale(1 -1)&quot;/&gt;&lt;/g&gt;&lt;g filter=&quot;url(#f)&quot;&gt;&lt;ellipse cx=&quot;5.508&quot; cy=&quot;30.599&quot; fill=&quot;#8900ff&quot; rx=&quot;5.508&quot; ry=&quot;30.599&quot; transform=&quot;rotate(89.814 -25.738 5.52)scale(1 -1)&quot;/&gt;&lt;/g&gt;&lt;g filter=&quot;url(#g)&quot;&gt;&lt;ellipse cx=&quot;14.072&quot; cy=&quot;22.078&quot; fill=&quot;#eee6ff&quot; rx=&quot;14.072&quot; ry=&quot;22.078&quot; transform=&quot;rotate(93.35 31.245 55.578)scale(-1 1)&quot;/&gt;&lt;/g&gt;&lt;g filter=&quot;url(#h)&quot;&gt;&lt;ellipse cx=&quot;3.47&quot; cy=&quot;21.501&quot; fill=&quot;#8900ff&quot; rx=&quot;3.47&quot; ry=&quot;21.501&quot; transform=&quot;rotate(89.009 35.419 55.202)scale(-1 1)&quot;/&gt;&lt;/g&gt;&lt;g filter=&quot;url(#i)&quot;&gt;&lt;ellipse cx=&quot;3.47&quot; cy=&quot;21.501&quot; fill=&quot;#8900ff&quot; rx=&quot;3.47&quot; ry=&quot;21.501&quot; transform=&quot;rotate(89.009 35.419 55.202)scale(-1 1)&quot;/&gt;&lt;/g&gt;&lt;g filter=&quot;url(#j)&quot;&gt;&lt;ellipse cx=&quot;14.592&quot; cy=&quot;9.743&quot; fill=&quot;#8900ff&quot; rx=&quot;4.407&quot; ry=&quot;29.108&quot; transform=&quot;rotate(39.51 14.592 9.743)&quot;/&gt;&lt;/g&gt;&lt;g filter=&quot;url(#k)&quot;&gt;&lt;ellipse cx=&quot;61.728&quot; cy=&quot;-5.321&quot; fill=&quot;#8900ff&quot; rx=&quot;4.407&quot; ry=&quot;29.108&quot; transform=&quot;rotate(37.892 61.728 -5.32)&quot;/&gt;&lt;/g&gt;&lt;g filter=&quot;url(#l)&quot;&gt;&lt;ellipse cx=&quot;55.618&quot; cy=&quot;7.104&quot; fill=&quot;#00c2ff&quot; rx=&quot;5.971&quot; ry=&quot;9.665&quot; transform=&quot;rotate(37.892 55.618 7.104)&quot;/&gt;&lt;/g&gt;&lt;g filter=&quot;url(#m)&quot;&gt;&lt;ellipse cx=&quot;12.326&quot; cy=&quot;39.103&quot; fill=&quot;#8900ff&quot; rx=&quot;4.407&quot; ry=&quot;29.108&quot; transform=&quot;rotate(37.892 12.326 39.103)&quot;/&gt;&lt;/g&gt;&lt;g filter=&quot;url(#n)&quot;&gt;&lt;ellipse cx=&quot;12.326&quot; cy=&quot;39.103&quot; fill=&quot;#8900ff&quot; rx=&quot;4.407&quot; ry=&quot;29.108&quot; transform=&quot;rotate(37.892 12.326 39.103)&quot;/&gt;&lt;/g&gt;&lt;g filter=&quot;url(#o)&quot;&gt;&lt;ellipse cx=&quot;49.857&quot; cy=&quot;30.678&quot; fill=&quot;#8900ff&quot; rx=&quot;4.407&quot; ry=&quot;29.108&quot; transform=&quot;rotate(37.892 49.857 30.678)&quot;/&gt;&lt;/g&gt;&lt;g filter=&quot;url(#p)&quot;&gt;&lt;ellipse cx=&quot;52.623&quot; cy=&quot;33.171&quot; fill=&quot;#00c2ff&quot; rx=&quot;5.971&quot; ry=&quot;15.297&quot; transform=&quot;rotate(37.892 52.623 33.17)&quot;/&gt;&lt;/g&gt;&lt;/g&gt;&lt;path d=&quot;M6.919 0c-9.198 13.166-9.252 33.575 0 46.789h6.215c-9.25-13.214-9.196-33.623 0-46.789zm62.424 0h-6.215c9.198 13.166 9.252 33.575 0 46.789h6.215c9.25-13.214 9.196-33.623 0-46.789&quot; class=&quot;parenthesis&quot;/&gt;&lt;defs&gt;&lt;filter id=&quot;b&quot; width=&quot;60.045&quot; height=&quot;41.654&quot; x=&quot;-5.564&quot; y=&quot;16.92&quot; color-interpolation-filters=&quot;sRGB&quot; filterUnits=&quot;userSpaceOnUse&quot;&gt;&lt;feFlood flood-opacity=&quot;0&quot; result=&quot;BackgroundImageFix&quot;/&gt;&lt;feBlend in=&quot;SourceGraphic&quot; in2=&quot;BackgroundImageFix&quot; result=&quot;shape&quot;/&gt;&lt;feGaussianBlur result=&quot;effect1_foregroundBlur_2002_17286&quot; stdDeviation=&quot;7.659&quot;/&gt;&lt;/filter&gt;&lt;filter id=&quot;c&quot; width=&quot;90.34&quot; height=&quot;51.437&quot; x=&quot;-40.407&quot; y=&quot;-6.762&quot; color-interpolation-filters=&quot;sRGB&quot; filterUnits=&quot;userSpaceOnUse&quot;&gt;&lt;feFlood flood-opacity=&quot;0&quot; result=&quot;BackgroundImageFix&quot;/&gt;&lt;feBlend in=&quot;SourceGraphic&quot; in2=&quot;BackgroundImageFix&quot; result=&quot;shape&quot;/&gt;&lt;feGaussianBlur result=&quot;effect1_foregroundBlur_2002_17286&quot; stdDeviation=&quot;7.659&quot;/&gt;&lt;/filter&gt;&lt;filter id=&quot;d&quot; width=&quot;79.355&quot; height=&quot;29.4&quot; x=&quot;-35.435&quot; y=&quot;2.801&quot; color-interpolation-filters=&quot;sRGB&quot; filterUnits=&quot;userSpaceOnUse&quot;&gt;&lt;feFlood flood-opacity=&quot;0&quot; result=&quot;BackgroundImageFix&quot;/&gt;&lt;feBlend in=&quot;SourceGraphic&quot; in2=&quot;BackgroundImageFix&quot; result=&quot;shape&quot;/&gt;&lt;feGaussianBlur result=&quot;effect1_foregroundBlur_2002_17286&quot; stdDeviation=&quot;4.596&quot;/&gt;&lt;/filter&gt;&lt;filter id=&quot;e&quot; width=&quot;79.579&quot; height=&quot;29.4&quot; x=&quot;-30.84&quot; y=&quot;20.8&quot; color-interpolation-filters=&quot;sRGB&quot; filterUnits=&quot;userSpaceOnUse&quot;&gt;&lt;feFlood flood-opacity=&quot;0&quot; result=&quot;BackgroundImageFix&quot;/&gt;&lt;feBlend in=&quot;SourceGraphic&quot; in2=&quot;BackgroundImageFix&quot; result=&quot;shape&quot;/&gt;&lt;feGaussianBlur result=&quot;effect1_foregroundBlur_2002_17286&quot; stdDeviation=&quot;4.596&quot;/&gt;&lt;/filter&gt;&lt;filter id=&quot;f&quot; width=&quot;79.579&quot; height=&quot;29.4&quot; x=&quot;-29.307&quot; y=&quot;21.949&quot; color-interpolation-filters=&quot;sRGB&quot; filterUnits=&quot;userSpaceOnUse&quot;&gt;&lt;feFlood flood-opacity=&quot;0&quot; result=&quot;BackgroundImageFix&quot;/&gt;&lt;feBlend in=&quot;SourceGraphic&quot; in2=&quot;BackgroundImageFix&quot; result=&quot;shape&quot;/&gt;&lt;feGaussianBlur result=&quot;effect1_foregroundBlur_2002_17286&quot; stdDeviation=&quot;4.596&quot;/&gt;&lt;/filter&gt;&lt;filter id=&quot;g&quot; width=&quot;74.749&quot; height=&quot;58.852&quot; x=&quot;29.961&quot; y=&quot;-17.13&quot; color-interpolation-filters=&quot;sRGB&quot; filterUnits=&quot;userSpaceOnUse&quot;&gt;&lt;feFlood flood-opacity=&quot;0&quot; result=&quot;BackgroundImageFix&quot;/&gt;&lt;feBlend in=&quot;SourceGraphic&quot; in2=&quot;BackgroundImageFix&quot; result=&quot;shape&quot;/&gt;&lt;feGaussianBlur result=&quot;effect1_foregroundBlur_2002_17286&quot; stdDeviation=&quot;7.659&quot;/&gt;&lt;/filter&gt;&lt;filter id=&quot;h&quot; width=&quot;61.377&quot; height=&quot;25.362&quot; x=&quot;37.754&quot; y=&quot;3.055&quot; color-interpolation-filters=&quot;sRGB&quot; filterUnits=&quot;userSpaceOnUse&quot;&gt;&lt;feFlood flood-opacity=&quot;0&quot; result=&quot;BackgroundImageFix&quot;/&gt;&lt;feBlend in=&quot;SourceGraphic&quot; in2=&quot;BackgroundImageFix&quot; result=&quot;shape&quot;/&gt;&lt;feGaussianBlur result=&quot;effect1_foregroundBlur_2002_17286&quot; stdDeviation=&quot;4.596&quot;/&gt;&lt;/filter&gt;&lt;filter id=&quot;i&quot; width=&quot;61.377&quot; height=&quot;25.362&quot; x=&quot;37.754&quot; y=&quot;3.055&quot; color-interpolation-filters=&quot;sRGB&quot; filterUnits=&quot;userSpaceOnUse&quot;&gt;&lt;feFlood flood-opacity=&quot;0&quot; result=&quot;BackgroundImageFix&quot;/&gt;&lt;feBlend in=&quot;SourceGraphic&quot; in2=&quot;BackgroundImageFix&quot; result=&quot;shape&quot;/&gt;&lt;feGaussianBlur result=&quot;effect1_foregroundBlur_2002_17286&quot; stdDeviation=&quot;4.596&quot;/&gt;&lt;/filter&gt;&lt;filter id=&quot;j&quot; width=&quot;56.045&quot; height=&quot;63.649&quot; x=&quot;-13.43&quot; y=&quot;-22.082&quot; color-interpolation-filters=&quot;sRGB&quot; filterUnits=&quot;userSpaceOnUse&quot;&gt;&lt;feFlood flood-opacity=&quot;0&quot; result=&quot;BackgroundImageFix&quot;/&gt;&lt;feBlend in=&quot;SourceGraphic&quot; in2=&quot;BackgroundImageFix&quot; result=&quot;shape&quot;/&gt;&lt;feGaussianBlur result=&quot;effect1_foregroundBlur_2002_17286&quot; stdDeviation=&quot;4.596&quot;/&gt;&lt;/filter&gt;&lt;filter id=&quot;k&quot; width=&quot;54.814&quot; height=&quot;64.646&quot; x=&quot;34.321&quot; y=&quot;-37.644&quot; color-interpolation-filters=&quot;sRGB&quot; filterUnits=&quot;userSpaceOnUse&quot;&gt;&lt;feFlood flood-opacity=&quot;0&quot; result=&quot;BackgroundImageFix&quot;/&gt;&lt;feBlend in=&quot;SourceGraphic&quot; in2=&quot;BackgroundImageFix&quot; result=&quot;shape&quot;/&gt;&lt;feGaussianBlur result=&quot;effect1_foregroundBlur_2002_17286&quot; stdDeviation=&quot;4.596&quot;/&gt;&lt;/filter&gt;&lt;filter id=&quot;l&quot; width=&quot;33.541&quot; height=&quot;35.313&quot; x=&quot;38.847&quot; y=&quot;-10.552&quot; color-interpolation-filters=&quot;sRGB&quot; filterUnits=&quot;userSpaceOnUse&quot;&gt;&lt;feFlood flood-opacity=&quot;0&quot; result=&quot;BackgroundImageFix&quot;/&gt;&lt;feBlend in=&quot;SourceGraphic&quot; in2=&quot;BackgroundImageFix&quot; result=&quot;shape&quot;/&gt;&lt;feGaussianBlur result=&quot;effect1_foregroundBlur_2002_17286&quot; stdDeviation=&quot;4.596&quot;/&gt;&lt;/filter&gt;&lt;filter id=&quot;m&quot; width=&quot;54.814&quot; height=&quot;64.646&quot; x=&quot;-15.081&quot; y=&quot;6.78&quot; color-interpolation-filters=&quot;sRGB&quot; filterUnits=&quot;userSpaceOnUse&quot;&gt;&lt;feFlood flood-opacity=&quot;0&quot; result=&quot;BackgroundImageFix&quot;/&gt;&lt;feBlend in=&quot;SourceGraphic&quot; in2=&quot;BackgroundImageFix&quot; result=&quot;shape&quot;/&gt;&lt;feGaussianBlur result=&quot;effect1_foregroundBlur_2002_17286&quot; stdDeviation=&quot;4.596&quot;/&gt;&lt;/filter&gt;&lt;filter id=&quot;n&quot; width=&quot;54.814&quot; height=&quot;64.646&quot; x=&quot;-15.081&quot; y=&quot;6.78&quot; color-interpolation-filters=&quot;sRGB&quot; filterUnits=&quot;userSpaceOnUse&quot;&gt;&lt;feFlood flood-opacity=&quot;0&quot; result=&quot;BackgroundImageFix&quot;/&gt;&lt;feBlend in=&quot;SourceGraphic&quot; in2=&quot;BackgroundImageFix&quot; result=&quot;shape&quot;/&gt;&lt;feGaussianBlur result=&quot;effect1_foregroundBlur_2002_17286&quot; stdDeviation=&quot;4.596&quot;/&gt;&lt;/filter&gt;&lt;filter id=&quot;o&quot; width=&quot;54.814&quot; height=&quot;64.646&quot; x=&quot;22.45&quot; y=&quot;-1.645&quot; color-interpolation-filters=&quot;sRGB&quot; filterUnits=&quot;userSpaceOnUse&quot;&gt;&lt;feFlood flood-opacity=&quot;0&quot; result=&quot;BackgroundImageFix&quot;/&gt;&lt;feBlend in=&quot;SourceGraphic&quot; in2=&quot;BackgroundImageFix&quot; result=&quot;shape&quot;/&gt;&lt;feGaussianBlur result=&quot;effect1_foregroundBlur_2002_17286&quot; stdDeviation=&quot;4.596&quot;/&gt;&lt;/filter&gt;&lt;filter id=&quot;p&quot; width=&quot;39.409&quot; height=&quot;43.623&quot; x=&quot;32.919&quot; y=&quot;11.36&quot; color-interpolation-filters=&quot;sRGB&quot; filterUnits=&quot;userSpaceOnUse&quot;&gt;&lt;feFlood flood-opacity=&quot;0&quot; result=&quot;BackgroundImageFix&quot;/&gt;&lt;feBlend in=&quot;SourceGraphic&quot; in2=&quot;BackgroundImageFix&quot; result=&quot;shape&quot;/&gt;&lt;feGaussianBlur result=&quot;effect1_foregroundBlur_2002_17286&quot; stdDeviation=&quot;4.596&quot;/&gt;&lt;/filter&gt;&lt;/defs&gt;&lt;/svg&gt;</file><file path="src/components/layout/Footer.tsx">export default function Footer() {
+  return (
+    &lt;footer className=&quot;w-full border-t border-accent/10 py-6&quot;&gt;
+      &lt;div className=&quot;mx-auto max-w-5xl px-6 text-center font-mono text-xs text-foreground/40&quot;&gt;
+        {&apos;// built with React · Framer Motion · Tailwind v4&apos;}
+      &lt;/div&gt;
+    &lt;/footer&gt;
+  )
+}</file><file path="src/components/layout/Header.tsx">import type { View, NavItem } from &apos;../../types&apos;
+import { useTheme } from &apos;../../hooks/useTheme&apos;
+import ThemeToggle from &apos;../ui/ThemeToggle&apos;
+
+const NAV_ITEMS: NavItem[] = [
+  { id: &apos;landing&apos;,      label: &apos;Home&apos; },
+  { id: &apos;presentation&apos;, label: &apos;About&apos; },
+  { id: &apos;experiences&apos;,  label: &apos;Work&apos; },
+  { id: &apos;contact&apos;,      label: &apos;Contact&apos; },
+]
+
+interface Props {
+  currentView: View
+  onNavigate: (view: View) =&gt; void
+}
+
+export default function Header({ currentView, onNavigate }: Props) {
+  const { theme } = useTheme()
+
+  return (
+    &lt;header className=&quot;sticky top-0 z-50 w-full border-b border-accent/10 bg-background/80 backdrop-blur-sm&quot;&gt;
+      &lt;div className=&quot;mx-auto flex h-16 max-w-5xl items-center justify-between px-6&quot;&gt;
+        {/* Logo / wordmark — placeholder */}
+        &lt;button
+          onClick={() =&gt; onNavigate(&apos;landing&apos;)}
+          className=&quot;font-mono text-sm font-semibold tracking-widest text-accent uppercase&quot;
+        &gt;
+          {&apos;// portfolio&apos;}
+        &lt;/button&gt;
+
+        &lt;nav className=&quot;flex items-center gap-6&quot;&gt;
+          {NAV_ITEMS.map(item =&gt; (
+            &lt;button
+              key={item.id}
+              onClick={() =&gt; onNavigate(item.id)}
+              className={[
+                &apos;text-sm transition-colors duration-200&apos;,
+                currentView === item.id
+                  ? &apos;text-accent font-semibold&apos;
+                  : &apos;text-foreground/60 hover:text-foreground&apos;,
+              ].join(&apos; &apos;)}
+            &gt;
+              {item.label}
+            &lt;/button&gt;
+          ))}
+          &lt;ThemeToggle /&gt;
+        &lt;/nav&gt;
+      &lt;/div&gt;
+    &lt;/header&gt;
+  )
+}</file><file path="src/components/ui/ThemeToggle.tsx">import { Sun, Moon } from &apos;lucide-react&apos;
+import { useTheme } from &apos;../../hooks/useTheme&apos;
+
+export default function ThemeToggle() {
+  const { theme, toggleTheme } = useTheme()
+
+  return (
+    &lt;button
+      onClick={toggleTheme}
+      aria-label={`Switch to ${theme === &apos;dark&apos; ? &apos;light&apos; : &apos;dark&apos;} mode`}
+      className=&quot;flex h-8 w-8 items-center justify-center rounded-full border border-accent/20 text-foreground/60 transition-colors duration-200 hover:border-accent/60 hover:text-accent&quot;
+    &gt;
+      {theme === &apos;dark&apos; ? &lt;Sun size={15} /&gt; : &lt;Moon size={15} /&gt;}
+    &lt;/button&gt;
+  )
+}</file><file path="src/context/ThemeContext.tsx">import { createContext, useContext, useEffect, useState } from &apos;react&apos;
+import type { ReactNode } from &apos;react&apos;
+import type { Theme } from &apos;../types&apos;
+
+interface ThemeContextValue {
+  theme: Theme
+  toggleTheme: () =&gt; void
+}
+
+const ThemeContext = createContext&lt;ThemeContextValue | null&gt;(null)
+
+function getInitialTheme(): Theme {
+  const saved = localStorage.getItem(&apos;theme&apos;) as Theme | null
+  if (saved === &apos;light&apos; || saved === &apos;dark&apos;) return saved
+  return window.matchMedia(&apos;(prefers-color-scheme: dark)&apos;).matches ? &apos;dark&apos; : &apos;light&apos;
+}
+
+export function ThemeProvider({ children }: { children: ReactNode }) {
+  const [theme, setTheme] = useState&lt;Theme&gt;(getInitialTheme)
+
+  useEffect(() =&gt; {
+    const root = document.documentElement
+    root.classList.toggle(&apos;dark&apos;, theme === &apos;dark&apos;)
+    localStorage.setItem(&apos;theme&apos;, theme)
+  }, [theme])
+
+  // Sync with OS preference changes only when the user has no manual override
+  useEffect(() =&gt; {
+    const mq = window.matchMedia(&apos;(prefers-color-scheme: dark)&apos;)
+    const handler = (e: MediaQueryListEvent) =&gt; {
+      if (!localStorage.getItem(&apos;theme&apos;)) {
+        setTheme(e.matches ? &apos;dark&apos; : &apos;light&apos;)
+      }
+    }
+    mq.addEventListener(&apos;change&apos;, handler)
+    return () =&gt; mq.removeEventListener(&apos;change&apos;, handler)
+  }, [])
+
+  const toggleTheme = () =&gt;
+    setTheme(prev =&gt; (prev === &apos;dark&apos; ? &apos;light&apos; : &apos;dark&apos;))
+
+  return (
+    &lt;ThemeContext.Provider value={{ theme, toggleTheme }}&gt;
+      {children}
+    &lt;/ThemeContext.Provider&gt;
+  )
+}
+
+export function useTheme(): ThemeContextValue {
+  const ctx = useContext(ThemeContext)
+  if (!ctx) throw new Error(&apos;useTheme must be used within &lt;ThemeProvider&gt;&apos;)
+  return ctx
+}</file><file path="src/data/.gitkeep"></file><file path="src/hooks/useTheme.ts">// Re-export from context so consumers can import from either path
+export { useTheme } from &apos;../context/ThemeContext&apos;</file><file path="src/pages/Contact.tsx">import { motion } from &apos;framer-motion&apos;
+import type { View } from &apos;../types&apos;
+
+interface Props {
+  onNavigate: (view: View) =&gt; void
+}
+
+export default function Contact({ onNavigate }: Props) {
+  return (
+    &lt;motion.div
+      key=&quot;contact&quot;
+      initial={{ opacity: 0, y: 24 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -24 }}
+      transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+      className=&quot;flex min-h-[calc(100vh-8rem)] items-center justify-center&quot;
+    &gt;
+      {/* Contact Page — Step 6 */}
+      &lt;p className=&quot;font-mono text-sm text-foreground/40&quot;&gt;Contact — coming in Step 6&lt;/p&gt;
+    &lt;/motion.div&gt;
+  )
+}</file><file path="src/pages/Experiences.tsx">import { motion } from &apos;framer-motion&apos;
+import type { View } from &apos;../types&apos;
+
+interface Props {
+  onNavigate: (view: View) =&gt; void
+}
+
+export default function Experiences({ onNavigate }: Props) {
+  return (
+    &lt;motion.div
+      key=&quot;experiences&quot;
+      initial={{ opacity: 0, y: 24 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -24 }}
+      transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+      className=&quot;flex min-h-[calc(100vh-8rem)] items-center justify-center&quot;
+    &gt;
+      {/* Experiences Page — Step 5 */}
+      &lt;p className=&quot;font-mono text-sm text-foreground/40&quot;&gt;Expériences — coming in Step 5&lt;/p&gt;
+    &lt;/motion.div&gt;
+  )
+}</file><file path="src/pages/Landing.tsx">import { motion } from &apos;framer-motion&apos;
+import type { View } from &apos;../types&apos;
+
+interface Props {
+  onNavigate: (view: View) =&gt; void
+}
+
+export default function Landing({ onNavigate }: Props) {
+  return (
+    &lt;motion.div
+      key=&quot;landing&quot;
+      initial={{ opacity: 0, y: 24 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -24 }}
+      transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+      className=&quot;flex min-h-[calc(100vh-8rem)] items-center justify-center&quot;
+    &gt;
+      {/* Landing Page — Step 3 */}
+      &lt;p className=&quot;font-mono text-sm text-foreground/40&quot;&gt;Landing — coming in Step 3&lt;/p&gt;
+    &lt;/motion.div&gt;
+  )
+}</file><file path="src/pages/Presentation.tsx">import { motion } from &apos;framer-motion&apos;
+import type { View } from &apos;../types&apos;
+
+interface Props {
+  onNavigate: (view: View) =&gt; void
+}
+
+export default function Presentation({ onNavigate }: Props) {
+  return (
+    &lt;motion.div
+      key=&quot;presentation&quot;
+      initial={{ opacity: 0, y: 24 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -24 }}
+      transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+      className=&quot;flex min-h-[calc(100vh-8rem)] items-center justify-center&quot;
+    &gt;
+      {/* Presentation Page — Step 4 */}
+      &lt;p className=&quot;font-mono text-sm text-foreground/40&quot;&gt;Présentation — coming in Step 4&lt;/p&gt;
+    &lt;/motion.div&gt;
+  )
+}</file><file path="src/types/index.ts">export type View = &apos;landing&apos; | &apos;presentation&apos; | &apos;experiences&apos; | &apos;contact&apos;
+export type Theme = &apos;light&apos; | &apos;dark&apos;
+
+export interface NavItem {
+  id: View
+  label: string
+}</file><file path="src/App.css">/* App-level styles — component styles live in their own files via Tailwind */</file><file path="src/App.tsx">import { useState } from &apos;react&apos;
+import { AnimatePresence } from &apos;framer-motion&apos;
+import { ThemeProvider } from &apos;./context/ThemeContext&apos;
+import Header from &apos;./components/layout/Header&apos;
+import Footer from &apos;./components/layout/Footer&apos;
+import Landing from &apos;./pages/Landing&apos;
+import Presentation from &apos;./pages/Presentation&apos;
+import Experiences from &apos;./pages/Experiences&apos;
+import Contact from &apos;./pages/Contact&apos;
+import type { View } from &apos;./types&apos;
+
+const PAGES = {
+  landing:      Landing,
+  presentation: Presentation,
+  experiences:  Experiences,
+  contact:      Contact,
+} as const
+
+function AppShell() {
+  const [currentView, setCurrentView] = useState&lt;View&gt;(&apos;landing&apos;)
+  const Page = PAGES[currentView]
+
+  return (
+    &lt;div className=&quot;flex min-h-screen flex-col bg-background text-foreground&quot;&gt;
+      &lt;Header currentView={currentView} onNavigate={setCurrentView} /&gt;
+      &lt;main className=&quot;flex-1&quot;&gt;
+        &lt;AnimatePresence mode=&quot;wait&quot;&gt;
+          &lt;Page key={currentView} onNavigate={setCurrentView} /&gt;
+        &lt;/AnimatePresence&gt;
+      &lt;/main&gt;
+      &lt;Footer /&gt;
+    &lt;/div&gt;
+  )
+}
+
+export default function App() {
+  return (
+    &lt;ThemeProvider&gt;
+      &lt;AppShell /&gt;
+    &lt;/ThemeProvider&gt;
+  )
+}</file><file path="src/index.css">@import &quot;tailwindcss&quot;;
+
+/* Class-based dark mode: apply .dark to &lt;html&gt; */
+@custom-variant dark (&amp;:where(.dark, .dark *));
+
+/* ─── Design tokens exposed as Tailwind utility classes ─── */
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-accent:     var(--accent);
+  --color-accent-muted: var(--accent-muted);
+
+  --font-sans: &apos;Inter&apos;, system-ui, sans-serif;
+  --font-mono: &apos;JetBrains Mono&apos;, ui-monospace, monospace;
+}
+
+/* ─── Light theme (default) ─── */
+:root {
+  color-scheme: light;
+  --background:    #FAFAC6;
+  --foreground:    #141018;
+  --accent:        #30283E;
+  --accent-muted:  rgba(48, 40, 62, 0.08);
+}
+
+/* ─── Dark theme ─── */
+.dark {
+  color-scheme: dark;
+  --background:    #141018;
+  --foreground:    #FAFAC6;
+  --accent:        #9383AF;
+  --accent-muted:  rgba(147, 131, 175, 0.12);
+}
+
+/* ─── Global resets ─── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}</file><file path="src/main.tsx">import { StrictMode } from &apos;react&apos;
+import { createRoot } from &apos;react-dom/client&apos;
+import &apos;./index.css&apos;
+import App from &apos;./App.tsx&apos;
+
+createRoot(document.getElementById(&apos;root&apos;)!).render(
+  &lt;StrictMode&gt;
+    &lt;App /&gt;
+  &lt;/StrictMode&gt;,
+)</file><file path=".gitignore"># Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?</file><file path=".oxlintrc.json">{
+  &quot;$schema&quot;: &quot;./node_modules/oxlint/configuration_schema.json&quot;,
+  &quot;plugins&quot;: [&quot;react&quot;, &quot;typescript&quot;, &quot;oxc&quot;],
+  &quot;rules&quot;: {
+    &quot;react/rules-of-hooks&quot;: &quot;error&quot;,
+    &quot;react/only-export-components&quot;: [&quot;warn&quot;, { &quot;allowConstantExport&quot;: true }]
+  }
+}</file><file path="index.html">&lt;!doctype html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot; /&gt;
+    &lt;link rel=&quot;icon&quot; type=&quot;image/svg+xml&quot; href=&quot;/favicon.svg&quot; /&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
+    &lt;title&gt;portfolio&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div id=&quot;root&quot;&gt;&lt;/div&gt;
+    &lt;script type=&quot;module&quot; src=&quot;/src/main.tsx&quot;&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</file><file path="package.json">{
+  &quot;name&quot;: &quot;portfolio&quot;,
+  &quot;private&quot;: true,
+  &quot;version&quot;: &quot;0.0.0&quot;,
+  &quot;type&quot;: &quot;module&quot;,
+  &quot;scripts&quot;: {
+    &quot;dev&quot;: &quot;vite&quot;,
+    &quot;build&quot;: &quot;tsc -b &amp;&amp; vite build&quot;,
+    &quot;lint&quot;: &quot;oxlint&quot;,
+    &quot;preview&quot;: &quot;vite preview&quot;
+  },
+  &quot;dependencies&quot;: {
+    &quot;framer-motion&quot;: &quot;^12.42.0&quot;,
+    &quot;lucide-react&quot;: &quot;^1.21.0&quot;,
+    &quot;react&quot;: &quot;^19.2.7&quot;,
+    &quot;react-dom&quot;: &quot;^19.2.7&quot;
+  },
+  &quot;devDependencies&quot;: {
+    &quot;@tailwindcss/vite&quot;: &quot;^4.3.1&quot;,
+    &quot;@types/node&quot;: &quot;^24.13.2&quot;,
+    &quot;@types/react&quot;: &quot;^19.2.17&quot;,
+    &quot;@types/react-dom&quot;: &quot;^19.2.3&quot;,
+    &quot;@vitejs/plugin-react&quot;: &quot;^6.0.2&quot;,
+    &quot;oxlint&quot;: &quot;^1.69.0&quot;,
+    &quot;tailwindcss&quot;: &quot;^4.3.1&quot;,
+    &quot;typescript&quot;: &quot;~6.0.2&quot;,
+    &quot;vite&quot;: &quot;^8.1.0&quot;
+  }
+}</file><file path="README.md"># React + TypeScript + Vite
+
+This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+
+Currently, two official plugins are available:
+
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+
+## React Compiler
+
+The React Compiler is not enabled on this template because of its impact on dev &amp; build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+
+## Expanding the Oxlint configuration
+
+If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+
+```json
+{
+  &quot;$schema&quot;: &quot;./node_modules/oxlint/configuration_schema.json&quot;,
+  &quot;plugins&quot;: [&quot;react&quot;, &quot;typescript&quot;, &quot;oxc&quot;],
+  &quot;options&quot;: {
+    &quot;typeAware&quot;: true
+  },
+  &quot;rules&quot;: {
+    &quot;react/rules-of-hooks&quot;: &quot;error&quot;,
+    &quot;react/only-export-components&quot;: [&quot;warn&quot;, { &quot;allowConstantExport&quot;: true }]
+  }
+}
+```
+
+See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.</file><file path="tsconfig.app.json">{
+  &quot;compilerOptions&quot;: {
+    &quot;tsBuildInfoFile&quot;: &quot;./node_modules/.tmp/tsconfig.app.tsbuildinfo&quot;,
+    &quot;target&quot;: &quot;es2023&quot;,
+    &quot;lib&quot;: [&quot;ES2023&quot;, &quot;DOM&quot;],
+    &quot;module&quot;: &quot;esnext&quot;,
+    &quot;types&quot;: [&quot;vite/client&quot;],
+    &quot;skipLibCheck&quot;: true,
+
+    /* Bundler mode */
+    &quot;moduleResolution&quot;: &quot;bundler&quot;,
+    &quot;allowImportingTsExtensions&quot;: true,
+    &quot;verbatimModuleSyntax&quot;: true,
+    &quot;moduleDetection&quot;: &quot;force&quot;,
+    &quot;noEmit&quot;: true,
+    &quot;jsx&quot;: &quot;react-jsx&quot;,
+
+    /* Linting */
+    &quot;noUnusedLocals&quot;: true,
+    &quot;noUnusedParameters&quot;: true,
+    &quot;erasableSyntaxOnly&quot;: true,
+    &quot;noFallthroughCasesInSwitch&quot;: true
+  },
+  &quot;include&quot;: [&quot;src&quot;]
+}</file><file path="tsconfig.json">{
+  &quot;files&quot;: [],
+  &quot;references&quot;: [
+    { &quot;path&quot;: &quot;./tsconfig.app.json&quot; },
+    { &quot;path&quot;: &quot;./tsconfig.node.json&quot; }
+  ]
+}</file><file path="tsconfig.node.json">{
+  &quot;compilerOptions&quot;: {
+    &quot;tsBuildInfoFile&quot;: &quot;./node_modules/.tmp/tsconfig.node.tsbuildinfo&quot;,
+    &quot;target&quot;: &quot;es2023&quot;,
+    &quot;lib&quot;: [&quot;ES2023&quot;],
+    &quot;types&quot;: [&quot;node&quot;],
+    &quot;skipLibCheck&quot;: true,
+
+    /* Bundler mode */
+    &quot;module&quot;: &quot;nodenext&quot;,
+    &quot;allowImportingTsExtensions&quot;: true,
+    &quot;verbatimModuleSyntax&quot;: true,
+    &quot;moduleDetection&quot;: &quot;force&quot;,
+    &quot;noEmit&quot;: true,
+
+    /* Linting */
+    &quot;noUnusedLocals&quot;: true,
+    &quot;noUnusedParameters&quot;: true,
+    &quot;erasableSyntaxOnly&quot;: true,
+    &quot;noFallthroughCasesInSwitch&quot;: true
+  },
+  &quot;include&quot;: [&quot;vite.config.ts&quot;]
+}</file><file path="vite.config.ts">import { defineConfig } from &apos;vite&apos;
+import react from &apos;@vitejs/plugin-react&apos;
+import tailwindcss from &apos;@tailwindcss/vite&apos;
+
+export default defineConfig({
+  plugins: [
+    react(),
+    tailwindcss(),
+  ],
+})</file></files></repomix>
