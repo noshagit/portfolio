@@ -15,7 +15,7 @@ export default function Footer({ onNavigate }: Props) {
         <div className="flex items-center gap-4">
           <button
             onClick={() => onNavigate('contact')}
-            className="text-[10px] font-semibold uppercase tracking-widest text-foreground/40
+            className="text-[10px] font-semibold uppercase tracking-widest text-foreground/60
                        transition-all duration-200 hover:text-accent"
           >
             Contact
@@ -27,14 +27,14 @@ export default function Footer({ onNavigate }: Props) {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
-              className="text-foreground/30 transition-all duration-200 hover:text-accent"
+              className="text-foreground/60 transition-all duration-200 hover:text-accent"
             >
               <LinkedInIcon size={13} />
             </a>
             <a
               href="mailto:ilianbenhamou2163@gmail.com"
               aria-label="Email"
-              className="text-foreground/30 transition-all duration-200 hover:text-accent"
+              className="text-foreground/60 transition-all duration-200 hover:text-accent"
             >
               <Mail size={13} />
             </a>
@@ -42,7 +42,7 @@ export default function Footer({ onNavigate }: Props) {
         </div>
 
         {/* Right — monospace contact details (cyber feel per spec) */}
-        <div className="hidden text-right font-mono text-[11px] leading-relaxed text-foreground/30 sm:block">
+        <div className="hidden text-right font-mono text-[11px] leading-relaxed text-foreground/60 sm:block">
           <p>BEN HAMOU Ilian</p>
           <p>+33781583839</p>
           <p>ilianbenhamou2163@gmail.com</p>

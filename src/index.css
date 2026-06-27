@@ -19,8 +19,8 @@
   color-scheme: light;
   --background:    #FAFAC6;
   --foreground:    #141018;
-  --accent:        #9685b4;
-  --accent-muted:  rgba(48, 40, 62, 0.08);
+  --accent:        #7B5EA7;
+  --accent-muted:  rgba(90, 62, 148, 0.10);
 }
 
 /* ─── Dark theme ─── */
@@ -41,6 +41,7 @@
 
 html {
   scroll-behavior: smooth;
+  font-family: var(--font-sans);
 }
 
 body {
@@ -51,8 +52,20 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Unlayered (beats Tailwind utilities layer): guarantee font inheritance
+   on form elements regardless of user-agent or Preflight layer order. */
+button, input, textarea, select, [role="button"] {
+  font-family: inherit;
+}
+
 button, [role="button"] {
   cursor: pointer;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
 }
 
 /* Applied only during theme toggle — keeps hover animations snappy */

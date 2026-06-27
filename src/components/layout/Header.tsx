@@ -36,6 +36,7 @@ export default function Header({ currentView, onNavigate }: Props) {
           <div className="flex flex-1">
             <button
               onClick={() => navigate('landing')}
+              aria-label="Accueil"
               className="text-sm font-bold uppercase tracking-[0.25em] text-accent
                          transition-opacity duration-200 hover:opacity-50"
             >
@@ -45,7 +46,7 @@ export default function Header({ currentView, onNavigate }: Props) {
 
           {/* Center — desktop nav with dot separators */}
           <LayoutGroup>
-            <nav className="hidden items-center md:flex">
+            <nav aria-label="Navigation principale" className="hidden items-center md:flex">
               {NAV_ITEMS.map((item, i) => {
                 const isActive = currentView === item.id
                 return (
@@ -57,11 +58,12 @@ export default function Header({ currentView, onNavigate }: Props) {
                     )}
                     <button
                       onClick={() => navigate(item.id)}
+                      aria-current={isActive ? 'page' : undefined}
                       className={[
                         'relative py-1 text-sm font-medium transition-colors duration-200',
                         isActive
                           ? 'text-foreground'
-                          : 'text-foreground/40 hover:text-foreground/70',
+                          : 'text-foreground/60 hover:text-foreground',
                       ].join(' ')}
                     >
                       {item.label}
@@ -87,7 +89,7 @@ export default function Header({ currentView, onNavigate }: Props) {
               rel="noopener noreferrer"
               aria-label="LinkedIn"
               className="flex h-8 w-8 items-center justify-center rounded-full border border-accent/20
-                         text-foreground/50 transition-all duration-200 hover:border-accent/60 hover:text-accent"
+                         text-foreground/60 transition-all duration-200 hover:border-accent/60 hover:text-accent"
             >
               <LinkedInIcon size={15} />
             </a>
@@ -99,7 +101,7 @@ export default function Header({ currentView, onNavigate }: Props) {
               aria-label={menuOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={menuOpen}
               className="flex h-8 w-8 items-center justify-center rounded-full border border-accent/20
-                         text-foreground/50 transition-all duration-200 hover:border-accent/60 hover:text-accent md:hidden"
+                         text-foreground/60 transition-all duration-200 hover:border-accent/60 hover:text-accent md:hidden"
             >
               <AnimatePresence mode="wait" initial={false}>
                 {menuOpen
@@ -143,7 +145,7 @@ export default function Header({ currentView, onNavigate }: Props) {
             transition={{ duration: 0.2 }}
             className="fixed inset-0 top-16 z-40 flex flex-col bg-background/98 backdrop-blur-md md:hidden"
           >
-            <nav className="flex flex-1 flex-col items-center justify-center gap-8">
+            <nav aria-label="Navigation mobile" className="flex flex-1 flex-col items-center justify-center gap-8">
               {NAV_ITEMS.map((item, i) => {
                 const isActive = currentView === item.id
                 return (
@@ -155,7 +157,7 @@ export default function Header({ currentView, onNavigate }: Props) {
                     onClick={() => navigate(item.id)}
                     className={[
                       'text-2xl font-bold uppercase tracking-widest transition-colors duration-200',
-                      isActive ? 'text-accent' : 'text-foreground/35 hover:text-foreground',
+                      isActive ? 'text-accent' : 'text-foreground/60 hover:text-foreground',
                     ].join(' ')}
                   >
                     {item.label}
@@ -175,7 +177,7 @@ export default function Header({ currentView, onNavigate }: Props) {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
-                className="text-foreground/30 transition-colors duration-200 hover:text-accent"
+                className="text-foreground/60 transition-colors duration-200 hover:text-accent"
               >
                 <LinkedInIcon size={20} />
               </a>

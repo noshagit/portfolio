@@ -49,8 +49,10 @@ export default function Landing({ onNavigate }: Props) {
         <div className="flex flex-col items-center gap-14 text-center sm:gap-20">
 
           {/* ── Name ────────────────────────────────────────────────── */}
-          <motion.div variants={NAME_CONTAINER} className="flex flex-col items-center">
-
+          <motion.h1
+            variants={NAME_CONTAINER}
+            className="flex flex-col items-center"
+          >
             {/* First name — light weight for hierarchy contrast */}
             <div className="overflow-hidden pb-1">
               <motion.span
@@ -75,7 +77,7 @@ export default function Landing({ onNavigate }: Props) {
                 </motion.span>
               ))}
             </div>
-          </motion.div>
+          </motion.h1>
 
           {/* ── CTAs ────────────────────────────────────────────────── */}
           <motion.div
@@ -109,7 +111,7 @@ export default function Landing({ onNavigate }: Props) {
               className="flex items-center gap-2.5 rounded-lg
                          border border-foreground/20 hover:border-accent/50
                          px-6 py-3 text-sm font-medium
-                         text-foreground/55 hover:text-foreground
+                         text-foreground/60 hover:text-foreground
                          transition-all duration-300"
             >
               <Download size={15} />

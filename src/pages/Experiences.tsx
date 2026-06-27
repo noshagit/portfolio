@@ -1,28 +1,46 @@
 import { useState, useMemo, useEffect } from 'react'
 import type { ReactNode } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Search, X, ChevronRight } from 'lucide-react'
+import { X, ChevronRight, ExternalLink } from 'lucide-react'
 import type { View } from '../types'
 import RAW from '../data/experiences.json'
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
-interface Experience {
-  id:                  string
-  nom:                 string
-  date:                string
-  type:                string
-  domaine:             string[]
-  employeur_collab:    string
-  description:         string
-  metiers_lies:        string[]
-  competences_obtenir: string[]
-  soft_skills_utilises: string[]
+interface ExpLink {
+  label: string
+  url:   string
 }
 
-const EXPERIENCES   = RAW as Experience[]
-const ALL_TYPES     = Array.from(new Set(EXPERIENCES.map(e => e.type)))
-const ALL_DOMAINES  = Array.from(new Set(EXPERIENCES.flatMap(e => e.domaine)))
+interface Experience {
+  id:                   string
+  nom:                  string
+  date:                 string
+  type:                 string
+  domaine:              string[]
+  employeur_collab:     string
+  description:          string
+  metiers_lies:         string[]
+  competences_obtenir:  string[]
+  soft_skills_utilises: string[]
+  links?:               ExpLink[]
+}
+
+const EXPERIENCES  = RAW as Experience[]
+const ALL_TYPES    = Array.from(new Set(EXPERIENCES.map(e => e.type)))
+const ALL_DOMAINES = Array.from(new Set(EXPERIENCES.flatMap(e => e.domaine)))
+
+// ── Image map (Vite resolves at build time) ───────────────────────────────────
+// Drop files into src/assets/experiences/{experience-id}/ to activate the gallery.
+const RAW_IMAGES = import.meta.glob<{ default: string }>(
+  '../assets/experiences/**/*.{jpg,jpeg,png,webp,avif}',
+  { eager: true },
+)
+const EXPERIENCE_IMAGES: Record<string, string[]> = {}
+for (const [path, mod] of Object.entries(RAW_IMAGES)) {
+  const id = path.split('/').at(-2) ?? ''
+  if (id) (EXPERIENCE_IMAGES[id] ??= []).push(mod.default)
+}
 const EASE        = [0.22, 1, 0.36, 1] as const
 
 type SortDir = 'desc' | 'asc'
@@ -47,7 +65,7 @@ function Tag({ children, accent = false }: { children: ReactNode; accent?: boole
         'border px-2.5 py-1 font-mono text-xs',
         accent
           ? 'border-accent/35 text-accent'
-          : 'border-accent/15 text-foreground/50',
+          : 'border-accent/15 text-foreground/60',
       ].join(' ')}
     >
       {children}
@@ -66,10 +84,14 @@ function ExperienceCard({ exp, onOpen }: { exp: Experience; onOpen: () => void }
       exit={{ opacity: 0, scale: 0.94 }}
       transition={{ duration: 0.28, ease: EASE }}
       onClick={onOpen}
+      onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onOpen() } }}
+      role="button"
+      tabIndex={0}
+      aria-label={`Voir le détail : ${exp.nom}`}
       className="group flex flex-col gap-4 border border-accent/15 p-5 transition-colors duration-200 hover:border-accent/40 hover:bg-accent-muted"
     >
       {/* Type badge */}
-      <span className="self-start border border-accent/20 px-2 py-0.5 font-mono text-[10px] uppercase tracking-widest text-foreground/45">
+      <span className="self-start border border-accent/20 px-2 py-0.5 font-mono text-[10px] uppercase tracking-widest text-foreground/60">
         {exp.type}
       </span>
 
@@ -78,15 +100,15 @@ function ExperienceCard({ exp, onOpen }: { exp: Experience; onOpen: () => void }
         <h3 className="mb-1 text-sm font-bold leading-snug text-foreground">
           {exp.nom}
         </h3>
-        <p className="font-mono text-xs text-foreground/50">{exp.employeur_collab}</p>
+        <p className="font-mono text-xs text-foreground/60">{exp.employeur_collab}</p>
       </div>
 
       {/* Date + arrow */}
       <div className="flex items-center justify-between">
-        <span className="font-mono text-xs text-foreground/30">{exp.date}</span>
+        <span className="font-mono text-xs text-foreground/60">{exp.date}</span>
         <ChevronRight
           size={14}
-          className="text-foreground/25 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:text-accent"
+          className="text-foreground/60 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:text-accent"
         />
       </div>
     </motion.article>
@@ -135,19 +157,19 @@ function ExperienceModal({ exp, onClose }: { exp: Experience; onClose: () => voi
           <button
             onClick={onClose}
             aria-label="Fermer"
-            className="absolute right-5 top-5 flex h-8 w-8 items-center justify-center text-foreground/35 transition-colors duration-150 hover:text-foreground"
+            className="absolute right-5 top-5 flex h-8 w-8 items-center justify-center text-foreground/60 transition-colors duration-150 hover:text-foreground"
           >
             <X size={15} />
           </button>
 
           {/* Header */}
           <div className="mb-8 pr-10">
-            <span className="mb-3 inline-block border border-accent/20 px-2 py-0.5 font-mono text-[10px] uppercase tracking-widest text-foreground/45">
+            <span className="mb-3 inline-block border border-accent/20 px-2 py-0.5 font-mono text-[10px] uppercase tracking-widest text-foreground/60">
               {exp.type}
             </span>
             <h2 className="mb-1 text-2xl font-black text-foreground">{exp.nom}</h2>
             <p className="font-mono text-sm text-accent">{exp.employeur_collab}</p>
-            <p className="mt-1 font-mono text-xs text-foreground/35">{exp.date}</p>
+            <p className="mt-1 font-mono text-xs text-foreground/60">{exp.date}</p>
           </div>
 
           {/* Description */}
@@ -155,6 +177,31 @@ function ExperienceModal({ exp, onClose }: { exp: Experience; onClose: () => voi
             <SectionLabel>// description</SectionLabel>
             <p className="text-sm leading-relaxed text-foreground/60">{exp.description}</p>
           </section>
+
+          {/* Images — rendered only when files exist in src/assets/experiences/{id}/ */}
+          {(EXPERIENCE_IMAGES[exp.id]?.length ?? 0) > 0 && (
+            <section className="mb-8">
+              <SectionLabel>// images</SectionLabel>
+              <div
+                className={[
+                  'grid gap-2',
+                  EXPERIENCE_IMAGES[exp.id].length === 1
+                    ? 'grid-cols-1'
+                    : 'grid-cols-2',
+                ].join(' ')}
+              >
+                {EXPERIENCE_IMAGES[exp.id].map((src, i) => (
+                  <img
+                    key={src}
+                    src={src}
+                    alt={`${exp.nom} — photo ${i + 1}`}
+                    className="aspect-video w-full object-cover"
+                    loading="lazy"
+                  />
+                ))}
+              </div>
+            </section>
+          )}
 
           {/* Métiers liés */}
           <section className="mb-6">
@@ -173,12 +220,35 @@ function ExperienceModal({ exp, onClose }: { exp: Experience; onClose: () => voi
           </section>
 
           {/* Soft skills */}
-          <section>
+          <section className={exp.links?.length ? 'mb-8' : ''}>
             <SectionLabel>// soft skills utilisés</SectionLabel>
             <div className="flex flex-wrap gap-2">
               {exp.soft_skills_utilises.map(s => <Tag key={s}>{s}</Tag>)}
             </div>
           </section>
+
+          {/* Links — rendered only when the experience has entries in links[] */}
+          {exp.links && exp.links.length > 0 && (
+            <section className="border-t border-accent/10 pt-6">
+              <SectionLabel>// liens</SectionLabel>
+              <div className="flex flex-col gap-2">
+                {exp.links.map(link => (
+                  <a
+                    key={link.url}
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 font-mono text-xs
+                               text-foreground/60 transition-colors duration-150
+                               hover:text-accent"
+                  >
+                    <ExternalLink size={11} aria-hidden="true" />
+                    {link.label}
+                  </a>
+                ))}
+              </div>
+            </section>
+          )}
         </motion.div>
       </div>
     </>
@@ -192,26 +262,43 @@ interface Props {
 }
 
 export default function Experiences({ onNavigate: _onNavigate }: Props) {
-  const [search,        setSearch]        = useState('')
   const [activeType,    setActiveType]    = useState<string | null>(null)
   const [activeDomaine, setActiveDomaine] = useState<string | null>(null)
   const [selected,      setSelected]      = useState<Experience | null>(null)
   const [sort,          setSort]          = useState<SortDir>('desc')
 
   const filtered = useMemo(() => {
-    const q = search.toLowerCase()
     return EXPERIENCES
       .filter(exp =>
-        (activeType    === null || exp.type    === activeType)    &&
-        (activeDomaine === null || exp.domaine.includes(activeDomaine)) &&
-        exp.nom.toLowerCase().includes(q)
+        (activeType    === null || exp.type    === activeType) &&
+        (activeDomaine === null || exp.domaine.includes(activeDomaine))
       )
       .sort((a, b) =>
         sort === 'desc'
           ? yearMax(b.date) - yearMax(a.date) || yearMin(b.date) - yearMin(a.date)
           : yearMin(a.date) - yearMin(b.date) || yearMax(a.date) - yearMax(b.date)
       )
-  }, [search, activeType, activeDomaine, sort])
+  }, [activeType, activeDomaine, sort])
+
+  // Which types are reachable given the active domain (domain filter only, no type filter)
+  const availableTypes = useMemo(() => {
+    if (activeDomaine === null) return new Set(ALL_TYPES)
+    return new Set(
+      EXPERIENCES
+        .filter(e => e.domaine.includes(activeDomaine))
+        .map(e => e.type)
+    )
+  }, [activeDomaine])
+
+  // Which domains are reachable given the active type (type filter only, no domain filter)
+  const availableDomaines = useMemo(() => {
+    if (activeType === null) return new Set(ALL_DOMAINES)
+    return new Set(
+      EXPERIENCES
+        .filter(e => e.type === activeType)
+        .flatMap(e => e.domaine)
+    )
+  }, [activeType])
 
   return (
     <motion.div
@@ -228,68 +315,75 @@ export default function Experiences({ onNavigate: _onNavigate }: Props) {
             // expériences & participations
           </p>
 
-          {/* Search */}
-          <div className="relative">
-            <Search
-              size={13}
-              className="absolute left-4 top-1/2 -translate-y-1/2 text-foreground/30"
-            />
-            <input
-              type="search"
-              placeholder="Rechercher une expérience…"
-              value={search}
-              onChange={e => setSearch(e.target.value)}
-              className="w-full border border-accent/20 bg-transparent py-2.5 pl-10 pr-4 font-mono text-sm text-foreground placeholder:text-foreground/25 outline-none transition-colors duration-200 focus:border-accent/50"
-            />
-          </div>
-
           {/* Type filters */}
-          <div className="flex flex-wrap gap-2">
-            {(['Tous', ...ALL_TYPES] as const).map(label => {
-              const value = label === 'Tous' ? null : label
-              const isActive = activeType === value
-              return (
-                <button
-                  key={label}
-                  onClick={() => setActiveType(isActive && value !== null ? null : value)}
-                  className={[
-                    'border px-3 py-1 font-mono text-xs transition-all duration-200',
-                    isActive
-                      ? 'border-accent bg-accent text-background'
-                      : 'border-accent/20 text-foreground/50 hover:border-accent/40 hover:text-foreground',
-                  ].join(' ')}
-                >
-                  {label}
-                </button>
-              )
-            })}
-          </div>
+          <motion.div layout role="group" aria-label="Filtrer par type" className="flex flex-wrap gap-2">
+            <AnimatePresence mode="popLayout">
+              {(['Tous', ...ALL_TYPES] as const)
+                .filter(label => label === 'Tous' || availableTypes.has(label))
+                .map(label => {
+                  const value = label === 'Tous' ? null : label
+                  const isActive = activeType === value
+                  return (
+                    <motion.button
+                      key={label}
+                      layout
+                      initial={{ opacity: 0, scale: 0.88 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: 0.88 }}
+                      transition={{ duration: 0.16, ease: EASE }}
+                      onClick={() => setActiveType(isActive && value !== null ? null : value)}
+                      aria-pressed={isActive}
+                      className={[
+                        'border px-3 py-1 font-mono text-xs transition-colors duration-200',
+                        isActive
+                          ? 'border-accent bg-accent text-background'
+                          : 'border-accent/20 text-foreground/60 hover:border-accent/60 hover:text-foreground',
+                      ].join(' ')}
+                    >
+                      {label}
+                    </motion.button>
+                  )
+                })
+              }
+            </AnimatePresence>
+          </motion.div>
 
           {/* Domain filters */}
-          <div className="flex flex-wrap gap-2">
-            {(['Tous', ...ALL_DOMAINES] as const).map(label => {
-              const value = label === 'Tous' ? null : label
-              const isActive = activeDomaine === value
-              return (
-                <button
-                  key={label}
-                  onClick={() => setActiveDomaine(isActive && value !== null ? null : value)}
-                  className={[
-                    'border px-3 py-1 font-mono text-xs transition-all duration-200',
-                    isActive
-                      ? 'border-accent bg-accent text-background'
-                      : 'border-accent/20 text-foreground/50 hover:border-accent/40 hover:text-foreground',
-                  ].join(' ')}
-                >
-                  {label}
-                </button>
-              )
-            })}
-          </div>
+          <motion.div layout role="group" aria-label="Filtrer par domaine" className="flex flex-wrap gap-2">
+            <AnimatePresence mode="popLayout">
+              {(['Tous', ...ALL_DOMAINES] as const)
+                .filter(label => label === 'Tous' || availableDomaines.has(label))
+                .map(label => {
+                  const value = label === 'Tous' ? null : label
+                  const isActive = activeDomaine === value
+                  return (
+                    <motion.button
+                      key={label}
+                      layout
+                      initial={{ opacity: 0, scale: 0.88 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: 0.88 }}
+                      transition={{ duration: 0.16, ease: EASE }}
+                      onClick={() => setActiveDomaine(isActive && value !== null ? null : value)}
+                      aria-pressed={isActive}
+                      className={[
+                        'border px-3 py-1 font-mono text-xs transition-colors duration-200',
+                        isActive
+                          ? 'border-accent bg-accent text-background'
+                          : 'border-accent/20 text-foreground/60 hover:border-accent/60 hover:text-foreground',
+                      ].join(' ')}
+                    >
+                      {label}
+                    </motion.button>
+                  )
+                })
+              }
+            </AnimatePresence>
+          </motion.div>
 
           {/* Sort */}
-          <div className="flex items-center gap-3">
-            <span className="font-mono text-[10px] uppercase tracking-widest text-foreground/30">
+          <div role="group" aria-label="Trier les expériences" className="flex items-center gap-3">
+            <span className="font-mono text-[10px] uppercase tracking-widest text-foreground/60">
               Trier par
             </span>
             {([
@@ -299,11 +393,12 @@ export default function Experiences({ onNavigate: _onNavigate }: Props) {
               <button
                 key={dir}
                 onClick={() => setSort(dir)}
+                aria-pressed={sort === dir}
                 className={[
                   'border px-3 py-1 font-mono text-xs transition-all duration-200',
                   sort === dir
                     ? 'border-accent bg-accent text-background'
-                    : 'border-accent/20 text-foreground/50 hover:border-accent/40 hover:text-foreground',
+                    : 'border-accent/20 text-foreground/60 hover:border-accent/60 hover:text-foreground',
                 ].join(' ')}
               >
                 {label}
@@ -313,6 +408,9 @@ export default function Experiences({ onNavigate: _onNavigate }: Props) {
         </div>
 
         {/* ── Grid ──────────────────────────────────────────────────── */}
+        <div aria-live="polite" aria-atomic="false" className="sr-only">
+          {filtered.length} résultat{filtered.length !== 1 ? 's' : ''}
+        </div>
         <motion.div layout className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           <AnimatePresence mode="popLayout">
             {filtered.map(exp => (
@@ -332,7 +430,7 @@ export default function Experiences({ onNavigate: _onNavigate }: Props) {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="py-20 text-center font-mono text-xs text-foreground/30"
+              className="py-20 text-center font-mono text-xs text-foreground/60"
             >
               Aucune expérience ne correspond à votre recherche.
             </motion.p>

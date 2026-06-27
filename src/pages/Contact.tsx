@@ -67,7 +67,7 @@ function PopoverContactLink({
         size={15}
         className={[
           'mt-0.5 shrink-0 transition-colors duration-200',
-          open ? 'text-accent' : 'text-foreground/25',
+          open ? 'text-accent' : 'text-foreground/60',
         ].join(' ')}
       />
 
@@ -75,6 +75,7 @@ function PopoverContactLink({
         {/* Trigger */}
         <button
           onClick={() => setOpen(prev => !prev)}
+          aria-expanded={open}
           className="group relative text-left text-sm text-foreground/60
                      transition-colors duration-200 hover:text-foreground sm:text-base md:text-lg"
         >
@@ -96,7 +97,7 @@ function PopoverContactLink({
               <button
                 onClick={handleCopy}
                 className="flex items-center gap-1.5 rounded border border-accent/25 px-2.5 py-1
-                           text-xs text-foreground/50 transition-colors duration-150
+                           text-xs text-foreground/60 transition-colors duration-150
                            hover:border-accent/60 hover:text-foreground"
               >
                 {copied
@@ -108,7 +109,7 @@ function PopoverContactLink({
               <a
                 href={actionHref}
                 className="flex items-center gap-1.5 rounded border border-accent/25 px-2.5 py-1
-                           text-xs text-foreground/50 transition-colors duration-150
+                           text-xs text-foreground/60 transition-colors duration-150
                            hover:border-accent/60 hover:text-foreground"
               >
                 <ActionIcon size={11} />
@@ -144,7 +145,7 @@ export default function Contact({ onNavigate: _onNavigate }: Props) {
           {/* ── Label ─────────────────────────────────────────────── */}
           <motion.p
             variants={LINE}
-            className="mb-8 text-xs font-semibold uppercase tracking-widest text-accent/70 sm:mb-12"
+            className="mb-8 text-xs font-semibold uppercase tracking-widest text-accent sm:mb-12"
           >
             Contact
           </motion.p>
@@ -198,8 +199,8 @@ export default function Contact({ onNavigate: _onNavigate }: Props) {
 
           {/* ── Mobility label ────────────────────────────────────── */}
           <motion.div variants={LINE} className="mb-5 flex items-center gap-2 sm:mb-6">
-            <MapPin size={11} className="text-foreground/30" />
-            <p className="text-xs font-semibold uppercase tracking-widest text-foreground/40">
+            <MapPin size={11} className="text-foreground/60" />
+            <p className="text-xs font-semibold uppercase tracking-widest text-foreground/60">
               Zone de mobilité / Lieux de travail
             </p>
           </motion.div>
@@ -221,7 +222,7 @@ export default function Contact({ onNavigate: _onNavigate }: Props) {
           </motion.div>
 
           {/* ── Remote note ───────────────────────────────────────── */}
-          <motion.p variants={LINE} className="text-xs text-foreground/35">
+          <motion.p variants={LINE} className="text-xs text-foreground/60">
             Ouvert aux propositions (Full Remote / Déplacements)
           </motion.p>
 

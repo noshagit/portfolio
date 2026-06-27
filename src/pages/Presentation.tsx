@@ -20,7 +20,7 @@ const RECOMMENDATIONS = [
     id:   'iaboni',
     label: 'Alexandra IABONI',
     role:  'Responsable des admissions - Lyon Ynov Campus',
-    text:  "Alexandra m'a côtoyé en tant qu'ambassadeur de l'école et membre du Bureau des Sports. Elle atteste de mon engagement dans la vie étudiante, de mon sens du collectif et de ma capacité à représenter l'établissement avec authenticité lors d'événements d'envergure.",
+    text:  "Alexandra m'a côtoyé en tant qu'ambassadeur de l'école et ancien membre du Bureau des Sports. Elle atteste de mon engagement dans la vie étudiante, de mon sens du collectif et de ma capacité à représenter l'établissement avec authenticité lors d'événements d'envergure.",
     pdf:   '/ldr/Alexandra%20IABONI.pdf',
   },
   {
@@ -116,11 +116,17 @@ function ScrollReveal({
   )
 }
 
-function SectionLabel({ children }: { children: ReactNode }) {
+function SectionLabel({
+  children,
+  as: Tag = 'h2',
+}: {
+  children: ReactNode
+  as?: 'h2' | 'p'
+}) {
   return (
-    <p className="mb-5 font-mono text-xs uppercase tracking-widest text-accent">
+    <Tag className="mb-5 font-mono text-xs uppercase tracking-widest text-accent">
       {children}
-    </p>
+    </Tag>
   )
 }
 
@@ -147,7 +153,7 @@ export default function Presentation({ onNavigate: _onNavigate }: Props) {
 
         {/* ── Intro ─────────────────────────────────────────────────────── */}
         <div>
-          <SectionLabel>// intro</SectionLabel>
+          <SectionLabel as="p">// intro</SectionLabel>
           <h1 className="mb-6 font-black leading-tight text-foreground
                          text-3xl sm:text-4xl md:text-5xl">
             Étudiant en<br />
@@ -156,7 +162,7 @@ export default function Presentation({ onNavigate: _onNavigate }: Props) {
           <p className="max-w-lg text-sm leading-relaxed text-foreground/60 md:text-base">
             23 ans, en troisième année d'école spécialisée en cybersécurité,
             je suis activement à la recherche d'un{' '}
-            <span className="font-medium text-foreground">contrat d'apprentissage</span>{' '}
+            <span className="font-medium text-accent">contrat d'apprentissage</span>{' '}
             pour poursuivre ma montée en compétences au sein d'une équipe
             technique ambitieuse.
           </p>
@@ -210,11 +216,12 @@ export default function Presentation({ onNavigate: _onNavigate }: Props) {
                   <button
                     key={id}
                     onClick={() => setActiveReco(id)}
+                    aria-pressed={isActive}
                     className={[
                       'flex items-center gap-3 text-left transition-all duration-200',
                       isActive
                         ? 'text-accent'
-                        : 'text-foreground/40 hover:text-foreground/70',
+                        : 'text-foreground/60 hover:text-foreground',
                     ].join(' ')}
                   >
                     <motion.span
@@ -274,11 +281,12 @@ export default function Presentation({ onNavigate: _onNavigate }: Props) {
                   <button
                     key={id}
                     onClick={() => setActive(id)}
+                    aria-pressed={isActive}
                     className={[
                       'flex items-center gap-3 text-left transition-all duration-200',
                       isActive
                         ? 'text-accent'
-                        : 'text-foreground/40 hover:text-foreground/70',
+                        : 'text-foreground/60 hover:text-foreground',
                     ].join(' ')}
                   >
                     <motion.span

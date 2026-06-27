@@ -9,7 +9,8 @@
     "description": "Déploiement d'une infrastructure réseau d'entreprise complète: Windows Server, Active Directory, GPO, VPN IPSec, DNS/DHCP et politique de sécurité. Configuration du routage, du pare-feu et des règles de filtrage réseau dans un environnement virtualisé.",
     "metiers_lies": ["Administrateur système", "Administrateur réseau", "Technicien système et réseau"],
     "competences_obtenir": ["Windows Server", "Active Directory", "GPO", "VPN IPSec", "DNS/DHCP", "Routage", "Pare-feu", "Virtualisation"],
-    "soft_skills_utilises": ["Rigueur", "Autonomie", "Esprit d'analyse"]
+    "soft_skills_utilises": ["Rigueur", "Autonomie", "Esprit d'analyse"],
+    "links": []
   },
   {
     "id": "exp-cyberwatch-2025",
@@ -21,7 +22,10 @@
     "description": "Pilotage d'une équipe de 8 personnes, gestion de projet, mise en place d'un SIEM avec ELK Stack et création de scripts d'attaques automatisées. Suivi des livrables, animation des réunions d'équipe et coordination entre les pôles technique et fonctionnel.",
     "metiers_lies": ["Responsable de projet IT", "Chef de projet cybersécurité", "Analyste SOC"],
     "competences_obtenir": ["Gestion de projet", "ELK Stack", "SIEM", "Scripts d'attaques", "Kibana", "Suivi de livrables"],
-    "soft_skills_utilises": ["Leadership & coordination", "Travail en équipe", "Sens de la communication", "Gestion des priorités"]
+    "soft_skills_utilises": ["Leadership & coordination", "Travail en équipe", "Sens de la communication", "Gestion des priorités"],
+    "links": [
+      { "label": "GitHub — Scripts & Configuration", "url": "https://github.com/" }
+    ]
   },
   {
     "id": "exp-inca-2024",
@@ -33,7 +37,8 @@
     "description": "Contribution au développement web: React, TypeScript. Création de scripts en Bash et validation des contributions de l'équipe via GitLab.",
     "metiers_lies": ["Développeur web", "Développeur / Scripteur", "Auditeur de sécurité (automatisation)"],
     "competences_obtenir": ["React", "TypeScript", "Bash", "GitLab", "Validation de code"],
-    "soft_skills_utilises": ["Curiosité technique", "Travail en équipe", "Force de proposition", "autonomie"]
+    "soft_skills_utilises": ["Curiosité technique", "Travail en équipe", "Force de proposition", "autonomie"],
+    "links": []
   },
   {
     "id": "exp-oraxya-2025",
@@ -45,7 +50,8 @@
     "description": "Contribution au développement web: Vite, TypeScript. Alimentation, tri et analyse des données partagées par des centaines de pharmacies.",
     "metiers_lies": ["Développeur web", "Data Engineer"],
     "competences_obtenir": ["Vite", "TypeScript", "Json", "GitHub", "Review de code"],
-    "soft_skills_utilises": ["Curiosité technique", "Travail en équipe", "Force de proposition", "autonomie"]
+    "soft_skills_utilises": ["Curiosité technique", "Travail en équipe", "Force de proposition", "autonomie"],
+    "links": []
   },
   {
     "id": "exp-marseille-2023",
@@ -57,7 +63,8 @@
     "description": "Optimisation opérationnelle et maintien de la salubrité des espaces publics. Gestion de la logistique de tri, application rigoureuse des normes d'hygiène et de sécurité, et coordination des flux de revalorisation des encombrants.",
     "metiers_lies": ["Agent de nettoiement", "Opérateur logistique", "Agent d'entretien et d'assainissement"],
     "competences_obtenir": ["Gestion logistique", "Application des normes HSE (Hygiène, Sécurité, Environnement)", "Optimisation des flux opérationnels", "Maintenance des équipements"],
-    "soft_skills_utilises": ["Rigueur", "Résistance physique", "Gestion des priorités", "Sens du service public"]
+    "soft_skills_utilises": ["Rigueur", "Résistance physique", "Gestion des priorités", "Sens du service public"],
+    "links": []
   },
   {
     "id": "exp-marseille-2022",
@@ -69,19 +76,21 @@
     "description": "Optimisation opérationnelle et maintien de la salubrité des espaces publics. Gestion de la logistique de tri, application rigoureuse des normes d'hygiène et de sécurité, et coordination des flux de revalorisation des encombrants.",
     "metiers_lies": ["Agent de nettoiement", "Opérateur logistique", "Agent d'entretien et d'assainissement"],
     "competences_obtenir": ["Gestion logistique", "Application des normes HSE (Hygiène, Sécurité, Environnement)", "Optimisation des flux opérationnels", "Maintenance des équipements"],
-    "soft_skills_utilises": ["Rigueur", "Résistance physique", "Gestion des priorités", "Sens du service public"]
+    "soft_skills_utilises": ["Rigueur", "Résistance physique", "Gestion des priorités", "Sens du service public"],
+    "links": []
   },
   {
     "id": "exp-bistrot-iris-2024",
     "nom": "Serveur & Barman polyvalent",
     "date": "2024",
-    "type": "CDD",
+    "type": "CDI",
     "domaine": ["Restauration"],
     "employeur_collab": "Bistrot Les Iris (Bron)",
     "description": "Garant de l'expérience client en salle et au bar au sein d'un environnement à fort flux. Gestion de la relation client, préparation des commandes (boissons et petite restauration) et maintien de la conformité aux normes d'hygiène (HACCP) en cuisine et comptoir.",
     "metiers_lies": ["Serveur", "Barman", "Équipier polyvalent de restauration"],
     "competences_obtenir": ["Relation et fidélisation client", "Gestion du service (flux tendu)", "Préparation et logistique de comptoir", "Application des normes HACCP"],
-    "soft_skills_utilises": ["Gestion du stress", "Polyvalence", "Sens de la communication", "Travail en équipe"]
+    "soft_skills_utilises": ["Gestion du stress", "Polyvalence", "Sens de la communication", "Travail en équipe"],
+    "links": []
   },
   {
     "id": "exp-room-service-2025",
@@ -93,7 +102,8 @@
     "description": "Deux jours de couverture photographique d'événements culturels sur trois journées. Captation d'une conférence sur le statut d'indépendant dans le design graphique lors d'une conférence au Musée d'Art Contemporain (MAC) de Lyon et valorisation visuelle d'une soirée d'exposition à l'espace KOMMET. Gestion du cadrage, de la lumière en conditions variables.",
     "metiers_lies": ["Photographe événementiel", "Reporter photographe", "Créateur de contenu visuel"],
     "competences_obtenir": ["Techniques de prise de vue (reportage & institutionnel)", "Gestion de la lumière (basse luminosité / intérieur)", "Post-traitement et édition numérique", "Respect d'un cahier des charges et de délais"],
-    "soft_skills_utilises": ["Capacité d'adaptation", "Autonomie", "Sens du détail", "Discrétion et professionnalisme"]
+    "soft_skills_utilises": ["Capacité d'adaptation", "Autonomie", "Sens du détail", "Discrétion et professionnalisme"],
+    "links": []
   },
   {
     "id": "exp-photo-slam-2025",
@@ -101,11 +111,12 @@
     "date": "2025",
     "type": "Participation bénévole",
     "domaine": ["Photographie"],
-    "employeur_collab": "Collaboration artistique (Artiste Slam)",
+    "employeur_collab": "Fifamé (Lyon)",
     "description": "Couverture photographique d'une performance scénique en direct et réalisation de portraits professionnels. Production de visuels de communication et à l'identité numérique (photo de profil officielle) de l'artiste.",
     "metiers_lies": ["Photographe de scène", "Portraitiste", "Créateur de contenu visuel"],
     "competences_obtenir": ["Photographie de spectacle (gestion du mouvement et des éclairages scéniques)", "Techniques du portrait institutionnel et artistique", "Retouche et optimisation pour le print et le web"],
-    "soft_skills_utilises": ["Sens de la communication", "Écoute et compréhension du besoin", "Créativité", "Rigueur"]
+    "soft_skills_utilises": ["Sens de la communication", "Écoute et compréhension du besoin", "Créativité", "Rigueur"],
+    "links": []
   },
   {
     "id": "exp-wifi-2026",
@@ -117,11 +128,14 @@
     "description": "Conception et déploiement d'une architecture réseau sécurisée au sein de l'établissement. Configuration d'une infrastructure complète (routeurs et switchs Cisco, pare-feu Stormshield) avec plan d'adressage IP dédié, segmentation par VLAN, routage inter-VLAN et application de politiques de filtrage pour sécuriser les flux de l'infrastructure.",
     "metiers_lies": ["Architecte sécurité réseau", "Administrateur réseau", "Intégrateur de solutions de sécurité"],
     "competences_obtenir": [
-      "Segmentation réseau (VLAN Cisco)", 
-      "Routage et configuration matérielle (Switchs & Routeurs Cisco)", 
-      "Configuration de pare-feu d'entreprise (Stormshield)", 
+      "Segmentation réseau (VLAN Cisco)",
+      "Routage et configuration matérielle (Switchs & Routeurs Cisco)",
+      "Configuration de pare-feu d'entreprise (Stormshield)",
       "Règles de filtrage et politiques d'accès"
     ],
-    "soft_skills_utilises": ["Rigueur", "Résolution de problèmes", "Organisation"]
+    "soft_skills_utilises": ["Rigueur", "Résolution de problèmes", "Organisation"],
+    "links": [
+      { "label": "GitHub — Architecture & Config", "url": "https://github.com/" }
+    ]
   }
 ]
