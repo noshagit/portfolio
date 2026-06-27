@@ -100,7 +100,7 @@
   },
   {
     "id": "exp-oraxya-2025",
-    "nom": "Web Developer & Data Engineer",
+    "nom": "Web Developer & Data manipulation",
     "date": "2025",
     "type": "Participation bénévole",
     "domaine": [
@@ -109,13 +109,13 @@
     "employeur_collab": "Oraxya",
     "description": "Contribution to web development: Vite, TypeScript. Data ingestion, sorting, and analysis shared by hundreds of pharmacies.",
     "metiers_lies": [
-      "Web Developer",
-      "Data Engineer"
+      "Web Developer"
     ],
     "competences_obtenir": [
       "Vite",
       "TypeScript",
       "JSON",
+      "Excell",
       "GitHub",
       "Code review"
     ],
