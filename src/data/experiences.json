@@ -84,13 +84,13 @@
     },
     {
         "id": "exp-oraxya-2025",
-        "nom": "Développeur web et data Engineer",
+        "nom": "Développeur web et Manipulation de données",
         "date": "2025",
         "type": "Participation bénévole",
         "domaine": ["Informatique"],
         "employeur_collab": "Oraxya",
         "description": "Contribution au développement web: Vite, TypeScript. Alimentation, tri et analyse des données partagées par des centaines de pharmacies.",
-        "metiers_lies": ["Développeur web", "Data Engineer"],
+        "metiers_lies": ["Développeur web"],
         "competences_obtenir": [
             "Vite",
             "TypeScript",
