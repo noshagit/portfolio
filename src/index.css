@@ -51,6 +51,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+button, [role="button"] {
+  cursor: pointer;
+}
+
 /* Applied only during theme toggle — keeps hover animations snappy */
 .theme-transition *,
 .theme-transition *::before,

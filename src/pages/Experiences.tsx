@@ -66,7 +66,7 @@ function ExperienceCard({ exp, onOpen }: { exp: Experience; onOpen: () => void }
       exit={{ opacity: 0, scale: 0.94 }}
       transition={{ duration: 0.28, ease: EASE }}
       onClick={onOpen}
-      className="group flex cursor-pointer flex-col gap-4 border border-accent/15 p-5 transition-colors duration-200 hover:border-accent/40 hover:bg-accent-muted"
+      className="group flex flex-col gap-4 border border-accent/15 p-5 transition-colors duration-200 hover:border-accent/40 hover:bg-accent-muted"
     >
       {/* Type badge */}
       <span className="self-start border border-accent/20 px-2 py-0.5 font-mono text-[10px] uppercase tracking-widest text-foreground/45">

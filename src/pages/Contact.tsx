@@ -75,7 +75,7 @@ function PopoverContactLink({
         {/* Trigger */}
         <button
           onClick={() => setOpen(prev => !prev)}
-          className="group relative cursor-pointer text-left text-sm text-foreground/60
+          className="group relative text-left text-sm text-foreground/60
                      transition-colors duration-200 hover:text-foreground sm:text-base md:text-lg"
         >
           {displayValue}

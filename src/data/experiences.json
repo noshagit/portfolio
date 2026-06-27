@@ -108,15 +108,20 @@
     "soft_skills_utilises": ["Sens de la communication", "Écoute et compréhension du besoin", "Créativité", "Rigueur"]
   },
   {
-    "id": "exp-wifi-iot-2026",
-    "nom": "Architecte réseau & Sécurité IoT",
+    "id": "exp-wifi-2026",
+    "nom": "Architecte Réseau & Sécurité",
     "date": "2025",
     "type": "Projet académique",
     "domaine": ["Infrastructure réseau"],
     "employeur_collab": "Ynov Campus Lyon",
-    "description": "Conception et déploiement d'une architecture réseau sécurisée au sein de l'établissement. Configuration d'une infrastructure complète (routeur, switch, pare-feu, serveur) avec plan d'adressage IP dédié, segmentation par VLAN et application de règles de filtrage pour intégrer un réseau Wi-Fi sécurisé destiné à l'interconnexion d'une caméra de surveillance IP.",
+    "description": "Conception et déploiement d'une architecture réseau sécurisée au sein de l'établissement. Configuration d'une infrastructure complète (routeurs et switchs Cisco, pare-feu Stormshield) avec plan d'adressage IP dédié, segmentation par VLAN, routage inter-VLAN et application de politiques de filtrage pour sécuriser les flux de l'infrastructure.",
     "metiers_lies": ["Architecte sécurité réseau", "Administrateur réseau", "Intégrateur de solutions de sécurité"],
-    "competences_obtenir": ["Segmentation réseau (VLAN)", "Configuration matérielle (Routeur/Switch/Firewall)", "Sécurisation des réseaux sans fil (Wi-Fi)", "Sécurité des objets connectés (IoT)", "Règles de filtrage et politiques d'accès"],
+    "competences_obtenir": [
+      "Segmentation réseau (VLAN Cisco)", 
+      "Routage et configuration matérielle (Switchs & Routeurs Cisco)", 
+      "Configuration de pare-feu d'entreprise (Stormshield)", 
+      "Règles de filtrage et politiques d'accès"
+    ],
     "soft_skills_utilises": ["Rigueur", "Résolution de problèmes", "Organisation"]
   }
 ]
