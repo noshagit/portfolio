@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Download, Mountain, Camera, Gamepad2, Telescope } from 'lucide-react'
 import type { ReactNode } from 'react'
@@ -74,7 +74,7 @@ type PassionId = (typeof PASSIONS)[number]['id']
 
 const EASE = [0.22, 1, 0.36, 1] as const
 
-function Reveal({
+function ScrollReveal({
   children,
   delay = 0,
   className,
@@ -83,16 +83,36 @@ function Reveal({
   delay?: number
   className?: string
 }) {
+  const ref = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) return
+        el.style.opacity = '1'
+        el.style.transform = 'translateY(0)'
+        observer.unobserve(el)
+      },
+      { rootMargin: '-60px' },
+    )
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [])
+
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 28 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-60px' }}
-      transition={{ duration: 0.65, ease: EASE, delay }}
+    <div
+      ref={ref}
+      style={{
+        opacity: 0,
+        transform: 'translateY(28px)',
+        transition: `opacity 0.65s cubic-bezier(0.22,1,0.36,1) ${delay}s, transform 0.65s cubic-bezier(0.22,1,0.36,1) ${delay}s`,
+      }}
       className={className}
     >
       {children}
-    </motion.div>
+    </div>
   )
 }
 
@@ -126,7 +146,7 @@ export default function Presentation({ onNavigate: _onNavigate }: Props) {
       <div className="mx-auto max-w-5xl space-y-16 px-4 py-12 sm:px-6 sm:py-16 md:space-y-24 md:py-20">
 
         {/* ── Intro ─────────────────────────────────────────────────────── */}
-        <Reveal>
+        <div>
           <SectionLabel>// intro</SectionLabel>
           <h1 className="mb-6 font-black leading-tight text-foreground
                          text-3xl sm:text-4xl md:text-5xl">
@@ -140,12 +160,12 @@ export default function Presentation({ onNavigate: _onNavigate }: Props) {
             pour poursuivre ma montée en compétences au sein d'une équipe
             technique ambitieuse.
           </p>
-        </Reveal>
+        </div>
 
         {/* ── Soft Skills + Languages ───────────────────────────────────── */}
         <div className="grid gap-10 md:grid-cols-2 md:gap-16">
 
-          <Reveal>
+          <ScrollReveal>
             <SectionLabel>// soft skills</SectionLabel>
             <div className="flex flex-wrap gap-2">
               {SOFT_SKILLS.map(skill => (
@@ -157,9 +177,9 @@ export default function Presentation({ onNavigate: _onNavigate }: Props) {
                 </span>
               ))}
             </div>
-          </Reveal>
+          </ScrollReveal>
 
-          <Reveal delay={0.1}>
+          <ScrollReveal delay={0.1}>
             <SectionLabel>// langues</SectionLabel>
             <div className="flex flex-col gap-4">
               {LANGUAGES.map(({ lang, level }) => (
@@ -172,12 +192,12 @@ export default function Presentation({ onNavigate: _onNavigate }: Props) {
                 </div>
               ))}
             </div>
-          </Reveal>
+          </ScrollReveal>
 
         </div>
 
         {/* ── Recommandations ───────────────────────────────────────────── */}
-        <Reveal>
+        <ScrollReveal>
           <SectionLabel>// recommandations</SectionLabel>
 
           <div className="grid gap-8 md:grid-cols-[220px_1fr] md:gap-16">
@@ -238,10 +258,10 @@ export default function Presentation({ onNavigate: _onNavigate }: Props) {
             </AnimatePresence>
 
           </div>
-        </Reveal>
+        </ScrollReveal>
 
         {/* ── Passions ──────────────────────────────────────────────────── */}
-        <Reveal>
+        <ScrollReveal>
           <SectionLabel>// passions</SectionLabel>
 
           <div className="grid gap-8 md:grid-cols-[200px_1fr] md:gap-16">
@@ -290,7 +310,7 @@ export default function Presentation({ onNavigate: _onNavigate }: Props) {
             </AnimatePresence>
 
           </div>
-        </Reveal>
+        </ScrollReveal>
 
       </div>
     </motion.div>
