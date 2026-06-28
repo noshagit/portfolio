@@ -29,7 +29,7 @@ export default function RecommendationPanel() {
               <p className="mt-1 text-xs text-accent">{role}</p>
             </div>
 
-            <p className="flex-1 text-justify text-sm leading-relaxed text-foreground/60 md:text-base">
+            <p className="flex-1 text-justify hyphens-auto break-words text-sm leading-relaxed text-foreground/60 md:text-base">
               {text}
             </p>
 

@@ -57,7 +57,7 @@ export default function PassionPanel() {
           transition={{ duration: 0.2, ease: EASE }}
           className="flex flex-col gap-3"
         >
-          <p className="text-justify text-sm leading-relaxed text-foreground/60 md:text-base">
+          <p className="text-justify hyphens-auto break-words text-sm leading-relaxed text-foreground/60 md:text-base">
             {active.text}
           </p>
           {active.url && (

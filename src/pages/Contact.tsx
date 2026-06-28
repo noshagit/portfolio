@@ -114,7 +114,7 @@ export default function Contact({ onNavigate: _onNavigate }: Props) {
           <motion.div variants={LINE} className="mt-8 h-px bg-accent/10 sm:mt-10" />
 
           <motion.div variants={LINE} className="mt-8 sm:mt-10">
-            <p className="mb-6 text-justify text-xs leading-relaxed text-foreground/60">
+            <p className="mb-6 text-justify hyphens-auto break-words text-xs leading-relaxed text-foreground/60">
               {c.cv.tagline}
             </p>
             <motion.a

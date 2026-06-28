@@ -131,7 +131,7 @@ export default function Experiences({ onNavigate }: Props) {
         <div className="pt-8">
           <div className="h-px bg-foreground/10" />
           <div className="flex flex-col items-center py-16 text-center sm:py-20">
-            <p className="mb-8 max-w-lg text-justify text-sm leading-relaxed text-foreground/60 sm:text-base">
+            <p className="mb-8 max-w-lg text-justify hyphens-auto break-words text-sm leading-relaxed text-foreground/60 sm:text-base">
               {t.experiences.cta.text}
             </p>
             <motion.button

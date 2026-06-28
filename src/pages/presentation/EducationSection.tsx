@@ -54,7 +54,7 @@ export default function EducationSection() {
                   {institution}
                   <ExternalLink size={10} className="shrink-0" aria-hidden="true" />
                 </a>
-                <p className="text-justify text-base leading-relaxed text-foreground/60">
+                <p className="text-justify hyphens-auto break-words text-base leading-relaxed text-foreground/60">
                   {context}
                 </p>
               </div>

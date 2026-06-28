@@ -94,7 +94,7 @@ export default function ExperienceModal({ exp, onClose }: Props) {
             {/* Description */}
             <section className="mb-5">
               <SectionLabel as="p" className="mb-2 text-[10px]">{modal.description}</SectionLabel>
-              <p className="text-justify text-sm leading-relaxed text-foreground/60">{exp.description}</p>
+              <p className="text-justify hyphens-auto break-words text-sm leading-relaxed text-foreground/60">{exp.description}</p>
             </section>
 
             {/* Images (optional) */}
