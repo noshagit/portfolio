@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useCallback } from 'react'
 import { AnimatePresence } from 'framer-motion'
 import { ThemeProvider } from './context/ThemeContext'
 import { LanguageProvider } from './context/LanguageContext'
@@ -25,15 +25,20 @@ function AppShell() {
   const [currentView, setCurrentView] = useState<View>('landing')
   const Page = PAGES[currentView]
 
+  const navigate = useCallback((view: View) => {
+    window.scrollTo({ top: 0, behavior: 'instant' })
+    setCurrentView(view)
+  }, [])
+
   return (
     <div className="flex min-h-screen flex-col bg-background text-foreground">
-      <Header currentView={currentView} onNavigate={setCurrentView} />
+      <Header currentView={currentView} onNavigate={navigate} />
       <main className="flex-1">
         <AnimatePresence mode="wait">
-          <Page key={currentView} onNavigate={setCurrentView} />
+          <Page key={currentView} onNavigate={navigate} />
         </AnimatePresence>
       </main>
-      <Footer onNavigate={setCurrentView} />
+      <Footer onNavigate={navigate} />
     </div>
   )
 }

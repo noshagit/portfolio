@@ -40,7 +40,9 @@ export default function Presentation({ onNavigate }: Props) {
   const cooldownRef   = useRef(false)
   const edgeHitRef    = useRef(0)   // timestamp when bottom edge was first hit (0 = not at edge)
   const sectionRef    = useRef<HTMLDivElement>(null)
-  const touchStartRef = useRef(0)
+  const touchStartRef  = useRef(0)
+  const touchStartXRef = useRef(0)
+  const touchDirRef    = useRef<'vert' | 'horiz' | null>(null)
 
   const EDGE_HOLD_MS = 150
 
@@ -109,9 +111,34 @@ export default function Presentation({ onNavigate }: Props) {
     }
 
     function onTouchStart(e: TouchEvent) {
-      touchStartRef.current = e.touches[0].clientY
+      touchStartRef.current  = e.touches[0].clientY
+      touchStartXRef.current = e.touches[0].clientX
+      touchDirRef.current    = null
+    }
+    function onTouchMove(e: TouchEvent) {
+      const dY = touchStartRef.current  - e.touches[0].clientY
+      const dX = touchStartXRef.current - e.touches[0].clientX
+
+      // Lock gesture axis on first significant movement
+      if (!touchDirRef.current) {
+        if (Math.abs(dX) > Math.abs(dY))  { touchDirRef.current = 'horiz'; return }
+        if (Math.abs(dY) > 4)              { touchDirRef.current = 'vert'  }
+        else                               { return }
+      }
+      if (touchDirRef.current === 'horiz') return
+
+      // Allow slide content to scroll when not at its boundary
+      const el = sectionRef.current
+      if (el && el.scrollHeight > el.clientHeight + 4) {
+        const down = dY > 0
+        if (down  && el.scrollTop + el.clientHeight < el.scrollHeight - 2) return
+        if (!down && el.scrollTop > 0) return
+      }
+      // Block native page scroll — slide navigation takes over
+      e.preventDefault()
     }
     function onTouchEnd(e: TouchEvent) {
+      if (touchDirRef.current === 'horiz') return
       const delta = touchStartRef.current - e.changedTouches[0].clientY
       if (Math.abs(delta) < 30) return
       const el = sectionRef.current
@@ -127,11 +154,13 @@ export default function Presentation({ onNavigate }: Props) {
     window.addEventListener('wheel',      onWheel,      { passive: false })
     window.addEventListener('keydown',    onKey)
     window.addEventListener('touchstart', onTouchStart, { passive: true })
+    window.addEventListener('touchmove',  onTouchMove,  { passive: false })
     window.addEventListener('touchend',   onTouchEnd,   { passive: true })
     return () => {
       window.removeEventListener('wheel',      onWheel)
       window.removeEventListener('keydown',    onKey)
       window.removeEventListener('touchstart', onTouchStart)
+      window.removeEventListener('touchmove',  onTouchMove)
       window.removeEventListener('touchend',   onTouchEnd)
     }
   }, [navigate])
@@ -181,7 +210,7 @@ export default function Presentation({ onNavigate }: Props) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.4 }}
-            className="pointer-events-none absolute bottom-6 left-1/2 -translate-x-1/2 xl:hidden"
+            className="pointer-events-none absolute bottom-6 left-1/2 -translate-x-1/2 2xl:hidden"
             aria-hidden="true"
           >
             <motion.div

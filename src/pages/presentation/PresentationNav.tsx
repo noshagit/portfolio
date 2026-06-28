@@ -23,7 +23,7 @@ export default function PresentationNav({ activeIdx, onChange }: Props) {
   return (
     <nav
       aria-label="Page sections"
-      className="fixed left-6 top-1/2 z-40 hidden -translate-y-1/2 flex-col xl:flex"
+      className="fixed left-6 top-1/2 z-40 hidden -translate-y-1/2 flex-col 2xl:flex"
     >
       {labels.map((label, i) => {
         const isActive = activeIdx === i
