@@ -27,6 +27,13 @@ Ce projet est bilingue. Toute modification, ajout ou suppression de contenu text
 - **Tirets cadratins interdits** : Le tiret cadratin (—) et le demi-cadratin (–) sont FORMELLEMENT BANNIS de tout le projet (fichiers de code, composants, fr.json, en.json). Pour séparer des éléments ou des plages de dates, utiliser exclusivement le tiret court (-), la barre verticale (|), ou reformuler la phrase de manière fluide.
 - **Accentuation française** : Appliquer scrupuleusement les accents, y compris sur les majuscules (É, À, È). Ex : "Expériences", "Études", "Équipe".
 - **Majuscules en français** : Aucune majuscule injustifiée sur un nom commun en milieu de phrase. Les majuscules sont réservées aux débuts de phrases, noms propres, acronymes et marques. Ex : "Déploiement d'une infrastructure" (pas "Infrastructure").
+- **Titres de sections** : Les préfixes `//` sont FORMELLEMENT BANNIS de tous les labels de sections (fr.json, en.json et composants). Les labels sont stockés en minuscules dans les JSONs ; le CSS applique `uppercase tracking-widest font-semibold text-sm` via `SectionLabel`. Conserver les accents sur les majuscules visuelles (ex : "PARCOURS ÉDUCATIF").
+- **Alignement justifié** : Tous les blocs de texte descriptifs (paragraphes de section, descriptions, biographies, textes de passion, recommandations, modales) utilisent IMPÉRATIVEMENT la classe Tailwind `text-justify`. L'alignement à gauche est réservé aux labels (`// section`), titres, boutons et éléments courts (< 2 lignes attendues).
+
+## Architecture en composants & auto-vérification
+
+- **Découpage** : Structurer en composants réutilisables et modularisés. Éviter les fichiers uniques trop denses.
+- **Auto-vérification** : Après chaque modification, relire le script complet pour vérifier : absence de régressions, typage TypeScript correct, alignement des balises, fluidité des animations.
 
 ## Engineering Standards (non-negotiable)
 

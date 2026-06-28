@@ -13,7 +13,7 @@
   },
   "presentation": {
     "intro": {
-      "label": "// intro",
+      "label": "intro",
       "title": "Student in",
       "titleAccent": "Cybersecurity.",
       "bio1": "Entering my third year of a bachelor's degree in cybersecurity, I am actively seeking a",
@@ -21,7 +21,7 @@
       "bio2": "to support my final year, extendable to 24 months for a master's degree. My goal is to bring my dedication and technical curiosity to an ambitious operational team tackling modern cyberdefense challenges."
     },
     "softSkills": {
-      "label": "// soft skills",
+      "label": "soft skills",
       "categories": [
         {
           "id": "communication",
@@ -66,7 +66,7 @@
       ]
     },
     "languages": {
-      "label": "// languages",
+      "label": "languages",
       "items": [
         {
           "lang": "French",
@@ -79,7 +79,7 @@
       ]
     },
     "techSkills": {
-      "label": "// technical skills",
+      "label": "technical skills",
       "categories": [
         {
           "id": "cyber",
@@ -202,12 +202,12 @@
       ]
     },
     "education": {
-      "label": "// education",
+      "label": "education",
       "items": [
         {
           "id": "bac",
           "period": "2018 - 2021",
-          "degree": "General & Technological Baccalaureate",
+          "degree": "General Baccalaureate",
           "institution": "Lycée Périer, Marseille",
           "url": "https://www.site.ac-aix-marseille.fr/cio-marseille-centre/spip/Lycee-Perier.html",
           "context": "Scientific curriculum specializing in computer science (NSI) and mathematics. Introduction to network architecture concepts, algorithmic scripting, and mathematical logic applied to data processing."
@@ -231,7 +231,7 @@
       ]
     },
     "recommendations": {
-      "label": "// recommendations",
+      "label": "recommendations",
       "downloadPdf": "Download PDF",
       "items": [
         {
@@ -258,7 +258,7 @@
       ]
     },
     "passions": {
-      "label": "// passions",
+      "label": "passions",
       "items": [
         {
           "id": "hiking",
@@ -291,13 +291,13 @@
       ]
     },
     "transition": {
-      "label": "// versatility & background",
+      "label": "versatility & background",
       "text": "My background is not limited to technology alone. Through my diverse experiences, I have developed great adaptability by evolving in various fields: from managing high-pressure situations in the restaurant industry to the artistic sensitivity of photography and video, and the rigor of cybersecurity. Each domain has provided me with unique skills that enrich my professional vision.",
       "cta": "Explore my experiences"
     }
   },
   "experiences": {
-    "sectionLabel": "// experiences & projects",
+    "sectionLabel": "experiences & projects",
     "empty": "No experience matches the selected filters.",
     "filters": {
       "all": "All",
@@ -310,12 +310,12 @@
     },
     "modal": {
       "close": "Close",
-      "description": "// description",
-      "images": "// images",
-      "relatedJobs": "// related roles",
-      "skills": "// acquired skills",
-      "softSkills": "// soft skills used",
-      "links": "// links",
+      "description": "description",
+      "images": "images",
+      "relatedJobs": "related roles",
+      "skills": "acquired skills",
+      "softSkills": "soft skills used",
+      "links": "links",
       "photo": "photo"
     },
     "types": {
@@ -361,7 +361,7 @@
     "privacy": "Privacy"
   },
   "privacy": {
-    "label": "// privacy policy",
+    "label": "privacy policy",
     "controller": {
       "heading": "Data Controller",
       "name": "Ilian BEN HAMOU",

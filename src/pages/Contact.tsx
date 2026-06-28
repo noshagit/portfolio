@@ -36,7 +36,7 @@ export default function Contact({ onNavigate: _onNavigate }: Props) {
 
           <motion.p
             variants={LINE}
-            className="mb-8 text-xs font-semibold uppercase tracking-widest text-accent sm:mb-12"
+            className="mb-8 text-sm font-semibold uppercase tracking-widest text-accent sm:mb-12"
           >
             {c.sectionLabel}
           </motion.p>
@@ -114,7 +114,7 @@ export default function Contact({ onNavigate: _onNavigate }: Props) {
           <motion.div variants={LINE} className="mt-8 h-px bg-accent/10 sm:mt-10" />
 
           <motion.div variants={LINE} className="mt-8 sm:mt-10">
-            <p className="mb-6 text-xs leading-relaxed text-foreground/60">
+            <p className="mb-6 text-justify text-xs leading-relaxed text-foreground/60">
               {c.cv.tagline}
             </p>
             <motion.a

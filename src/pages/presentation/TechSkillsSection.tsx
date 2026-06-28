@@ -30,7 +30,7 @@ export default function TechSkillsSection() {
                              transition-colors duration-200 hover:border-accent/30"
                 >
                   <span className="text-xs font-medium text-accent">{title}</span>
-                  <span className="text-sm leading-relaxed text-foreground/60">{description}</span>
+                  <span className="text-justify text-sm leading-relaxed text-foreground/60">{description}</span>
                 </div>
               ))}
             </div>

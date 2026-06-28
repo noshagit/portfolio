@@ -21,7 +21,7 @@ export default function TransitionSection({ onNavigate }: Props) {
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4, ease: EASE, delay: 0.1 }}
-        className="mb-10 max-w-2xl text-base leading-relaxed text-foreground/60 md:text-lg"
+        className="mb-10 max-w-2xl text-justify text-base leading-relaxed text-foreground/60 md:text-lg"
       >
         {transition.text}
       </motion.p>

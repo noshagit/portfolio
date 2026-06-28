@@ -11,13 +11,13 @@ export default function PresentationNav({ activeIdx, onChange }: Props) {
   const p = t.presentation
 
   const labels = [
-    p.intro.label.replace(/^\/\/ /, ''),
-    p.techSkills.label.replace(/^\/\/ /, ''),
-    p.softSkills.label.replace(/^\/\/ /, ''),
-    p.education.label.replace(/^\/\/ /, ''),
-    p.recommendations.label.replace(/^\/\/ /, ''),
-    p.passions.label.replace(/^\/\/ /, ''),
-    p.transition.label.replace(/^\/\/ /, ''),
+    p.intro.label,
+    p.techSkills.label,
+    p.softSkills.label,
+    p.education.label,
+    p.recommendations.label,
+    p.passions.label,
+    p.transition.label,
   ]
 
   return (

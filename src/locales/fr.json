@@ -13,7 +13,7 @@
   },
   "presentation": {
     "intro": {
-      "label": "// intro",
+      "label": "intro",
       "title": "Étudiant en",
       "titleAccent": "Cybersécurité.",
       "bio1": "Entrant en troisième année de bachelor en cybersécurité, je suis activement à la recherche d'un",
@@ -21,7 +21,7 @@
       "bio2": "pour accompagner ma B3, reconductible en 24 mois dans le cadre d'un master. Mon objectif est de mettre ma rigueur et ma curiosité technique au service d'une équipe opérationnelle ambitieuse face aux enjeux de la cyberdéfense."
     },
     "softSkills": {
-      "label": "// soft skills",
+      "label": "soft skills",
       "categories": [
         {
           "id": "communication",
@@ -66,7 +66,7 @@
       ]
     },
     "languages": {
-      "label": "// langues",
+      "label": "langues",
       "items": [
         {
           "lang": "Français",
@@ -79,7 +79,7 @@
       ]
     },
     "techSkills": {
-      "label": "// compétences techniques",
+      "label": "compétences techniques",
       "categories": [
         {
           "id": "cyber",
@@ -202,12 +202,12 @@
       ]
     },
     "education": {
-      "label": "// parcours éducatif",
+      "label": "parcours éducatif",
       "items": [
         {
           "id": "bac",
           "period": "2018 - 2021",
-          "degree": "Baccalauréat général & technologique",
+          "degree": "Baccalauréat général",
           "institution": "Lycée Périer, Marseille",
           "url": "https://www.site.ac-aix-marseille.fr/cio-marseille-centre/spip/Lycee-Perier.html",
           "context": "Cursus scientifique avec spécialisations en numérique et sciences informatiques (NSI) ainsi qu'en mathématiques. Introduction aux concepts de l'architecture des réseaux, à l'écriture de scripts algorithmiques et à la logique mathématique appliquée au traitement de données."
@@ -231,7 +231,7 @@
       ]
     },
     "recommendations": {
-      "label": "// recommandations",
+      "label": "recommandations",
       "downloadPdf": "Télécharger le PDF",
       "items": [
         {
@@ -258,7 +258,7 @@
       ]
     },
     "passions": {
-      "label": "// passions",
+      "label": "passions",
       "items": [
         {
           "id": "hiking",
@@ -291,13 +291,13 @@
       ]
     },
     "transition": {
-      "label": "// ouverture & polyvalence",
+      "label": "ouverture & polyvalence",
       "text": "Mon parcours ne se résume pas uniquement à la technique. À travers mes différentes expériences, j'ai développé une grande adaptabilité en évoluant dans des univers variés : de la gestion du rush dans la restauration à la sensibilité artistique de la photographie et de la vidéo, jusqu'à la rigueur de la cybersécurité. Chaque domaine m'a apporté des compétences uniques qui enrichissent ma vision professionnelle.",
       "cta": "Découvrir mes expériences"
     }
   },
   "experiences": {
-    "sectionLabel": "// expériences & participations",
+    "sectionLabel": "expériences & participations",
     "empty": "Aucune expérience ne correspond aux filtres sélectionnés.",
     "filters": {
       "all": "Tous",
@@ -310,12 +310,12 @@
     },
     "modal": {
       "close": "Fermer",
-      "description": "// description",
-      "images": "// images",
-      "relatedJobs": "// métiers liés",
-      "skills": "// compétences obtenues",
-      "softSkills": "// soft skills utilisés",
-      "links": "// liens",
+      "description": "description",
+      "images": "images",
+      "relatedJobs": "métiers liés",
+      "skills": "compétences obtenues",
+      "softSkills": "soft skills utilisés",
+      "links": "liens",
       "photo": "photo"
     },
     "types": {
@@ -361,7 +361,7 @@
     "privacy": "Confidentialité"
   },
   "privacy": {
-    "label": "// confidentialité",
+    "label": "confidentialité",
     "controller": {
       "heading": "Responsable du traitement",
       "name": "Ilian BEN HAMOU",

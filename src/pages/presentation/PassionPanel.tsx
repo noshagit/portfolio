@@ -1,4 +1,5 @@
-import { motion } from 'framer-motion'
+import { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import { Mountain, Camera, Gamepad2, Telescope, ExternalLink } from 'lucide-react'
 import SectionLabel from '../../components/ui/SectionLabel'
 import { useLang } from '../../hooks/useLang'
@@ -14,47 +15,65 @@ const ICONS: Record<string, React.ElementType> = {
 export default function PassionPanel() {
   const { t } = useLang()
   const { passions } = t.presentation
+  const [activeId, setActiveId] = useState(passions.items[0].id)
+
+  const active = passions.items.find(p => p.id === activeId) ?? passions.items[0]
 
   return (
     <>
       <SectionLabel>{passions.label}</SectionLabel>
 
-      <div className="flex flex-col gap-8">
-        {passions.items.map(({ id, label, text, url, urlLabel }, i) => {
+      {/* Tab buttons */}
+      <div className="mb-6 flex flex-wrap gap-2">
+        {passions.items.map(({ id, label }) => {
           const Icon = ICONS[id] ?? Mountain
+          const isActive = activeId === id
           return (
-            <motion.div
+            <button
               key={id}
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.45, ease: EASE, delay: i * 0.07 }}
-              className="flex flex-col gap-2"
+              onClick={() => setActiveId(id)}
+              className={[
+                'inline-flex items-center gap-2 border px-4 py-2 text-xs font-semibold uppercase tracking-widest',
+                'transition-colors duration-200',
+                isActive
+                  ? 'border-accent text-accent'
+                  : 'border-foreground/10 text-foreground/40 hover:border-accent/30 hover:text-foreground/60',
+              ].join(' ')}
             >
-              <div className="flex items-center gap-2">
-                <Icon size={12} className="text-accent" />
-                <p className="text-xs font-semibold uppercase tracking-widest text-foreground/40">
-                  {label}
-                </p>
-              </div>
-              <p className="text-sm leading-relaxed text-foreground/60 md:text-base">
-                {text}
-              </p>
-              {url && (
-                <a
-                  href={url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-1 inline-flex items-center gap-1.5 self-start
-                             text-xs text-foreground/40 transition-colors duration-200 hover:text-accent"
-                >
-                  <ExternalLink size={10} aria-hidden="true" />
-                  {urlLabel}
-                </a>
-              )}
-            </motion.div>
+              <Icon size={10} aria-hidden="true" />
+              {label}
+            </button>
           )
         })}
       </div>
+
+      {/* Active passion content */}
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={activeId}
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -8 }}
+          transition={{ duration: 0.2, ease: EASE }}
+          className="flex flex-col gap-3"
+        >
+          <p className="text-justify text-sm leading-relaxed text-foreground/60 md:text-base">
+            {active.text}
+          </p>
+          {active.url && (
+            <a
+              href={active.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-1 inline-flex items-center gap-1.5 self-start
+                         text-xs text-foreground/40 transition-colors duration-200 hover:text-accent"
+            >
+              <ExternalLink size={10} aria-hidden="true" />
+              {active.urlLabel}
+            </a>
+          )}
+        </motion.div>
+      </AnimatePresence>
     </>
   )
 }

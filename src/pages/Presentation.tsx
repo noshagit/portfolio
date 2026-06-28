@@ -148,7 +148,7 @@ export default function Presentation({ onNavigate }: Props) {
         {i.title}<br />
         <span className="text-accent">{i.titleAccent}</span>
       </h1>
-      <p className="max-w-lg text-sm leading-relaxed text-foreground/60 md:text-base">
+      <p className="max-w-lg text-justify text-sm leading-relaxed text-foreground/60 md:text-base">
         {i.bio1}{' '}
         <span className="font-medium text-accent">{i.bioAccent}</span>{' '}
         {i.bio2}

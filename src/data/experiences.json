@@ -216,8 +216,12 @@
         ],
         "links": [
             {
-                "label": "Instagram - Room Service Festival",
-                "url": "https://www.instagram.com/roomservicefestival/"
+                "label": "Instagram - conférence MAC de Lyon",
+                "url": "https://www.instagram.com/p/DJ_rsTQIuxg/?img_index=1"
+            },
+            {
+                "label": "Instagram - soirée KOMMET",
+                "url": "https://www.instagram.com/p/DJ7GrG3IOMz/?img_index=1"
             }
         ]
     },
@@ -348,7 +352,7 @@
         "type": "Participation bénévole",
         "domaine": ["Photographie", "Vidéo"],
         "employeur_collab": "ON WHEELS",
-        "description": "Gestion complète de la production visuelle pour la marque. Réalisation de photos de produits et de portraits de l'équipe pour les supports de communication professionnels. Captation et montage de teasers promotionnels, réalisation d'interviews format long et couverture de l'ensemble des événements officiels de la structure.",
+        "description": "Gestion d'une partie de la production visuelle pour la marque. Réalisation de photos de produits et de portraits de l'équipe pour les supports de communication professionnels. Captation et montage de teasers promotionnels, réalisation d'interviews format long et couverture de l'ensemble des événements officiels de la structure.",
         "metiers_lies": [
             "Créateur de contenu",
             "Responsable communication visuelle",
@@ -369,7 +373,11 @@
         "links": [
             {
                 "label": "Instagram - ON WHEELS",
-                "url": "https://www.instagram.com/onwheels.fr/"
+                "url": "https://www.instagram.com/on_wheels_app/"
+            },
+            {
+                "label": "Site Web - ON WHEELS",
+                "url": "https://on-wheels.fr/"
             }
         ]
     },

@@ -86,7 +86,7 @@ export default function Experiences({ onNavigate }: Props) {
       <div className="mx-auto max-w-5xl space-y-8 px-4 py-10 sm:px-6 sm:py-16">
 
         <div className="space-y-5">
-          <h1 className="text-xs uppercase tracking-widest text-accent">
+          <h1 className="text-sm font-semibold uppercase tracking-widest text-accent">
             {t.experiences.sectionLabel}
           </h1>
           <ExperienceFilters
@@ -131,7 +131,7 @@ export default function Experiences({ onNavigate }: Props) {
         <div className="pt-8">
           <div className="h-px bg-foreground/10" />
           <div className="flex flex-col items-center py-16 text-center sm:py-20">
-            <p className="mb-8 max-w-lg text-sm leading-relaxed text-foreground/60 sm:text-base">
+            <p className="mb-8 max-w-lg text-justify text-sm leading-relaxed text-foreground/60 sm:text-base">
               {t.experiences.cta.text}
             </p>
             <motion.button

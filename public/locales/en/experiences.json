@@ -248,8 +248,12 @@
     ],
     "links": [
       {
-        "label": "Instagram - Room Service Festival",
-        "url": "https://www.instagram.com/roomservicefestival/"
+        "label": "Instagram - MAC de Lyon conference",
+        "url": "https://www.instagram.com/p/DJ_rsTQIuxg/?img_index=1"
+      },
+      {
+        "label": "Instagram - KOMMET evening",
+        "url": "https://www.instagram.com/p/DJ7GrG3IOMz/?img_index=1"
       }
     ]
   },
@@ -391,7 +395,7 @@
       "Vidéo"
     ],
     "employeur_collab": "ON WHEELS",
-    "description": "Full management of visual production for the brand. Product photography and team portraits for professional communication materials. Filming and editing of promotional teasers, long-format interviews, and coverage of all official brand events.",
+    "description": "Partial management of visual production for the brand. Product photography and team portraits for professional communication materials. Filming and editing of promotional teasers, long-format interviews, and coverage of all official brand events.",
     "metiers_lies": [
       "Content Creator",
       "Visual Communications Manager",
@@ -410,11 +414,15 @@
       "Communication"
     ],
     "links": [
-      {
-        "label": "Instagram - ON WHEELS",
-        "url": "https://www.instagram.com/onwheels.fr/"
-      }
-    ]
+            {
+                "label": "Instagram - ON WHEELS",
+                "url": "https://www.instagram.com/on_wheels_app/"
+            },
+            {
+                "label": "Site Web - ON WHEELS",
+                "url": "https://on-wheels.fr/"
+            }
+        ]
   },
   {
     "id": "exp-photo-ynov-2026",
