@@ -11,6 +11,7 @@ import RecommendationPanel from './presentation/RecommendationPanel'
 import PassionPanel from './presentation/PassionPanel'
 import TransitionSection from './presentation/TransitionSection'
 import PresentationNav from './presentation/PresentationNav'
+import MobileNav from './presentation/MobileNav'
 import { EASE } from '../lib/motion'
 
 const SECTION_COUNT = 7
@@ -211,6 +212,7 @@ export default function Presentation({ onNavigate }: Props) {
       className="relative h-[calc(100dvh-10rem)] overflow-hidden"
     >
       <PresentationNav activeIdx={activeIdx} onChange={navigate} />
+      <MobileNav activeIdx={activeIdx} onChange={navigate} />
 
       {/* Scroll cue - mobile only, hidden once user reaches last section */}
       <AnimatePresence>
@@ -259,7 +261,7 @@ export default function Presentation({ onNavigate }: Props) {
           initial="enter"
           animate="center"
           exit="exit"
-          className="h-full overflow-y-auto px-4 py-12 sm:px-6 md:py-16 [overscroll-behavior:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          className="h-full overflow-y-auto pl-10 pr-4 py-12 sm:pr-6 md:py-16 2xl:pl-6 [overscroll-behavior:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
         >
           <div className="mx-auto flex min-h-full max-w-5xl flex-col justify-center">
             {slides[activeIdx]}
