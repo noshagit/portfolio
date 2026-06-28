@@ -98,12 +98,12 @@ export default function Contact({ onNavigate: _onNavigate }: Props) {
           >
             <span className="font-black uppercase tracking-tight text-foreground
                              text-3xl sm:text-4xl md:text-5xl">
-              Marseille
+              Lyon
             </span>
             <span className="text-lg text-accent/10 sm:text-xl">|</span>
             <span className="font-black uppercase tracking-tight text-foreground
                              text-3xl sm:text-4xl md:text-5xl">
-              Lyon
+              Marseille
             </span>
           </motion.div>
 
