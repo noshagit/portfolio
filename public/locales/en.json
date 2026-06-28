@@ -205,21 +205,21 @@
           "label": "Alexandra IABONI",
           "role": "Head of Admissions — Lyon Ynov Campus",
           "text": "Alexandra worked alongside me during my time as a school ambassador and former member of the Student Sports Association. She vouches for my commitment to student life, my team spirit, and my ability to authentically represent the institution at major events.",
-          "pdf": "/ldr/Alexandra%20IABONI.pdf"
+          "pdf": "/ldr/ldr-001.pdf"
         },
         {
           "id": "sirot",
           "label": "Cellya SIROT",
           "role": "Web Developer — Oraxya",
           "text": "Cellya entrusted me with a key role on a nationally scoped digital project. She highlights my exemplary client-facing attitude, my proactive contributions — some of which are still valued today — and my ability to grow autonomously when faced with complex technical challenges.",
-          "pdf": "/ldr/Cellya%20SIROT.pdf"
+          "pdf": "/ldr/ldr-002.pdf"
         },
         {
           "id": "theodore",
           "label": "Melvin THEODORE",
           "role": "Cybersecurity Expert — Trainer / Speaker",
           "text": "With experience at ARKEMA and INTERPOL, Melvin supervised me across several specialised training programmes. He attests to my technical skills, my curiosity for the field, and my professional ethics — qualities he considers essential in cybersecurity careers.",
-          "pdf": "/ldr/Melvin%20Theodore.pdf"
+          "pdf": "/ldr/ldr-003.pdf"
         }
       ]
     },
@@ -302,6 +302,33 @@
     "copied": "Copied!"
   },
   "footer": {
-    "contact": "Contact"
+    "contact": "Contact",
+    "privacy": "Privacy"
+  },
+  "privacy": {
+    "label": "// privacy policy",
+    "controller": {
+      "heading": "Data Controller",
+      "name": "Ilian BEN HAMOU",
+      "email": "ilianbenhamou2163@gmail.com"
+    },
+    "data": {
+      "heading": "Data Processed",
+      "body": "This site sets no cookies. Two preferences are saved in your browser (localStorage) for site functionality:",
+      "items": [
+        "portfolio-theme — theme preference (light / dark)",
+        "portfolio-lang — language preference (FR / EN)"
+      ],
+      "retention": "This data stays in your browser, is never shared with third parties, and is erased when you clear your browsing data."
+    },
+    "letters": {
+      "heading": "Recommendation Letters",
+      "body": "The letters viewable on this site are published with the explicit consent of their authors."
+    },
+    "rights": {
+      "heading": "Your Rights (GDPR Art. 15-17)",
+      "body": "You may request access to, correction of, or deletion of your data by writing to"
+    },
+    "updated": "Last updated: June 2025"
   }
 }

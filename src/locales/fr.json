@@ -205,21 +205,21 @@
           "label": "Alexandra IABONI",
           "role": "Responsable des admissions — Lyon Ynov Campus",
           "text": "Alexandra m'a côtoyé en tant qu'ambassadeur de l'école et ancien membre du Bureau des Sports. Elle atteste de mon engagement dans la vie étudiante, de mon sens du collectif et de ma capacité à représenter l'établissement avec authenticité lors d'événements d'envergure.",
-          "pdf": "/ldr/Alexandra%20IABONI.pdf"
+          "pdf": "/ldr/ldr-001.pdf"
         },
         {
           "id": "sirot",
           "label": "Cellya SIROT",
           "role": "Développeuse web — Oraxya",
           "text": "Cellya m'a confié un rôle clé sur un projet numérique d'envergure nationale. Elle souligne ma posture client exemplaire, mon esprit force de proposition, ayant contribué à des optimisations encore appréciées aujourd'hui, et ma capacité à progresser en autonomie face à des problématiques techniques complexes.",
-          "pdf": "/ldr/Cellya%20SIROT.pdf"
+          "pdf": "/ldr/ldr-002.pdf"
         },
         {
           "id": "theodore",
           "label": "Melvin THEODORE",
           "role": "Expert en cybersécurité — Formateur / Conférencier",
           "text": "Fort d'expériences au sein d'ARKEMA et d'INTERPOL, Melvin m'a encadré dans plusieurs formations spécialisées. Il témoigne de mes compétences techniques, de ma curiosité pour les enjeux du domaine et de mon éthique professionnelle, des qualités qu'il juge essentielles dans les métiers de la cybersécurité.",
-          "pdf": "/ldr/Melvin%20Theodore.pdf"
+          "pdf": "/ldr/ldr-003.pdf"
         }
       ]
     },
@@ -302,6 +302,33 @@
     "copied": "Copié !"
   },
   "footer": {
-    "contact": "Contact"
+    "contact": "Contact",
+    "privacy": "Confidentialité"
+  },
+  "privacy": {
+    "label": "// confidentialité",
+    "controller": {
+      "heading": "Responsable du traitement",
+      "name": "Ilian BEN HAMOU",
+      "email": "ilianbenhamou2163@gmail.com"
+    },
+    "data": {
+      "heading": "Données traitées",
+      "body": "Ce site ne dépose aucun cookie. Deux préférences sont enregistrées dans votre navigateur (localStorage) pour le bon fonctionnement du site :",
+      "items": [
+        "portfolio-theme — préférence de thème (clair / sombre)",
+        "portfolio-lang — préférence de langue (FR / EN)"
+      ],
+      "retention": "Ces données restent dans votre navigateur, ne sont jamais transmises à des tiers, et sont supprimées lorsque vous videz vos données de navigation."
+    },
+    "letters": {
+      "heading": "Lettres de recommandation",
+      "body": "Les lettres consultables sur ce site sont publiées avec l'accord explicite de leurs auteurs."
+    },
+    "rights": {
+      "heading": "Vos droits (RGPD Art. 15-17)",
+      "body": "Vous pouvez demander l'accès, la rectification ou la suppression de vos données en écrivant à"
+    },
+    "updated": "Dernière révision : juin 2025"
   }
 }

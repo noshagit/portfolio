@@ -23,6 +23,14 @@ export default function Footer({ onNavigate }: Props) {
             {t.footer.contact}
           </button>
           <span className="h-3 w-px bg-accent/15" />
+          <button
+            onClick={() => onNavigate('privacy')}
+            className="text-[10px] font-semibold uppercase tracking-widest text-foreground/60
+                       transition-all duration-200 hover:text-accent"
+          >
+            {t.footer.privacy}
+          </button>
+          <span className="h-3 w-px bg-accent/15" />
           <div className="flex items-center gap-3">
             <a
               href="https://www.linkedin.com/in/ilian-ben-hamou-7b6053297/"

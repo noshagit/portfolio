@@ -32,9 +32,7 @@ npm run preview   # preview production build
 
 **i18n** — FR is bundled (`src/locales/fr.json`). EN is lazy-fetched (`public/locales/en.json`). Experience data per language lives in `public/locales/{lang}/experiences.json`. Module-level `Map` cache prevents redundant fetches. Locale keys must stay in sync across both JSON files.
 
-### 4. Performance & Resource Optimization
-- **Asset & Data Loading**: Always optimize data consumption. Translatable resources and heavy data sets (like `experiences.json`) must be dynamically or lazy-loaded based on the active locale. Never preload unused languages or heavy assets that waste network bandwidth.
-- **Rendering Performance**: Keep components lightweight. Strive for a locked 60 FPS experience by preventing unnecessary layout reflows. Always privilege hardware-accelerated CSS properties (`transform`, `opacity`) for animations and use `React.memo` or `useMemo` to cache heavy computations or filtered arrays.
+**Performance** — Translatable resources and heavy data sets (like `experiences.json`) must be lazy-loaded per locale. Never preload unused languages. Privilege `transform`/`opacity` for animations; use `React.memo`/`useMemo` for heavy computations or filtered arrays.
 
 ## Architecture
 
@@ -55,3 +53,11 @@ SPA with no router — navigation is pure React state. `App.tsx` holds `currentV
 **Tailwind v4** — config is in `index.css` via `@theme` / `@custom-variant`, not `tailwind.config.*`. One custom utility exists: `shadow-accent` (accent-colored drop shadow via `@utility`). Fonts: `font-sans` → Inter, `font-mono` → JetBrains Mono.
 
 **Animations**: page transitions use `AnimatePresence mode="wait"`; card grids use `mode="popLayout"` with `motion.div layout` for smooth reordering. Modal pattern in `Experiences.tsx`: backdrop + centered shell with `pointer-events-none` to let backdrop clicks fall through, inner panel with `pointer-events-auto` and `stopPropagation`.
+
+**Splash gate** — `App` renders a `SplashGate` (reads `loading` from `LanguageContext`) alongside `AppShell`. `SplashScreen` dismisses only when both its progress bar animation completes AND `loading` is false. Never bypass this gate for perceived-performance reasons; it masks the EN locale fetch latency.
+
+**Experience image gallery** — `src/pages/experiences/imageMap.ts` uses `import.meta.glob` to discover all images under `src/assets/experiences/{id}/` at build time. Drop image files into that directory named by experience `id` to activate a gallery in the modal. No code change needed.
+
+**Recommendation letters** — PDFs live in `public/ldr/`. Each locale JSON entry under `presentation.recommendations.items[].pdf` must point to the correct path. Adding a new recommendation requires: dropping the PDF in `public/ldr/`, then adding the entry to both `src/locales/fr.json` and `public/locales/en.json`.
+
+**Lang resolution order** — URL `?lang=` param → `localStorage` → `navigator.language` (defaults to FR). The URL param exists for SEO hreflang crawlers; don't remove it.

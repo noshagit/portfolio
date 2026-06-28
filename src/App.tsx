@@ -10,6 +10,7 @@ import Landing from './pages/Landing'
 import Presentation from './pages/Presentation'
 import Experiences from './pages/Experiences'
 import Contact from './pages/Contact'
+import Privacy from './pages/Privacy'
 import type { View } from './types'
 
 const PAGES = {
@@ -17,6 +18,7 @@ const PAGES = {
   presentation: Presentation,
   experiences:  Experiences,
   contact:      Contact,
+  privacy:      Privacy,
 } as const
 
 function AppShell() {

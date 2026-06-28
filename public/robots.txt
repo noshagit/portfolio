@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /ldr/
+
+Sitemap: https://ilianbenhamou.fr/sitemap.xml

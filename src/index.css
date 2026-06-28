@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@import "@fontsource-variable/inter";
+@import "@fontsource-variable/jetbrains-mono";
 
 /* Class-based dark mode: apply .dark to <html> */
 @custom-variant dark (&:where(.dark, .dark *));
@@ -10,8 +12,8 @@
   --color-accent:     var(--accent);
   --color-accent-muted: var(--accent-muted);
 
-  --font-sans: 'Inter', system-ui, sans-serif;
-  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --font-sans: 'Inter Variable', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono Variable', ui-monospace, monospace;
 }
 
 /* ─── Light theme (default) ─── */
