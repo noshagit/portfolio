@@ -1,5 +1,5 @@
 // Drop images into src/assets/experiences/{experience-id}/ to activate the gallery.
-// Vite resolves this glob at build time — no runtime filesystem access required.
+// Vite resolves this glob at build time - no runtime filesystem access required.
 const RAW = import.meta.glob<{ default: string }>(
   '../../assets/experiences/**/*.{jpg,jpeg,png,webp,avif}',
   { eager: true },

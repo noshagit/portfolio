@@ -17,14 +17,14 @@ export const LanguageContext = createContext<LanguageContextValue | null>(null)
 const cache = new Map<Lang, Translations>([['fr', FR]])
 
 function resolveInitialLang(): Lang {
-  // URL param takes priority — used by hreflang crawlers and direct deep-links
+  // URL param takes priority - used by hreflang crawlers and direct deep-links
   const urlLang = new URLSearchParams(window.location.search).get('lang') as Lang | null
   if (urlLang === 'en' || urlLang === 'fr') return urlLang
 
   const saved = localStorage.getItem('portfolio-lang') as Lang | null
   if (saved === 'en' || saved === 'fr') return saved
 
-  // First visit — detect from browser, persist the result
+  // First visit - detect from browser, persist the result
   const detected = (navigator.languages?.[0] ?? navigator.language ?? 'fr').toLowerCase()
   const lang: Lang = detected.startsWith('fr') ? 'fr' : 'en'
   localStorage.setItem('portfolio-lang', lang)
@@ -34,16 +34,16 @@ function resolveInitialLang(): Lang {
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [lang, setLangState] = useState<Lang>(resolveInitialLang)
 
-  // If the resolved initial lang is EN, it isn't bundled — set loading=true until fetched
+  // If the resolved initial lang is EN, it isn't bundled - set loading=true until fetched
   const [t,       setT]       = useState<Translations>(() => cache.get(lang) ?? FR)
   const [loading, setLoading] = useState<boolean>(() => lang === 'en' && !cache.has('en'))
-  // Keep html[lang] in sync with active language — SEO + screen readers
+  // Keep html[lang] in sync with active language - SEO + screen readers
   useEffect(() => { document.documentElement.lang = lang }, [lang])
 
   // Capture initial lang in a ref so the mount effect below doesn't need lang as a dep
   const initialLang = useRef(lang)
 
-  // Initial EN fetch — only fires when the browser default or saved pref is EN
+  // Initial EN fetch - only fires when the browser default or saved pref is EN
   useEffect(() => {
     if (initialLang.current !== 'en' || cache.has('en')) return
 
@@ -56,11 +56,11 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
         cache.set('en', data)
         setT(data)
       })
-      .catch(() => { /* network error / timeout — fall back to FR text silently */ })
+      .catch(() => { /* network error / timeout - fall back to FR text silently */ })
       .finally(() => { clearTimeout(timeout); setLoading(false) })
 
     return () => { ctrl.abort(); clearTimeout(timeout) }
-  }, []) // intentionally empty — runs once on mount
+  }, []) // intentionally empty - runs once on mount
 
   const setLang = useCallback(async (next: Lang) => {
     if (next === lang) return
@@ -81,7 +81,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
       setT(data)
       localStorage.setItem('portfolio-lang', next)
     } catch {
-      // Network error or bad response — stay on current language
+      // Network error or bad response - stay on current language
     } finally {
       setLoading(false)
     }

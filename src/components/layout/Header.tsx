@@ -39,7 +39,7 @@ export default function Header({ currentView, onNavigate }: Props) {
       <header className="sticky top-0 z-50 w-full border-b border-accent/10 bg-background/90 backdrop-blur-md">
         <div className="mx-auto flex h-16 max-w-5xl items-center px-6 md:h-20">
 
-          {/* Left — initials */}
+          {/* Left - initials */}
           <div className="flex flex-1">
             <button
               onClick={() => navigate('landing')}
@@ -54,7 +54,7 @@ export default function Header({ currentView, onNavigate }: Props) {
             </button>
           </div>
 
-          {/* Center — desktop nav with dot separators */}
+          {/* Center - desktop nav with dot separators */}
           <LayoutGroup>
             <nav aria-label="Navigation principale" className="hidden items-center md:flex">
               {NAV_ITEMS.map((item, i) => {
@@ -91,7 +91,7 @@ export default function Header({ currentView, onNavigate }: Props) {
             </nav>
           </LayoutGroup>
 
-          {/* Right — LinkedIn + theme toggle + hamburger */}
+          {/* Right - LinkedIn + theme toggle + hamburger */}
           <div className="flex flex-1 items-center justify-end gap-2.5">
             <a
               href="https://www.linkedin.com/in/ilian-ben-hamou-7b6053297/"
@@ -106,7 +106,7 @@ export default function Header({ currentView, onNavigate }: Props) {
             <LangToggle />
             <ThemeToggle />
 
-            {/* Hamburger — mobile only */}
+            {/* Hamburger - mobile only */}
             <button
               onClick={() => setMenuOpen(prev => !prev)}
               aria-label={menuOpen ? 'Close menu' : 'Open menu'}

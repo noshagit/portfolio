@@ -14,7 +14,7 @@ const FR_BASE = RAW as Experience[]
 const ALL_TYPES_BASE    = Array.from(new Set(FR_BASE.map(e => e.type)))
 const ALL_DOMAINES_BASE = Array.from(new Set(FR_BASE.flatMap(e => e.domaine)))
 
-// Module-level cache — survives page navigation
+// Module-level cache - survives page navigation
 const expCache = new Map<Lang, Experience[]>([['fr', FR_BASE]])
 
 function yearMax(date: string) { return Math.max(...date.split('-').map(Number)) }
@@ -44,7 +44,7 @@ export default function Experiences({ onNavigate: _onNavigate }: Props) {
     fetch(`/locales/${lang}/experiences.json`, { signal: abortRef.current.signal })
       .then(r => { if (!r.ok) throw new Error(`${r.status}`); return r.json() })
       .then((data: Experience[]) => { expCache.set(lang, data); setExperiences(data) })
-      .catch(() => {/* aborted or HTTP error — keep current */})
+      .catch(() => {/* aborted or HTTP error - keep current */})
   }, [lang])
 
   const filtered = useMemo(() => experiences

@@ -216,7 +216,7 @@
         ],
         "links": [
             {
-                "label": "Instagram — Room Service Festival",
+                "label": "Instagram - Room Service Festival",
                 "url": "https://www.instagram.com/roomservicefestival/"
             }
         ]
@@ -271,7 +271,7 @@
         ],
         "competences_obtenir": [
             "Segmentation réseau (VLAN Cisco)",
-            "Routage et configuration matérielle (Switchs & Routeurs Cisco)",
+            "Routage et configuration matérielle (switchs & routeurs Cisco)",
             "Configuration de pare-feu d'entreprise (Stormshield)",
             "Règles de filtrage et politiques d'accès"
         ],
@@ -295,7 +295,7 @@
             "Consultant en Cybersécurité"
         ],
         "competences_obtenir": [
-            "Analyse de dumps mémoires (Mobile & PC)",
+            "Analyse de dumps mémoires (mobile & PC)",
             "Utilisation de suites forensics (Cellebrite Reader, Autopsy)",
             "Extraction d'artefacts et reconstruction de timeline",
             "Résolution de challenges de stéganographie"
@@ -375,7 +375,7 @@
     },
     {
         "id": "exp-photo-ynov-2026",
-        "nom": "Photographe événementiel (Remise des diplômes)",
+        "nom": "Remise des diplômes",
         "date": "2026",
         "type": "Participation bénévole",
         "domaine": ["Photographie"],

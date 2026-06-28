@@ -18,9 +18,15 @@ npm run lint      # oxlint (no tests exist)
 npm run preview   # preview production build
 ```
 
-## RÈGLE IMPÉRATIVE — SYNCHRONISATION i18n (FR/EN)
+## RÈGLE IMPÉRATIVE - SYNCHRONISATION i18n (FR/EN)
 
 Ce projet est bilingue. Toute modification, ajout ou suppression de contenu textuel doit IMPÉRATIVEMENT être répercuté et traduit simultanément dans `src/locales/fr.json` et `public/locales/en.json`. Les structures de données doivent rester strictement miroirs. Ne pas attendre de demande explicite.
+
+## Règles strictes de rédaction et typographie
+
+- **Tirets cadratins interdits** : Le tiret cadratin (—) et le demi-cadratin (–) sont FORMELLEMENT BANNIS de tout le projet (fichiers de code, composants, fr.json, en.json). Pour séparer des éléments ou des plages de dates, utiliser exclusivement le tiret court (-), la barre verticale (|), ou reformuler la phrase de manière fluide.
+- **Accentuation française** : Appliquer scrupuleusement les accents, y compris sur les majuscules (É, À, È). Ex : "Expériences", "Études", "Équipe".
+- **Majuscules en français** : Aucune majuscule injustifiée sur un nom commun en milieu de phrase. Les majuscules sont réservées aux débuts de phrases, noms propres, acronymes et marques. Ex : "Déploiement d'une infrastructure" (pas "Infrastructure").
 
 ## Engineering Standards (non-negotiable)
 

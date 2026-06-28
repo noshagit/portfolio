@@ -71,7 +71,7 @@ export default function Presentation({ onNavigate: _onNavigate }: Props) {
         const atBottom = el.scrollTop + el.clientHeight >= el.scrollHeight - 2
         const atTop    = el.scrollTop <= 0
 
-        // Not at edge — let the section scroll normally and reset edge timer
+        // Not at edge - let the section scroll normally and reset edge timer
         if (down  && scrollable && !atBottom) { edgeHitRef.current = 0; setShowHint(false); return }
         if (!down && scrollable && !atTop)    { edgeHitRef.current = 0; setShowHint(false); return }
 
@@ -170,7 +170,7 @@ export default function Presentation({ onNavigate: _onNavigate }: Props) {
     >
       <PresentationNav activeIdx={activeIdx} onChange={navigate} />
 
-      {/* Scroll cue — mobile only, hidden once user reaches last section */}
+      {/* Scroll cue - mobile only, hidden once user reaches last section */}
       <AnimatePresence>
         {indicatorReady && activeIdx < SECTION_COUNT - 1 && !showHint && (
           <motion.div

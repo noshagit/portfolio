@@ -13,10 +13,10 @@ export default function EducationSection() {
       <SectionLabel>{education.label}</SectionLabel>
 
       <div className="relative">
-        {/* Horizontal rule — desktop only */}
+        {/* Horizontal rule - desktop only */}
         <div className="absolute top-2 hidden h-px w-full bg-foreground/10 md:block" aria-hidden="true" />
 
-        <div className="grid grid-cols-1 gap-10 md:grid-cols-3 md:gap-8">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-3 md:gap-14">
           {education.items.map(({ id, period, degree, institution, url, context }, i) => (
             <motion.div
               key={id}
@@ -37,24 +37,24 @@ export default function EducationSection() {
                 aria-hidden="true"
               />
 
-              <div className="pb-2 md:pt-6">
-                <p className="mb-3 text-[10px] uppercase tracking-[0.2em] text-accent">
+              <div className="pb-6 md:pt-10">
+                <p className="mb-4 text-xs uppercase tracking-[0.2em] text-accent">
                   {period}
                 </p>
-                <h3 className="mb-1.5 text-base font-bold leading-snug text-foreground">
+                <h3 className="mb-3 text-xl font-bold leading-snug text-foreground">
                   {degree}
                 </h3>
                 <a
                   href={url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mb-3 inline-flex items-center gap-1 text-xs text-foreground/50
+                  className="mb-5 inline-flex items-center gap-1.5 text-sm text-foreground/50
                              transition-colors duration-200 hover:text-accent"
                 >
                   {institution}
-                  <ExternalLink size={9} className="shrink-0" aria-hidden="true" />
+                  <ExternalLink size={10} className="shrink-0" aria-hidden="true" />
                 </a>
-                <p className="text-sm leading-relaxed text-foreground/60">
+                <p className="text-base leading-relaxed text-foreground/60">
                   {context}
                 </p>
               </div>

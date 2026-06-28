@@ -35,7 +35,7 @@
 }
 
 /* ─── Global resets ─── */
-/* box-sizing only — margin/padding left to Tailwind Preflight (@layer base) so
+/* box-sizing only - margin/padding left to Tailwind Preflight (@layer base) so
    @layer utilities (py-*, mb-*, etc.) aren't overridden by unlayered CSS */
 *, *::before, *::after {
   box-sizing: border-box;
@@ -71,7 +71,7 @@ button, [role="button"] {
   border-radius: 2px;
 }
 
-/* Applied only during theme toggle — keeps hover animations snappy */
+/* Applied only during theme toggle - keeps hover animations snappy */
 .theme-transition *,
 .theme-transition *::before,
 .theme-transition *::after {

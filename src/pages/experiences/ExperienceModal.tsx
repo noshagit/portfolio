@@ -41,7 +41,7 @@ export default function ExperienceModal({ exp, onClose }: Props) {
         className="fixed inset-0 z-[60] bg-foreground/15 backdrop-blur-sm"
       />
 
-      {/* Shell — pointer-events-none so clicks outside fall through to backdrop */}
+      {/* Shell - pointer-events-none so clicks outside fall through to backdrop */}
       <div className="pointer-events-none fixed inset-0 z-[70] flex items-start justify-center p-4 pt-20 sm:items-center sm:p-6">
         <motion.div
           initial={{ opacity: 0, y: 20, scale: 0.97 }}
@@ -106,7 +106,7 @@ export default function ExperienceModal({ exp, onClose }: Props) {
                     <img
                       key={src}
                       src={src}
-                      alt={`${exp.nom} — ${modal.photo} ${i + 1}`}
+                      alt={`${exp.nom} - ${modal.photo} ${i + 1}`}
                       className="aspect-video w-full object-cover"
                       loading="lazy"
                     />
@@ -115,7 +115,7 @@ export default function ExperienceModal({ exp, onClose }: Props) {
               </section>
             )}
 
-            {/* Tag grid — 3 columns side by side on sm+, stacked on mobile */}
+            {/* Tag grid - 3 columns side by side on sm+, stacked on mobile */}
             <div className="mb-5 grid grid-cols-1 gap-4 sm:grid-cols-3">
               <section>
                 <SectionLabel as="p" className="mb-2 text-[10px]">{modal.relatedJobs}</SectionLabel>

@@ -38,7 +38,7 @@ export default function SplashScreen({ ready, onDone }: Props) {
         </div>
       </div>
 
-      {/* Progress bar — scaleX is GPU-accelerated, origin-left expands left→right */}
+      {/* Progress bar - scaleX is GPU-accelerated, origin-left expands left→right */}
       <div
         className="w-40 overflow-hidden"
         style={{ height: '1px', background: 'color-mix(in srgb, var(--foreground) 10%, transparent)' }}
