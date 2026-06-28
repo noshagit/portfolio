@@ -1,5 +1,6 @@
 import { useState, useMemo, useEffect, useRef, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { ArrowRight } from 'lucide-react'
 import type { View } from '../types'
 import type { Experience, SortDir } from '../types/experience'
 import type { Lang } from '../context/LanguageContext'
@@ -24,7 +25,7 @@ interface Props {
   onNavigate: (view: View) => void
 }
 
-export default function Experiences({ onNavigate: _onNavigate }: Props) {
+export default function Experiences({ onNavigate }: Props) {
   const { lang, t } = useLang()
   const [activeType,    setActiveType]    = useState<string | null>(null)
   const [activeDomaine, setActiveDomaine] = useState<string | null>(null)
@@ -125,6 +126,27 @@ export default function Experiences({ onNavigate: _onNavigate }: Props) {
             </motion.p>
           )}
         </AnimatePresence>
+
+        {/* CTA */}
+        <div className="pt-8">
+          <div className="h-px bg-foreground/10" />
+          <div className="flex flex-col items-center py-16 text-center sm:py-20">
+            <p className="mb-8 max-w-lg text-sm leading-relaxed text-foreground/60 sm:text-base">
+              {t.experiences.cta.text}
+            </p>
+            <motion.button
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.98 }}
+              onClick={() => onNavigate('contact')}
+              className="inline-flex items-center gap-2.5 border border-accent px-6 py-3
+                         text-sm font-medium text-accent transition-colors duration-200
+                         hover:bg-accent hover:text-background"
+            >
+              {t.experiences.cta.button}
+              <ArrowRight size={14} aria-hidden="true" />
+            </motion.button>
+          </div>
+        </div>
 
       </div>
 

@@ -16,9 +16,9 @@
       "label": "// intro",
       "title": "Étudiant en",
       "titleAccent": "Cybersécurité.",
-      "bio1": "23 ans, en troisième année de cybersécurité, je suis activement à la recherche d'un",
+      "bio1": "Actuellement en troisième année de bachelor en cybersécurité, je suis activement à la recherche d'un",
       "bioAccent": "contrat d'apprentissage",
-      "bio2": "pour poursuivre ma montée en compétences au sein d'une équipe technique ambitieuse."
+      "bio2": "pour intégrer un master à la rentrée 2026. Mon objectif est de mettre ma rigueur et ma curiosité technique au service d'une équipe opérationnelle ambitieuse face aux enjeux de la cyberdéfense."
     },
     "softSkills": {
       "label": "// soft skills",
@@ -289,6 +289,11 @@
           "urlLabel": ""
         }
       ]
+    },
+    "transition": {
+      "label": "// ouverture & polyvalence",
+      "text": "Mon parcours ne se résume pas uniquement à la technique. À travers mes différentes expériences, j'ai développé une grande adaptabilité en évoluant dans des univers variés : de la gestion du rush dans la restauration à la sensibilité artistique de la photographie et de la vidéo, jusqu'à la rigueur de la cybersécurité. Chaque domaine m'a apporté des compétences uniques qui enrichissent ma vision professionnelle.",
+      "cta": "Découvrir mes expériences"
     }
   },
   "experiences": {
@@ -328,6 +333,10 @@
       "Restauration": "Restauration",
       "Photographie": "Photographie",
       "Vidéo": "Vidéo"
+    },
+    "cta": {
+      "text": "Mon profil ou mes expériences ont suscité votre intérêt ? Rencontrons-nous pour échanger sur vos projets et mes futures collaborations.",
+      "button": "Me contacter"
     }
   },
   "contact": {

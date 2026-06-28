@@ -9,10 +9,11 @@ import SkillsSection from './presentation/SkillsSection'
 import EducationSection from './presentation/EducationSection'
 import RecommendationPanel from './presentation/RecommendationPanel'
 import PassionPanel from './presentation/PassionPanel'
+import TransitionSection from './presentation/TransitionSection'
 import PresentationNav from './presentation/PresentationNav'
 import { EASE } from '../lib/motion'
 
-const SECTION_COUNT = 6
+const SECTION_COUNT = 7
 
 const slideVariants = {
   enter: (dir: number) => ({ opacity: 0, y: dir > 0 ? 36 : -36 }),
@@ -24,7 +25,7 @@ interface Props {
   onNavigate: (view: View) => void
 }
 
-export default function Presentation({ onNavigate: _onNavigate }: Props) {
+export default function Presentation({ onNavigate }: Props) {
   const { t } = useLang()
   const i = t.presentation.intro
 
@@ -158,6 +159,7 @@ export default function Presentation({ onNavigate: _onNavigate }: Props) {
     <EducationSection     key="education" />,
     <RecommendationPanel  key="recommendations" />,
     <PassionPanel         key="passions" />,
+    <TransitionSection    key="transition" onNavigate={onNavigate} />,
   ]
 
   return (

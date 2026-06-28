@@ -17,6 +17,7 @@ export default function PresentationNav({ activeIdx, onChange }: Props) {
     p.education.label.replace(/^\/\/ /, ''),
     p.recommendations.label.replace(/^\/\/ /, ''),
     p.passions.label.replace(/^\/\/ /, ''),
+    p.transition.label.replace(/^\/\/ /, ''),
   ]
 
   return (

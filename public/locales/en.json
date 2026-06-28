@@ -16,9 +16,9 @@
       "label": "// intro",
       "title": "Student in",
       "titleAccent": "Cybersecurity.",
-      "bio1": "23 years old, in my third year of cybersecurity studies, I am actively seeking an",
-      "bioAccent": "apprenticeship contract",
-      "bio2": "to continue building my skills within an ambitious technical team."
+      "bio1": "Currently in my third year of a bachelor's degree in cybersecurity, I am actively seeking an",
+      "bioAccent": "apprenticeship",
+      "bio2": "to pursue a master's degree starting in September 2026. My goal is to bring my dedication and technical curiosity to an ambitious operational team tackling modern cyberdefense challenges."
     },
     "softSkills": {
       "label": "// soft skills",
@@ -289,6 +289,11 @@
           "urlLabel": ""
         }
       ]
+    },
+    "transition": {
+      "label": "// versatility & background",
+      "text": "My background is not limited to technology alone. Through my diverse experiences, I have developed great adaptability by evolving in various fields: from managing high-pressure situations in the restaurant industry to the artistic sensitivity of photography and video, and the rigor of cybersecurity. Each domain has provided me with unique skills that enrich my professional vision.",
+      "cta": "Explore my experiences"
     }
   },
   "experiences": {
@@ -328,6 +333,10 @@
       "Restauration": "Hospitality",
       "Photographie": "Photography",
       "Vidéo": "Video"
+    },
+    "cta": {
+      "text": "Interested in my background or experiences? Let's connect to discuss your projects and potential collaborations.",
+      "button": "Get in touch"
     }
   },
   "contact": {
