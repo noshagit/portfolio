@@ -42,7 +42,7 @@ export default function Presentation({ onNavigate }: Props) {
   const sectionRef    = useRef<HTMLDivElement>(null)
   const touchStartRef = useRef(0)
 
-  const EDGE_HOLD_MS = 400
+  const EDGE_HOLD_MS = 150
 
   const navigate = useCallback((idx: number) => {
     const next = Math.max(0, Math.min(SECTION_COUNT - 1, idx))
