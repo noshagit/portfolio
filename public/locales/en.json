@@ -236,13 +236,6 @@
       "downloadPdf": "Download PDF",
       "items": [
         {
-          "id": "iaboni",
-          "label": "Alexandra IABONI",
-          "role": "Head of Admissions - Lyon Ynov Campus",
-          "text": "Alexandra worked alongside me during my time as a school ambassador and former member of the Student Sports Association. She vouches for my commitment to student life, my team spirit, and my ability to authentically represent the institution at major events.",
-          "pdf": "/ldr/ldr-001.pdf"
-        },
-        {
           "id": "sirot",
           "label": "Cellya SIROT",
           "role": "Web Developer - Oraxya",
