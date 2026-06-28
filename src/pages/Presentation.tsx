@@ -57,6 +57,17 @@ export default function Presentation({ onNavigate }: Props) {
     requestAnimationFrame(() => { if (sectionRef.current) sectionRef.current.scrollTop = 0 })
   }, [])
 
+  // Lock body scroll for the entire duration of the Presentation page
+  useEffect(() => {
+    const prev = document.body.style.overflow
+    document.body.style.overflow          = 'hidden'
+    document.body.style.overscrollBehavior = 'none'
+    return () => {
+      document.body.style.overflow          = prev
+      document.body.style.overscrollBehavior = ''
+    }
+  }, [])
+
   useEffect(() => {
     function tryStep(delta: number) {
       if (cooldownRef.current) return
@@ -248,9 +259,9 @@ export default function Presentation({ onNavigate }: Props) {
           initial="enter"
           animate="center"
           exit="exit"
-          className="h-full overflow-y-auto px-4 py-12 sm:px-6 md:py-16 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          className="h-full overflow-y-auto px-4 py-12 sm:px-6 md:py-16 [overscroll-behavior:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
         >
-          <div className="mx-auto max-w-5xl">
+          <div className="mx-auto flex min-h-full max-w-5xl flex-col justify-center">
             {slides[activeIdx]}
           </div>
         </motion.div>

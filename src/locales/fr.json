@@ -370,6 +370,10 @@
       ],
       "retention": "Ces données restent dans votre navigateur, ne sont jamais transmises à des tiers, et sont supprimées lorsque vous videz vos données de navigation."
     },
+    "photo": {
+      "heading": "Photo de profil",
+      "body": "La photo affichée sur ce site est celle du titulaire du portfolio, publiée volontairement à des fins de présentation professionnelle."
+    },
     "letters": {
       "heading": "Lettres de recommandation",
       "body": "Les lettres consultables sur ce site sont publiées avec l'accord explicite de leurs auteurs."

@@ -38,7 +38,7 @@ function AppShell() {
           <Page key={currentView} onNavigate={navigate} />
         </AnimatePresence>
       </main>
-      <Footer onNavigate={navigate} />
+      {currentView !== 'presentation' && <Footer onNavigate={navigate} />}
     </div>
   )
 }

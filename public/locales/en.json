@@ -370,6 +370,10 @@
       ],
       "retention": "This data stays in your browser, is never shared with third parties, and is erased when you clear your browsing data."
     },
+    "photo": {
+      "heading": "Profile photo",
+      "body": "The photo displayed on this site belongs to the portfolio owner and is published voluntarily for professional presentation purposes."
+    },
     "letters": {
       "heading": "Recommendation Letters",
       "body": "The letters viewable on this site are published with the explicit consent of their authors."
