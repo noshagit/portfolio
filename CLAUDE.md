@@ -18,6 +18,10 @@ npm run lint      # oxlint (no tests exist)
 npm run preview   # preview production build
 ```
 
+## RÈGLE IMPÉRATIVE — SYNCHRONISATION i18n (FR/EN)
+
+Ce projet est bilingue. Toute modification, ajout ou suppression de contenu textuel doit IMPÉRATIVEMENT être répercuté et traduit simultanément dans `src/locales/fr.json` et `public/locales/en.json`. Les structures de données doivent rester strictement miroirs. Ne pas attendre de demande explicite.
+
 ## Engineering Standards (non-negotiable)
 
 **Design Tokens** — All colors, spacing, and typography are centralized in `src/index.css` as CSS custom properties. Never hardcode hex values or magic numbers in components. Always use semantic Tailwind tokens: `bg-background`, `text-foreground`, `text-accent`, `bg-accent-muted`.
@@ -30,7 +34,7 @@ npm run preview   # preview production build
 
 **Fetch robustness** — Always check `res.ok` before calling `res.json()`. Throw on non-2xx; callers must handle gracefully (fallback to last known good state).
 
-**i18n** — FR is bundled (`src/locales/fr.json`). EN is lazy-fetched (`public/locales/en.json`). Experience data per language lives in `public/locales/{lang}/experiences.json`. Module-level `Map` cache prevents redundant fetches. Locale keys must stay in sync across both JSON files.
+**i18n** — FR bundled (`src/locales/fr.json`), EN lazy-fetched (`public/locales/en.json`). Experience data per language in `public/locales/{lang}/experiences.json`. Module-level `Map` cache prevents redundant fetches. See synchronisation rule above.
 
 **Performance** — Translatable resources and heavy data sets (like `experiences.json`) must be lazy-loaded per locale. Never preload unused languages. Privilege `transform`/`opacity` for animations; use `React.memo`/`useMemo` for heavy computations or filtered arrays.
 
@@ -46,7 +50,7 @@ SPA with no router — navigation is pure React state. `App.tsx` holds `currentV
 
 **Content data** lives in `src/data/` (FR experiences JSON, bundled). The `Experience` interface and `SortDir` type live in `src/types/experience.ts`. `src/types/index.ts` holds only `View`, `Theme`, and `NavItem`.
 
-**i18n** — `LanguageContext` + `useLang()` hook. FR bundled, EN lazy-fetched. Experience translations in `public/locales/en/experiences.json` (separate file, fetched by `Experiences.tsx` via `useEffect([lang])`). `EASE` animation constant lives in `src/lib/motion.ts` — import from there, never redeclare.
+**i18n** — `LanguageContext` + `useLang()` hook. `Translations = typeof FR` — the FR JSON is the type source of truth; EN must mirror it exactly. Experience translations in `public/locales/en/experiences.json`, fetched by `Experiences.tsx` via `useEffect([lang])`. `EASE` animation constant lives in `src/lib/motion.ts` — import from there, never redeclare.
 
 **Linter**: oxlint with react + typescript + oxc plugins. `react/rules-of-hooks` is an error; `react/only-export-components` is a warning (constant exports allowed). No ESLint.
 
@@ -57,6 +61,8 @@ SPA with no router — navigation is pure React state. `App.tsx` holds `currentV
 **Splash gate** — `App` renders a `SplashGate` (reads `loading` from `LanguageContext`) alongside `AppShell`. `SplashScreen` dismisses only when both its progress bar animation completes AND `loading` is false. Never bypass this gate for perceived-performance reasons; it masks the EN locale fetch latency.
 
 **Experience image gallery** — `src/pages/experiences/imageMap.ts` uses `import.meta.glob` to discover all images under `src/assets/experiences/{id}/` at build time. Drop image files into that directory named by experience `id` to activate a gallery in the modal. No code change needed.
+
+**Presentation page** — unlike all other pages, `Presentation.tsx` is a fullscreen paged slider (not a scroll page). It manages 6 sections via `activeIdx` state and custom wheel/keyboard/touch handlers registered on `window`. A 650 ms cooldown debounce prevents rapid flipping. For scrollable sections, the edge-hold logic requires the user to hold at the scroll boundary for `EDGE_HOLD_MS` (700 ms) before the slide advances. `PresentationNav` is a fixed left-rail dot nav that only renders at `xl:` and above. Never add `overflow-y-scroll` to the page root — section overflow is handled per-slide via `sectionRef`.
 
 **Recommendation letters** — PDFs live in `public/ldr/`. Each locale JSON entry under `presentation.recommendations.items[].pdf` must point to the correct path. Adding a new recommendation requires: dropping the PDF in `public/ldr/`, then adding the entry to both `src/locales/fr.json` and `public/locales/en.json`.
 

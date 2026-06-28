@@ -39,6 +39,7 @@
    @layer utilities (py-*, mb-*, etc.) aren't overridden by unlayered CSS */
 *, *::before, *::after {
   box-sizing: border-box;
+  font-family: inherit;
 }
 
 html {

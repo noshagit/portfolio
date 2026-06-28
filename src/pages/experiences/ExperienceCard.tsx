@@ -30,17 +30,17 @@ function ExperienceCard({ exp, onOpen }: Props) {
       aria-label={exp.nom}
       className="group flex flex-col gap-4 border border-accent/15 p-5 transition-colors duration-200 hover:border-accent/40 hover:bg-accent-muted"
     >
-      <span className="self-start border border-accent/20 px-2 py-0.5 font-mono text-[10px] uppercase tracking-widest text-foreground/60">
+      <span className="self-start border border-accent/20 px-2 py-0.5 text-[10px] uppercase tracking-widest text-foreground/60">
         {typeLabel}
       </span>
 
       <div className="flex-1">
         <h2 className="mb-1 text-sm font-bold leading-snug text-foreground">{exp.nom}</h2>
-        <p className="font-mono text-xs text-foreground/60">{exp.employeur_collab}</p>
+        <p className="text-xs text-foreground/60">{exp.employeur_collab}</p>
       </div>
 
       <div className="flex items-center justify-between">
-        <span className="font-mono text-xs text-foreground/60">{exp.date}</span>
+        <span className="text-xs text-foreground/60">{exp.date}</span>
         <ChevronRight
           size={14}
           className="text-foreground/60 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:text-accent"

@@ -51,7 +51,7 @@ export default function Footer({ onNavigate }: Props) {
           </div>
         </div>
 
-        <div className="hidden text-right font-mono text-[11px] leading-relaxed text-foreground/60 sm:block">
+        <div className="hidden text-right text-[11px] leading-relaxed text-foreground/60 sm:block">
           <p>BEN HAMOU Ilian</p>
           <p>+33781583839</p>
           <p>ilianbenhamou2163@gmail.com</p>

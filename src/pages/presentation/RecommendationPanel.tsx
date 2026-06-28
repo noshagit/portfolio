@@ -1,75 +1,45 @@
-import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { Download } from 'lucide-react'
 import SectionLabel from '../../components/ui/SectionLabel'
 import { useLang } from '../../hooks/useLang'
+import { EASE } from '../../lib/motion'
 
 export default function RecommendationPanel() {
   const { t } = useLang()
   const { recommendations } = t.presentation
-  const [activeId, setActiveId] = useState(recommendations.items[0].id)
-  const reco = recommendations.items.find(r => r.id === activeId) ?? recommendations.items[0]
 
   return (
     <>
       <SectionLabel>{recommendations.label}</SectionLabel>
 
-      <div className="grid gap-8 md:grid-cols-[220px_1fr] md:gap-16">
-
-        {/* Selector */}
-        <div className="flex flex-wrap gap-x-6 gap-y-3 md:flex-col md:gap-4">
-          {recommendations.items.map(({ id, label }) => {
-            const isActive = activeId === id
-            return (
-              <button
-                key={id}
-                onClick={() => setActiveId(id)}
-                aria-pressed={isActive}
-                className={[
-                  'flex items-center gap-3 text-left transition-all duration-200',
-                  isActive ? 'text-accent' : 'text-foreground/60 hover:text-foreground',
-                ].join(' ')}
-              >
-                <motion.span
-                  animate={{ opacity: isActive ? 1 : 0, x: isActive ? 0 : -4 }}
-                  transition={{ duration: 0.18, ease: 'easeOut' }}
-                  className="font-mono text-xs"
-                >
-                  ›
-                </motion.span>
-                <span className="font-mono text-sm">{label}</span>
-              </button>
-            )
-          })}
-        </div>
-
-        {/* Cross-fading content */}
-        <AnimatePresence mode="wait">
+      <div className="flex flex-col gap-10">
+        {recommendations.items.map(({ id, label, role, text, pdf }, i) => (
           <motion.div
-            key={activeId}
-            initial={{ opacity: 0, y: 6 }}
+            key={id}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -6 }}
-            transition={{ duration: 0.22, ease: 'easeOut' }}
-            className="flex flex-col gap-4"
+            transition={{ duration: 0.45, ease: EASE, delay: i * 0.07 }}
+            className="flex flex-col gap-3"
           >
-            <p className="font-mono text-xs text-accent">{reco.role}</p>
-            <p className="min-h-[6rem] text-sm leading-relaxed text-foreground/60 md:min-h-[8rem] md:text-base">
-              {reco.text}
-            </p>
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-widest text-foreground/40">
+                {label}
+              </p>
+              <p className="mt-1 text-xs text-accent">{role}</p>
+            </div>
+            <p className="text-sm leading-relaxed text-foreground/60 md:text-base">{text}</p>
             <a
-              href={reco.pdf}
+              href={pdf}
               download
               className="inline-flex items-center gap-2 self-start border border-accent/30 px-5 py-2.5
-                         font-mono text-xs text-foreground/60
+                         text-xs text-foreground/60
                          transition-all duration-200 hover:-translate-y-px hover:border-accent/70 hover:text-foreground"
             >
               <Download size={13} />
               {recommendations.downloadPdf}
             </a>
           </motion.div>
-        </AnimatePresence>
-
+        ))}
       </div>
     </>
   )

@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { ExternalLink } from 'lucide-react'
 import SectionLabel from '../../components/ui/SectionLabel'
 import { useLang } from '../../hooks/useLang'
 import { EASE } from '../../lib/motion'
@@ -16,7 +17,7 @@ export default function EducationSection() {
         <div className="absolute top-2 hidden h-px w-full bg-foreground/10 md:block" aria-hidden="true" />
 
         <div className="grid grid-cols-1 gap-10 md:grid-cols-3 md:gap-8">
-          {education.items.map(({ id, period, degree, institution, context }, i) => (
+          {education.items.map(({ id, period, degree, institution, url, context }, i) => (
             <motion.div
               key={id}
               initial={{ opacity: 0, y: 16 }}
@@ -37,15 +38,22 @@ export default function EducationSection() {
               />
 
               <div className="pb-2 md:pt-6">
-                <p className="mb-3 font-mono text-[10px] uppercase tracking-[0.2em] text-accent">
+                <p className="mb-3 text-[10px] uppercase tracking-[0.2em] text-accent">
                   {period}
                 </p>
                 <h3 className="mb-1.5 text-base font-bold leading-snug text-foreground">
                   {degree}
                 </h3>
-                <p className="mb-3 font-mono text-xs text-foreground/50">
+                <a
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mb-3 inline-flex items-center gap-1 text-xs text-foreground/50
+                             transition-colors duration-200 hover:text-accent"
+                >
                   {institution}
-                </p>
+                  <ExternalLink size={9} className="shrink-0" aria-hidden="true" />
+                </a>
                 <p className="text-sm leading-relaxed text-foreground/60">
                   {context}
                 </p>

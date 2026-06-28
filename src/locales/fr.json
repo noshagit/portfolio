@@ -22,16 +22,47 @@
     },
     "softSkills": {
       "label": "// soft skills",
-      "items": [
-        "Adaptabilité",
-        "Curiosité",
-        "Rigueur",
-        "Autonomie",
-        "Esprit d'équipe",
-        "Persévérance",
-        "Force de proposition",
-        "Leadership",
-        "Organisation"
+      "categories": [
+        {
+          "id": "communication",
+          "label": "Communication",
+          "items": [
+            "Travail en équipe",
+            "Présentation de projets",
+            "Rédaction technique",
+            "Sens de la communication"
+          ]
+        },
+        {
+          "id": "organisation",
+          "label": "Organisation",
+          "items": [
+            "Gestion de projet",
+            "Planification",
+            "Priorisation des tâches",
+            "Rigueur",
+            "Autonomie"
+          ]
+        },
+        {
+          "id": "learning",
+          "label": "Apprentissage",
+          "items": [
+            "Autodidacte",
+            "Curiosité",
+            "Capacité d'adaptation",
+            "Esprit d'analyse"
+          ]
+        },
+        {
+          "id": "leadership",
+          "label": "Leadership",
+          "items": [
+            "Leadership & coordination",
+            "Prise de décision",
+            "Force de proposition"
+          ]
+        }
       ]
     },
     "languages": {
@@ -175,23 +206,26 @@
       "items": [
         {
           "id": "bachelor",
-          "period": "2024 - 2027",
+          "period": "2024 – 2027",
           "degree": "Bachelor Cybersécurité",
           "institution": "Ynov Campus Lyon",
+          "url": "https://www.ynov.com/formations/cybersecurite/bachelor-cybersecurite",
           "context": "Fondamentaux de la cybersécurité, systèmes, réseaux, forensique et réponse à incident."
         },
         {
           "id": "licence",
-          "period": "2021 - 2023",
+          "period": "2021 – 2023",
           "degree": "Licence Informatique & Mathématiques",
           "institution": "Université Clermont Auvergne",
+          "url": "https://www.uca.fr/formation/nos-formations/par-ufr-ecoles-et-iut/clermont-auvergne-inp/institut-dinformatique/licence",
           "context": "Logique fondamentale, mathématiques avancées, génie logiciel et structuration algorithmique."
         },
         {
           "id": "bac",
-          "period": "2018 - 2021",
+          "period": "2018 – 2021",
           "degree": "Baccalauréat Général & Technologique",
           "institution": "Lycée Périer, Marseille",
+          "url": "https://www.site.ac-aix-marseille.fr/cio-marseille-centre/spip/Lycee-Perier.html",
           "context": "Spécialités NSI (Numérique et Sciences Informatiques) et Mathématiques."
         }
       ]
@@ -229,22 +263,30 @@
         {
           "id": "hiking",
           "label": "Randonnée",
-          "text": "J'aime partir à la découverte de zones naturelles et sillonner les sentiers de montagne pour me ressourcer. Prendre un bol d'air frais loin du quotidien, se dépasser physiquement et contempler des paysages sauvages, la montagne représente pour moi un espace de liberté et de reconnexion avec l'essentiel."
+          "text": "J'aime partir à la découverte de zones naturelles et sillonner les sentiers de montagne pour me ressourcer. Prendre un bol d'air frais loin du quotidien, se dépasser physiquement et contempler des paysages sauvages, la montagne représente pour moi un espace de liberté et de reconnexion avec l'essentiel.",
+          "url": "",
+          "urlLabel": ""
         },
         {
           "id": "photography",
           "label": "Photographie",
-          "text": "Commencée en 2021 avec le petit Nikon Coolpix P510 de mon père, la photographie est rapidement devenue une passion à part entière. J'emporte mon appareil partout, à l'école, en randonnée, en camping, en vacances... Il m'accompagne presque en permanence. Capturer l'instant, choisir la lumière, figer un paysage ou un visage : chaque prise de vue est une nouvelle exploration."
+          "text": "Commencée en 2021 avec le petit Nikon Coolpix P510 de mon père, la photographie est rapidement devenue une passion à part entière. J'emporte mon appareil partout, à l'école, en randonnée, en camping, en vacances... Il m'accompagne presque en permanence. Capturer l'instant, choisir la lumière, figer un paysage ou un visage : chaque prise de vue est une nouvelle exploration.",
+          "url": "https://www.instagram.com/noshaonig/",
+          "urlLabel": "@noshaonig"
         },
         {
           "id": "gaming",
           "label": "Jeux Vidéo",
-          "text": "Je joue aux jeux vidéo depuis l'enfance, ce qui m'a permis de développer des compétences sociales et relationnelles bien avant ma vie professionnelle. C'est en me demandant comment un jeu est créé que j'ai commencé à coder, puis à m'intéresser au réseau et système informatique, et enfin à comprendre leur protection. Le jeu vidéo est à l'origine de ma vocation en cybersécurité."
+          "text": "Je joue aux jeux vidéo depuis l'enfance, ce qui m'a permis de développer des compétences sociales et relationnelles bien avant ma vie professionnelle. C'est en me demandant comment un jeu est créé que j'ai commencé à coder, puis à m'intéresser au réseau et système informatique, et enfin à comprendre leur protection. Le jeu vidéo est à l'origine de ma vocation en cybersécurité.",
+          "url": "",
+          "urlLabel": ""
         },
         {
           "id": "astronomy",
           "label": "Astronomie",
-          "text": "Un amour émergent pour le ciel, et tout particulièrement pour l'observation du ciel profond. Galaxies, nébuleuses, amas stellaires... contempler ce qui se passe à des millions d'années-lumière me donne une perspective unique sur le monde. Cette passion croise naturellement la photographie, notamment l'astrophotographie, un terrain d'exploration qui n'a pas fini de me surprendre."
+          "text": "Un amour émergent pour le ciel, et tout particulièrement pour l'observation du ciel profond. Galaxies, nébuleuses, amas stellaires... contempler ce qui se passe à des millions d'années-lumière me donne une perspective unique sur le monde. Cette passion croise naturellement la photographie, notamment l'astrophotographie, un terrain d'exploration qui n'a pas fini de me surprendre.",
+          "url": "",
+          "urlLabel": ""
         }
       ]
     }

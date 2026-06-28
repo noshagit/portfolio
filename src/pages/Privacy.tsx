@@ -31,12 +31,12 @@ export default function Privacy({ onNavigate: _onNavigate }: Props) {
     >
       <motion.div variants={CONTAINER} initial="hidden" animate="visible" className="flex flex-col gap-12">
 
-        <motion.p variants={BLOCK} className="font-mono text-xs text-accent">
+        <motion.p variants={BLOCK} className="text-xs text-accent">
           {p.label}
         </motion.p>
 
         <motion.section variants={BLOCK} className="flex flex-col gap-2">
-          <h2 className="font-mono text-xs font-semibold uppercase tracking-widest text-foreground/40">
+          <h2 className="text-xs font-semibold uppercase tracking-widest text-foreground/40">
             {p.controller.heading}
           </h2>
           <p className="text-sm text-foreground/80">{p.controller.name}</p>
@@ -49,13 +49,13 @@ export default function Privacy({ onNavigate: _onNavigate }: Props) {
         </motion.section>
 
         <motion.section variants={BLOCK} className="flex flex-col gap-3">
-          <h2 className="font-mono text-xs font-semibold uppercase tracking-widest text-foreground/40">
+          <h2 className="text-xs font-semibold uppercase tracking-widest text-foreground/40">
             {p.data.heading}
           </h2>
           <p className="text-sm leading-relaxed text-foreground/70">{p.data.body}</p>
           <ul className="flex flex-col gap-1.5 pl-4">
             {p.data.items.map((item) => (
-              <li key={item} className="font-mono text-xs text-foreground/60 before:mr-2 before:text-accent before:content-['›']">
+              <li key={item} className="text-xs text-foreground/60 before:mr-2 before:text-accent before:content-['›']">
                 {item}
               </li>
             ))}
@@ -64,14 +64,14 @@ export default function Privacy({ onNavigate: _onNavigate }: Props) {
         </motion.section>
 
         <motion.section variants={BLOCK} className="flex flex-col gap-2">
-          <h2 className="font-mono text-xs font-semibold uppercase tracking-widest text-foreground/40">
+          <h2 className="text-xs font-semibold uppercase tracking-widest text-foreground/40">
             {p.letters.heading}
           </h2>
           <p className="text-sm leading-relaxed text-foreground/70">{p.letters.body}</p>
         </motion.section>
 
         <motion.section variants={BLOCK} className="flex flex-col gap-2">
-          <h2 className="font-mono text-xs font-semibold uppercase tracking-widest text-foreground/40">
+          <h2 className="text-xs font-semibold uppercase tracking-widest text-foreground/40">
             {p.rights.heading}
           </h2>
           <p className="text-sm leading-relaxed text-foreground/70">
@@ -86,7 +86,7 @@ export default function Privacy({ onNavigate: _onNavigate }: Props) {
           </p>
         </motion.section>
 
-        <motion.p variants={BLOCK} className="font-mono text-[11px] text-foreground/30">
+        <motion.p variants={BLOCK} className="text-[11px] text-foreground/30">
           {p.updated}
         </motion.p>
 

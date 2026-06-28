@@ -12,7 +12,7 @@ export default function SectionLabel({
   className = 'mb-5 text-xs',
 }: Props) {
   return (
-    <Tag className={`font-mono uppercase tracking-widest text-accent ${className}`}>
+    <Tag className={`uppercase tracking-widest text-accent ${className}`}>
       {children}
     </Tag>
   )

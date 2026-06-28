@@ -9,7 +9,7 @@ export default function LangToggle() {
       disabled={loading}
       aria-label={lang === 'fr' ? 'Switch to English' : 'Passer en français'}
       className="flex h-8 items-center gap-px rounded-full border border-accent/20 px-3
-                 font-mono text-[11px] font-medium transition-all duration-200
+                 text-[11px] font-medium tracking-wider transition-all duration-200
                  hover:border-accent/60 hover:text-accent
                  disabled:opacity-40 disabled:cursor-wait"
     >

@@ -85,7 +85,7 @@ export default function Experiences({ onNavigate: _onNavigate }: Props) {
       <div className="mx-auto max-w-5xl space-y-8 px-4 py-10 sm:px-6 sm:py-16">
 
         <div className="space-y-5">
-          <h1 className="font-mono text-xs uppercase tracking-widest text-accent">
+          <h1 className="text-xs uppercase tracking-widest text-accent">
             {t.experiences.sectionLabel}
           </h1>
           <ExperienceFilters
@@ -119,7 +119,7 @@ export default function Experiences({ onNavigate: _onNavigate }: Props) {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="py-20 text-center font-mono text-xs text-foreground/60"
+              className="py-20 text-center text-xs text-foreground/60"
             >
               {t.experiences.empty}
             </motion.p>

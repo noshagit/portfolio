@@ -38,11 +38,11 @@ export default function ExperienceModal({ exp, onClose }: Props) {
         exit={{ opacity: 0 }}
         transition={{ duration: 0.2 }}
         onClick={onClose}
-        className="fixed inset-0 z-40 bg-foreground/15 backdrop-blur-sm"
+        className="fixed inset-0 z-[60] bg-foreground/15 backdrop-blur-sm"
       />
 
       {/* Shell — pointer-events-none so clicks outside fall through to backdrop */}
-      <div className="pointer-events-none fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6">
+      <div className="pointer-events-none fixed inset-0 z-[70] flex items-start justify-center p-4 pt-20 sm:items-center sm:p-6">
         <motion.div
           initial={{ opacity: 0, y: 20, scale: 0.97 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -52,8 +52,9 @@ export default function ExperienceModal({ exp, onClose }: Props) {
           role="dialog"
           aria-modal="true"
           aria-label={exp.nom}
-          className="pointer-events-auto flex w-full max-w-2xl flex-col
-                     max-h-[80vh] border border-accent/20 bg-background shadow-2xl"
+          className="pointer-events-auto relative flex w-full max-w-2xl flex-col
+                     max-h-[calc(100dvh-6rem)] sm:max-h-[80vh]
+                     border border-accent/20 bg-background shadow-2xl"
         >
 
           {/* ── Fixed header ───────────────────────────────────────── */}
@@ -61,21 +62,22 @@ export default function ExperienceModal({ exp, onClose }: Props) {
             <button
               onClick={onClose}
               aria-label={modal.close}
-              className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center
-                         text-foreground/60 transition-colors duration-150 hover:text-foreground"
+              className="absolute right-3 top-3 flex h-10 w-10 items-center justify-center
+                         text-foreground/60 transition-colors duration-150 hover:text-foreground
+                         sm:right-4 sm:top-4 sm:h-8 sm:w-8"
             >
               <X size={15} />
             </button>
 
             <span className="mb-2 inline-block border border-accent/20 px-2 py-0.5
-                             font-mono text-[10px] uppercase tracking-widest text-foreground/60">
+                             text-[10px] uppercase tracking-widest text-foreground/60">
               {typeLabel}
             </span>
             <h2 className="pr-8 text-xl font-black leading-snug text-foreground sm:text-2xl">
               {exp.nom}
             </h2>
-            <p className="mt-1 font-mono text-sm text-accent">{exp.employeur_collab}</p>
-            <p className="font-mono text-xs text-foreground/60">{exp.date}</p>
+            <p className="mt-1 text-sm text-accent">{exp.employeur_collab}</p>
+            <p className="text-xs text-foreground/60">{exp.date}</p>
           </div>
 
           {/* ── Scrollable body ────────────────────────────────────── */}
@@ -148,7 +150,7 @@ export default function ExperienceModal({ exp, onClose }: Props) {
                       href={link.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 font-mono text-xs
+                      className="inline-flex items-center gap-2 text-xs
                                  text-foreground/60 transition-colors duration-150 hover:text-accent"
                     >
                       <ExternalLink size={11} aria-hidden="true" />

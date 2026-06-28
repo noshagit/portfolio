@@ -25,7 +25,7 @@ export default function SplashScreen({ ready, onDone }: Props) {
       className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-background"
     >
       <div className="mb-10 text-center">
-        <p className="mb-5 font-mono text-[10px] uppercase tracking-[0.35em] text-foreground/30">
+        <p className="mb-5 text-[10px] uppercase tracking-[0.35em] text-foreground/30">
           portfolio
         </p>
         <div className="flex flex-col items-center leading-none">
