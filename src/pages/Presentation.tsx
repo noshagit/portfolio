@@ -17,8 +17,8 @@ const SECTION_COUNT = 7
 
 const slideVariants = {
   enter: (dir: number) => ({ opacity: 0, y: dir > 0 ? 36 : -36 }),
-  center: { opacity: 1, y: 0, transition: { duration: 0.30, ease: EASE } },
-  exit:  (dir: number) => ({ opacity: 0, y: dir > 0 ? -36 : 36, transition: { duration: 0.20, ease: EASE } }),
+  center: { opacity: 1, y: 0, transition: { duration: 0.28, ease: EASE } },
+  exit:  (dir: number) => ({ opacity: 0, y: dir > 0 ? -36 : 36, transition: { duration: 0.18, ease: EASE } }),
 }
 
 interface Props {
@@ -59,7 +59,7 @@ export default function Presentation({ onNavigate }: Props) {
     function tryStep(delta: number) {
       if (cooldownRef.current) return
       cooldownRef.current = true
-      setTimeout(() => { cooldownRef.current = false }, 520)
+      setTimeout(() => { cooldownRef.current = false }, 480)
       navigate(activeIdxRef.current + delta)
     }
 
