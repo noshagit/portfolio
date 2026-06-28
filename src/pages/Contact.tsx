@@ -29,7 +29,7 @@ export default function Contact({ onNavigate: _onNavigate }: Props) {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -16 }}
       transition={{ duration: 0.4, ease: EASE }}
-      className="flex min-h-[calc(100vh-10rem)] items-center"
+      className="flex min-h-[calc(100dvh-10rem)] items-center"
     >
       <div className="mx-auto w-full max-w-5xl px-6 py-12 sm:py-16">
         <motion.div variants={CONTAINER} initial="hidden" animate="visible">

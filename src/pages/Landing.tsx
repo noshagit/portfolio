@@ -33,7 +33,7 @@ export default function Landing({ onNavigate }: Props) {
       initial="hidden"
       animate="visible"
       exit={{ opacity: 0, y: -28, transition: { duration: 0.3 } }}
-      className="relative flex min-h-[calc(100vh-5rem)] items-center justify-center px-6"
+      className="relative flex min-h-[calc(100dvh-5rem)] items-center justify-center px-6"
     >
       <div className="mx-auto w-full max-w-5xl">
         <div className="flex flex-col items-center gap-14 text-center sm:gap-20">

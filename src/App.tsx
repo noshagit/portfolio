@@ -31,7 +31,7 @@ function AppShell() {
   }, [])
 
   return (
-    <div className="flex min-h-screen flex-col bg-background text-foreground">
+    <div className="flex min-h-dvh flex-col bg-background text-foreground">
       <Header currentView={currentView} onNavigate={navigate} />
       <main className="flex-1">
         <AnimatePresence mode="wait">

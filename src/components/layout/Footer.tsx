@@ -1,3 +1,4 @@
+import { useRef, useEffect, useState } from 'react'
 import { Mail } from 'lucide-react'
 import type { View } from '../../types'
 import { LinkedInIcon } from '../ui/BrandIcons'
@@ -9,9 +10,29 @@ interface Props {
 
 export default function Footer({ onNavigate }: Props) {
   const { t } = useLang()
+  const footerRef = useRef<HTMLElement>(null)
+  const [visible, setVisible] = useState(false)
+
+  useEffect(() => {
+    const el = footerRef.current
+    if (!el) return
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) setVisible(true) },
+      { threshold: 0.1 }
+    )
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [])
 
   return (
-    <footer className="w-full border-t border-accent/10">
+    <footer
+      ref={footerRef}
+      className={[
+        'w-full border-t border-accent/10 transition-opacity duration-300',
+        visible ? 'opacity-100' : 'opacity-0 pointer-events-none',
+      ].join(' ')}
+      style={{ paddingBottom: 'env(safe-area-inset-bottom, 0px)' }}
+    >
       <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-5 sm:py-6">
 
         <div className="flex items-center gap-4">
