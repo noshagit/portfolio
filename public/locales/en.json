@@ -16,9 +16,9 @@
       "label": "// intro",
       "title": "Student in",
       "titleAccent": "Cybersecurity.",
-      "bio1": "Currently in my third year of a bachelor's degree in cybersecurity, I am actively seeking an",
-      "bioAccent": "apprenticeship",
-      "bio2": "to pursue a master's degree starting in September 2026. My goal is to bring my dedication and technical curiosity to an ambitious operational team tackling modern cyberdefense challenges."
+      "bio1": "Entering my third year of a bachelor's degree in cybersecurity, I am actively seeking a",
+      "bioAccent": "12-month work-study contract",
+      "bio2": "to support my final year, extendable to 24 months for a master's degree. My goal is to bring my dedication and technical curiosity to an ambitious operational team tackling modern cyberdefense challenges."
     },
     "softSkills": {
       "label": "// soft skills",
@@ -350,7 +350,11 @@
       "action": "Open mail client"
     },
     "copy": "Copy",
-    "copied": "Copied!"
+    "copied": "Copied!",
+    "cv": {
+      "tagline": "Need a paper version or a summary? Get a complete overview of my background.",
+      "button": "Download my resume (PDF)"
+    }
   },
   "footer": {
     "contact": "Contact",

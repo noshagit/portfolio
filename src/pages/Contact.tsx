@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Phone, Mail, MapPin, ExternalLink, PhoneCall } from 'lucide-react'
+import { Phone, Mail, MapPin, ExternalLink, PhoneCall, Download } from 'lucide-react'
 import type { View } from '../types'
 import PopoverContactLink from './contact/PopoverContactLink'
 import { useLang } from '../hooks/useLang'
@@ -110,6 +110,28 @@ export default function Contact({ onNavigate: _onNavigate }: Props) {
           <motion.p variants={LINE} className="text-xs text-foreground/60">
             {c.remote}
           </motion.p>
+
+          <motion.div variants={LINE} className="mt-8 h-px bg-accent/10 sm:mt-10" />
+
+          <motion.div variants={LINE} className="mt-8 sm:mt-10">
+            <p className="mb-6 text-xs leading-relaxed text-foreground/60">
+              {c.cv.tagline}
+            </p>
+            <motion.a
+              href="/cv.pdf"
+              download
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.98 }}
+              className="inline-flex items-center gap-2.5 border border-accent px-6 py-3
+                         text-sm font-medium text-accent transition-colors duration-200
+                         hover:bg-accent hover:text-background"
+            >
+              <Download size={14} aria-hidden="true" />
+              {c.cv.button}
+            </motion.a>
+          </motion.div>
 
         </motion.div>
       </div>

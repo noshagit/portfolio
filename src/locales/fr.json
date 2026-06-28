@@ -16,9 +16,9 @@
       "label": "// intro",
       "title": "Étudiant en",
       "titleAccent": "Cybersécurité.",
-      "bio1": "Actuellement en troisième année de bachelor en cybersécurité, je suis activement à la recherche d'un",
-      "bioAccent": "contrat d'apprentissage",
-      "bio2": "pour intégrer un master à la rentrée 2026. Mon objectif est de mettre ma rigueur et ma curiosité technique au service d'une équipe opérationnelle ambitieuse face aux enjeux de la cyberdéfense."
+      "bio1": "Entrant en troisième année de bachelor en cybersécurité, je suis activement à la recherche d'un",
+      "bioAccent": "contrat d'alternance de 12 mois",
+      "bio2": "pour accompagner ma B3, reconductible en 24 mois dans le cadre d'un master. Mon objectif est de mettre ma rigueur et ma curiosité technique au service d'une équipe opérationnelle ambitieuse face aux enjeux de la cyberdéfense."
     },
     "softSkills": {
       "label": "// soft skills",
@@ -350,7 +350,11 @@
       "action": "Ouvrir la messagerie"
     },
     "copy": "Copier",
-    "copied": "Copié !"
+    "copied": "Copié !",
+    "cv": {
+      "tagline": "Besoin d'une version papier ou d'un récapitulatif ? Retrouvez mon parcours complet.",
+      "button": "Télécharger mon CV (PDF)"
+    }
   },
   "footer": {
     "contact": "Contact",
