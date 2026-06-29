@@ -14,6 +14,16 @@ interface Props {
   onClose: () => void
 }
 
+/**
+ * Full-screen modal displaying the detailed view of a single experience record.
+ *
+ * Locks body scroll and registers an Escape-key listener for its entire mount lifetime.
+ * Renders as two framer-motion layers: a click-to-close backdrop and a scrollable content panel.
+ *
+ * @param exp     - The experience record to render.
+ * @param onClose - Callback invoked on backdrop click, Escape key, or close-button press.
+ * @returns Animated backdrop + modal panel with body-scroll locked during the mount.
+ */
 export default function ExperienceModal({ exp, onClose }: Props) {
   const { t, lang } = useLang()
   const { modal, types } = t.experiences
@@ -32,7 +42,6 @@ export default function ExperienceModal({ exp, onClose }: Props) {
 
   return (
     <>
-      {/* Backdrop */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -42,7 +51,6 @@ export default function ExperienceModal({ exp, onClose }: Props) {
         className="fixed inset-0 z-[60] bg-foreground/15 backdrop-blur-sm"
       />
 
-      {/* Shell */}
       <div className="pointer-events-none fixed inset-0 z-[70] flex items-start justify-center p-4 pt-20 sm:items-center sm:p-6">
         <motion.div
           initial={{ opacity: 0, y: 20, scale: 0.97 }}
@@ -58,7 +66,6 @@ export default function ExperienceModal({ exp, onClose }: Props) {
                      border border-accent/20 bg-background shadow-2xl"
         >
 
-          {/* ── En-tête fixe ────────────────────────────────────────── */}
           <div className="shrink-0 border-b border-accent/10 px-5 py-5 sm:px-8 sm:py-6">
             <button
               onClick={onClose}
@@ -81,7 +88,6 @@ export default function ExperienceModal({ exp, onClose }: Props) {
             <p className="mt-1 text-xs text-foreground/60">{dateLong(exp.detailed_date, lang)}</p>
           </div>
 
-          {/* ── Corps défilant ──────────────────────────────────────── */}
           <div
             className="flex-1 overflow-y-auto px-5 py-6 sm:px-8 sm:py-8
                        [scrollbar-width:thin]
@@ -93,7 +99,6 @@ export default function ExperienceModal({ exp, onClose }: Props) {
           >
             <div className="space-y-7">
 
-              {/* Description */}
               <section>
                 <SectionLabel as="p" className="mb-3 text-[10px]">{modal.description}</SectionLabel>
                 <p className="text-justify hyphens-auto break-words text-sm leading-relaxed text-foreground/60">
@@ -101,7 +106,6 @@ export default function ExperienceModal({ exp, onClose }: Props) {
                 </p>
               </section>
 
-              {/* Images (optionnel) */}
               {images.length > 0 && (
                 <section>
                   <SectionLabel as="p" className="mb-3 text-[10px]">{modal.images}</SectionLabel>
@@ -119,7 +123,6 @@ export default function ExperienceModal({ exp, onClose }: Props) {
                 </section>
               )}
 
-              {/* Grille de compétences */}
               <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
                 <section>
                   <SectionLabel as="p" className="mb-3 text-[10px]">{modal.relatedJobs}</SectionLabel>
@@ -143,7 +146,6 @@ export default function ExperienceModal({ exp, onClose }: Props) {
                 </section>
               </div>
 
-              {/* Liens */}
               {exp.links && exp.links.length > 0 && (
                 <section className="border-t border-accent/10 pt-5">
                   <SectionLabel as="p" className="mb-3 text-[10px]">{modal.links}</SectionLabel>

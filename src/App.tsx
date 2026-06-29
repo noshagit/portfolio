@@ -24,6 +24,7 @@ const PAGES: Record<View, React.ComponentType<PageProps>> = {
   privacy:      Privacy,
 }
 
+/** Root layout shell: owns active-view state and wires navigation across header, main, and footer. */
 function AppShell() {
   const [currentView, setCurrentView] = useState<View>('landing')
   const Page = PAGES[currentView]
@@ -48,7 +49,13 @@ function AppShell() {
   )
 }
 
-// Preloads all lazy page chunks during the splash screen so navigation is instant.
+/**
+ * Splash-screen gate that blocks the app shell until translations are loaded.
+ * Triggers prefetches for all lazy page chunks during the splash animation so
+ * every route chunk is ready before the user can interact.
+ *
+ * @param onDone - Fired once the splash animation completes and `loading` is false.
+ */
 function SplashGate({ onDone }: { onDone: () => void }) {
   const { loading } = useLang()
 

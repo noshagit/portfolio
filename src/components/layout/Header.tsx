@@ -9,6 +9,7 @@ import { useTheme } from '../../hooks/useTheme'
 import { useLang } from '../../hooks/useLang'
 import { EASE } from '../../lib/motion'
 
+/** Builds the ordered navigation item list from the current locale's translated labels. */
 function useNavItems(t: ReturnType<typeof useLang>['t']): NavItem[] {
   return [
     { id: 'landing',      label: t.header.nav.home },
@@ -23,6 +24,13 @@ interface Props {
   onNavigate:  (view: View) => void
 }
 
+/**
+ * Sticky application header with desktop tab nav, animated mobile full-screen overlay,
+ * language/theme toggles, and a LinkedIn shortcut.
+ *
+ * @param currentView - The active route, used to highlight the correct nav item.
+ * @param onNavigate  - Navigation callback passed down from AppShell.
+ */
 export default function Header({ currentView, onNavigate }: Props) {
   const [menuOpen, setMenuOpen] = useState(false)
   const { theme } = useTheme()
@@ -39,7 +47,6 @@ export default function Header({ currentView, onNavigate }: Props) {
       <header className="sticky top-0 z-50 w-full border-b border-accent/10 bg-background/90 backdrop-blur-md">
         <div className="mx-auto flex h-16 max-w-5xl items-center px-6 md:h-20">
 
-          {/* Left - initials */}
           <div className="flex flex-1">
             <button
               onClick={() => navigate('landing')}
@@ -54,7 +61,6 @@ export default function Header({ currentView, onNavigate }: Props) {
             </button>
           </div>
 
-          {/* Center - desktop nav with dot separators */}
           <LayoutGroup>
             <nav aria-label="Navigation principale" className="hidden items-center md:flex">
               {NAV_ITEMS.map((item, i) => {
@@ -91,7 +97,6 @@ export default function Header({ currentView, onNavigate }: Props) {
             </nav>
           </LayoutGroup>
 
-          {/* Right - LinkedIn + theme toggle + hamburger */}
           <div className="flex flex-1 items-center justify-end gap-2.5">
             <a
               href="https://www.linkedin.com/in/ilian-ben-hamou-7b6053297/"
@@ -107,7 +112,6 @@ export default function Header({ currentView, onNavigate }: Props) {
             <LangToggle />
             <ThemeToggle />
 
-            {/* Hamburger - mobile only */}
             <button
               onClick={() => setMenuOpen(prev => !prev)}
               aria-label={menuOpen ? t.header.closeMenu : t.header.openMenu}
@@ -146,7 +150,6 @@ export default function Header({ currentView, onNavigate }: Props) {
         </div>
       </header>
 
-      {/* Mobile full-screen overlay */}
       <AnimatePresence>
         {menuOpen && (
           <motion.div

@@ -54,6 +54,18 @@ Ce projet est bilingue. Toute modification, ajout ou suppression de contenu text
 
 **Performance** — Translatable resources and heavy data sets (like `experiences.json`) must be lazy-loaded per locale. Never preload unused languages. Privilege `transform`/`opacity` for animations; use `React.memo`/`useMemo` for heavy computations or filtered arrays.
 
+## Documentation & Commenting Rules
+
+**No inline or loose comments** — Never scatter `// comments` inside function or component bodies. The only accepted exception is a non-obvious workaround, security constraint, or sentinel value whose intent cannot be expressed through the identifier alone.
+
+**Lightweight docstring for small units** — Simple components, hooks, helpers, or utilities under ~15 lines get a single-line JSDoc block stating the primary purpose. No `@param`/`@returns` needed unless the signature is ambiguous. Example: `/** Formats a detailed_date tuple into a localized display string. */`
+
+**Heavy docstring for complex units** — Large components, core logic handlers, state machines, or filtering/pagination engines get a full multi-line JSDoc block with:
+- A clear description of the component's or function's role.
+- `@param` tags with descriptive explanations for each argument/prop.
+- `@returns` tag detailing the output structure or rendered element.
+- `@throws` or side-effect notes where applicable (e.g. scroll lock, event listeners registered on `window`).
+
 ## Architecture
 
 SPA with no router — navigation is pure React state. `App.tsx` holds `currentView: View` and renders the active page via a `PAGES` map. `AnimatePresence` from framer-motion wraps the active `<Page>` for enter/exit transitions.

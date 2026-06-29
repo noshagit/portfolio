@@ -9,6 +9,13 @@ interface Props {
   onChange:  (idx: number) => void
 }
 
+/**
+ * Fixed left-rail dot navigation for the Presentation page, visible below the 2xl breakpoint.
+ * Collapses to dots only; expands to labeled dots when the user taps the chevron toggle.
+ *
+ * @param activeIdx - Index of the currently visible slide (0-based).
+ * @param onChange  - Callback to jump directly to a specific slide index.
+ */
 export default function MobileNav({ activeIdx, onChange }: Props) {
   const { t } = useLang()
   const p = t.presentation
@@ -94,7 +101,6 @@ export default function MobileNav({ activeIdx, onChange }: Props) {
             )
           })}
 
-          {/* Chevron toggle — toujours visible, rotation 180° à l'expansion */}
           <button
             onClick={() => setExpanded(e => !e)}
             aria-label={expanded ? 'Fermer la navigation' : 'Ouvrir la navigation'}

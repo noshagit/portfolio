@@ -7,9 +7,9 @@ const EN_MONTHS = [
   'July', 'August', 'September', 'October', 'November', 'December',
 ]
 
-// Clé de tri YYYYMM — sentinelle pour les postes en cours
 const PRESENT_KEY = 999999
 
+/** @internal Parses a "MM/YYYY" string into month/year integers, returning safe defaults on malformed input. */
 function parse(mmYYYY: string): { m: number; y: number } {
   const parts = (mmYYYY ?? '').split('/')
   const m = parseInt(parts[0], 10)
@@ -20,6 +20,7 @@ function parse(mmYYYY: string): { m: number; y: number } {
   }
 }
 
+/** @internal Converts a parsed date to a sortable YYYYMM integer (e.g. `{ m: 6, y: 2026 }` → `202606`). */
 function toKey(p: { m: number; y: number }): number {
   return p.y * 100 + p.m
 }
