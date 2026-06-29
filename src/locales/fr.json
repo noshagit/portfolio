@@ -2,9 +2,15 @@
   "header": {
     "nav": {
       "home": "Accueil",
-      "about": "A propos",
+      "about": "À propos",
       "experiences": "Expériences",
-      "contact": "Contacts"
+      "contact": "Contact"
+    },
+    "openMenu": "Ouvrir le menu",
+    "closeMenu": "Fermer le menu",
+    "themeToggle": {
+      "toDark": "Passer en mode sombre",
+      "toLight": "Passer en mode clair"
     }
   },
   "landing": {
@@ -184,7 +190,7 @@
         },
         {
           "id": "proj",
-          "label": "Gestion de Projet",
+          "label": "Gestion de projet",
           "skills": [
             {
               "title": "Outillage Agile",
@@ -288,7 +294,8 @@
       "label": "ouverture & polyvalence",
       "text": "Mon parcours ne se résume pas uniquement à la technique. À travers mes différentes expériences, j'ai développé une grande adaptabilité en évoluant dans des univers variés : de la gestion du rush dans la restauration à la sensibilité artistique de la photographie et de la vidéo, jusqu'à la rigueur de la cybersécurité. Chaque domaine m'a apporté des compétences uniques qui enrichissent ma vision professionnelle.",
       "cta": "Découvrir mes expériences"
-    }
+    },
+    "scrollHint": "scroll"
   },
   "experiences": {
     "sectionLabel": "expériences & participations",

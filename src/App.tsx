@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useEffect, lazy, Suspense } from 'react'
 import { AnimatePresence } from 'framer-motion'
 import { ThemeProvider } from './context/ThemeContext'
 import { LanguageProvider } from './context/LanguageContext'
@@ -7,19 +7,22 @@ import Header from './components/layout/Header'
 import Footer from './components/layout/Footer'
 import SplashScreen from './components/ui/SplashScreen'
 import Landing from './pages/Landing'
-import Presentation from './pages/Presentation'
-import Experiences from './pages/Experiences'
-import Contact from './pages/Contact'
-import Privacy from './pages/Privacy'
 import type { View } from './types'
 
-const PAGES = {
+const Presentation = lazy(() => import('./pages/Presentation'))
+const Experiences  = lazy(() => import('./pages/Experiences'))
+const Contact      = lazy(() => import('./pages/Contact'))
+const Privacy      = lazy(() => import('./pages/Privacy'))
+
+type PageProps = { onNavigate: (view: View) => void }
+
+const PAGES: Record<View, React.ComponentType<PageProps>> = {
   landing:      Landing,
   presentation: Presentation,
   experiences:  Experiences,
   contact:      Contact,
   privacy:      Privacy,
-} as const
+}
 
 function AppShell() {
   const [currentView, setCurrentView] = useState<View>('landing')
@@ -34,18 +37,28 @@ function AppShell() {
     <div className="flex min-h-dvh flex-col bg-background text-foreground">
       <Header currentView={currentView} onNavigate={navigate} />
       <main className="flex-1">
-        <AnimatePresence mode="wait">
-          <Page key={currentView} onNavigate={navigate} />
-        </AnimatePresence>
+        <Suspense fallback={null}>
+          <AnimatePresence mode="wait">
+            <Page key={currentView} onNavigate={navigate} />
+          </AnimatePresence>
+        </Suspense>
       </main>
       {currentView !== 'presentation' && <Footer onNavigate={navigate} />}
     </div>
   )
 }
 
-// Thin gate: reads loading state from LanguageContext and passes ready signal to SplashScreen
+// Preloads all lazy page chunks during the splash screen so navigation is instant.
 function SplashGate({ onDone }: { onDone: () => void }) {
   const { loading } = useLang()
+
+  useEffect(() => {
+    import('./pages/Presentation')
+    import('./pages/Experiences')
+    import('./pages/Contact')
+    import('./pages/Privacy')
+  }, [])
+
   return <SplashScreen ready={!loading} onDone={onDone} />
 }
 

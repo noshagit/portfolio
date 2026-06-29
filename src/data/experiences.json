@@ -1,10 +1,46 @@
 [
     {
+        "id": "ambassadeur-ynov",
+        "nom": "Ambassadeur Ynov Campus",
+        "detailed_date": [
+            "10/2024",
+            "PRESENT"
+        ],
+        "type": "Participation bénévole",
+        "domaine": [
+            "Communication",
+            "Événementiel"
+        ],
+        "employeur_collab": "Ynov Campus Lyon",
+        "description": "Représentation de l'école lors des salons étudiants, des journées portes ouvertes (JPO) et des événements d'orientation. Accueil des futurs étudiants, présentation des cursus en cybersécurité et partage d'expérience sur la vie de campus.",
+        "metiers_lies": [
+            "Chargé de communication",
+            "Ambassadeur de marque"
+        ],
+        "competences_obtenir": [
+            "Communication",
+            "Sens du contact",
+            "Présentation de projets",
+            "Esprit d'équipe"
+        ],
+        "soft_skills_utilises": [
+            "Autonomie",
+            "Aisance à l'oral",
+            "Pédagogie"
+        ]
+    },
+    {
         "id": "exp-infra-2026",
         "nom": "Administrateur système & réseau",
-        "date": "2026",
+        "detailed_date": [
+            "10/2025",
+            "06/2026"
+        ],
         "type": "Projet académique",
-        "domaine": ["Cybersécurité", "Infrastructure réseau"],
+        "domaine": [
+            "Cybersécurité",
+            "Infrastructure réseau"
+        ],
         "employeur_collab": "Ynov Campus Lyon",
         "description": "Déploiement d'une infrastructure réseau d'entreprise complète: Windows Server, Active Directory, GPO, VPN IPSec, DNS/DHCP et politique de sécurité. Configuration du routage, du pare-feu et des règles de filtrage réseau dans un environnement virtualisé.",
         "metiers_lies": [
@@ -22,15 +58,24 @@
             "Pare-feu",
             "Virtualisation"
         ],
-        "soft_skills_utilises": ["Rigueur", "Autonomie", "Esprit d'analyse"],
+        "soft_skills_utilises": [
+            "Rigueur",
+            "Autonomie",
+            "Esprit d'analyse"
+        ],
         "links": []
     },
     {
         "id": "exp-cyberwatch-2025",
         "nom": "Responsable de projet",
-        "date": "2025-2026",
+        "detailed_date": [
+            "09/2025",
+            "06/2026"
+        ],
         "type": "Projet académique",
-        "domaine": ["Cybersécurité"],
+        "domaine": [
+            "Cybersécurité"
+        ],
         "employeur_collab": "Ynov Campus Lyon",
         "description": "Pilotage d'une équipe de 8 personnes, gestion de projet, mise en place d'un SIEM avec ELK Stack et création de scripts d'attaques automatisées. Suivi des livrables, animation des réunions d'équipe et coordination entre les pôles technique et fonctionnel.",
         "metiers_lies": [
@@ -57,9 +102,14 @@
     {
         "id": "exp-inca-2024",
         "nom": "Développeur web et script",
-        "date": "2024-2025",
+        "detailed_date": [
+            "09/2024",
+            "06/2025"
+        ],
         "type": "Projet académique",
-        "domaine": ["Informatique"],
+        "domaine": [
+            "Informatique"
+        ],
         "employeur_collab": "Ynov Campus Lyon",
         "description": "Contribution au développement web: React, TypeScript. Création de scripts en Bash et validation des contributions de l'équipe via GitLab.",
         "metiers_lies": [
@@ -80,17 +130,29 @@
             "Force de proposition",
             "autonomie"
         ],
-        "links": [{ "label": "Inca Project", "url": "https://incaproject.fr/" }]
+        "links": [
+            {
+                "label": "Inca Project",
+                "url": "https://incaproject.fr/"
+            }
+        ]
     },
     {
         "id": "exp-oraxya-2025",
         "nom": "Développeur web et Manipulation de données",
-        "date": "2025",
+        "detailed_date": [
+            "06/2025",
+            "09/2025"
+        ],
         "type": "Participation bénévole",
-        "domaine": ["Informatique"],
+        "domaine": [
+            "Informatique"
+        ],
         "employeur_collab": "Oraxya",
         "description": "Contribution au développement web: Vite, TypeScript. Alimentation, tri et analyse des données partagées par des centaines de pharmacies.",
-        "metiers_lies": ["Développeur web"],
+        "metiers_lies": [
+            "Développeur web"
+        ],
         "competences_obtenir": [
             "Vite",
             "TypeScript",
@@ -109,9 +171,14 @@
     {
         "id": "exp-marseille-2023",
         "nom": "Agent de nettoiement",
-        "date": "2023",
+        "detailed_date": [
+            "07/2023",
+            "08/2023"
+        ],
         "type": "CDD",
-        "domaine": ["Service"],
+        "domaine": [
+            "Service"
+        ],
         "employeur_collab": "Ville de Marseille",
         "description": "Optimisation opérationnelle et maintien de la salubrité des espaces publics. Gestion de la logistique de tri, application rigoureuse des normes d'hygiène et de sécurité, et coordination des flux de revalorisation des encombrants.",
         "metiers_lies": [
@@ -136,9 +203,14 @@
     {
         "id": "exp-marseille-2022",
         "nom": "Agent de nettoiement",
-        "date": "2022",
+        "detailed_date": [
+            "07/2022",
+            "08/2022"
+        ],
         "type": "CDD",
-        "domaine": ["Service"],
+        "domaine": [
+            "Service"
+        ],
         "employeur_collab": "Ville de Marseille",
         "description": "Optimisation opérationnelle et maintien de la salubrité des espaces publics. Gestion de la logistique de tri, application rigoureuse des normes d'hygiène et de sécurité, et coordination des flux de revalorisation des encombrants.",
         "metiers_lies": [
@@ -163,9 +235,14 @@
     {
         "id": "exp-bistrot-iris-2024",
         "nom": "Serveur & Barman polyvalent",
-        "date": "2024",
+        "detailed_date": [
+            "03/2024",
+            "08/2024"
+        ],
         "type": "CDI",
-        "domaine": ["Restauration"],
+        "domaine": [
+            "Restauration"
+        ],
         "employeur_collab": "Bistrot Les Iris (Bron)",
         "description": "Garant de l'expérience client en salle et au bar au sein d'un environnement à fort flux. Gestion de la relation client, préparation des commandes (boissons et petite restauration) et maintien de la conformité aux normes d'hygiène (HACCP) en cuisine et comptoir.",
         "metiers_lies": [
@@ -186,15 +263,23 @@
             "Travail en équipe"
         ],
         "links": [
-            { "label": "Site web", "url": "https://bistrot-les-iris.fr/" }
+            {
+                "label": "Site web",
+                "url": "https://bistrot-les-iris.fr/"
+            }
         ]
     },
     {
         "id": "exp-room-service-2025",
         "nom": "Photographe événementiel",
-        "date": "2025",
+        "detailed_date": [
+            "03/2025",
+            "03/2025"
+        ],
         "type": "Participation bénévole",
-        "domaine": ["Photographie"],
+        "domaine": [
+            "Photographie"
+        ],
         "employeur_collab": "Room Service (Lyon)",
         "description": "Deux jours de couverture photographique d'événements culturels sur trois journées. Captation d'une conférence sur le statut d'indépendant dans le design graphique lors d'une conférence au Musée d'Art Contemporain (MAC) de Lyon et valorisation visuelle d'une soirée d'exposition à l'espace KOMMET. Gestion du cadrage, de la lumière en conditions variables.",
         "metiers_lies": [
@@ -228,9 +313,14 @@
     {
         "id": "exp-photo-slam-2025",
         "nom": "Photographe de scène & portrait",
-        "date": "2025",
+        "detailed_date": [
+            "08/2025",
+            "08/2025"
+        ],
         "type": "Participation bénévole",
-        "domaine": ["Photographie"],
+        "domaine": [
+            "Photographie"
+        ],
         "employeur_collab": "Fifamé (Lyon)",
         "description": "Couverture photographique d'une performance scénique en direct et réalisation de portraits professionnels. Production de visuels de communication et à l'identité numérique (photo de profil officielle) de l'artiste.",
         "metiers_lies": [
@@ -263,9 +353,14 @@
     {
         "id": "exp-wifi-2026",
         "nom": "Architecte Réseau & Sécurité",
-        "date": "2025",
+        "detailed_date": [
+            "05/2025",
+            "05/2025"
+        ],
         "type": "Projet académique",
-        "domaine": ["Infrastructure réseau"],
+        "domaine": [
+            "Infrastructure réseau"
+        ],
         "employeur_collab": "Ynov Campus Lyon",
         "description": "Conception et déploiement d'une architecture réseau sécurisée au sein de l'établissement. Configuration d'une infrastructure complète (routeurs et switchs Cisco, pare-feu Stormshield) avec plan d'adressage IP dédié, segmentation par VLAN, routage inter-VLAN et application de politiques de filtrage pour sécuriser les flux de l'infrastructure.",
         "metiers_lies": [
@@ -289,9 +384,14 @@
     {
         "id": "exp-challenge-48h-2026",
         "nom": "Enquêteur Forensic & Réponse aux Incidents (Challenge 48H)",
-        "date": "2026",
+        "detailed_date": [
+            "03/2026",
+            "03/2026"
+        ],
         "type": "Projet académique",
-        "domaine": ["Cybersécurité"],
+        "domaine": [
+            "Cybersécurité"
+        ],
         "employeur_collab": "Ynov Campus Lyon",
         "description": "Participation à un défi de 48 heures simulant une enquête policière numérique. Analyse approfondie de dumps de mémoire d'appareils mobiles et de PC pour reconstituer la chronologie d'une affaire suspecte, extraire des artefacts compromettants et résoudre des défis de stéganographie à l'aide d'outils professionnels d'investigation.",
         "metiers_lies": [
@@ -315,9 +415,14 @@
     {
         "id": "exp-lyon-breach-2026",
         "nom": "Compétiteur CTF (LYON://BREACH x Ynov)",
-        "date": "2026",
+        "detailed_date": [
+            "06/2026",
+            "06/2026"
+        ],
         "type": "CTF",
-        "domaine": ["Cybersécurité"],
+        "domaine": [
+            "Cybersécurité"
+        ],
         "employeur_collab": "Ynov Campus x HackTheBox",
         "description": "Compétition de type Capture The Flag (CTF) regroupant 33 équipes sur des défis de niveau Très Facile à Insane. Au sein de l'équipe 'Pirate La Boite', résolution de 9 scénarios sur 15 et validation de 14 flags sur 20. Investigation multi-domaines incluant le web, le pwn, le reversing, la crypto, la blockchain, le forensic, le hardware, le mobile, le spatial (satellite) et la sécurité des systèmes industriels (ICS). Classement final : 17ème sur 33.",
         "metiers_lies": [
@@ -348,9 +453,15 @@
     {
         "id": "exp-photo-onwheels-2026",
         "nom": "Vidéaste & Photographe",
-        "date": "2025-2026",
+        "detailed_date": [
+            "12/2025",
+            "04/2026"
+        ],
         "type": "Participation bénévole",
-        "domaine": ["Photographie", "Vidéo"],
+        "domaine": [
+            "Photographie",
+            "Vidéo"
+        ],
         "employeur_collab": "ON WHEELS",
         "description": "Gestion d'une partie de la production visuelle pour la marque. Réalisation de photos de produits et de portraits de l'équipe pour les supports de communication professionnels. Captation et montage de teasers promotionnels, réalisation d'interviews format long et couverture de l'ensemble des événements officiels de la structure.",
         "metiers_lies": [
@@ -384,12 +495,19 @@
     {
         "id": "exp-photo-ynov-2026",
         "nom": "Remise des diplômes",
-        "date": "2026",
+        "detailed_date": [
+            "05/2026",
+            "05/2026"
+        ],
         "type": "Participation bénévole",
-        "domaine": ["Photographie"],
+        "domaine": [
+            "Photographie"
+        ],
         "employeur_collab": "Ynov Campus Lyon",
         "description": "Couverture photographique de la cérémonie officielle de remise des diplômes de l'établissement. Prise en charge exclusive de la captation brute sur le terrain en conditions lumineuses complexes (scène, basse luminosité) et réalisation des portraits des diplômés à la volée. Le tri et la post-production ont été gérés par une équipe tierce.",
-        "metiers_lies": ["Photographe événementiel"],
+        "metiers_lies": [
+            "Photographe événementiel"
+        ],
         "competences_obtenir": [
             "Prise de vue technique en basse luminosité et contrastes forts (Événementiel)",
             "Gestion du positionnement et des angles en direct",

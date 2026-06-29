@@ -10,6 +10,7 @@ import ExperienceModal from './experiences/ExperienceModal'
 import ExperienceFilters from './experiences/ExperienceFilters'
 import { useLang } from '../hooks/useLang'
 import { EASE } from '../lib/motion'
+import { yearMax, yearMin } from '../lib/formatDate'
 
 const FR_BASE = RAW as Experience[]
 const ALL_TYPES_BASE    = Array.from(new Set(FR_BASE.map(e => e.type)))
@@ -17,9 +18,6 @@ const ALL_DOMAINES_BASE = Array.from(new Set(FR_BASE.flatMap(e => e.domaine)))
 
 // Module-level cache - survives page navigation
 const expCache = new Map<Lang, Experience[]>([['fr', FR_BASE]])
-
-function yearMax(date: string) { return Math.max(...date.split('-').map(Number)) }
-function yearMin(date: string) { return Math.min(...date.split('-').map(Number)) }
 
 interface Props {
   onNavigate: (view: View) => void
@@ -55,8 +53,8 @@ export default function Experiences({ onNavigate }: Props) {
     )
     .sort((a, b) =>
       sort === 'desc'
-        ? yearMax(b.date) - yearMax(a.date) || yearMin(b.date) - yearMin(a.date)
-        : yearMin(a.date) - yearMin(b.date) || yearMax(a.date) - yearMax(b.date)
+        ? yearMax(b.detailed_date) - yearMax(a.detailed_date) || yearMin(b.detailed_date) - yearMin(a.detailed_date)
+        : yearMin(a.detailed_date) - yearMin(b.detailed_date) || yearMax(a.detailed_date) - yearMax(b.detailed_date)
     ), [experiences, activeType, activeDomaine, sort])
 
   const availableTypes = useMemo(() => {
@@ -106,7 +104,7 @@ export default function Experiences({ onNavigate }: Props) {
         <div aria-live="polite" aria-atomic="false" className="sr-only">
           {filtered.length} {t.experiences.sectionLabel}
         </div>
-        <motion.div layout className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <motion.div layout className="grid gap-5 sm:grid-cols-2 md:gap-8 lg:grid-cols-3">
           <AnimatePresence mode="popLayout">
             {filtered.map(exp => (
               <ExperienceCard key={exp.id} exp={exp} onOpen={setSelectedId} />

@@ -28,7 +28,7 @@ function FilterButton({ label, isActive, onClick }: { label: string; isActive: b
       onClick={onClick}
       aria-pressed={isActive}
       className={[
-        'border px-3 py-1 text-xs transition-colors duration-200',
+        'flex min-h-[44px] items-center border px-3 py-1 text-xs transition-colors duration-200',
         isActive
           ? 'border-accent bg-accent text-background'
           : 'border-accent/20 text-foreground/60 hover:border-accent/60 hover:text-foreground',
@@ -107,7 +107,7 @@ function ExperienceFilters({
             onClick={() => onSortChange(dir)}
             aria-pressed={sort === dir}
             className={[
-              'border px-3 py-1 text-xs transition-all duration-200',
+              'flex min-h-[44px] items-center border px-3 py-1 text-xs transition-all duration-200',
               sort === dir
                 ? 'border-accent bg-accent text-background'
                 : 'border-accent/20 text-foreground/60 hover:border-accent/60 hover:text-foreground',

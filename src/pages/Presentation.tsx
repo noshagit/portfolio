@@ -247,7 +247,7 @@ export default function Presentation({ onNavigate }: Props) {
             className="pointer-events-none absolute bottom-4 left-1/2 -translate-x-1/2
                        text-[10px] uppercase tracking-widest text-foreground/30"
           >
-            {hintDir === 'down' ? '↓' : '↑'} scroll
+            {hintDir === 'down' ? '↓' : '↑'} {t.presentation.scrollHint}
           </motion.p>
         )}
       </AnimatePresence>

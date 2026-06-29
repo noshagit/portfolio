@@ -5,6 +5,12 @@
       "about": "About",
       "experiences": "Experiences",
       "contact": "Contact"
+    },
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "themeToggle": {
+      "toDark": "Switch to dark mode",
+      "toLight": "Switch to light mode"
     }
   },
   "landing": {
@@ -288,7 +294,8 @@
       "label": "versatility & background",
       "text": "My background is not limited to technology alone. Through my diverse experiences, I have developed great adaptability by evolving in various fields: from managing high-pressure situations in the restaurant industry to the artistic sensitivity of photography and video, and the rigor of cybersecurity. Each domain has provided me with unique skills that enrich my professional vision.",
       "cta": "Explore my experiences"
-    }
+    },
+    "scrollHint": "scroll"
   },
   "experiences": {
     "sectionLabel": "experiences & projects",

@@ -43,7 +43,7 @@ export default function Header({ currentView, onNavigate }: Props) {
           <div className="flex flex-1">
             <button
               onClick={() => navigate('landing')}
-              aria-label="Accueil"
+              aria-label={t.header.nav.home}
               className="transition-opacity duration-200 hover:opacity-50"
             >
               <img
@@ -98,8 +98,9 @@ export default function Header({ currentView, onNavigate }: Props) {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
-              className="flex h-8 w-8 items-center justify-center rounded-full border border-accent/20
-                         text-foreground/60 transition-all duration-200 hover:border-accent/60 hover:text-accent"
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-accent/20
+                         text-foreground/60 transition-all duration-200 hover:border-accent/60 hover:text-accent
+                         md:h-8 md:w-8"
             >
               <LinkedInIcon size={15} />
             </a>
@@ -109,9 +110,9 @@ export default function Header({ currentView, onNavigate }: Props) {
             {/* Hamburger - mobile only */}
             <button
               onClick={() => setMenuOpen(prev => !prev)}
-              aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+              aria-label={menuOpen ? t.header.closeMenu : t.header.openMenu}
               aria-expanded={menuOpen}
-              className="flex h-8 w-8 items-center justify-center rounded-full border border-accent/20
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-accent/20
                          text-foreground/60 transition-all duration-200 hover:border-accent/60 hover:text-accent md:hidden"
             >
               <AnimatePresence mode="wait" initial={false}>
@@ -188,7 +189,7 @@ export default function Header({ currentView, onNavigate }: Props) {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
-                className="text-foreground/60 transition-colors duration-200 hover:text-accent"
+                className="flex h-11 w-11 items-center justify-center text-foreground/60 transition-colors duration-200 hover:text-accent"
               >
                 <LinkedInIcon size={20} />
               </a>

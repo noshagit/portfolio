@@ -52,7 +52,7 @@ export default function Privacy({ onNavigate: _onNavigate }: Props) {
           <h2 className="text-xs font-semibold uppercase tracking-widest text-foreground/40">
             {p.data.heading}
           </h2>
-          <p className="text-sm leading-relaxed text-foreground/70">{p.data.body}</p>
+          <p className="text-justify hyphens-auto break-words text-sm leading-relaxed text-foreground/70">{p.data.body}</p>
           <ul className="flex flex-col gap-1.5 pl-4">
             {p.data.items.map((item) => (
               <li key={item} className="text-xs text-foreground/60 before:mr-2 before:text-accent before:content-['›']">
@@ -60,28 +60,28 @@ export default function Privacy({ onNavigate: _onNavigate }: Props) {
               </li>
             ))}
           </ul>
-          <p className="text-sm leading-relaxed text-foreground/70">{p.data.retention}</p>
+          <p className="text-justify hyphens-auto break-words text-sm leading-relaxed text-foreground/70">{p.data.retention}</p>
         </motion.section>
 
         <motion.section variants={BLOCK} className="flex flex-col gap-2">
           <h2 className="text-xs font-semibold uppercase tracking-widest text-foreground/40">
             {p.photo.heading}
           </h2>
-          <p className="text-sm leading-relaxed text-foreground/70">{p.photo.body}</p>
+          <p className="text-justify hyphens-auto break-words text-sm leading-relaxed text-foreground/70">{p.photo.body}</p>
         </motion.section>
 
         <motion.section variants={BLOCK} className="flex flex-col gap-2">
           <h2 className="text-xs font-semibold uppercase tracking-widest text-foreground/40">
             {p.letters.heading}
           </h2>
-          <p className="text-sm leading-relaxed text-foreground/70">{p.letters.body}</p>
+          <p className="text-justify hyphens-auto break-words text-sm leading-relaxed text-foreground/70">{p.letters.body}</p>
         </motion.section>
 
         <motion.section variants={BLOCK} className="flex flex-col gap-2">
           <h2 className="text-xs font-semibold uppercase tracking-widest text-foreground/40">
             {p.rights.heading}
           </h2>
-          <p className="text-sm leading-relaxed text-foreground/70">
+          <p className="text-justify hyphens-auto break-words text-sm leading-relaxed text-foreground/70">
             {p.rights.body}{' '}
             <a
               href={`mailto:${p.controller.email}`}

@@ -8,7 +8,7 @@ export interface ExpLink {
 export interface Experience {
   id:                   string
   nom:                  string
-  date:                 string
+  detailed_date:        [string, string]
   type:                 string
   domaine:              string[]
   employeur_collab:     string
