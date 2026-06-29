@@ -4,6 +4,11 @@ import SectionLabel from '../../components/ui/SectionLabel'
 import { useLang } from '../../hooks/useLang'
 import { EASE } from '../../lib/motion'
 
+/**
+ * Renders the educational timeline slide.
+ * Desktop: horizontal 3-column grid with a connecting rule (oldest → newest, left to right).
+ * Mobile: reversed vertical stack so the most recent entry appears at the top.
+ */
 export default function EducationSection() {
   const { t } = useLang()
   const { education } = t.presentation
@@ -16,7 +21,7 @@ export default function EducationSection() {
         {/* Horizontal rule - desktop only */}
         <div className="absolute top-2 hidden h-px w-full bg-foreground/10 md:block" aria-hidden="true" />
 
-        <div className="grid grid-cols-1 gap-10 md:grid-cols-3 md:gap-14">
+        <div className="flex flex-col-reverse gap-10 md:grid md:grid-cols-3 md:gap-14">
           {education.items.map(({ id, period, degree, institution, url, context }, i) => (
             <motion.div
               key={id}
