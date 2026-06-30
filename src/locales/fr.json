@@ -24,7 +24,7 @@
       "titleAccent": "Cybersécurité.",
       "bio1": "Entrant en troisième année de bachelor en cybersécurité, je suis activement à la recherche d'un",
       "bioAccent": "contrat d'alternance de 12 mois",
-      "bio2": "pour accompagner ma B3, reconductible en 24 mois dans le cadre d'un master. Mon objectif est de mettre ma rigueur et ma curiosité technique au service d'une équipe opérationnelle ambitieuse face aux enjeux de la cyberdéfense."
+      "bio2": "pour accompagner ma B3, reconductible en 24 mois dans le cadre d'un mastère. Mon objectif est de mettre ma rigueur et ma curiosité technique au service d'une équipe opérationnelle ambitieuse face aux enjeux de la cyberdéfense."
     },
     "softSkills": {
       "label": "soft skills",
@@ -81,7 +81,7 @@
         },
         {
           "lang": "Anglais",
-          "level": "B2+"
+          "level": "B2"
         }
       ]
     },
@@ -233,7 +233,7 @@
           "degree": "Bachelor Cybersécurité",
           "institution": "Ynov Campus Lyon",
           "url": "https://www.ynov.com/formations/cybersecurite/bachelor-cybersecurite",
-          "context": "Formation axée sur la cybersécurité offensive et défensive, l'infrastructure réseau et le développement sécurisé. Apprentissage par la pratique et via une plateforme de peer-to-peer learning YTRACK et participation active aux compétitions nationales et inter-campus (Capture The Flag, Hack The Box). Maîtrise de l'administration des systèmes Linux et Windows Server, de la conteneurisation, de la sécurité cloud, du développement d'outils en Python, PHP ou C#, ainsi que de la réponse aux incidents."
+          "context": "Formation axée sur la cybersécurité offensive et défensive, l'infrastructure réseau et le développement sécurisé. Apprentissage par la pratique et via une plateforme de peer-to-peer learning YTRACK et participation active aux compétitions nationales et inter-campus (Capture The Flag, HackTheBox). Maîtrise de l'administration des systèmes Linux et Windows Server, de la conteneurisation, de la sécurité cloud, du développement d'outils en Python, PHP ou C#, ainsi que de la réponse aux incidents."
         }
       ]
     },

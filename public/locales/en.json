@@ -81,7 +81,7 @@
         },
         {
           "lang": "English",
-          "level": "B2+"
+          "level": "B2"
         }
       ]
     },
@@ -233,12 +233,12 @@
           "degree": "Bachelor in Cybersecurity",
           "institution": "Ynov Campus Lyon",
           "url": "https://www.ynov.com/formations/cybersecurite/bachelor-cybersecurite",
-          "context": "Program focused on offensive and defensive cybersecurity, network infrastructure, and secure development. Hands-on learning through a YTRACK peer-to-peer platform and active participation in national and inter-campus competitions (Capture The Flag, Hack The Box). Proficiency in Linux and Windows Server administration, containerization, cloud security, scripting and tool development in Python, PHP, or C#, as well as incident response."
+          "context": "Program focused on offensive and defensive cybersecurity, network infrastructure, and secure development. Hands-on learning through a YTRACK peer-to-peer platform and active participation in national and inter-campus competitions (Capture The Flag, HackTheBox). Proficiency in Linux and Windows Server administration, containerization, cloud security, scripting and tool development in Python, PHP, or C#, as well as incident response."
         }
       ]
     },
     "recommendations": {
-      "label": "recommendations",
+      "label": "Recommended by",
       "downloadPdf": "Download PDF",
       "items": [
         {
@@ -252,7 +252,7 @@
           "id": "sirot",
           "label": "Cellya SIROT",
           "role": "Web Developer - Oraxya",
-          "text": "Cellya entrusted me with a key role on a nationally scoped digital project. She highlights my exemplary client-facing attitude, my proactive contributions, some of which are still valued today, and my ability to grow autonomously when faced with complex technical challenges.",
+          "text": "Cellya entrusted me with a key role on a nationally scoped digital project. She highlights my exemplary social skills in a business, my proactive contributions, some of which are still valued today, and my ability to grow autonomously when faced with complex technical challenges.",
           "pdf": "/ldr/ldr-002.pdf"
         },
         {
@@ -265,7 +265,7 @@
       ]
     },
     "passions": {
-      "label": "passions",
+      "label": "Hobbies",
       "items": [
         {
           "id": "hiking",
