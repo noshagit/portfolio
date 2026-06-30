@@ -12,7 +12,20 @@
             "Événementiel"
         ],
         "employeur_collab": "Ynov Campus Lyon",
-        "description": "Representing the school at student fairs, open house days (JPO), and orientation events. Welcoming prospective students, presenting the cybersecurity curriculum, and sharing campus life experiences.",
+        "description": [
+            {
+                "titre": "School representation",
+                "texte": "Active representation of Ynov Campus at various promotional and institutional events - student fairs, open house days, and prospective student meet-and-greets. This role involves managing a stand, presenting the school and its programmes to high school students, career changers, and their families, as well as leading guided tours of the campus to showcase classrooms and student life spaces."
+            },
+            {
+                "titre": "Welcoming & information",
+                "texte": "Welcoming prospective students and their families is at the heart of this mission, with the goal of creating a trusting atmosphere conducive to open conversations. A detailed presentation of the cybersecurity curriculum is provided, covering the course structure, available specialisations, career prospects, admission requirements, and the opportunities offered by this fast-growing sector."
+            },
+            {
+                "titre": "Orientation guidance",
+                "texte": "Personal experience of campus life is shared through first-hand accounts of student daily life, clubs and associations, housing, and extracurricular activities, offering an authentic overview of the programme. Individualised guidance is provided to prospective students by actively listening to their career goals and directing them toward the course or specialisation that best fits their profile."
+            }
+        ],
         "metiers_lies": [
             "Communications Officer",
             "Brand Ambassador"
@@ -42,7 +55,20 @@
             "Infrastructure réseau"
         ],
         "employeur_collab": "Ynov Campus Lyon",
-        "description": "Deployment of a complete enterprise network infrastructure: Windows Server, Active Directory, GPO, IPSec VPN, DNS/DHCP, and security policy. Configuration of routing, firewall, and network filtering rules in a virtualized environment.",
+        "description": [
+            {
+                "titre": "Project context",
+                "texte": "Academic project simulating a real enterprise environment, carried out in a fully virtualised setup. The objective was to design a web application and deploy an end-to-end operational network infrastructure, covering system administration, network services, and access security."
+            },
+            {
+                "titre": "System infrastructure",
+                "texte": "Deployment of a Windows Server with full Active Directory integration for centralised account and resource management. Group policies (GPO) were defined to control client workstations, while an IPSec VPN was configured to secure remote communications, alongside DNS and DHCP services for name resolution and automatic address assignment."
+            },
+            {
+                "titre": "Network security",
+                "texte": "Implementation of a global security policy covering access rights, network filtering, and firewall rules to ensure the consistency and robustness of the entire system. Configurations were validated in accordance with enterprise infrastructure hardening best practices for a multi-site environment."
+            }
+        ],
         "metiers_lies": [
             "Systems Administrator",
             "Network Administrator",
@@ -77,7 +103,20 @@
             "Cybersécurité"
         ],
         "employeur_collab": "Ynov Campus Lyon",
-        "description": "Management of an 8-person team, project oversight, deployment of an ELK Stack SIEM, and creation of automated attack scripts. Deliverable tracking, team meeting facilitation, and coordination between technical and functional departments.",
+        "description": [
+            {
+                "titre": "Leadership & design",
+                "texte": "Project lead for a team of 8, tasked with designing and deploying a SIEM connected to an online platform allowing each registered user to view the security alerts raised for their session. Coordination between technical and functional teams relied on rigorous deliverable tracking throughout the full development cycle, from scoping to final delivery."
+            },
+            {
+                "titre": "Attack simulation",
+                "texte": "Automated attack scripts were developed to launch simulations against an intentionally vulnerable machine (Metasploitable 3). These scenarios generated real security events, collected, indexed, and visualised via the ELK Stack (Elasticsearch, Kibana), feeding the platform with authentic and varied attack data."
+            },
+            {
+                "titre": "Alerts & learning",
+                "texte": "Each registered user on the platform received personalised alerts corresponding to the attacks simulated on their session, with detailed information on the nature of the detected threat. The educational goal was to enable analysis of alert feeds, understanding of the underlying attack mechanisms, and discovery of the appropriate defence strategies for each threat type."
+            }
+        ],
         "metiers_lies": [
             "IT Project Manager",
             "Cybersecurity Project Lead",
@@ -111,7 +150,20 @@
             "Informatique"
         ],
         "employeur_collab": "Ynov Campus Lyon",
-        "description": "Contribution to web development: React, TypeScript. Creation of Bash scripts and validation of team contributions via GitLab.",
+        "description": [
+            {
+                "titre": "Project overview",
+                "texte": "INCA is a web platform providing security audit scripts and task automation tools, aimed at both companies and educational institutions looking to train their teams or integrate these tools directly into the management of their information systems. The script library, accessible online, is designed to simplify and standardise recurring technical operations in professional or educational environments."
+            },
+            {
+                "titre": "Front-end development",
+                "texte": "Contribution to the web platform development using a React and TypeScript stack, taking ownership of front-end features in line with the team's code quality standards. Development was carried out in short iterations, integrated into the collaborative workflow via GitLab, including reviewing merge requests from team members before merging into the main branch."
+            },
+            {
+                "titre": "Scripts developed",
+                "texte": "Development of two original Bash scripts integrated into the platform. The first enables full setup and management of a SQL database from the command line - creating the database, managing tables, adding and manipulating data, all without requiring a graphical interface. The second simplifies firewall rule configuration by providing an interactive command-line interface to define, modify, and apply network filtering rules in a guided and reproducible way."
+            }
+        ],
         "metiers_lies": [
             "Web Developer",
             "Developer / Scripter",
@@ -139,7 +191,7 @@
     },
     {
         "id": "exp-oraxya-2025",
-        "nom": "Web Developer & Data manipulation",
+        "nom": "Web Developer & Data Manipulation",
         "detailed_date": [
             "06/2025",
             "09/2025"
@@ -149,15 +201,29 @@
             "Informatique"
         ],
         "employeur_collab": "Oraxya",
-        "description": "Contribution to web development: Vite, TypeScript. Data ingestion, sorting, and analysis shared by hundreds of pharmacies.",
+        "description": [
+            {
+                "titre": "Project context",
+                "texte": "Oraxya was a free, publicly accessible platform listing real-time prices for Mounjaro and Wegovy across pharmacies in mainland France and overseas territories (DOM/TOM). Closed in June 2026, it served as a unique resource for patients and healthcare professionals looking to locate and compare the availability of these treatments across hundreds of partner pharmacies."
+            },
+            {
+                "titre": "Development & features",
+                "texte": "Full-stack contribution to the platform using a Vite and TypeScript stack, covering both front-end development and back-end features. Key deliverables included the design and integration of an interactive map allowing users to geographically visualise medication availability by pharmacy, alongside data ingestion, sorting, and cleaning of datasets submitted by partner pharmacies."
+            },
+            {
+                "titre": "Audit & quality",
+                "texte": "Audits of the existing back-end code were conducted to identify weaknesses, inconsistencies, and optimisation opportunities. Contributions were integrated through a code review process on GitHub, ensuring the maintainability and coherence of the overall codebase."
+            }
+        ],
         "metiers_lies": [
-            "Web Developer"
+            "Full-Stack Web Developer",
+            "Front-End Developer"
         ],
         "competences_obtenir": [
             "Vite",
             "TypeScript",
-            "JSON",
-            "Excell",
+            "Interactive mapping",
+            "Back-end code audit",
             "GitHub",
             "Code review"
         ],
@@ -181,7 +247,16 @@
             "Service"
         ],
         "employeur_collab": "Ville de Marseille",
-        "description": "Operational optimisation and maintenance of public space cleanliness. Sorting logistics management, rigorous application of health and safety standards, and coordination of bulky waste recovery flows.",
+        "description": [
+            {
+                "titre": "Second season",
+                "texte": "Second seasonal contract with the City of Marseille's sanitation services, with a marked increase in autonomy compared to the first season. Prior experience allowed for faster integration into the teams and better anticipation of the operational constraints specific to the field."
+            },
+            {
+                "titre": "Field operations",
+                "texte": "Maintaining cleanliness of public spaces in high-footfall areas, with direct responsibility for the logistics of collecting and sorting bulky waste for recovery. Rigorous application of HSE standards in a physically intensive environment, with greater initiative taken in organising rounds and handling unexpected situations."
+            }
+        ],
         "metiers_lies": [
             "Sanitation Agent",
             "Logistics Operator",
@@ -213,7 +288,16 @@
             "Service"
         ],
         "employeur_collab": "Ville de Marseille",
-        "description": "Operational optimisation and maintenance of public space cleanliness. Sorting logistics management, rigorous application of health and safety standards, and coordination of bulky waste recovery flows.",
+        "description": [
+            {
+                "titre": "First professional experience",
+                "texte": "First immersion in the working world as part of the City of Marseille's sanitation services, under a seasonal contract. This experience provided an initial concrete encounter with professional demands - thoroughness, punctuality, following instructions - in a physically challenging work environment."
+            },
+            {
+                "titre": "Field operations",
+                "texte": "Active participation in maintaining and cleaning public spaces, handling the collection and sorting of bulky waste for recovery. Application of HSE procedures and integration into a field team working through the intense heat of summer."
+            }
+        ],
         "metiers_lies": [
             "Sanitation Agent",
             "Logistics Operator",
@@ -245,7 +329,20 @@
             "Restauration"
         ],
         "employeur_collab": "Bistrot Les Iris (Bron)",
-        "description": "Ensuring customer experience in the dining room and at the bar in a high-traffic environment. Customer relationship management, order preparation, and compliance with HACCP hygiene standards in kitchen and counter operations.",
+        "description": [
+            {
+                "titre": "Customer relationship management",
+                "texte": "Versatile position at Bistrot Les Iris in Bron, with direct responsibility for the quality of the customer experience from welcome to checkout, in a high-footfall establishment. The constant focus on satisfaction and loyalty required ongoing attention to service quality, a strong ability to read customer expectations, and a capacity to handle tense situations with composure and professionalism."
+            },
+            {
+                "titre": "Floor & bar service",
+                "texte": "Simultaneous management of floor service and the bar, requiring rigorous organisation to maintain order flow during peak hours. Preparing drinks and light food required mastery of counter techniques and efficient priority management to maintain a fast service without compromising quality."
+            },
+            {
+                "titre": "Hygiene & compliance",
+                "texte": "Strict compliance with HACCP standards in both the kitchen and at the counter, ensuring food safety and hygiene at all times. These regulatory requirements were monitored daily and naturally embedded into working practices."
+            }
+        ],
         "metiers_lies": [
             "Server",
             "Bartender",
@@ -282,7 +379,20 @@
             "Photographie"
         ],
         "employeur_collab": "Room Service (Lyon)",
-        "description": "Two days of photographic coverage of cultural events. Capturing a conference on freelance status in graphic design at the MAC in Lyon, and visual showcasing of an exhibition evening at the KOMMET space. Frame composition and light management in variable conditions.",
+        "description": [
+            {
+                "titre": "Conference at the MAC Lyon",
+                "texte": "Photographic coverage of a conference on freelance status in graphic design, held at the Musée d'Art Contemporain (MAC) in Lyon. The goal was to capture the atmosphere of the event and the key moments of the presentations through discreet, precise shooting in a venue with constrained lighting."
+            },
+            {
+                "titre": "Exhibition evening - KOMMET space",
+                "texte": "Visual documentation of an artistic exhibition evening at the KOMMET space, requiring autonomous management of framing and exposure under variable and low-light conditions. The assignment demanded constant adaptation to the movement of attendees and the evolving ambiance throughout the evening."
+            },
+            {
+                "titre": "Technical management",
+                "texte": "Both assignments, carried out over three days, required constant adaptation to each venue's specifics and the ability to produce quality visuals in real time, without any prior staging. All shots were handled entirely independently, from equipment setup to file delivery."
+            }
+        ],
         "metiers_lies": [
             "Event Photographer",
             "Press Photographer",
@@ -323,7 +433,20 @@
             "Photographie"
         ],
         "employeur_collab": "Fifamé (Lyon)",
-        "description": "Photographic coverage of a live stage performance and creation of professional portraits. Production of communication visuals and digital identity assets (official profile photo) for the artist.",
+        "description": [
+            {
+                "titre": "Stage coverage",
+                "texte": "Live photographic coverage of a stage performance by artist Fifamé (slam and spoken word), managing intense and ever-changing stage lighting. Reactivity and anticipation of the artist's movements were essential to capturing the highlights of a constantly evolving performance."
+            },
+            {
+                "titre": "Professional portraits",
+                "texte": "Creation of institutional and artistic portraits to build the artist's digital identity, including official profile photos for distribution platforms and communication materials. Preliminary discussions with the artist helped orient the shoot toward an aesthetic consistent with her creative universe."
+            },
+            {
+                "titre": "Post-production",
+                "texte": "Retouching and optimisation of all produced visuals, adapted to both print constraints and web and social media platform specifications. Final delivery respected agreed deadlines and the visual identity established in advance with the artist."
+            }
+        ],
         "metiers_lies": [
             "Stage Photographer",
             "Portrait Photographer",
@@ -363,7 +486,20 @@
             "Infrastructure réseau"
         ],
         "employeur_collab": "Ynov Campus Lyon",
-        "description": "Design and deployment of a secure network architecture. Configuration of a complete infrastructure (Cisco routers and switches, Stormshield firewall) with a dedicated IP addressing plan, VLAN segmentation, inter-VLAN routing, and traffic filtering policies.",
+        "description": [
+            {
+                "titre": "Architecture design",
+                "texte": "Academic project to design and deploy a secure network architecture within the Ynov Campus Lyon premises, built from scratch through to final acceptance testing. Defining the dedicated IP addressing plan and the network segmentation strategy formed the first phase, establishing the logical foundations of the entire infrastructure."
+            },
+            {
+                "titre": "Hardware deployment",
+                "texte": "Configuration of Cisco routers and switches to handle routing and switching within the network, with VLAN segmentation implemented to isolate traffic by user profile (administration, students, guests). Inter-VLAN routing was then configured to allow authorised communication between segments."
+            },
+            {
+                "titre": "Traffic security",
+                "texte": "Configuration of the Stormshield firewall with precise filtering rules to control and secure all inbound and outbound traffic. The defined access policies ensured global consistency between the network segmentation and security rules, covering all use cases within the campus."
+            }
+        ],
         "metiers_lies": [
             "Network Security Architect",
             "Network Administrator",
@@ -394,7 +530,20 @@
             "Cybersécurité"
         ],
         "employeur_collab": "Ynov Campus Lyon",
-        "description": "Participation in a 48-hour challenge simulating a digital police investigation. In-depth analysis of memory dumps from mobile devices and PCs to reconstruct the timeline of a suspicious case, extract incriminating artifacts, and solve steganography challenges using professional forensic tools.",
+        "description": [
+            {
+                "titre": "Challenge context",
+                "texte": "Participation in a 48-hour digital investigation challenge designed as a simulated police inquiry involving cybercrime. The exercise required reconstructing the precise timeline of a fictional case, identifying those involved, and gathering exploitable digital evidence within a framework demanding strict time and priority management."
+            },
+            {
+                "titre": "Forensic investigation",
+                "texte": "Analysis of memory dumps extracted from mobile devices and desktop computers using professional forensic suites - Cellebrite Reader for mobile data and Autopsy for PC environments. Extraction of key artefacts (browsing history, metadata, deleted communications) progressively reconstructed the case timeline."
+            },
+            {
+                "titre": "Steganography & synthesis",
+                "texte": "Steganography challenges embedded in the scenario required identifying and extracting information concealed within multimedia files, further complicating the investigation. All analyses were conducted continuously over 48 hours, demanding sustained concentration and perseverance despite time pressure and increasingly complex leads."
+            }
+        ],
         "metiers_lies": [
             "Forensics Analyst (DFIR)",
             "Cybersecurity Consultant"
@@ -425,7 +574,20 @@
             "Cybersécurité"
         ],
         "employeur_collab": "Ynov Campus x HackTheBox",
-        "description": "Capture The Flag competition bringing together 33 teams on challenges ranging from Very Easy to Insane. As part of the 'Pirate La Boite' team, solved 9 out of 15 scenarios and validated 14 out of 20 flags. Multi-domain investigation covering web, pwn, reversing, crypto, blockchain, forensics, hardware, mobile, satellite, and ICS security. Final ranking: 17th out of 33.",
+        "description": [
+            {
+                "titre": "Competition format",
+                "texte": "Participation in LYON://BREACH, a Capture The Flag (CTF) competition co-organised by Ynov Campus and HackTheBox, bringing together 33 teams on challenges ranging from Very Easy to Insane. The event ran in an intensive format, with technical scenarios spanning a particularly broad range of cybersecurity disciplines."
+            },
+            {
+                "titre": "Results & ranking",
+                "texte": "As part of team 'Pirate La Boite', 9 out of 15 scenarios were solved and 14 out of 20 flags were validated, for a final ranking of 17th out of 33. These results reflect the team's ability to cover multiple challenge categories while maintaining a methodical approach on the most complex tasks."
+            },
+            {
+                "titre": "Technical domains covered",
+                "texte": "Challenges spanned a very wide technical spectrum: web and infrastructure exploitation (pwn), binary reverse engineering (reversing), cryptanalysis, smart contract auditing (blockchain), digital forensics, hardware security, mobile app analysis, satellite communications, and industrial control system security (ICS). This competition was an intensive hands-on exercise at the frontier of cybersecurity and critical systems."
+            }
+        ],
         "metiers_lies": [
             "Pentester",
             "Security Auditor",
@@ -464,7 +626,20 @@
             "Vidéo"
         ],
         "employeur_collab": "ON WHEELS",
-        "description": "Partial management of visual production for the brand. Product photography and team portraits for professional communication materials. Filming and editing of promotional teasers, long-format interviews, and coverage of all official brand events.",
+        "description": [
+            {
+                "titre": "Photography",
+                "texte": "Visual production mission for the ON WHEELS brand, spanning several months of collaboration. Contributions included product photography and packshots for professional communication materials, team portraits, and complete photographic coverage of all official brand events."
+            },
+            {
+                "titre": "Video production",
+                "texte": "Filming and editing of short promotional teasers, as well as production of long-format interviews for the brand's digital channels. Each production required full ownership from shoot to post-production, including editing and colour grading."
+            },
+            {
+                "titre": "Art direction",
+                "texte": "The entire art direction, from framing to post-production of both photo and video assets, was handled autonomously. Every deliverable was crafted in keeping with the brand's visual identity and the communication team's strategic guidelines, ensuring overall consistency across all materials."
+            }
+        ],
         "metiers_lies": [
             "Content Creator",
             "Visual Communications Manager",
@@ -505,7 +680,16 @@
             "Photographie"
         ],
         "employeur_collab": "Ynov Campus Lyon",
-        "description": "Photographic coverage of the official graduation ceremony. Sole responsibility for raw capture on location under challenging lighting conditions (stage, low light) and on-the-fly portrait photography of graduates. Sorting and post-production were handled by a separate team.",
+        "description": [
+            {
+                "titre": "Field assignment",
+                "texte": "Photographic coverage of the official Ynov Campus Lyon graduation ceremony, carried out as a volunteer assignment. Responsibilities were focused exclusively on raw capture in the field, while sorting and post-production were handled by a dedicated team."
+            },
+            {
+                "titre": "Technical constraints",
+                "texte": "Shooting conditions presented significant technical challenges: high-contrast stage lighting, low ambient light in audience movement zones, and the pace imposed by the ceremony's schedule. Graduate portraits were captured on the fly during each stage appearance, requiring constant adjustment of framing and camera settings to ensure quality in every shot."
+            }
+        ],
         "metiers_lies": [
             "Event Photographer"
         ],

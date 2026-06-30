@@ -5,6 +5,11 @@ export interface ExpLink {
   url:   string
 }
 
+export interface DescriptionSection {
+  titre: string
+  texte: string
+}
+
 export interface Experience {
   id:                   string
   nom:                  string
@@ -12,7 +17,7 @@ export interface Experience {
   type:                 string
   domaine:              string[]
   employeur_collab:     string
-  description:          string
+  description:          DescriptionSection[] | string
   metiers_lies:         string[]
   competences_obtenir:  string[]
   soft_skills_utilises: string[]

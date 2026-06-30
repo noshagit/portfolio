@@ -68,13 +68,13 @@ Ce projet est bilingue. Toute modification, ajout ou suppression de contenu text
 
 ## Architecture
 
-SPA with no router — navigation is pure React state. `App.tsx` holds `currentView: View` and renders the active page via a `PAGES` map. `AnimatePresence` from framer-motion wraps the active `<Page>` for enter/exit transitions.
+SPA with no router — navigation is pure React state. `AppShell` (inside `App.tsx`) holds `currentView: View` and renders the active page via a `PAGES` map. `AnimatePresence` from framer-motion wraps the active `<Page>` for enter/exit transitions.
 
 **Data flow**: `onNavigate(view: View)` is passed down as a prop from `AppShell` to every page and to `Header`. Pages never navigate themselves directly.
 
 **Theming**: `ThemeContext` applies/removes the `.dark` class on `<html>` and persists to `localStorage`. Consume via `useTheme()` from `src/hooks/useTheme.ts`. During toggle, `ThemeContext` briefly adds `.theme-transition` to `<html>` so CSS transitions fire; it removes it after 500ms so hover animations stay snappy the rest of the time. CSS variables (`--background`, `--foreground`, `--accent`, `--accent-muted`) are declared in `index.css` for both light/dark modes and exposed as Tailwind tokens via `@theme`. Always use semantic tokens (`bg-background`, `text-foreground`, `text-accent`) — never hardcode colors.
 
-**Pages** (`src/pages/`): `Landing`, `Presentation`, `Experiences`, `Contact` — each accepts `{ onNavigate }` prop and wraps its root element in a `<motion.div>` with the standard fade+slide transition (`opacity 0→1, y 24→0`).
+**Pages** (`src/pages/`): `Landing`, `Presentation`, `Experiences`, `Contact`, `Privacy` — each accepts `{ onNavigate }` prop and wraps its root element in a `<motion.div>` with the standard fade+slide transition (`opacity 0→1, y 24→0`). All pages except `Landing` are `React.lazy()`-loaded; `SplashGate` prefetches all lazy chunks during the splash animation so every route is ready before the user can interact. `Footer` is rendered for all views except `presentation`.
 
 **Content data** lives in `src/data/` (FR experiences JSON, bundled). The `Experience` interface and `SortDir` type live in `src/types/experience.ts`. `src/types/index.ts` holds only `View`, `Theme`, and `NavItem`.
 

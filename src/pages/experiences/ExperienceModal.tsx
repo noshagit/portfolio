@@ -101,9 +101,20 @@ export default function ExperienceModal({ exp, onClose }: Props) {
 
               <section>
                 <SectionLabel as="p" className="mb-3 text-[10px]">{modal.description}</SectionLabel>
-                <p className="text-justify hyphens-auto break-words text-sm leading-relaxed text-foreground/60">
-                  {exp.description}
-                </p>
+                {Array.isArray(exp.description) ? (
+                  <div className="space-y-5">
+                    {exp.description.map(s => (
+                      <div key={s.titre}>
+                        <p className="mb-1.5 text-[9px] font-semibold uppercase tracking-widest text-foreground/35">{s.titre}</p>
+                        <p className="text-justify hyphens-auto break-words text-sm leading-relaxed text-foreground/60">{s.texte}</p>
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <p className="text-justify hyphens-auto break-words text-sm leading-relaxed text-foreground/60">
+                    {exp.description}
+                  </p>
+                )}
               </section>
 
               {images.length > 0 && (

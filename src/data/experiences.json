@@ -12,7 +12,20 @@
             "Événementiel"
         ],
         "employeur_collab": "Ynov Campus Lyon",
-        "description": "Représentation de l'école lors des salons étudiants, des journées portes ouvertes (JPO) et des événements d'orientation. Accueil des futurs étudiants, présentation des cursus en cybersécurité et partage d'expérience sur la vie de campus.",
+        "description": [
+            {
+                "titre": "Représentation de l'école",
+                "texte": "Représentation active d'Ynov Campus lors de divers événements promotionnels et institutionnels, salons étudiants, journées portes ouvertes et soirées de rencontre avec les futurs candidats. Ce rôle implique la tenue de stand, la présentation de l'établissement et de ses formations auprès des lycéens, des étudiants en réorientation et de leurs familles, ainsi que l'animation de visites guidées du campus pour faire découvrir les salles et les espaces de vie étudiante."
+            },
+            {
+                "titre": "Accueil & information",
+                "texte": "L'accueil des futurs étudiants et de leurs proches occupe une place centrale dans cette mission, avec pour objectif d'instaurer un climat de confiance propice aux échanges. Une présentation détaillée des cursus en cybersécurité est proposée, abordant le déroulé pédagogique, les spécialisations possibles, les débouchés professionnels, les modalités d'admission et les perspectives de carrière offertes par ce secteur en pleine croissance."
+            },
+            {
+                "titre": "Accompagnement à l'orientation",
+                "texte": "Un partage d'expérience personnel sur la vie de campus est proposé à travers des témoignages sur mon quotidien étudiant, la vie associative, le logement et les activités extra-scolaires, afin de donner une vision globale de la formation. Un accompagnement est assuré auprès des futurs candidats, à travers une écoute attentive de leurs projets professionnels permettant de les guider vers la formation ou la spécialisation la plus adaptée à leur profil."
+            }
+        ],
         "metiers_lies": [
             "Chargé de communication",
             "Ambassadeur de marque"
@@ -42,7 +55,20 @@
             "Infrastructure réseau"
         ],
         "employeur_collab": "Ynov Campus Lyon",
-        "description": "Déploiement d'une infrastructure réseau d'entreprise complète: Windows Server, Active Directory, GPO, VPN IPSec, DNS/DHCP et politique de sécurité. Configuration du routage, du pare-feu et des règles de filtrage réseau dans un environnement virtualisé.",
+        "description": [
+            {
+                "titre": "Contexte du projet",
+                "texte": "Projet académique simulant un environnement d'entreprise réel, mené dans un environnement entièrement virtualisé. L'objectif était de concevoir une application web et de déployer une infrastructure réseau opérationnelle de bout en bout, en couvrant à la fois les aspects systèmes, les services réseau et la sécurisation des accès."
+            },
+            {
+                "titre": "Infrastructure système",
+                "texte": "Mise en place d'un serveur Windows Server avec intégration complète d'Active Directory pour la gestion centralisée des comptes et des ressources. Les stratégies de groupe (GPO) ont été définies pour contrôler les postes clients, tandis qu'un VPN IPSec a été configuré pour sécuriser les communications distantes, accompagné des services DNS et DHCP pour la résolution de noms et l'attribution automatique des adresses."
+            },
+            {
+                "titre": "Sécurisation du réseau",
+                "texte": "Déploiement d'une politique de sécurité globale encadrant les droits d'accès, le filtrage réseau et les règles de pare-feu, afin d'assurer la cohérence et la robustesse de l'ensemble du système. Les configurations ont été validées dans le respect des bonnes pratiques de durcissement d'une infrastructure d'entreprise multi-sites."
+            }
+        ],
         "metiers_lies": [
             "Administrateur système",
             "Administrateur réseau",
@@ -77,7 +103,20 @@
             "Cybersécurité"
         ],
         "employeur_collab": "Ynov Campus Lyon",
-        "description": "Pilotage d'une équipe de 8 personnes, gestion de projet, mise en place d'un SIEM avec ELK Stack et création de scripts d'attaques automatisées. Suivi des livrables, animation des réunions d'équipe et coordination entre les pôles technique et fonctionnel.",
+        "description": [
+            {
+                "titre": "Pilotage & conception",
+                "texte": "Responsable de projet au sein d'une équipe de 8 personnes, avec pour mission de concevoir et déployer un SIEM connecté à une plateforme en ligne permettant à chaque utilisateur inscrit de visualiser les alertes de sécurité qui lui sont remontées. La coordination entre les pôles technique et fonctionnel s'est appuyée sur un suivi rigoureux des livrables tout au long du cycle de développement, de la phase de cadrage jusqu'à la livraison finale."
+            },
+            {
+                "titre": "Simulation d'attaques",
+                "texte": "Des scripts d'attaques automatisées ont été développés pour lancer des simulations sur une machine intentionnellement vulnérable (Metasploitable 3). Ces scénarios généraient des événements de sécurité réels, collectés, indexés et visualisés via la suite ELK Stack (Elasticsearch, Kibana), alimentant ainsi la plateforme avec des données d'attaque authentiques et variées."
+            },
+            {
+                "titre": "Alertes & apprentissage",
+                "texte": "Chaque utilisateur inscrit sur la plateforme recevait des alertes personnalisées correspondant aux attaques simulées sur sa session, avec des informations détaillées sur la nature de la menace détectée. L'objectif pédagogique était de permettre l'analyse des remontées d'alertes, la compréhension des mécanismes d'attaque sous-jacents et la découverte des stratégies de défense adaptées à chaque type de menace."
+            }
+        ],
         "metiers_lies": [
             "Responsable de projet IT",
             "Chef de projet cybersécurité",
@@ -111,7 +150,20 @@
             "Informatique"
         ],
         "employeur_collab": "Ynov Campus Lyon",
-        "description": "Contribution au développement web: React, TypeScript. Création de scripts en Bash et validation des contributions de l'équipe via GitLab.",
+        "description": [
+            {
+                "titre": "Présentation du projet",
+                "texte": "INCA est une plateforme web mettant à disposition des scripts d'audit de sécurité et d'automatisation de tâches, destinés aussi bien à des entreprises qu'à des établissements d'enseignement souhaitant former leurs équipes ou intégrer ces outils directement dans la gestion de leur système d'information. La bibliothèque de scripts, accessible en ligne, vise à simplifier et standardiser des opérations techniques récurrentes dans des environnements professionnels ou pédagogiques."
+            },
+            {
+                "titre": "Développement front-end",
+                "texte": "Contribution au développement de la plateforme web avec une stack React et TypeScript, en prenant en charge des fonctionnalités front-end dans le respect des standards de qualité de code définis par l'équipe."
+            },
+            {
+                "titre": "Scripts développés",
+                "texte": "Développement de deux scripts Bash intégrés à la plateforme. Le premier permet la mise en place et la gestion complète d'une base de données SQL depuis la ligne de commande - création de la base, gestion des tables, ajout et manipulation des données, sans nécessiter d'interface graphique. Le second facilite la configuration des règles de pare-feu, en proposant une interface interactive pour définir, modifier et appliquer des règles de filtrage réseau de manière guidée et reproductible."
+            }
+        ],
         "metiers_lies": [
             "Développeur web",
             "Développeur / Scripteur",
@@ -128,7 +180,7 @@
             "Curiosité technique",
             "Travail en équipe",
             "Force de proposition",
-            "autonomie"
+            "Autonomie"
         ],
         "links": [
             {
@@ -149,14 +201,29 @@
             "Informatique"
         ],
         "employeur_collab": "Oraxya",
-        "description": "Contribution au développement web: Vite, TypeScript. Alimentation, tri et analyse des données partagées par des centaines de pharmacies.",
+        "description": [
+            {
+                "titre": "Contexte du projet",
+                "texte": "Oraxya était une plateforme gratuite et accessible à tous, référençant en temps réel les prix du Mounjaro et du Wegovy dans les pharmacies de France métropolitaine et des DOM/TOM. Fermée en juin 2026, elle constituait une ressource unique pour les patients et professionnels de santé cherchant à localiser et comparer la disponibilité de ces traitements à travers des centaines d'officines."
+            },
+            {
+                "titre": "Développement & fonctionnalités",
+                "texte": "Contribution au développement full-stack de la plateforme avec une stack Vite et TypeScript, couvrant à la fois des développements front-end et des fonctionnalités back-end. Parmi les réalisations notables, la conception et l'intégration d'une carte dynamique et interactive permettant aux utilisateurs de visualiser géographiquement la disponibilité des médicaments par officine, ainsi que le travail d'alimentation, de tri et de nettoyage des jeux de données transmis par les pharmacies."
+            },
+            {
+                "titre": "Audit & qualité",
+                "texte": "Réalisation d'audits du code back-end existant afin d'identifier les points de fragilité, les incohérences et les axes d'optimisation. Les contributions ont été intégrées via un processus de review de code sur GitHub, garantissant la maintenabilité et la cohérence de l'ensemble de la base de code."
+            }
+        ],
         "metiers_lies": [
-            "Développeur web"
+            "Développeur web full-stack",
+            "Développeur front-end"
         ],
         "competences_obtenir": [
             "Vite",
             "TypeScript",
-            "Json",
+            "Cartographie interactive",
+            "Audit de code back-end",
             "GitHub",
             "Review de code"
         ],
@@ -164,7 +231,7 @@
             "Curiosité technique",
             "Travail en équipe",
             "Force de proposition",
-            "autonomie"
+            "Autonomie"
         ],
         "links": []
     },
@@ -180,7 +247,16 @@
             "Service"
         ],
         "employeur_collab": "Ville de Marseille",
-        "description": "Optimisation opérationnelle et maintien de la salubrité des espaces publics. Gestion de la logistique de tri, application rigoureuse des normes d'hygiène et de sécurité, et coordination des flux de revalorisation des encombrants.",
+        "description": [
+            {
+                "titre": "Deuxième saison",
+                "texte": "Deuxième contrat saisonnier au sein des services de nettoiement de la Ville de Marseille, avec une montée en autonomie notable par rapport à la première saison. L'expérience préalablement acquise a permis une intégration plus rapide dans les équipes et une meilleure anticipation des contraintes opérationnelles liées aux spécificités du terrain."
+            },
+            {
+                "titre": "Missions sur le terrain",
+                "texte": "Maintien de la salubrité des espaces publics dans des secteurs à fort passage, avec gestion directe de la logistique de collecte et de tri des encombrants en vue de leur revalorisation. Application rigoureuse des normes HSE dans un contexte d'activité physique intensive, avec prise d'initiatives accrue dans l'organisation des tournées et la gestion des imprévus."
+            }
+        ],
         "metiers_lies": [
             "Agent de nettoiement",
             "Opérateur logistique",
@@ -212,7 +288,16 @@
             "Service"
         ],
         "employeur_collab": "Ville de Marseille",
-        "description": "Optimisation opérationnelle et maintien de la salubrité des espaces publics. Gestion de la logistique de tri, application rigoureuse des normes d'hygiène et de sécurité, et coordination des flux de revalorisation des encombrants.",
+        "description": [
+            {
+                "titre": "Première saison",
+                "texte": "Au sein des services de nettoiement de la Ville de Marseille, dans le cadre d'un contrat saisonnier. Cette expérience a constitué un contact concret avec les exigences du milieu professionnel, rigueur, ponctualité, respect des consignes, dans un environnement de travail physiquement exigeant."
+            },
+            {
+                "titre": "Missions sur le terrain",
+                "texte": "Participation active à l'entretien et à la salubrité des espaces publics, avec prise en charge de la collecte et du tri des encombrants pour leur revalorisation. Application des procédures d'hygiène et de sécurité en vigueur (normes HSE) et intégration au sein d'une équipe de terrain dans un contexte de fortes chaleurs estivales."
+            }
+        ],
         "metiers_lies": [
             "Agent de nettoiement",
             "Opérateur logistique",
@@ -244,7 +329,20 @@
             "Restauration"
         ],
         "employeur_collab": "Bistrot Les Iris (Bron)",
-        "description": "Garant de l'expérience client en salle et au bar au sein d'un environnement à fort flux. Gestion de la relation client, préparation des commandes (boissons et petite restauration) et maintien de la conformité aux normes d'hygiène (HACCP) en cuisine et comptoir.",
+        "description": [
+            {
+                "titre": "Gestion de la relation client",
+                "texte": "Poste polyvalent au sein du Bistrot Les Iris à Bron, avec une responsabilité directe sur la qualité de l'expérience client, depuis l'accueil jusqu'à l'encaissement, dans un établissement à fort flux de clientèle. L'objectif constant de satisfaction et de fidélisation imposait une attention permanente à la qualité du service, une bonne lecture des attentes de la clientèle et une capacité à gérer les situations tendues avec calme et professionnalisme."
+            },
+            {
+                "titre": "Service en salle & au bar",
+                "texte": "Gestion simultanée du service en salle et du bar, nécessitant une organisation rigoureuse pour assurer la fluidité des commandes lors des périodes d'affluence. La préparation des boissons et de la petite restauration exigeait une maîtrise des techniques de comptoir et une gestion efficace des priorités pour maintenir un service rapide sans compromettre la qualité."
+            },
+            {
+                "titre": "Hygiène & conformité",
+                "texte": "Respect strict des normes HACCP en cuisine et au comptoir, garantissant la sécurité alimentaire et l'hygiène de l'établissement en toutes circonstances. Ces exigences réglementaires faisaient l'objet d'une vigilance quotidienne, intégrée naturellement dans les pratiques de travail."
+            }
+        ],
         "metiers_lies": [
             "Serveur",
             "Barman",
@@ -264,7 +362,7 @@
         ],
         "links": [
             {
-                "label": "Site web",
+                "label": "Site web - Bistrot les Iris",
                 "url": "https://bistrot-les-iris.fr/"
             }
         ]
@@ -281,7 +379,20 @@
             "Photographie"
         ],
         "employeur_collab": "Room Service (Lyon)",
-        "description": "Deux jours de couverture photographique d'événements culturels sur trois journées. Captation d'une conférence sur le statut d'indépendant dans le design graphique lors d'une conférence au Musée d'Art Contemporain (MAC) de Lyon et valorisation visuelle d'une soirée d'exposition à l'espace KOMMET. Gestion du cadrage, de la lumière en conditions variables.",
+        "description": [
+            {
+                "titre": "Conférence au MAC de Lyon",
+                "texte": "Couverture photographique d'une conférence consacrée au statut d'indépendant dans le design graphique, tenue au Musée d'Art Contemporain (MAC) de Lyon. L'objectif était de restituer l'atmosphère de l'événement et les moments clés des interventions à travers une captation discrète et précise, dans un espace institutionnel à l'éclairage contraint."
+            },
+            {
+                "titre": "Soirée d'exposition - espace KOMMET",
+                "texte": "Valorisation visuelle d'une soirée d'exposition artistique à l'espace KOMMET, impliquant une gestion autonome du cadrage et de l'exposition dans des conditions d'éclairage variables et faibles. La mission nécessitait une adaptation permanente aux déplacements des visiteurs et à l'évolution de l'ambiance lumineuse au fil de la soirée."
+            },
+            {
+                "titre": "Gestion technique",
+                "texte": "Ces deux missions, réalisées sur un format de deux journées journées, ont nécessité une adaptation constante aux spécificités de chaque lieu et une capacité à produire des visuels de qualité en temps réel, sans mise en scène préalable. L'ensemble des prises de vue a été géré de manière entièrement autonome."
+            }
+        ],
         "metiers_lies": [
             "Photographe événementiel",
             "Reporter photographe",
@@ -322,14 +433,25 @@
             "Photographie"
         ],
         "employeur_collab": "Fifamé (Lyon)",
-        "description": "Couverture photographique d'une performance scénique en direct et réalisation de portraits professionnels. Production de visuels de communication et à l'identité numérique (photo de profil officielle) de l'artiste.",
+        "description": [
+            {
+                "titre": "Captation",
+                "texte": "Couverture en live d'une performance en plein air de l'artiste Fifamé (slam et conte), avec gestion d'un éclairage naturel plus ou moins intense et changeant. La réactivité et l'anticipation des mouvements de l'artiste ont été essentielles pour saisir les instants forts d'une prestation en constante évolution."
+            },
+            {
+                "titre": "Portraits professionnels",
+                "texte": "Réalisation de portraits destinés à alimenter l'identité numérique de l'artiste, notamment ses photos de profil officielles sur les plateformes de diffusion et ses supports de communication. Un travail préalable d'échange avec l'artiste a permis d'orienter les prises de vue vers une esthétique cohérente avec son univers."
+            },
+            {
+                "titre": "Post-production",
+                "texte": "Retouche et optimisation de l'ensemble des visuels produits, adaptés à la fois aux contraintes du print et aux spécifications des plateformes web et réseaux sociaux. La livraison finale a respecté les délais convenus et l'identité visuelle définie en amont avec l'artiste."
+            }
+        ],
         "metiers_lies": [
-            "Photographe de scène",
             "Portraitiste",
             "Créateur de contenu visuel"
         ],
         "competences_obtenir": [
-            "Photographie de spectacle (gestion du mouvement et des éclairages scéniques)",
             "Techniques du portrait institutionnel et artistique",
             "Retouche et optimisation pour le print et le web"
         ],
@@ -362,7 +484,20 @@
             "Infrastructure réseau"
         ],
         "employeur_collab": "Ynov Campus Lyon",
-        "description": "Conception et déploiement d'une architecture réseau sécurisée au sein de l'établissement. Configuration d'une infrastructure complète (routeurs et switchs Cisco, pare-feu Stormshield) avec plan d'adressage IP dédié, segmentation par VLAN, routage inter-VLAN et application de politiques de filtrage pour sécuriser les flux de l'infrastructure.",
+        "description": [
+            {
+                "titre": "Conception de l'architecture",
+                "texte": "Projet académique de conception d'une architecture réseau sécurisée au sein des locaux d'Ynov Campus Lyon, réalisé de zéro jusqu'à la recette finale. L'élaboration du plan d'adressage IP dédié et la définition de la segmentation réseau ont constitué la première phase du projet, posant les bases logiques de l'ensemble de l'infrastructure."
+            },
+            {
+                "titre": "Déploiement matériel",
+                "texte": "Configuration de routeurs et de switchs Cisco pour assurer le routage et la commutation au sein du réseau."
+            },
+            {
+                "titre": "Sécurisation des flux",
+                "texte": "Paramétrage du pare-feu Stormshield avec des règles de filtrage précises pour contrôler et sécuriser l'ensemble des flux entrants et sortants de l'infrastructure. Les politiques d'accès définies ont assuré une cohérence globale, couvrant l'intégralité des cas d'usage de l'établissement."
+            }
+        ],
         "metiers_lies": [
             "Architecte sécurité réseau",
             "Administrateur réseau",
@@ -393,7 +528,20 @@
             "Cybersécurité"
         ],
         "employeur_collab": "Ynov Campus Lyon",
-        "description": "Participation à un défi de 48 heures simulant une enquête policière numérique. Analyse approfondie de dumps de mémoire d'appareils mobiles et de PC pour reconstituer la chronologie d'une affaire suspecte, extraire des artefacts compromettants et résoudre des défis de stéganographie à l'aide d'outils professionnels d'investigation.",
+        "description": [
+            {
+                "titre": "Contexte du challenge",
+                "texte": "Participation à un challenge d'investigation numérique de 48 heures, conçu sous la forme d'une simulation d'enquête policière impliquant une affaire d'espionnage. L'exercice visait à reconstituer la chronologie précise d'une affaire fictive, identifier les acteurs impliqués et rassembler des preuves numériques exploitables, dans un cadre imposant une gestion rigoureuse du temps et des priorités."
+            },
+            {
+                "titre": "Investigation forensique",
+                "texte": "Analyse de dumps de mémoire extraits d'appareils mobiles et de postes informatiques à l'aide de suites forensics professionnelles, Cellebrite Reader pour les données mobiles et Autopsy pour les environnements PC. L'extraction d'artefacts clés (historiques de navigation, métadonnées, communications effacées) a permis de reconstituer progressivement la timeline de l'affaire."
+            },
+            {
+                "titre": "Stéganographie & synthèse",
+                "texte": "Des challenges de stéganographie intégrés au scénario ont nécessité l'identification et l'extraction d'informations dissimulées dans des fichiers multimédias, complexifiant davantage l'investigation. L'ensemble des analyses a été mené en continu sur 48 heures, exigeant une concentration et une persévérance soutenues malgré la pression du temps et la complexité croissante des indices."
+            }
+        ],
         "metiers_lies": [
             "Analyste Forensics (DFIR)",
             "Consultant en Cybersécurité"
@@ -424,7 +572,20 @@
             "Cybersécurité"
         ],
         "employeur_collab": "Ynov Campus x HackTheBox",
-        "description": "Compétition de type Capture The Flag (CTF) regroupant 33 équipes sur des défis de niveau Très Facile à Insane. Au sein de l'équipe 'Pirate La Boite', résolution de 9 scénarios sur 15 et validation de 14 flags sur 20. Investigation multi-domaines incluant le web, le pwn, le reversing, la crypto, la blockchain, le forensic, le hardware, le mobile, le spatial (satellite) et la sécurité des systèmes industriels (ICS). Classement final : 17ème sur 33.",
+        "description": [
+            {
+                "titre": "Format de la compétition",
+                "texte": "Participation à LYON://BREACH, compétition de type Capture The Flag (CTF) co-organisée par Ynov Campus et HackTheBox, réunissant 33 équipes sur des épreuves de difficulté allant de Très Facile à Insane. La compétition s'est déroulée dans un format intensif, avec des scénarios techniques couvrant un spectre particulièrement large de la cybersécurité."
+            },
+            {
+                "titre": "Résultats & classement",
+                "texte": "Au sein de l'équipe 'Pirate La Boite', 9 scénarios résolus sur 15 proposés et 14 flags validés sur 20, pour un classement final de 17ème sur 33. Ces résultats illustrent la capacité de l'équipe à couvrir plusieurs catégories de défis tout en maintenant une approche méthodique sur les épreuves les plus complexes."
+            },
+            {
+                "titre": "Domaines techniques explorés",
+                "texte": "Les défis ont couvert un spectre très large : exploitation de vulnérabilités web et d'infrastructure (pwn), rétro-ingénierie de binaires (reversing), cryptanalyse, audit de smart contracts (blockchain), investigation numérique (forensic), sécurité matérielle (hardware), analyse d'applications mobiles, communications spatiales (satellite) et sécurité des systèmes industriels (ICS). Cette compétition a constitué une mise en situation intensive sur des thématiques à la frontière de la cybersécurité et des systèmes critiques."
+            }
+        ],
         "metiers_lies": [
             "Pentester",
             "Auditeur Sécurité",
@@ -463,7 +624,16 @@
             "Vidéo"
         ],
         "employeur_collab": "ON WHEELS",
-        "description": "Gestion d'une partie de la production visuelle pour la marque. Réalisation de photos de produits et de portraits de l'équipe pour les supports de communication professionnels. Captation et montage de teasers promotionnels, réalisation d'interviews format long et couverture de l'ensemble des événements officiels de la structure.",
+        "description": [
+            {
+                "titre": "Photographie",
+                "texte": "Mission de production photographique pour ON WHEELS, couvrant plusieurs mois de collaboration. La contribution a inclus la réalisation de photographies de produits pour les supports de communication, des portraits des membres de l'équipe, ainsi que la couverture photographique complète de certains événements de la structure."
+            },
+            {
+                "titre": "Production vidéo",
+                "texte": "Captation et montage de teasers promotionnels courts formats, ainsi que réalisation d'une interview courte durée destinées aux canaux digitaux de la marque. Chaque production a nécessité une prise en charge complète du tournage jusqu'à la post-production, incluant le montage et l'étalonnage."
+            }
+        ],
         "metiers_lies": [
             "Créateur de contenu",
             "Responsable communication visuelle",
@@ -472,8 +642,7 @@
         "competences_obtenir": [
             "Production et post-production vidéo (Teasers, Interviews)",
             "Photographie de studio et packshot produit",
-            "Reportage photo événementiel et gestion de la lumière",
-            "Direction artistique et traitement d'image"
+            "Reportage photo événementiel et gestion de la lumière"
         ],
         "soft_skills_utilises": [
             "Autonomie",
@@ -504,7 +673,16 @@
             "Photographie"
         ],
         "employeur_collab": "Ynov Campus Lyon",
-        "description": "Couverture photographique de la cérémonie officielle de remise des diplômes de l'établissement. Prise en charge exclusive de la captation brute sur le terrain en conditions lumineuses complexes (scène, basse luminosité) et réalisation des portraits des diplômés à la volée. Le tri et la post-production ont été gérés par une équipe tierce.",
+        "description": [
+            {
+                "titre": "Mission de terrain",
+                "texte": "Couverture photographique de la cérémonie de remise des diplômes d'Ynov Campus Lyon, dans le cadre d'une mission bénévole. La prise en charge s'est concentrée exclusivement sur la captation brute en conditions de terrain, tandis que le tri et la post-production ont été confiés à une équipe dédiée."
+            },
+            {
+                "titre": "Contraintes techniques",
+                "texte": "Les conditions de prise de vue ont présenté des défis techniques importants : lumière de scène contrastée, basse luminosité dans les zones de déplacement du public et rythme soutenu imposé par le déroulé de la cérémonie. Les portraits des diplômés ont été réalisés à la volée lors des passages sur scène, nécessitant une adaptation permanente du cadrage et des paramètres de prise de vue pour garantir la qualité de chaque cliché."
+            }
+        ],
         "metiers_lies": [
             "Photographe événementiel"
         ],
