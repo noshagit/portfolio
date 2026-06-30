@@ -1,6 +1,6 @@
-import { useEffect } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
-import { X, ExternalLink } from 'lucide-react'
+import { X, ExternalLink, ChevronDown } from 'lucide-react'
 import type { Experience } from '../../types/experience'
 import SectionLabel from '../../components/ui/SectionLabel'
 import Tag from '../../components/ui/Tag'
@@ -29,6 +29,18 @@ export default function ExperienceModal({ exp, onClose }: Props) {
   const { modal, types } = t.experiences
   const images    = EXPERIENCE_IMAGES[exp.id] ?? []
   const typeLabel = types[exp.type as keyof typeof types] ?? exp.type
+
+  const scrollRef = useRef<HTMLDivElement>(null)
+  const [showArrow, setShowArrow] = useState(true)
+
+  useEffect(() => {
+    const el = scrollRef.current
+    if (!el) return
+    const check = () => setShowArrow(el.scrollTop + el.clientHeight < el.scrollHeight - 8)
+    check()
+    el.addEventListener('scroll', check, { passive: true })
+    return () => el.removeEventListener('scroll', check)
+  }, [])
 
   useEffect(() => {
     document.body.style.overflow = 'hidden'
@@ -63,7 +75,9 @@ export default function ExperienceModal({ exp, onClose }: Props) {
           aria-label={exp.nom}
           className="pointer-events-auto relative flex w-full max-w-3xl flex-col
                      max-h-[calc(100dvh-6rem)] sm:max-h-[80vh]
-                     border border-accent/20 bg-background shadow-2xl"
+                     border border-accent/20 bg-background shadow-2xl
+                     after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-14
+                     after:bg-gradient-to-t after:from-background after:to-transparent after:z-10"
         >
 
           <div className="shrink-0 border-b border-accent/10 px-5 py-5 sm:px-8 sm:py-6">
@@ -89,6 +103,7 @@ export default function ExperienceModal({ exp, onClose }: Props) {
           </div>
 
           <div
+            ref={scrollRef}
             className="flex-1 overflow-y-auto px-5 py-6 sm:px-8 sm:py-8
                        [scrollbar-width:thin]
                        [scrollbar-color:color-mix(in_srgb,var(--accent)_25%,transparent)_transparent]
@@ -180,6 +195,11 @@ export default function ExperienceModal({ exp, onClose }: Props) {
 
             </div>
           </div>
+
+          <div className={`pointer-events-none absolute bottom-3 right-4 z-20 transition-opacity duration-300 ${showArrow ? 'opacity-100' : 'opacity-0'}`}>
+            <ChevronDown size={16} className="text-accent animate-bounce" />
+          </div>
+
         </motion.div>
       </div>
     </>
