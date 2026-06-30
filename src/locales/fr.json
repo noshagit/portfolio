@@ -242,6 +242,13 @@
       "downloadPdf": "Télécharger le PDF",
       "items": [
         {
+          "id": "theodore",
+          "label": "Melvin THEODORE",
+          "role": "Expert en cybersécurité - Formateur / Conférencier",
+          "text": "Fort d'expériences au sein d'ARKEMA et d'INTERPOL, Melvin m'a encadré dans plusieurs formations spécialisées. Il témoigne de mes compétences techniques, de ma curiosité pour les enjeux du domaine et de mon éthique professionnelle, des qualités qu'il juge essentielles dans les métiers de la cybersécurité.",
+          "pdf": "/ldr/ldr-003.pdf"
+        },
+        {
           "id": "sirot",
           "label": "Cellya SIROT",
           "role": "Développeuse web - Oraxya",
@@ -249,11 +256,11 @@
           "pdf": "/ldr/ldr-002.pdf"
         },
         {
-          "id": "theodore",
-          "label": "Melvin THEODORE",
-          "role": "Expert en cybersécurité - Formateur / Conférencier",
-          "text": "Fort d'expériences au sein d'ARKEMA et d'INTERPOL, Melvin m'a encadré dans plusieurs formations spécialisées. Il témoigne de mes compétences techniques, de ma curiosité pour les enjeux du domaine et de mon éthique professionnelle, des qualités qu'il juge essentielles dans les métiers de la cybersécurité.",
-          "pdf": "/ldr/ldr-003.pdf"
+          "id": "iaboni",
+          "label": "Alexandra IABONI",
+          "role": "Responsable des admissions - Lyon Ynov Campus",
+          "text": "Alexandra m'a côtoyé en tant qu'ambassadeur de l'école et ancien membre du Bureau des Sports. Elle atteste de mon engagement dans la vie étudiante, de mon sens du collectif et de ma capacité à représenter l'établissement avec authenticité lors d'événements d'envergure.",
+          "pdf": "/ldr/ldr-001.pdf"
         }
       ]
     },
