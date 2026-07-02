@@ -214,10 +214,10 @@
         {
           "id": "bac",
           "period": "2018 - 2021",
-          "degree": "General Baccalaureate",
+          "degree": "French High School Diploma (Baccalauréat)",
           "institution": "Lycée Périer, Marseille",
           "url": "https://www.site.ac-aix-marseille.fr/cio-marseille-centre/spip/Lycee-Perier.html",
-          "context": "Scientific curriculum specializing in computer science (NSI) and mathematics. Introduction to network architecture concepts, algorithmic scripting, and mathematical logic applied to data processing."
+          "context": "Specialized in Mathematics and Computer Science. Introduction to network architecture concepts, algorithmic scripting, and mathematical logic applied to data processing."
         },
         {
           "id": "licence",
@@ -328,6 +328,7 @@
     },
     "types": {
       "Projet académique": "Academic Project",
+      "Projet personnel": "Personal Project",
       "CDD": "Fixed-term Contract",
       "CDI": "Permanent Contract",
       "Participation bénévole": "Volunteer",
@@ -366,7 +367,8 @@
   },
   "footer": {
     "contact": "Contact",
-    "privacy": "Privacy"
+    "privacy": "Privacy",
+    "legal": "Legal notice"
   },
   "privacy": {
     "label": "privacy policy",
@@ -384,10 +386,6 @@
       ],
       "retention": "This data stays in your browser, is never shared with third parties, and is erased when you clear your browsing data."
     },
-    "photo": {
-      "heading": "Profile photo",
-      "body": "The photo displayed on this site belongs to the portfolio owner and is published voluntarily for professional presentation purposes."
-    },
     "letters": {
       "heading": "Recommendation Letters",
       "body": "The letters viewable on this site are published with the explicit consent of their authors."
@@ -396,6 +394,35 @@
       "heading": "Your Rights (GDPR Art. 15-17)",
       "body": "You may request access to, correction of, or deletion of your data by writing to"
     },
-    "updated": "Last updated: June 2025"
+    "updated": "Last updated: July 2026"
+  },
+  "legal": {
+    "label": "legal notice",
+    "editor": {
+      "heading": "Site editor",
+      "name": "Ilian BEN HAMOU",
+      "status": "Personal, non-commercial website.",
+      "email": "ilianbenhamou2163@gmail.com",
+      "phone": "+33 7 81 58 38 39"
+    },
+    "publisher": {
+      "heading": "Publication director",
+      "body": "Publication is directed by Ilian BEN HAMOU, editor of this site."
+    },
+    "host": {
+      "heading": "Hosting",
+      "name": "Cloudflare, Inc.",
+      "address": "101 Townsend Street, San Francisco, CA 94107, United States",
+      "website": "https://www.cloudflare.com"
+    },
+    "ip": {
+      "heading": "Intellectual property",
+      "body": "All content on this site (text, layout, source code, visual identity) is the exclusive property of Ilian BEN HAMOU, unless stated otherwise. Any reproduction, representation or distribution, in whole or in part, without prior authorization is prohibited."
+    },
+    "liability": {
+      "heading": "Limitation of liability",
+      "body": "The editor strives to ensure the accuracy of information published on this site but cannot be held liable for errors, omissions, or unavailability of content."
+    },
+    "updated": "Last revised: July 2026"
   }
 }

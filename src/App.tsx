@@ -13,6 +13,7 @@ const Presentation = lazy(() => import('./pages/Presentation'))
 const Experiences  = lazy(() => import('./pages/Experiences'))
 const Contact      = lazy(() => import('./pages/Contact'))
 const Privacy      = lazy(() => import('./pages/Privacy'))
+const LegalNotice  = lazy(() => import('./pages/legal/LegalNotice'))
 
 type PageProps = { onNavigate: (view: View) => void }
 
@@ -22,6 +23,7 @@ const PAGES: Record<View, React.ComponentType<PageProps>> = {
   experiences:  Experiences,
   contact:      Contact,
   privacy:      Privacy,
+  legal:        LegalNotice,
 }
 
 /** Root layout shell: owns active-view state and wires navigation across header, main, and footer. */
@@ -64,6 +66,7 @@ function SplashGate({ onDone }: { onDone: () => void }) {
     import('./pages/Experiences')
     import('./pages/Contact')
     import('./pages/Privacy')
+    import('./pages/legal/LegalNotice')
   }, [])
 
   return <SplashScreen ready={!loading} onDone={onDone} />

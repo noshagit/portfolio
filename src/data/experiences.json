@@ -703,5 +703,57 @@
                 "url": "https://www.instagram.com/p/DYw6MOAkfJr/?img_index=1"
             }
         ]
+    },
+    {
+        "id": "exp-game-of-life-2022",
+        "nom": "Développeur",
+        "detailed_date": [
+            "09/2021",
+            "06/2022"
+        ],
+        "type": "Projet personnel",
+        "domaine": [
+            "Informatique"
+        ],
+        "employeur_collab": "Projet Personnel (Lycée)",
+        "description": [
+            {
+                "titre": "Présentation du projet",
+                "texte": "Conception et développement complet, en autodidacte durant le lycée, d'un framework modulaire de simulation d'écosystème multi-agents en Python et Tkinter, étendant les concepts du Jeu de la Vie vers un environnement de survie géré par IA."
+            },
+            {
+                "titre": "Terrain et végétation",
+                "texte": "Architecture d'une grille de terrain procédurale gérant la pousse dynamique de la végétation et l'impact de la topographie (plaines, forêts, eau, montagnes) sur la vitesse des entités."
+            },
+            {
+                "titre": "Intelligence artificielle multi-espèces",
+                "texte": "Programmation d'une machine à états IA pour 4 espèces distinctes (herbivores, omnivores, carnivores) intégrant la vision, le métabolisme, la reproduction par cycle d'âge et des comportements de prédation et de chasse."
+            },
+            {
+                "titre": "Moteur d'exécution",
+                "texte": "Implémentation d'un moteur d'exécution double : une interface graphique Tkinter temps réel (commandes play, pause, pas-à-pas) et un mode headless optimisé pour la collecte de données statistiques massives."
+            }
+        ],
+        "metiers_lies": [
+            "Développeur Python",
+            "Ingénieur IA / Simulation",
+            "Développeur de jeux"
+        ],
+        "competences_obtenir": [
+            "Python",
+            "Tkinter",
+            "NumPy",
+            "SciPy",
+            "Matplotlib",
+            "Pillow",
+            "POO",
+            "IA Multi-Agents"
+        ],
+        "soft_skills_utilises": [
+            "Autodidaxie",
+            "Autonomie",
+            "Persévérance",
+            "Rigueur"
+        ]
     }
 ]

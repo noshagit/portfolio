@@ -328,6 +328,7 @@
     },
     "types": {
       "Projet académique": "Projet académique",
+      "Projet personnel": "Projet personnel",
       "CDD": "CDD",
       "CDI": "CDI",
       "Participation bénévole": "Participation bénévole",
@@ -366,7 +367,8 @@
   },
   "footer": {
     "contact": "Contact",
-    "privacy": "Confidentialité"
+    "privacy": "Confidentialité",
+    "legal": "Mentions légales"
   },
   "privacy": {
     "label": "confidentialité",
@@ -384,10 +386,6 @@
       ],
       "retention": "Ces données restent dans votre navigateur, ne sont jamais transmises à des tiers, et sont supprimées lorsque vous videz vos données de navigation."
     },
-    "photo": {
-      "heading": "Photo de profil",
-      "body": "La photo affichée sur ce site est celle du titulaire du portfolio, publiée volontairement à des fins de présentation professionnelle."
-    },
     "letters": {
       "heading": "Lettres de recommandation",
       "body": "Les lettres consultables sur ce site sont publiées avec l'accord explicite de leurs auteurs."
@@ -396,6 +394,35 @@
       "heading": "Vos droits (RGPD Art. 15-17)",
       "body": "Vous pouvez demander l'accès, la rectification ou la suppression de vos données en écrivant à"
     },
-    "updated": "Dernière révision : juin 2025"
+    "updated": "Dernière révision : juillet 2026"
+  },
+  "legal": {
+    "label": "mentions légales",
+    "editor": {
+      "heading": "Éditeur du site",
+      "name": "Ilian BEN HAMOU",
+      "status": "Site personnel édité à titre non professionnel.",
+      "email": "ilianbenhamou2163@gmail.com",
+      "phone": "+33 7 81 58 38 39"
+    },
+    "publisher": {
+      "heading": "Directeur de la publication",
+      "body": "La direction de la publication est assurée par Ilian BEN HAMOU, éditeur du site."
+    },
+    "host": {
+      "heading": "Hébergement",
+      "name": "Cloudflare, Inc.",
+      "address": "101 Townsend Street, San Francisco, CA 94107, États-Unis",
+      "website": "https://www.cloudflare.com"
+    },
+    "ip": {
+      "heading": "Propriété intellectuelle",
+      "body": "L'ensemble des contenus présents sur ce site (textes, mise en page, code source, identité visuelle) est la propriété exclusive d'Ilian BEN HAMOU, sauf mention contraire. Toute reproduction, représentation ou diffusion, totale ou partielle, sans autorisation préalable est interdite."
+    },
+    "liability": {
+      "heading": "Limitation de responsabilité",
+      "body": "L'éditeur s'efforce d'assurer l'exactitude des informations diffusées sur ce site mais ne saurait être tenu responsable des erreurs, omissions ou de l'indisponibilité des contenus."
+    },
+    "updated": "Dernière révision : juillet 2026"
   }
 }

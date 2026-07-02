@@ -1,4 +1,4 @@
-export type View = 'landing' | 'presentation' | 'experiences' | 'contact' | 'privacy'
+export type View = 'landing' | 'presentation' | 'experiences' | 'contact' | 'privacy' | 'legal'
 export type Theme = 'light' | 'dark'
 
 export interface NavItem {

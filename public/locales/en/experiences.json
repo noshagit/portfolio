@@ -710,5 +710,57 @@
                 "url": "https://www.instagram.com/p/DYw6MOAkfJr/?img_index=1"
             }
         ]
+    },
+    {
+        "id": "exp-game-of-life-2022",
+        "nom": "Developer",
+        "detailed_date": [
+            "09/2021",
+            "06/2022"
+        ],
+        "type": "Projet personnel",
+        "domaine": [
+            "Informatique"
+        ],
+        "employeur_collab": "Personal High School Project",
+        "description": [
+            {
+                "titre": "Project overview",
+                "texte": "Designed and implemented, self-taught during high school, a modular multi-agent ecosystem simulation framework using Python and Tkinter, extending Conway's Game of Life principles into a complex survival AI environment."
+            },
+            {
+                "titre": "Terrain and vegetation",
+                "texte": "Engineered a procedural multi-tier terrain grid system managing dynamic plant growth, vegetation mechanics, and physical movement constraints based on terrain speed dampening."
+            },
+            {
+                "titre": "Multi-species artificial intelligence",
+                "texte": "Developed a complete AI state machine for 4 distinct species (herbivores, omnivores, and carnivores) incorporating real-time sensory perception, metabolism, energy tracking, age-based reproduction, and hunting behaviors."
+            },
+            {
+                "titre": "Execution engine",
+                "texte": "Built a dual-mode execution engine featuring a live real-time Tkinter GUI with execution controls (pause, step, reset), a high-speed headless data collection engine, and a performance benchmarking suite."
+            }
+        ],
+        "metiers_lies": [
+            "Python Developer",
+            "AI / Simulation Engineer",
+            "Game Developer"
+        ],
+        "competences_obtenir": [
+            "Python",
+            "Tkinter",
+            "NumPy",
+            "SciPy",
+            "Matplotlib",
+            "Pillow",
+            "OOP",
+            "Multi-Agent AI"
+        ],
+        "soft_skills_utilises": [
+            "Self-taught mindset",
+            "Autonomy",
+            "Perseverance",
+            "Rigor"
+        ]
     }
 ]

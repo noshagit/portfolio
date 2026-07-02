@@ -95,3 +95,5 @@ SPA with no router — navigation is pure React state. `AppShell` (inside `App.t
 **Recommendation letters** — PDFs live in `public/ldr/`. Each locale JSON entry under `presentation.recommendations.items[].pdf` must point to the correct path. Adding a new recommendation requires: dropping the PDF in `public/ldr/`, then adding the entry to both `src/locales/fr.json` and `public/locales/en.json`.
 
 **Lang resolution order** — URL `?lang=` param → `localStorage` → `navigator.language` (defaults to FR). The URL param exists for SEO hreflang crawlers; don't remove it.
+
+**Security headers** — `public/_headers` (Cloudflare Pages format) sets a strict CSP with a hardcoded `sha256-...` hash allowlisting the single inline bootstrap script emitted by the build. If `index.html`'s inline script content ever changes, this hash must be regenerated or the CSP silently blocks the page in production.

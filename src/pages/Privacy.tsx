@@ -65,13 +65,6 @@ export default function Privacy({ onNavigate: _onNavigate }: Props) {
 
         <motion.section variants={BLOCK} className="flex flex-col gap-2">
           <h2 className="text-xs font-semibold uppercase tracking-widest text-foreground/40">
-            {p.photo.heading}
-          </h2>
-          <p className="text-justify hyphens-auto break-words text-sm leading-relaxed text-foreground/70">{p.photo.body}</p>
-        </motion.section>
-
-        <motion.section variants={BLOCK} className="flex flex-col gap-2">
-          <h2 className="text-xs font-semibold uppercase tracking-widest text-foreground/40">
             {p.letters.heading}
           </h2>
           <p className="text-justify hyphens-auto break-words text-sm leading-relaxed text-foreground/70">{p.letters.body}</p>
