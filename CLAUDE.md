@@ -50,9 +50,9 @@ Ce projet est bilingue. Toute modification, ajout ou suppression de contenu text
 
 **Fetch robustness** — Always check `res.ok` before calling `res.json()`. Throw on non-2xx; callers must handle gracefully (fallback to last known good state).
 
-**i18n** — FR bundled (`src/locales/fr.json`), EN lazy-fetched (`public/locales/en.json`). Experience data per language in `public/locales/{lang}/experiences.json`. Module-level `Map` cache prevents redundant fetches. See synchronisation rule above.
+**i18n** — Both FR and EN are fetched at runtime from `public/locales/{lang}.json`; neither is bundled. Experience data per language in `public/locales/{lang}/experiences.json`. Module-level `Map` caches prevent redundant fetches. See synchronisation rule above.
 
-**Performance** — Translatable resources and heavy data sets (like `experiences.json`) must be lazy-loaded per locale. Never preload unused languages. Privilege `transform`/`opacity` for animations; use `React.memo`/`useMemo` for heavy computations or filtered arrays.
+**Performance** — Translatable resources and heavy data sets (like `experiences.json`) must be lazy-loaded per locale. Never preload unused languages. `AppShell` renders nothing until the active locale's fetch resolves (see Splash gate below) — never add a `t`-consuming hook call above that gate. Privilege `transform`/`opacity` for animations; use `React.memo`/`useMemo` for heavy computations or filtered arrays.
 
 ## Documentation & Commenting Rules
 
@@ -74,11 +74,11 @@ SPA with no router — navigation is pure React state. `AppShell` (inside `App.t
 
 **Theming**: `ThemeContext` applies/removes the `.dark` class on `<html>` and persists to `localStorage`. Consume via `useTheme()` from `src/hooks/useTheme.ts`. During toggle, `ThemeContext` briefly adds `.theme-transition` to `<html>` so CSS transitions fire; it removes it after 500ms so hover animations stay snappy the rest of the time. CSS variables (`--background`, `--foreground`, `--accent`, `--accent-muted`) are declared in `index.css` for both light/dark modes and exposed as Tailwind tokens via `@theme`. Always use semantic tokens (`bg-background`, `text-foreground`, `text-accent`) — never hardcode colors.
 
-**Pages** (`src/pages/`): `Landing`, `Presentation`, `Experiences`, `Contact`, `Privacy` — each accepts `{ onNavigate }` prop and wraps its root element in a `<motion.div>` with the standard fade+slide transition (`opacity 0→1, y 24→0`). All pages except `Landing` are `React.lazy()`-loaded; `SplashGate` prefetches all lazy chunks during the splash animation so every route is ready before the user can interact. `Footer` is rendered for all views except `presentation`.
+**Pages** (`src/pages/`): `Landing`, `Presentation`, `Experiences`, `Contact`, `Privacy`, `legal/LegalNotice` — each accepts `{ onNavigate }` prop and wraps its root element in a `<motion.div>` with the standard fade+slide transition (`opacity 0→1, y 24→0`). All pages except `Landing` are `React.lazy()`-loaded; `SplashGate` prefetches all lazy chunks during the splash animation so every route is ready before the user can interact. `Footer` is rendered for all views except `presentation`.
 
-**Content data** lives in `src/data/` (FR experiences JSON, bundled). The `Experience` interface and `SortDir` type live in `src/types/experience.ts`. `src/types/index.ts` holds only `View`, `Theme`, and `NavItem`.
+**Content data** — experience data per language lives in `public/locales/{lang}/experiences.json` (both fetched at runtime, none bundled). The `Experience` interface and `SortDir` type live in `src/types/experience.ts`. `src/types/index.ts` holds only `View`, `Theme`, and `NavItem`.
 
-**i18n** — `LanguageContext` + `useLang()` hook. `Translations = typeof FR` — the FR JSON is the type source of truth; EN must mirror it exactly. Experience translations in `public/locales/en/experiences.json`, fetched by `Experiences.tsx` via `useEffect([lang])`. `EASE` animation constant lives in `src/lib/motion.ts` — import from there, never redeclare.
+**i18n** — `LanguageContext` + `useLang()` hook. `Translations = typeof FR`, where `FR` is a **type-only** import of `public/locales/fr.json` (`import type FR from '../../public/locales/fr.json'`) — erased at build time, so it costs nothing at runtime, but keeps the FR JSON as the single compile-time source of truth that EN must mirror exactly. `LanguageContext`'s exposed `t: Translations` is asserted non-null internally; that assertion is only sound because `AppShell` (`src/App.tsx`) renders `null` while `loading` is true, so no `t`-consumer can mount before the fetch resolves. Experience translations in `public/locales/{lang}/experiences.json`, fetched by `Experiences.tsx` via `useEffect([lang])` — that page keeps its own `loadingExp` state since experience data is a separate fetch from `t`. `EASE` animation constant lives in `src/lib/motion.ts` — import from there, never redeclare.
 
 **Linter**: oxlint with react + typescript + oxc plugins. `react/rules-of-hooks` is an error; `react/only-export-components` is a warning (constant exports allowed). No ESLint.
 
@@ -86,7 +86,7 @@ SPA with no router — navigation is pure React state. `AppShell` (inside `App.t
 
 **Animations**: page transitions use `AnimatePresence mode="wait"`; card grids use `mode="popLayout"` with `motion.div layout` for smooth reordering. Modal pattern in `Experiences.tsx`: backdrop + centered shell with `pointer-events-none` to let backdrop clicks fall through, inner panel with `pointer-events-auto` and `stopPropagation`.
 
-**Splash gate** — `App` renders a `SplashGate` (reads `loading` from `LanguageContext`) alongside `AppShell`. `SplashScreen` dismisses only when both its progress bar animation completes AND `loading` is false. Never bypass this gate for perceived-performance reasons; it masks the EN locale fetch latency.
+**Splash gate** — `App` renders a `SplashGate` (reads `loading` from `LanguageContext`) alongside `AppShell`. `SplashScreen` dismisses only when both its progress bar animation completes AND `loading` is false. `AppShell` itself also reads `loading` and renders `null` until it flips false — since neither FR nor EN is bundled, this is what keeps every `t`-consumer downstream (Header, Footer, all pages) from ever rendering with unresolved translations. Never bypass either gate for perceived-performance reasons; together they mask the locale fetch latency for both languages.
 
 **Experience image gallery** — `src/pages/experiences/imageMap.ts` uses `import.meta.glob` to discover all images under `src/assets/experiences/{id}/` at build time. Drop image files into that directory named by experience `id` to activate a gallery in the modal. No code change needed.
 

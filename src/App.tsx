@@ -26,8 +26,13 @@ const PAGES: Record<View, React.ComponentType<PageProps>> = {
   legal:        LegalNotice,
 }
 
-/** Root layout shell: owns active-view state and wires navigation across header, main, and footer. */
+/**
+ * Root layout shell: owns active-view state and wires navigation across header, main, and footer.
+ * Renders nothing while translations are loading - neither FR nor EN is bundled, both are
+ * fetched from public/locales/, so every `useLang()` consumer below needs `t` to be ready.
+ */
 function AppShell() {
+  const { loading } = useLang()
   const [currentView, setCurrentView] = useState<View>('landing')
   const Page = PAGES[currentView]
 
@@ -35,6 +40,8 @@ function AppShell() {
     window.scrollTo({ top: 0, behavior: 'instant' })
     setCurrentView(view)
   }, [])
+
+  if (loading) return null
 
   return (
     <div className="flex min-h-dvh flex-col bg-background text-foreground">

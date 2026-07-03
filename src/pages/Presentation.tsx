@@ -36,10 +36,9 @@ export default function Presentation({ onNavigate }: Props) {
   const [hintDir,        setHintDir]        = useState<'up' | 'down'>('down')
   const [indicatorReady, setIndicatorReady] = useState(false)
 
-  // Refs so event handlers never go stale
   const activeIdxRef  = useRef(0)
   const cooldownRef   = useRef(false)
-  const edgeHitRef    = useRef(0)   // timestamp when bottom edge was first hit (0 = not at edge)
+  const edgeHitRef    = useRef(0)
   const sectionRef    = useRef<HTMLDivElement>(null)
   const touchStartRef  = useRef(0)
   const touchStartXRef = useRef(0)
@@ -58,7 +57,6 @@ export default function Presentation({ onNavigate }: Props) {
     requestAnimationFrame(() => { if (sectionRef.current) sectionRef.current.scrollTop = 0 })
   }, [])
 
-  // Lock body scroll for the entire duration of the Presentation page
   useEffect(() => {
     const prev = document.body.style.overflow
     document.body.style.overflow          = 'hidden'

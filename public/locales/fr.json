@@ -306,6 +306,7 @@
   },
   "experiences": {
     "sectionLabel": "expériences & participations",
+    "loading": "Chargement des expériences...",
     "empty": "Aucune expérience ne correspond aux filtres sélectionnés.",
     "filters": {
       "all": "Tous",

@@ -4,7 +4,6 @@ import { ArrowRight } from 'lucide-react'
 import type { View } from '../types'
 import type { Experience, SortDir } from '../types/experience'
 import type { Lang } from '../context/LanguageContext'
-import RAW from '../data/experiences.json'
 import ExperienceCard from './experiences/ExperienceCard'
 import ExperienceModal from './experiences/ExperienceModal'
 import ExperienceFilters from './experiences/ExperienceFilters'
@@ -12,12 +11,8 @@ import { useLang } from '../hooks/useLang'
 import { EASE } from '../lib/motion'
 import { yearMax, yearMin } from '../lib/formatDate'
 
-const FR_BASE = RAW as Experience[]
-const ALL_TYPES_BASE    = Array.from(new Set(FR_BASE.map(e => e.type)))
-const ALL_DOMAINES_BASE = Array.from(new Set(FR_BASE.flatMap(e => e.domaine)))
-
 // Module-level cache - survives page navigation
-const expCache = new Map<Lang, Experience[]>([['fr', FR_BASE]])
+const expCache = new Map<Lang, Experience[]>()
 
 interface Props {
   onNavigate: (view: View) => void
@@ -29,20 +24,22 @@ export default function Experiences({ onNavigate }: Props) {
   const [activeDomaine, setActiveDomaine] = useState<string | null>(null)
   const [selectedId,    setSelectedId]    = useState<string | null>(null)
   const [sort,          setSort]          = useState<SortDir>('desc')
-  const [experiences,   setExperiences]   = useState<Experience[]>(expCache.get(lang) ?? FR_BASE)
+  const [experiences,   setExperiences]   = useState<Experience[]>(expCache.get(lang) ?? [])
+  const [loadingExp,    setLoadingExp]    = useState<boolean>(() => !expCache.has(lang))
   const abortRef = useRef<AbortController | null>(null)
 
-  // Fetch EN experiences lazily; FR is always from the bundled JSON
+  // Neither language is bundled - fetch experiences.json for whichever lang is active
   useEffect(() => {
     const cached = expCache.get(lang)
-    if (cached) { setExperiences(cached); return }
+    if (cached) { setExperiences(cached); setLoadingExp(false); return }
 
+    setLoadingExp(true)
     abortRef.current?.abort()
     abortRef.current = new AbortController()
 
     fetch(`/locales/${lang}/experiences.json`, { signal: abortRef.current.signal })
       .then(r => { if (!r.ok) throw new Error(`${r.status}`); return r.json() })
-      .then((data: Experience[]) => { expCache.set(lang, data); setExperiences(data) })
+      .then((data: Experience[]) => { expCache.set(lang, data); setExperiences(data); setLoadingExp(false) })
       .catch(() => {/* aborted or HTTP error - keep current */})
   }, [lang])
 
@@ -57,15 +54,20 @@ export default function Experiences({ onNavigate }: Props) {
         : yearMin(a.detailed_date) - yearMin(b.detailed_date) || yearMax(a.detailed_date) - yearMax(b.detailed_date)
     ), [experiences, activeType, activeDomaine, sort])
 
+  // type/domaine are locale-invariant keys (identical across fr/en experiences.json),
+  // so deriving the filter option lists from whichever data is currently loaded is safe.
+  const allTypes    = useMemo(() => Array.from(new Set(experiences.map(e => e.type))), [experiences])
+  const allDomaines = useMemo(() => Array.from(new Set(experiences.flatMap(e => e.domaine))), [experiences])
+
   const availableTypes = useMemo(() => {
-    if (activeDomaine === null) return new Set(ALL_TYPES_BASE)
-    return new Set(FR_BASE.filter(e => e.domaine.includes(activeDomaine)).map(e => e.type))
-  }, [activeDomaine])
+    if (activeDomaine === null) return new Set(allTypes)
+    return new Set(experiences.filter(e => e.domaine.includes(activeDomaine)).map(e => e.type))
+  }, [experiences, allTypes, activeDomaine])
 
   const availableDomaines = useMemo(() => {
-    if (activeType === null) return new Set(ALL_DOMAINES_BASE)
-    return new Set(FR_BASE.filter(e => e.type === activeType).flatMap(e => e.domaine))
-  }, [activeType])
+    if (activeType === null) return new Set(allDomaines)
+    return new Set(experiences.filter(e => e.type === activeType).flatMap(e => e.domaine))
+  }, [experiences, allDomaines, activeType])
 
   const selected = useMemo(
     () => selectedId ? (experiences.find(e => e.id === selectedId) ?? null) : null,
@@ -87,43 +89,53 @@ export default function Experiences({ onNavigate }: Props) {
           <h1 className="text-sm font-semibold uppercase tracking-widest text-accent">
             {t.experiences.sectionLabel}
           </h1>
-          <ExperienceFilters
-            allTypes={ALL_TYPES_BASE}
-            allDomaines={ALL_DOMAINES_BASE}
-            availableTypes={availableTypes}
-            availableDomaines={availableDomaines}
-            activeType={activeType}
-            activeDomaine={activeDomaine}
-            sort={sort}
-            onTypeChange={setActiveType}    // stable: useState setter
-            onDomaineChange={setActiveDomaine}
-            onSortChange={setSort}
-          />
-        </div>
-
-        <div aria-live="polite" aria-atomic="false" className="sr-only">
-          {filtered.length} {t.experiences.sectionLabel}
-        </div>
-        <motion.div layout className="grid gap-5 sm:grid-cols-2 md:gap-8 lg:grid-cols-3">
-          <AnimatePresence mode="popLayout">
-            {filtered.map(exp => (
-              <ExperienceCard key={exp.id} exp={exp} onOpen={setSelectedId} />
-            ))}
-          </AnimatePresence>
-        </motion.div>
-
-        <AnimatePresence>
-          {filtered.length === 0 && (
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="py-20 text-center text-xs text-foreground/60"
-            >
-              {t.experiences.empty}
-            </motion.p>
+          {!loadingExp && (
+            <ExperienceFilters
+              allTypes={allTypes}
+              allDomaines={allDomaines}
+              availableTypes={availableTypes}
+              availableDomaines={availableDomaines}
+              activeType={activeType}
+              activeDomaine={activeDomaine}
+              sort={sort}
+              onTypeChange={setActiveType}    // stable: useState setter
+              onDomaineChange={setActiveDomaine}
+              onSortChange={setSort}
+            />
           )}
-        </AnimatePresence>
+        </div>
+
+        {loadingExp ? (
+          <p className="py-20 text-center text-xs text-foreground/60">
+            {t.experiences.loading}
+          </p>
+        ) : (
+          <>
+            <div aria-live="polite" aria-atomic="false" className="sr-only">
+              {filtered.length} {t.experiences.sectionLabel}
+            </div>
+            <motion.div layout className="grid gap-5 sm:grid-cols-2 md:gap-8 lg:grid-cols-3">
+              <AnimatePresence mode="popLayout">
+                {filtered.map(exp => (
+                  <ExperienceCard key={exp.id} exp={exp} onOpen={setSelectedId} />
+                ))}
+              </AnimatePresence>
+            </motion.div>
+
+            <AnimatePresence>
+              {filtered.length === 0 && (
+                <motion.p
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  className="py-20 text-center text-xs text-foreground/60"
+                >
+                  {t.experiences.empty}
+                </motion.p>
+              )}
+            </AnimatePresence>
+          </>
+        )}
 
         {/* CTA */}
         <div className="pt-8">

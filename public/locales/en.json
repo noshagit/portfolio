@@ -306,6 +306,7 @@
   },
   "experiences": {
     "sectionLabel": "experiences & projects",
+    "loading": "Loading experiences...",
     "empty": "No experience matches the selected filters.",
     "filters": {
       "all": "All",
