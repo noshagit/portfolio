@@ -16,19 +16,19 @@ export const LanguageContext = createContext<LanguageContextValue | null>(null)
 
 const cache = new Map<Lang, Translations>()
 
+/**
+ * The URL path is the sole source of truth for which language renders on a given URL
+ * (`/en/*` = EN, everything else = FR) - required for hreflang correctness: a canonical
+ * URL must always render the same content, never vary by visitor or cache. `?lang=` is
+ * kept as a best-effort fallback for old links; src/App.tsx normalizes it to a path on mount.
+ */
 function resolveInitialLang(): Lang {
-  // URL param takes priority - used by hreflang crawlers and direct deep-links
+  if (window.location.pathname.startsWith('/en')) return 'en'
+
   const urlLang = new URLSearchParams(window.location.search).get('lang') as Lang | null
   if (urlLang === 'en' || urlLang === 'fr') return urlLang
 
-  const saved = localStorage.getItem('portfolio-lang') as Lang | null
-  if (saved === 'en' || saved === 'fr') return saved
-
-  // First visit - detect from browser, persist the result
-  const detected = (navigator.languages?.[0] ?? navigator.language ?? 'fr').toLowerCase()
-  const lang: Lang = detected.startsWith('fr') ? 'fr' : 'en'
-  localStorage.setItem('portfolio-lang', lang)
-  return lang
+  return 'fr'
 }
 
 async function fetchTranslations(lang: Lang, signal?: AbortSignal): Promise<Translations> {
@@ -66,7 +66,6 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     if (cached) {
       setLangState(next)
       setT(cached)
-      localStorage.setItem('portfolio-lang', next)
       return
     }
     try {
@@ -74,7 +73,6 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
       cache.set(next, data)
       setLangState(next)
       setT(data)
-      localStorage.setItem('portfolio-lang', next)
     } catch {
       // Network error or bad response - stay on current language
     }

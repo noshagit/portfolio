@@ -170,6 +170,7 @@ export default function Header({ currentView, onNavigate }: Props) {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: i * 0.07, duration: 0.3, ease: EASE }}
                     onClick={() => navigate(item.id)}
+                    aria-current={isActive ? 'page' : undefined}
                     className={[
                       'text-2xl font-bold uppercase tracking-widest transition-colors duration-200',
                       isActive ? 'text-accent' : 'text-foreground/60 hover:text-foreground',

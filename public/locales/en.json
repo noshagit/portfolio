@@ -1,4 +1,33 @@
 {
+  "a11y": {
+    "skipToContent": "Skip to content"
+  },
+  "meta": {
+    "landing": {
+      "title": "Ilian Ben Hamou | Cybersecurity & Development Portfolio",
+      "description": "Professional portfolio of Ilian Ben Hamou, cybersecurity bachelor's student at Ynov Campus Lyon. Discover my background, technical skills and projects."
+    },
+    "presentation": {
+      "title": "About - Ilian Ben Hamou | Cybersecurity Student",
+      "description": "Third-year cybersecurity bachelor's student at Ynov Campus Lyon, looking for a 12-month work-study contract. Background, soft skills and technical skills."
+    },
+    "experiences": {
+      "title": "Experiences & Projects - Ilian Ben Hamou",
+      "description": "CTFs, internships, academic projects and volunteer work by Ilian Ben Hamou in cybersecurity, digital forensics and systems & network administration."
+    },
+    "contact": {
+      "title": "Contact - Ilian Ben Hamou | Cybersecurity",
+      "description": "Get in touch with Ilian Ben Hamou for a work-study contract in cybersecurity: contact details, mobility area and downloadable resume."
+    },
+    "privacy": {
+      "title": "Privacy Policy - Ilian Ben Hamou",
+      "description": "Privacy policy and personal data handling for Ilian Ben Hamou's portfolio."
+    },
+    "legal": {
+      "title": "Legal Notice - Ilian Ben Hamou",
+      "description": "Legal notice, publisher and hosting provider for Ilian Ben Hamou's portfolio."
+    }
+  },
   "header": {
     "nav": {
       "home": "Home",

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <url>
+    <loc>https://ilianbenhamou.fr/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ilianbenhamou.fr/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ilianbenhamou.fr/en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ilianbenhamou.fr/" />
+    <lastmod>2026-07-03</lastmod>
+  </url>
+  <url>
+    <loc>https://ilianbenhamou.fr/en</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ilianbenhamou.fr/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ilianbenhamou.fr/en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ilianbenhamou.fr/" />
+    <lastmod>2026-07-03</lastmod>
+  </url>
+
+  <url>
+    <loc>https://ilianbenhamou.fr/presentation</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ilianbenhamou.fr/presentation" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ilianbenhamou.fr/en/presentation" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ilianbenhamou.fr/presentation" />
+    <lastmod>2026-07-03</lastmod>
+  </url>
+  <url>
+    <loc>https://ilianbenhamou.fr/en/presentation</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ilianbenhamou.fr/presentation" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ilianbenhamou.fr/en/presentation" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ilianbenhamou.fr/presentation" />
+    <lastmod>2026-07-03</lastmod>
+  </url>
+
+  <url>
+    <loc>https://ilianbenhamou.fr/experiences</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ilianbenhamou.fr/experiences" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ilianbenhamou.fr/en/experiences" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ilianbenhamou.fr/experiences" />
+    <lastmod>2026-07-03</lastmod>
+  </url>
+  <url>
+    <loc>https://ilianbenhamou.fr/en/experiences</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ilianbenhamou.fr/experiences" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ilianbenhamou.fr/en/experiences" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ilianbenhamou.fr/experiences" />
+    <lastmod>2026-07-03</lastmod>
+  </url>
+
+  <url>
+    <loc>https://ilianbenhamou.fr/contact</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ilianbenhamou.fr/contact" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ilianbenhamou.fr/en/contact" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ilianbenhamou.fr/contact" />
+    <lastmod>2026-07-03</lastmod>
+  </url>
+  <url>
+    <loc>https://ilianbenhamou.fr/en/contact</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ilianbenhamou.fr/contact" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ilianbenhamou.fr/en/contact" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ilianbenhamou.fr/contact" />
+    <lastmod>2026-07-03</lastmod>
+  </url>
+
+  <url>
+    <loc>https://ilianbenhamou.fr/privacy</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ilianbenhamou.fr/privacy" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ilianbenhamou.fr/en/privacy" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ilianbenhamou.fr/privacy" />
+    <lastmod>2026-07-03</lastmod>
+  </url>
+  <url>
+    <loc>https://ilianbenhamou.fr/en/privacy</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ilianbenhamou.fr/privacy" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ilianbenhamou.fr/en/privacy" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ilianbenhamou.fr/privacy" />
+    <lastmod>2026-07-03</lastmod>
+  </url>
+
+  <url>
+    <loc>https://ilianbenhamou.fr/legal</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ilianbenhamou.fr/legal" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ilianbenhamou.fr/en/legal" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ilianbenhamou.fr/legal" />
+    <lastmod>2026-07-03</lastmod>
+  </url>
+  <url>
+    <loc>https://ilianbenhamou.fr/en/legal</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ilianbenhamou.fr/legal" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ilianbenhamou.fr/en/legal" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ilianbenhamou.fr/legal" />
+    <lastmod>2026-07-03</lastmod>
+  </url>
+
+</urlset>

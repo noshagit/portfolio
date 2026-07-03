@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 
     <!-- Synchronous init: sets theme class + html[lang] before first paint.
-         Mirrors ThemeContext.getInitialTheme() and resolveInitialLang() exactly. -->
+         Mirrors ThemeContext.getInitialTheme() and LanguageContext's resolveInitialLang()
+         exactly - the /en path prefix is the source of truth, ?lang= is a legacy fallback
+         only (src/App.tsx normalizes it to a path on mount). -->
     <script>
       (function () {
         var t = localStorage.getItem('portfolio-theme');
@@ -13,13 +15,14 @@
         if (dark) document.documentElement.classList.add('dark');
         document.documentElement.style.backgroundColor = dark ? '#141018' : '#FFFBEF';
 
-        var urlLang = new URLSearchParams(window.location.search).get('lang');
-        var savedLang = (urlLang === 'fr' || urlLang === 'en') ? urlLang : localStorage.getItem('portfolio-lang');
-        if (savedLang !== 'fr' && savedLang !== 'en') {
-          var nav = (navigator.languages && navigator.languages[0]) || navigator.language || 'fr';
-          savedLang = nav.toLowerCase().startsWith('fr') ? 'fr' : 'en';
+        var lang = 'fr';
+        if (window.location.pathname.indexOf('/en') === 0) {
+          lang = 'en';
+        } else {
+          var urlLang = new URLSearchParams(window.location.search).get('lang');
+          if (urlLang === 'en' || urlLang === 'fr') lang = urlLang;
         }
-        document.documentElement.lang = savedLang;
+        document.documentElement.lang = lang;
       })();
     </script>
 
@@ -28,21 +31,24 @@
          Replace https://ilianbenhamou.fr with your domain.
          ═══════════════════════════════════════════════════ -->
     <title>Ilian Ben Hamou | Portfolio Cybersécurité &amp; Développement</title>
-    <meta name="description" content="Portfolio professionnel d'Ilian Ben Hamou, étudiant en bachelor cybersécurité à Ynov Campus Lyon. Découvrez mon parcours, mes compétences techniques et mes projets." />
+    <meta id="meta-description" name="description" content="Portfolio professionnel d'Ilian Ben Hamou, étudiant en bachelor cybersécurité à Ynov Campus Lyon. Découvrez mon parcours, mes compétences techniques et mes projets." />
     <meta name="keywords" content="Ilian Ben Hamou, cybersécurité, portfolio, Lyon, Ynov, alternance, forensique, CTF, dev" />
-    <link rel="canonical" href="https://ilianbenhamou.fr/" />
+    <link id="canonical-link" rel="canonical" href="https://ilianbenhamou.fr/" />
 
     <!-- ═══════════════════════════════════════════════════════
          OPEN GRAPH  (Facebook, LinkedIn, Discord…)
+         Static fallback for social-share bots, which don't execute JS - they always see
+         these FR landing values regardless of the shared URL. src/hooks/useDocumentMeta.ts
+         updates these tags per-route/lang for crawlers that do execute JS (e.g. Googlebot).
          ═══════════════════════════════════════════════════════ -->
     <meta property="og:type"             content="website" />
-    <meta property="og:url"              content="https://ilianbenhamou.fr/" />
-    <meta property="og:title"            content="Ilian Ben Hamou | Portfolio Cybersécurité &amp; Développement" />
-    <meta property="og:description"      content="Étudiant en troisième année de bachelor en cybersécurité à Ynov Lyon, activement à la recherche d'un contrat d'apprentissage pour la rentrée 2026. Découvrez mes compétences en forensique, administration réseaux et développement." />
+    <meta id="og-url"                    property="og:url"              content="https://ilianbenhamou.fr/" />
+    <meta id="og-title"                  property="og:title"            content="Ilian Ben Hamou | Portfolio Cybersécurité &amp; Développement" />
+    <meta id="og-description"            property="og:description"      content="Étudiant en troisième année de bachelor en cybersécurité à Ynov Lyon, activement à la recherche d'un contrat d'apprentissage pour la rentrée 2026. Découvrez mes compétences en forensique, administration réseaux et développement." />
     <meta property="og:image"            content="https://ilianbenhamou.fr/favicon.png" />
     <meta property="og:image:width"      content="512" />
     <meta property="og:image:height"     content="512" />
-    <meta property="og:locale"           content="fr_FR" />
+    <meta id="og-locale"                 property="og:locale"           content="fr_FR" />
     <meta property="og:locale:alternate" content="en_GB" />
     <meta property="og:site_name"        content="Ilian Ben Hamou" />
 
@@ -50,20 +56,20 @@
          TWITTER / X CARD
          summary = carré (512×512) ; summary_large_image = paysage 1200×630
          ═════════════════════════════ -->
-    <meta name="twitter:card"        content="summary" />
-    <meta name="twitter:url"         content="https://ilianbenhamou.fr/" />
-    <meta name="twitter:title"       content="Ilian Ben Hamou | Portfolio Cybersécurité" />
-    <meta name="twitter:description" content="Étudiant en troisième année de bachelor en cybersécurité à Ynov Lyon, activement à la recherche d'un contrat d'apprentissage pour la rentrée 2026." />
-    <meta name="twitter:image"       content="https://ilianbenhamou.fr/favicon.png" />
+    <meta name="twitter:card"                 content="summary" />
+    <meta id="twitter-url"         name="twitter:url"         content="https://ilianbenhamou.fr/" />
+    <meta id="twitter-title"       name="twitter:title"       content="Ilian Ben Hamou | Portfolio Cybersécurité" />
+    <meta id="twitter-description" name="twitter:description" content="Étudiant en troisième année de bachelor en cybersécurité à Ynov Lyon, activement à la recherche d'un contrat d'apprentissage pour la rentrée 2026." />
+    <meta name="twitter:image"                content="https://ilianbenhamou.fr/favicon.png" />
 
     <!-- ══════════════════════════════════════════════════════════
-         HREFLANG — ?lang= URL param activates the correct locale,
-         making these links crawlable by Googlebot.
-         x-default → canonical URL (FR default).
+         HREFLANG — path-based locale (/ = FR, /en = EN), matching
+         src/lib/routes.ts. Updated per-route by useDocumentMeta.ts.
+         x-default → canonical FR URL.
          ══════════════════════════════════════════════════════════ -->
-    <link rel="alternate" hreflang="fr"        href="https://ilianbenhamou.fr/?lang=fr" />
-    <link rel="alternate" hreflang="en"        href="https://ilianbenhamou.fr/?lang=en" />
-    <link rel="alternate" hreflang="x-default" href="https://ilianbenhamou.fr/" />
+    <link id="hreflang-fr"        rel="alternate" hreflang="fr"        href="https://ilianbenhamou.fr/" />
+    <link id="hreflang-en"        rel="alternate" hreflang="en"        href="https://ilianbenhamou.fr/en" />
+    <link id="hreflang-x-default" rel="alternate" hreflang="x-default" href="https://ilianbenhamou.fr/" />
 
     <!-- Favicons -->
     <link rel="icon"             type="image/x-icon" href="/favicon.ico" />
