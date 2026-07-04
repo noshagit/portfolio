@@ -17,7 +17,7 @@
     },
     "contact": {
       "title": "Contact - Ilian Ben Hamou | Cybersecurity",
-      "description": "Get in touch with Ilian Ben Hamou for a work-study contract in cybersecurity: contact details, mobility area and downloadable resume."
+      "description": "Get in touch with Ilian Ben Hamou for a work-study contract in cybersecurity: email address and downloadable resume."
     },
     "privacy": {
       "title": "Privacy Policy - Ilian Ben Hamou",
@@ -380,11 +380,6 @@
   },
   "contact": {
     "sectionLabel": "Contact",
-    "mobilityLabel": "Mobility zone / Work locations",
-    "remote": "Open to opportunities (Full Remote / Travel)",
-    "phone": {
-      "action": "Call"
-    },
     "email": {
       "action": "Open mail client"
     },
@@ -432,8 +427,7 @@
       "heading": "Site editor",
       "name": "Ilian BEN HAMOU",
       "status": "Personal, non-commercial website.",
-      "email": "ilianbenhamou2163@gmail.com",
-      "phone": "+33 7 81 58 38 39"
+      "email": "ilianbenhamou2163@gmail.com"
     },
     "publisher": {
       "heading": "Publication director",

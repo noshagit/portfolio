@@ -82,7 +82,6 @@ export default function Footer({ onNavigate }: Props) {
 
         <div className="hidden text-center text-[11px] leading-relaxed text-foreground/60 sm:block sm:text-right">
           <p>BEN HAMOU Ilian</p>
-          <p>+33781583839</p>
           <p>ilianbenhamou2163@gmail.com</p>
         </div>
 

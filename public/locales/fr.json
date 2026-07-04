@@ -17,7 +17,7 @@
     },
     "contact": {
       "title": "Contact - Ilian Ben Hamou | Cybersécurité",
-      "description": "Contactez Ilian Ben Hamou pour un contrat d'alternance en cybersécurité : coordonnées, zone de mobilité et CV téléchargeable."
+      "description": "Contactez Ilian Ben Hamou pour un contrat d'alternance en cybersécurité : adresse email et CV téléchargeable."
     },
     "privacy": {
       "title": "Politique de confidentialité - Ilian Ben Hamou",
@@ -380,11 +380,6 @@
   },
   "contact": {
     "sectionLabel": "Contact",
-    "mobilityLabel": "Zone de mobilité / Lieux de travail",
-    "remote": "Ouvert aux propositions (Full Remote / Déplacements)",
-    "phone": {
-      "action": "Appeler"
-    },
     "email": {
       "action": "Ouvrir la messagerie"
     },
@@ -432,8 +427,7 @@
       "heading": "Éditeur du site",
       "name": "Ilian BEN HAMOU",
       "status": "Site personnel édité à titre non professionnel.",
-      "email": "ilianbenhamou2163@gmail.com",
-      "phone": "+33 7 81 58 38 39"
+      "email": "ilianbenhamou2163@gmail.com"
     },
     "publisher": {
       "heading": "Directeur de la publication",

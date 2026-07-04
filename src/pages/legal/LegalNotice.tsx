@@ -48,7 +48,6 @@ export default function LegalNotice({ onNavigate: _onNavigate }: Props) {
           >
             {l.editor.email}
           </a>
-          <p className="text-sm text-foreground/70">{l.editor.phone}</p>
         </motion.section>
 
         <motion.section variants={BLOCK} className="flex flex-col gap-2">

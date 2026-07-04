@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Phone, Mail, MapPin, ExternalLink, PhoneCall, Download } from 'lucide-react'
+import { Mail, ExternalLink, Download } from 'lucide-react'
 import type { View } from '../types'
 import PopoverContactLink from './contact/PopoverContactLink'
 import { useLang } from '../hooks/useLang'
@@ -61,17 +61,6 @@ export default function Contact({ onNavigate: _onNavigate }: Props) {
 
           <motion.div variants={LINE} className="mb-8 h-px bg-accent/10 sm:mb-10" />
 
-          <motion.div variants={LINE} className="mb-5">
-            <PopoverContactLink
-              Icon={Phone}
-              displayValue="+33 7 81 58 38 39"
-              copyValue="+33781583839"
-              actionHref="tel:+33781583839"
-              actionLabel={c.phone.action}
-              ActionIcon={PhoneCall}
-            />
-          </motion.div>
-
           <motion.div variants={LINE} className="mb-10 sm:mb-14">
             <PopoverContactLink
               Icon={Mail}
@@ -84,34 +73,6 @@ export default function Contact({ onNavigate: _onNavigate }: Props) {
           </motion.div>
 
           <motion.div variants={LINE} className="mb-8 h-px bg-accent/10 sm:mb-10" />
-
-          <motion.div variants={LINE} className="mb-5 flex items-center gap-2 sm:mb-6">
-            <MapPin size={11} className="text-foreground/60" />
-            <p className="text-xs font-semibold uppercase tracking-widest text-foreground/60">
-              {c.mobilityLabel}
-            </p>
-          </motion.div>
-
-          <motion.div
-            variants={LINE}
-            className="mb-5 flex flex-wrap items-baseline gap-4 sm:gap-6 md:gap-10"
-          >
-            <span className="font-black uppercase tracking-tight text-foreground
-                             text-3xl sm:text-4xl md:text-5xl">
-              Lyon
-            </span>
-            <span className="text-lg text-accent/10 sm:text-xl">|</span>
-            <span className="font-black uppercase tracking-tight text-foreground
-                             text-3xl sm:text-4xl md:text-5xl">
-              Marseille
-            </span>
-          </motion.div>
-
-          <motion.p variants={LINE} className="text-xs text-foreground/60">
-            {c.remote}
-          </motion.p>
-
-          <motion.div variants={LINE} className="mt-8 h-px bg-accent/10 sm:mt-10" />
 
           <motion.div variants={LINE} className="mt-8 sm:mt-10">
             <p className="mb-6 text-justify hyphens-auto break-words text-xs leading-relaxed text-foreground/60">
