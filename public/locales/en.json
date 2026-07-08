@@ -9,7 +9,7 @@
     },
     "presentation": {
       "title": "About - Ilian Ben Hamou | Cybersecurity Student",
-      "description": "Third-year cybersecurity bachelor's student at Ynov Campus Lyon, looking for a 12-month work-study contract. Background, soft skills and technical skills."
+      "description": "Third-year cybersecurity bachelor's student at Ynov Campus Lyon, currently working as an IT technician apprentice at Ynov Campus. Background, soft skills and technical skills."
     },
     "experiences": {
       "title": "Experiences & Projects - Ilian Ben Hamou",
@@ -17,7 +17,7 @@
     },
     "contact": {
       "title": "Contact - Ilian Ben Hamou | Cybersecurity",
-      "description": "Get in touch with Ilian Ben Hamou for a work-study contract in cybersecurity: email address and downloadable resume."
+      "description": "Get in touch with Ilian Ben Hamou, IT technician apprentice at Ynov Campus in cybersecurity: email address and mobility area."
     },
     "privacy": {
       "title": "Privacy Policy - Ilian Ben Hamou",
@@ -43,17 +43,16 @@
     }
   },
   "landing": {
-    "discover": "Learn about me",
-    "downloadCV": "Download CV"
+    "discover": "Learn about me"
   },
   "presentation": {
     "intro": {
       "label": "intro",
       "title": "Student in",
       "titleAccent": "Cybersecurity.",
-      "bio1": "Entering my third year of a bachelor's degree in cybersecurity, I am actively seeking a",
-      "bioAccent": "12-month work-study contract",
-      "bio2": "to support my final year, extendable to 24 months for a master's degree. My goal is to bring my dedication and technical curiosity to an ambitious operational team tackling modern cyberdefense challenges."
+      "bio1": "In my third year of a bachelor's degree in cybersecurity, I am doing my work-study placement as an",
+      "bioAccent": "IT technician at Ynov Campus",
+      "bio2": "under a one-year apprenticeship contract."
     },
     "softSkills": {
       "label": "soft skills",
@@ -362,7 +361,8 @@
       "CDD": "Fixed-term Contract",
       "CDI": "Permanent Contract",
       "Participation bénévole": "Volunteer",
-      "CTF": "CTF"
+      "CTF": "CTF",
+      "Contrat d'apprentissage": "Apprenticeship Contract"
     },
     "domains": {
       "Cybersécurité": "Cybersecurity",
@@ -380,15 +380,13 @@
   },
   "contact": {
     "sectionLabel": "Contact",
+    "mobilityLabel": "Mobility zone / Work locations",
+    "remote": "Open to opportunities (Full Remote / Travel)",
     "email": {
       "action": "Open mail client"
     },
     "copy": "Copy",
-    "copied": "Copied!",
-    "cv": {
-      "tagline": "Need a paper version or a summary? Get a complete overview of my background.",
-      "button": "Download my resume (PDF)"
-    }
+    "copied": "Copied!"
   },
   "footer": {
     "contact": "Contact",

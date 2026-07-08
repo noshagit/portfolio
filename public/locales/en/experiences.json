@@ -762,5 +762,23 @@
             "Perseverance",
             "Rigor"
         ]
+    },
+    {
+        "id": "exp-ynov-technicien-it-2026",
+        "nom": "IT Technician",
+        "detailed_date": [
+            "07/2026",
+            "07/2027"
+        ],
+        "type": "Contrat d'apprentissage",
+        "domaine": [
+            "Informatique",
+            "Infrastructure réseau"
+        ],
+        "employeur_collab": "Ynov Campus Lyon",
+        "description": "",
+        "metiers_lies": [],
+        "competences_obtenir": [],
+        "soft_skills_utilises": []
     }
 ]

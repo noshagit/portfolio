@@ -18,9 +18,11 @@ npm run lint      # oxlint (no tests exist)
 npm run preview   # preview production build
 ```
 
+`vite.config.ts` splits `react`/`react-dom` and `framer-motion` into separate `vendor-*` chunks (`manualChunks`) so app-code deploys don't bust their cache for returning visitors. Extend that function, don't add new plugins for chunking.
+
 ## RÈGLE IMPÉRATIVE - SYNCHRONISATION i18n (FR/EN)
 
-Ce projet est bilingue. Toute modification, ajout ou suppression de contenu textuel doit IMPÉRATIVEMENT être répercuté et traduit simultanément dans `src/locales/fr.json` et `public/locales/en.json`. Les structures de données doivent rester strictement miroirs. Ne pas attendre de demande explicite.
+Ce projet est bilingue. Toute modification, ajout ou suppression de contenu textuel doit IMPÉRATIVEMENT être répercuté et traduit simultanément dans `public/locales/fr.json` et `public/locales/en.json`. Les structures de données doivent rester strictement miroirs. Ne pas attendre de demande explicite.
 
 ## Règles strictes de rédaction et typographie
 
@@ -86,11 +88,15 @@ SPA with URL-based routing, hand-rolled (no router library — `src/lib/routes.t
 
 **i18n** — `LanguageContext` + `useLang()` hook. `Translations = typeof FR`, where `FR` is a **type-only** import of `public/locales/fr.json` (`import type FR from '../../public/locales/fr.json'`) — erased at build time, so it costs nothing at runtime, but keeps the FR JSON as the single compile-time source of truth that EN must mirror exactly. `LanguageContext`'s exposed `t: Translations` is asserted non-null internally; that assertion is only sound because `AppShell` (`src/App.tsx`) renders `null` while `loading` is true, so no `t`-consumer can mount before the fetch resolves. Experience translations in `public/locales/{lang}/experiences.json`, fetched by `Experiences.tsx` via `useEffect([lang])` — that page keeps its own `loadingExp` state since experience data is a separate fetch from `t`. `EASE` animation constant lives in `src/lib/motion.ts` — import from there, never redeclare.
 
+**Language transition overlay** — switching language is not an instant `setLang` mutation; `LanguageContext.setLang` (`src/context/LanguageContext.tsx`) runs a two-phase timeline coordinated with `LanguageTransitionOverlay` (`src/components/ui/LanguageTransitionOverlay.tsx`, mounted permanently in `AppShell`) purely by sharing the `CURTAIN_COVER_DURATION_MS` constant (`src/lib/motion.ts`) — neither component holds a direct reference to the other. Phase 1: `isTransitioning` flips `true`, mounting the curtain; the actual `setLangState`/`setT` mutation is withheld behind a timer of that same duration so the page can never re-render in the new language while the viewport is still visible. Phase 2: once the curtain has visually finished covering the screen, the mutation is applied (from cache or a fresh fetch) at essentially the same moment the overlay's plane-flight animation (gated on the curtain's `onAnimationComplete`) starts — so the flight always plays over an already-mutated page. `TRANSITION_DURATION_MS` is an overall floor awaited alongside the mutation, so the curtain can't lift before the new language is actually applied. If you change `CURTAIN_COVER_DURATION_MS`, both components pick it up automatically — don't hardcode the duration in either file.
+
 **Linter**: oxlint with react + typescript + oxc plugins. `react/rules-of-hooks` is an error; `react/only-export-components` is a warning (constant exports allowed). No ESLint.
 
 **Tailwind v4** — config is in `index.css` via `@theme` / `@custom-variant`, not `tailwind.config.*`. One custom utility exists: `shadow-accent` (accent-colored drop shadow via `@utility`). Fonts: `font-sans` → Inter, `font-mono` → JetBrains Mono.
 
 **Animations**: page transitions use `AnimatePresence mode="wait"`; card grids use `mode="popLayout"` with `motion.div layout` for smooth reordering. Modal pattern in `Experiences.tsx`: backdrop + centered shell with `pointer-events-none` to let backdrop clicks fall through, inner panel with `pointer-events-auto` and `stopPropagation`.
+
+**Artificial route-entry loading** — `useLoadingProgress(resetKey, durationMs)` (`src/hooks/useLoadingProgress.ts`) drives a fake minimum loading sequence (0-100 progress bar) independent of any real data fetch, purely as an entry polish transition. `Experiences.tsx` is the current consumer: on every mount it shows a centered progress bar for `ROUTE_ENTRY_DURATION_MS` regardless of whether the real `experiences.json` fetch (`loadingExp`) has resolved yet — the two loading flags are unrelated and both must clear before real content is considered fully settled. Reuse this hook rather than hand-rolling another `setInterval`/`setTimeout` pair if another route wants the same effect.
 
 **Splash gate** — `App` renders a `SplashGate` (reads `loading` from `LanguageContext`) alongside `AppShell`. `SplashScreen` dismisses only when both its progress bar animation completes AND `loading` is false. `AppShell` itself also reads `loading` and renders `null` until it flips false — since neither FR nor EN is bundled, this is what keeps every `t`-consumer downstream (Header, Footer, all pages) from ever rendering with unresolved translations. Never bypass either gate for perceived-performance reasons; together they mask the locale fetch latency for both languages.
 

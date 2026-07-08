@@ -9,6 +9,7 @@ import Header from './components/layout/Header'
 import Footer from './components/layout/Footer'
 import SplashScreen from './components/ui/SplashScreen'
 import SkipLink from './components/ui/SkipLink'
+import LanguageTransitionOverlay from './components/ui/LanguageTransitionOverlay'
 import Landing from './pages/Landing'
 import type { View } from './types'
 
@@ -90,6 +91,7 @@ function AppShell() {
         </Suspense>
       </main>
       {currentView !== 'presentation' && <Footer onNavigate={navigate} />}
+      <LanguageTransitionOverlay />
     </div>
   )
 }

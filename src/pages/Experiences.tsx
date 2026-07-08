@@ -8,16 +8,40 @@ import ExperienceCard from './experiences/ExperienceCard'
 import ExperienceModal from './experiences/ExperienceModal'
 import ExperienceFilters from './experiences/ExperienceFilters'
 import { useLang } from '../hooks/useLang'
+import { useLoadingProgress } from '../hooks/useLoadingProgress'
 import { EASE } from '../lib/motion'
 import { yearMax, yearMin } from '../lib/formatDate'
 
 // Module-level cache - survives page navigation
 const expCache = new Map<Lang, Experience[]>()
 
+const ROUTE_ENTRY_DURATION_MS = 400
+
 interface Props {
   onNavigate: (view: View) => void
 }
 
+/**
+ * Experiences route: filterable, sortable grid of experience records with a detail modal.
+ *
+ * Route-mount transition sequence (independent of the real `loadingExp` data fetch below):
+ * on every mount - a fresh instance each time this route is navigated to, since `AppShell`
+ * keys its `<Page>` by `currentView` - `useLoadingProgress` drives an artificial minimum
+ * entry sequence for `ROUTE_ENTRY_DURATION_MS`. While its `isLoading` is true, the entire
+ * listing (filters, cards, empty state, CTA) is replaced by a centered progress bar; once
+ * it flips false, that content fades in via opacity. This is purely a polish transition for
+ * the route entry itself - the pre-existing `loadingExp` flag still separately governs
+ * whether the real experience data (fetched per-locale, cached in `expCache`) is ready, and
+ * continues to render its own inline "loading" text if the network fetch outlasts this
+ * artificial window.
+ *
+ * Timer lifecycle: entirely delegated to `useLoadingProgress`, which clears its internal
+ * interval and timeout on unmount, so navigating away mid-sequence cannot leave a stale
+ * timer writing to state after the component is gone.
+ *
+ * @param onNavigate - Callback used to navigate to another view (passed to the CTA button).
+ * @returns The experiences route, gated behind its artificial entry progress bar.
+ */
 export default function Experiences({ onNavigate }: Props) {
   const { lang, t } = useLang()
   const [activeType,    setActiveType]    = useState<string | null>(null)
@@ -27,6 +51,7 @@ export default function Experiences({ onNavigate }: Props) {
   const [experiences,   setExperiences]   = useState<Experience[]>(expCache.get(lang) ?? [])
   const [loadingExp,    setLoadingExp]    = useState<boolean>(() => !expCache.has(lang))
   const abortRef = useRef<AbortController | null>(null)
+  const { isLoading: isRouteLoading, progress: routeProgress } = useLoadingProgress(null, ROUTE_ENTRY_DURATION_MS)
 
   // Neither language is bundled - fetch experiences.json for whichever lang is active
   useEffect(() => {
@@ -83,7 +108,22 @@ export default function Experiences({ onNavigate }: Props) {
       exit={{ opacity: 0, y: -16 }}
       transition={{ duration: 0.4, ease: EASE }}
     >
-      <div className="mx-auto max-w-5xl space-y-8 px-4 py-10 sm:px-6 sm:py-16">
+      {isRouteLoading ? (
+        <div className="flex min-h-[70vh] items-center justify-center px-4">
+          <div className="w-full max-w-xs overflow-hidden rounded-full bg-accent-muted" style={{ height: '3px' }}>
+            <div
+              className="h-full origin-left rounded-full bg-accent transition-transform duration-300 ease-out"
+              style={{ transform: `scaleX(${routeProgress / 100})` }}
+            />
+          </div>
+        </div>
+      ) : (
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.4, ease: EASE }}
+      >
+        <div className="mx-auto max-w-5xl space-y-8 px-4 py-10 sm:px-6 sm:py-16">
 
         <div className="space-y-5">
           <h1 className="text-sm font-semibold uppercase tracking-widest text-accent">
@@ -159,6 +199,8 @@ export default function Experiences({ onNavigate }: Props) {
         </div>
 
       </div>
+      </motion.div>
+      )}
 
       <AnimatePresence>
         {selected && (

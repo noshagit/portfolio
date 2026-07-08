@@ -1,5 +1,5 @@
 import { motion, type Variants } from 'framer-motion'
-import { Download, ArrowRight } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import type { View } from '../types'
 import { useLang } from '../hooks/useLang'
 import { EASE } from '../lib/motion'
@@ -78,22 +78,6 @@ export default function Landing({ onNavigate }: Props) {
               {t.landing.discover}
               <ArrowRight size={15} className="transition-transform duration-200 group-hover:translate-x-1" />
             </motion.button>
-
-            <motion.a
-              href="/cv.pdf"
-              download
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.97 }}
-              transition={SPRING}
-              className="flex items-center gap-2.5 rounded-lg
-                         border border-foreground/20 hover:border-accent/50
-                         px-6 py-3 text-sm font-medium
-                         text-foreground/60 hover:text-foreground
-                         transition-all duration-300"
-            >
-              <Download size={15} />
-              {t.landing.downloadCV}
-            </motion.a>
           </motion.div>
 
         </div>

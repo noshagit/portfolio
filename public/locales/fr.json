@@ -9,7 +9,7 @@
     },
     "presentation": {
       "title": "À propos - Ilian Ben Hamou | Étudiant en Cybersécurité",
-      "description": "Étudiant en troisième année de bachelor cybersécurité à Ynov Campus Lyon, à la recherche d'un contrat d'alternance de 12 mois. Parcours, soft skills et compétences techniques."
+      "description": "Étudiant en troisième année de bachelor cybersécurité à Ynov Campus Lyon, actuellement en alternance en tant que technicien IT chez Ynov Campus. Parcours, soft skills et compétences techniques."
     },
     "experiences": {
       "title": "Expériences & Participations - Ilian Ben Hamou",
@@ -17,7 +17,7 @@
     },
     "contact": {
       "title": "Contact - Ilian Ben Hamou | Cybersécurité",
-      "description": "Contactez Ilian Ben Hamou pour un contrat d'alternance en cybersécurité : adresse email et CV téléchargeable."
+      "description": "Contactez Ilian Ben Hamou, alternant technicien IT chez Ynov Campus en cybersécurité : adresse email et zone de mobilité."
     },
     "privacy": {
       "title": "Politique de confidentialité - Ilian Ben Hamou",
@@ -43,17 +43,16 @@
     }
   },
   "landing": {
-    "discover": "Me découvrir",
-    "downloadCV": "Télécharger mon CV"
+    "discover": "Me découvrir"
   },
   "presentation": {
     "intro": {
       "label": "intro",
       "title": "Étudiant en",
       "titleAccent": "Cybersécurité.",
-      "bio1": "Entrant en troisième année de bachelor en cybersécurité, je suis activement à la recherche d'un",
-      "bioAccent": "contrat d'alternance de 12 mois",
-      "bio2": "pour accompagner ma B3, reconductible en 24 mois dans le cadre d'un mastère. Mon objectif est de mettre ma rigueur et ma curiosité technique au service d'une équipe opérationnelle ambitieuse face aux enjeux de la cyberdéfense."
+      "bio1": "En troisième année de bachelor en cybersécurité, j'effectue mon alternance en tant que",
+      "bioAccent": "technicien IT chez Ynov Campus",
+      "bio2": "dans le cadre d'un contrat d'apprentissage d'un an."
     },
     "softSkills": {
       "label": "soft skills",
@@ -362,7 +361,8 @@
       "CDD": "CDD",
       "CDI": "CDI",
       "Participation bénévole": "Participation bénévole",
-      "CTF": "CTF"
+      "CTF": "CTF",
+      "Contrat d'apprentissage": "Contrat d'apprentissage"
     },
     "domains": {
       "Cybersécurité": "Cybersécurité",
@@ -380,15 +380,13 @@
   },
   "contact": {
     "sectionLabel": "Contact",
+    "mobilityLabel": "Zone de mobilité / Lieux de travail",
+    "remote": "Ouvert aux propositions (Full Remote / Déplacements)",
     "email": {
       "action": "Ouvrir la messagerie"
     },
     "copy": "Copier",
-    "copied": "Copié !",
-    "cv": {
-      "tagline": "Besoin d'une version papier ou d'un récapitulatif ? Retrouvez mon parcours complet.",
-      "button": "Télécharger mon CV (PDF)"
-    }
+    "copied": "Copié !"
   },
   "footer": {
     "contact": "Contact",

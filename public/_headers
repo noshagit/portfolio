@@ -15,10 +15,6 @@
 /sitemap.xml
   Cache-Control: no-cache
 
-/cv.pdf
-  Cache-Control: public, max-age=86400
-  Content-Disposition: inline
-
 /ldr/*
   Cache-Control: public, max-age=86400
   Content-Disposition: inline

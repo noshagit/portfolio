@@ -1,12 +1,12 @@
 import { useLang } from '../../hooks/useLang'
 
 export default function LangToggle() {
-  const { lang, setLang, loading } = useLang()
+  const { lang, setLang, loading, isTransitioning } = useLang()
 
   return (
     <button
       onClick={() => setLang(lang === 'fr' ? 'en' : 'fr')}
-      disabled={loading}
+      disabled={loading || isTransitioning}
       aria-label={lang === 'fr' ? 'Switch to English' : 'Passer en français'}
       className="flex h-11 items-center gap-px rounded-full border border-accent/20 px-3 md:h-8
                  text-[11px] font-medium tracking-wider transition-all duration-200
