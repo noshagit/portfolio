@@ -371,7 +371,9 @@
       "Service": "Service",
       "Restauration": "Restauration",
       "Photographie": "Photographie",
-      "Vidéo": "Vidéo"
+      "Vidéo": "Vidéo",
+      "Communication": "Communication",
+      "Événementiel": "Événementiel"
     },
     "cta": {
       "text": "Mon profil ou mes expériences ont suscité votre intérêt ? Rencontrons-nous pour échanger sur vos projets et mes futures collaborations.",

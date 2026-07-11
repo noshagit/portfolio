@@ -473,6 +473,110 @@
         ]
     },
     {
+        "id": "exp-bds-photo-2025",
+        "nom": "Photographe & Community Manager",
+        "detailed_date": [
+            "03/2025",
+            "08/2025"
+        ],
+        "type": "Participation bénévole",
+        "domaine": [
+            "Photographie",
+            "Communication"
+        ],
+        "employeur_collab": "Bureau des Sports (Ynov Campus Lyon)",
+        "description": [
+            {
+                "titre": "Couverture photographique des événements",
+                "texte": "Photographe principal du BDS (Bureau des Sports), association sportive de l'école et structure indépendante, avec pour mission la couverture photographique de l'ensemble des événements organisés par l'association, compétitions, soirées, rencontres sportives. Les prises de vue incluaient également des portraits des membres du bureau, destinés à valoriser l'équipe auprès des étudiants et des partenaires."
+            },
+            {
+                "titre": "Création de contenu pour les réseaux sociaux",
+                "texte": "Participation active à la ligne éditoriale du compte Instagram de l'association, à travers la sélection des visuels, la mise en forme des publications et la proposition de formats adaptés aux usages des réseaux sociaux. Ce rôle de community manager, complémentaire à la photographie, a permis d'assurer une cohérence visuelle entre les événements couverts et leur restitution en ligne."
+            },
+            {
+                "titre": "Rôle hybride et autonomie",
+                "texte": "Cette mission de six mois a nécessité une double casquette photographe et community manager, avec une gestion autonome du matériel, du tri des images et de la publication des contenus. L'objectif constant était de renforcer la visibilité et l'image de l'association auprès des étudiants."
+            }
+        ],
+        "metiers_lies": [
+            "Photographe événementiel",
+            "Community manager",
+            "Créateur de contenu visuel"
+        ],
+        "competences_obtenir": [
+            "Photographie événementielle",
+            "Gestion de réseaux sociaux",
+            "Création de contenu",
+            "Retouche photo",
+            "Communication visuelle"
+        ],
+        "soft_skills_utilises": [
+            "Autonomie",
+            "Créativité",
+            "Sens du contact",
+            "Réactivité"
+        ],
+        "links": [
+            {
+                "label": "Instagram - BDS Ynov",
+                "url": "https://www.instagram.com/bdsynovlyon/"
+            }
+        ]
+    },
+    {
+        "id": "exp-bds-copresident-2025",
+        "nom": "Co-président - Secrétaire & Community Manager",
+        "detailed_date": [
+            "08/2025",
+            "12/2025"
+        ],
+        "type": "Participation bénévole",
+        "domaine": [
+            "Communication",
+            "Événementiel"
+        ],
+        "employeur_collab": "Bureau des Sports (Ynov Campus Lyon)",
+        "description": [
+            {
+                "titre": "Co-présidence et gestion administrative",
+                "texte": "Co-président du BDS (Bureau des Sports) durant un mandat de cinq mois, en charge de deux rôles combinés au sein du bureau, secrétaire et community manager. La fonction de secrétaire couvrait la gestion administrative de l'association, le suivi des partenariats et la rédaction des contrats avec les partenaires extérieurs."
+            },
+            {
+                "titre": "Organisation d'événements",
+                "texte": "Organisation et coordination des événements sportifs et festifs de l'association, de la phase de préparation jusqu'à leur tenue effective, en lien avec les autres membres du bureau et les partenaires impliqués. Cette responsabilité impliquait une gestion rigoureuse des délais et des ressources disponibles."
+            },
+            {
+                "titre": "Communication et prise de parole",
+                "texte": "Pilotage de la communication de l'association sur Instagram, avec la publication de contenus et la prise de parole directe auprès de la communauté étudiante lors des événements. Ce double rôle de secrétaire et de community manager a demandé une forte polyvalence et une coordination constante avec le reste du bureau."
+            }
+        ],
+        "metiers_lies": [
+            "Chargé de communication",
+            "Responsable associatif",
+            "Community manager"
+        ],
+        "competences_obtenir": [
+            "Gestion de partenariats",
+            "Rédaction de contrats",
+            "Organisation d'événements",
+            "Community management",
+            "Prise de parole en public"
+        ],
+        "soft_skills_utilises": [
+            "Leadership",
+            "Sens de la communication",
+            "Organisation",
+            "Esprit d'équipe"
+        ],
+        "links": [
+            {
+                "label": "Instagram - BDS Ynov",
+                "url": "https://www.instagram.com/bdsynovlyon/"
+            }
+        ]
+    },
+    {
         "id": "exp-wifi-2026",
         "nom": "Architecte Réseau & Sécurité",
         "detailed_date": [

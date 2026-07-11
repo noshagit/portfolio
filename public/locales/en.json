@@ -371,7 +371,9 @@
       "Service": "Service",
       "Restauration": "Hospitality",
       "Photographie": "Photography",
-      "Vidéo": "Video"
+      "Vidéo": "Video",
+      "Communication": "Communication",
+      "Événementiel": "Events"
     },
     "cta": {
       "text": "Interested in my background or experiences? Let's connect to discuss your projects and potential collaborations.",
