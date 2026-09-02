@@ -864,8 +864,8 @@
         "id": "exp-ynov-technicien-it-2026",
         "nom": "Technicien IT",
         "detailed_date": [
-            "07/2026",
-            "08/2027"
+            "13/07/2026",
+            "PRESENT"
         ],
         "type": "Contrat d'apprentissage",
         "domaine": [
@@ -873,9 +873,45 @@
             "Infrastructure réseau"
         ],
         "employeur_collab": "Ynov Campus Lyon",
-        "description": "",
-        "metiers_lies": [],
-        "competences_obtenir": [],
-        "soft_skills_utilises": []
+        "description": [
+            {
+                "titre": "Support utilisateurs",
+                "texte": "Assurer le support informatique de proximité et à distance pour l'ensemble du campus, en couvrant les niveaux 0 et 1. Prise en charge des incidents et demandes via le système de tickets, surveillance et traitement du backlog CAMPUS, avec un renfort ponctuel du SIÈGE de Mérignac ou d'autres campus en cas de surcharge. Les interventions sont menées à distance via RustDesk ou directement auprès des utilisateurs, notamment pour les accompagner sur des sujets comme l'authentification multifacteur (MFA)."
+            },
+            {
+                "titre": "Gestion du parc informatique",
+                "texte": "Préparation, masterisation et déploiement des postes utilisateurs sous Windows (portables, Surface, tours), avec suivi des déploiements Collaborateurs et PC3D et installation des logiciels via FOG. Le suivi du parc est assuré au quotidien dans GLPI (production, maintenance, stock), avec vérification des stocks de matériel, organisation et inventaire des équipements, ainsi que gestion de l'obsolescence."
+            },
+            {
+                "titre": "Contrôles PC3D, filière cinéma",
+                "texte": "Réalisation des contrôles spécifiques sur les postes PC3D : vérification du Wake On LAN, contrôle des mots de passe BIOS, du boot PXE, de la visserie et de la sécurité physique, ainsi que des périphériques. Étiquetage des équipements et mise à jour de l'inventaire GLPI lors des changements de statut, stock, production ou maintenance."
+            },
+            {
+                "titre": "Gestion administrative et amélioration continue",
+                "texte": "Création des comptes utilisateurs dans le référentiel, passage et validation de commandes auprès des prestataires, réception et expédition de matériel, et suivi du fichier d'état PRONOTE. Rédaction et mise à jour des procédures, réalisation de schémas techniques, identification des dysfonctionnements et proposition d'améliorations pour renforcer la qualité et l'efficacité du support."
+            }
+        ],
+        "metiers_lies": [
+            "Technicien support informatique",
+            "Technicien parc informatique",
+            "Technicien helpdesk"
+        ],
+        "competences_obtenir": [
+            "GLPI",
+            "FOG",
+            "RustDesk",
+            "MFA",
+            "Déploiement Windows",
+            "WOL / BIOS / PXE",
+            "PRONOTE"
+        ],
+        "soft_skills_utilises": [
+            "Autonomie",
+            "Rigueur",
+            "Sens du service",
+            "Priorisation",
+            "Réactivité",
+            "Esprit d'équipe"
+        ]
     }
 ]

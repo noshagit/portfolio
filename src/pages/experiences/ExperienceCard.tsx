@@ -3,8 +3,9 @@ import { motion } from 'framer-motion'
 import { ChevronRight } from 'lucide-react'
 import type { Experience } from '../../types/experience'
 import { useLang } from '../../hooks/useLang'
+import { useToday } from '../../hooks/useToday'
 import { EASE } from '../../lib/motion'
-import { dateShort } from '../../lib/formatDate'
+import { dateShort, duration } from '../../lib/formatDate'
 
 interface Props {
   exp:    Experience
@@ -13,7 +14,9 @@ interface Props {
 
 function ExperienceCard({ exp, onOpen }: Props) {
   const { t, lang } = useLang()
+  const today = useToday()
   const typeLabel = t.experiences.types[exp.type as keyof typeof t.experiences.types] ?? exp.type
+  const durationLabel = duration(exp.detailed_date, lang, today)
 
   function handleOpen() { onOpen(exp.id) }
 
@@ -42,7 +45,10 @@ function ExperienceCard({ exp, onOpen }: Props) {
       </div>
 
       <div className="flex items-center justify-between">
-        <span className="text-xs text-foreground/60">{dateShort(exp.detailed_date, lang)}</span>
+        <div className="flex flex-col gap-0.5">
+          <span className="text-xs text-foreground/60">{dateShort(exp.detailed_date, lang)}</span>
+          {durationLabel && <span className="text-[10px] text-foreground/40">{durationLabel}</span>}
+        </div>
         <ChevronRight
           size={15}
           className="text-foreground/40 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:text-accent"

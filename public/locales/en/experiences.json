@@ -871,8 +871,8 @@
         "id": "exp-ynov-technicien-it-2026",
         "nom": "IT Technician",
         "detailed_date": [
-            "07/2026",
-            "08/2027"
+            "13/07/2026",
+            "PRESENT"
         ],
         "type": "Contrat d'apprentissage",
         "domaine": [
@@ -880,9 +880,45 @@
             "Infrastructure réseau"
         ],
         "employeur_collab": "Ynov Campus Lyon",
-        "description": "",
-        "metiers_lies": [],
-        "competences_obtenir": [],
-        "soft_skills_utilises": []
+        "description": [
+            {
+                "titre": "User support",
+                "texte": "Providing on-site and remote IT support for the whole campus, covering level 0 and level 1. Handling incidents and requests through the ticketing system, monitoring and processing the CAMPUS backlog, with occasional reinforcement of the Mérignac HEADQUARTERS or other campuses during overload periods. Interventions are carried out remotely via RustDesk or directly with users, including guiding them through topics such as multi-factor authentication (MFA)."
+            },
+            {
+                "titre": "IT fleet management",
+                "texte": "Preparing, imaging and deploying user workstations on Windows (laptops, Surface devices, towers), with tracking of Collaborateurs and PC3D deployments and software installation via FOG. The fleet is tracked daily in GLPI (production, maintenance, stock), including stock verification, equipment organization and inventory, as well as obsolescence management."
+            },
+            {
+                "titre": "PC3D checks, cinema department",
+                "texte": "Carrying out specific checks on PC3D workstations: Wake On LAN verification, BIOS password checks, PXE boot verification, screw fastening and physical security checks, as well as peripheral verification. Equipment labeling and GLPI inventory updates on status changes, stock, production or maintenance."
+            },
+            {
+                "titre": "Administrative work and continuous improvement",
+                "texte": "Creating user accounts in the identity repository, placing and validating orders with vendors, receiving and shipping equipment, and tracking the PRONOTE status file. Writing and updating procedures, producing technical diagrams, identifying issues and proposing improvements to strengthen support quality and efficiency."
+            }
+        ],
+        "metiers_lies": [
+            "IT support technician",
+            "IT fleet technician",
+            "Helpdesk technician"
+        ],
+        "competences_obtenir": [
+            "GLPI",
+            "FOG",
+            "RustDesk",
+            "MFA",
+            "Windows deployment",
+            "WOL / BIOS / PXE",
+            "PRONOTE"
+        ],
+        "soft_skills_utilises": [
+            "Autonomy",
+            "Rigor",
+            "Service mindset",
+            "Prioritization",
+            "Responsiveness",
+            "Team spirit"
+        ]
     }
 ]
