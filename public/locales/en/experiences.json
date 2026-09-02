@@ -890,7 +890,7 @@
                 "texte": "Preparing, imaging and deploying user workstations on Windows (laptops, Surface devices, towers), with tracking of Collaborateurs and PC3D deployments and software installation via FOG. The fleet is tracked daily in GLPI (production, maintenance, stock), including stock verification, equipment organization and inventory, as well as obsolescence management."
             },
             {
-                "titre": "PC3D checks, cinema department",
+                "titre": "PC3D checks",
                 "texte": "Carrying out specific checks on PC3D workstations: Wake On LAN verification, BIOS password checks, PXE boot verification, screw fastening and physical security checks, as well as peripheral verification. Equipment labeling and GLPI inventory updates on status changes, stock, production or maintenance."
             },
             {
@@ -909,8 +909,7 @@
             "RustDesk",
             "MFA",
             "Windows deployment",
-            "WOL / BIOS / PXE",
-            "PRONOTE"
+            "WOL / BIOS / PXE"
         ],
         "soft_skills_utilises": [
             "Autonomy",
